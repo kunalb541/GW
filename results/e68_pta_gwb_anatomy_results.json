@@ -1,0 +1,135 @@
+{
+  "prereg": "preregs/E68_pta_gwb_anatomy_prereg.md",
+  "probes": {
+    "NANOGrav15 (HD)": {
+      "log10A": -14.198,
+      "gamma": 3.246,
+      "sd_log10A": 0.138,
+      "sd_gamma": 0.359,
+      "rho": -0.905,
+      "psi_deg": 109.7,
+      "z_gamma_13_3": 3.03,
+      "n": 143824
+    },
+    "EPTA DR2full (HD)": {
+      "log10A": -14.561,
+      "gamma": 4.21,
+      "sd_log10A": 0.214,
+      "sd_gamma": 0.422,
+      "rho": -0.943,
+      "psi_deg": 116.1,
+      "z_gamma_13_3": 0.29,
+      "n": 22493
+    },
+    "PPTA DR3 (CRN)": {
+      "log10A": -14.508,
+      "gamma": 3.866,
+      "sd_log10A": 0.158,
+      "sd_gamma": 0.374,
+      "rho": -0.855,
+      "psi_deg": 110.6,
+      "z_gamma_13_3": 1.25,
+      "n": 2978
+    },
+    "EPTA DR2new (HD)": {
+      "log10A": -13.98,
+      "gamma": 2.793,
+      "sd_log10A": 0.245,
+      "sd_gamma": 0.622,
+      "rho": -0.949,
+      "psi_deg": 110.8,
+      "z_gamma_13_3": 2.48,
+      "n": 22493
+    }
+  },
+  "pairs": {
+    "NANOGrav15 (HD) | EPTA DR2full (HD)": {
+      "sigma": 1.8,
+      "vf_raw": 0.991,
+      "vf_joint": 0.954,
+      "vf_orientation_only": 0.957,
+      "delta_rho": 0.038,
+      "dmu_log10A": 0.363,
+      "dmu_gamma": -0.964,
+      "nongauss_ratio": 0.995,
+      "gauss_faithful": true
+    },
+    "NANOGrav15 (HD) | PPTA DR3 (CRN)": {
+      "sigma": 1.5,
+      "vf_raw": 0.998,
+      "vf_joint": 0.977,
+      "vf_orientation_only": 0.991,
+      "delta_rho": 0.05,
+      "dmu_log10A": 0.311,
+      "dmu_gamma": -0.621,
+      "nongauss_ratio": 1.01,
+      "gauss_faithful": true
+    },
+    "EPTA DR2full (HD) | PPTA DR3 (CRN)": {
+      "sigma": 1.03,
+      "vf_raw": 0.948,
+      "vf_joint": 0.911,
+      "vf_orientation_only": 0.907,
+      "delta_rho": 0.088,
+      "dmu_log10A": -0.053,
+      "dmu_gamma": 0.344,
+      "nongauss_ratio": 0.982,
+      "gauss_faithful": true
+    }
+  },
+  "D2": {
+    "rho_all_negative": true,
+    "rhos": {
+      "NANOGrav15 (HD)": -0.905,
+      "EPTA DR2full (HD)": -0.943,
+      "PPTA DR3 (CRN)": -0.855
+    },
+    "common_axis": [
+      -0.376,
+      0.926
+    ],
+    "offset_frac_along_degeneracy": {
+      "NANOGrav15 (HD) | EPTA DR2full (HD)": 0.999,
+      "NANOGrav15 (HD) | PPTA DR3 (CRN)": 0.994,
+      "EPTA DR2full (HD) | PPTA DR3 (CRN)": 0.946
+    },
+    "mean_frac": 0.98,
+    "classification": "degeneracy-sliding (band/convention)"
+  },
+  "D3": {
+    "z_scores": {
+      "NANOGrav15 (HD)": 3.03,
+      "EPTA DR2full (HD)": 0.29,
+      "PPTA DR3 (CRN)": 1.25
+    },
+    "n_PTAs_z_gt_2": 1
+  },
+  "robustness_epta_internal": {
+    "sigma": 1.89,
+    "vf_raw": 0.983,
+    "vf_joint": 0.953,
+    "vf_orientation_only": 0.96,
+    "delta_rho": 0.006,
+    "dmu_log10A": 0.581,
+    "dmu_gamma": -1.417,
+    "nongauss_ratio": 1.002,
+    "gauss_faithful": true
+  },
+  "posthoc_span_ordering": {
+    "label": "EXPLORATORY post-hoc, not preregistered",
+    "spans_yr": {
+      "EPTA DR2new (HD)": 10.3,
+      "NANOGrav15 (HD)": 16.03,
+      "PPTA DR3 (CRN)": 18.0,
+      "EPTA DR2full (HD)": 24.7
+    },
+    "gammas": {
+      "EPTA DR2new (HD)": 2.793,
+      "NANOGrav15 (HD)": 3.246,
+      "PPTA DR3 (CRN)": 3.866,
+      "EPTA DR2full (HD)": 4.21
+    },
+    "perfectly_monotonic": true,
+    "note": "gamma-hat strictly increasing with time span across all 4 datasets; the signature of a bending (non-power-law) spectrum or span-correlated systematic - exactly the ambiguity the D2 caveat names. 4 datasets, 2 not independent (EPTA subsets); p~1/24 one-sided if independent, weaker here. To be preregistered against IPTA DR3 / NG20yr when public."
+  }
+}

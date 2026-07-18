@@ -1,0 +1,74 @@
+{
+  "prereg": "preregs/E41_gw_plane_lawfulness_prereg.md",
+  "n_events_max": 75,
+  "hits": 3,
+  "planes": [
+    {
+      "plane": "mass_1_source__mass_2_source",
+      "n": 75,
+      "median_rho": -0.51,
+      "frac_pos": 0.04,
+      "frac_neg": 0.96,
+      "median_Wx_Wy": 1.31,
+      "psi_units": "physical",
+      "predicted": "negative",
+      "verdict": "HIT"
+    },
+    {
+      "plane": "chirp_mass_source__mass_ratio",
+      "n": 75,
+      "median_rho": 0.257,
+      "frac_pos": 0.84,
+      "frac_neg": 0.16,
+      "median_Wx_Wy": 11.63,
+      "psi_units": "x-dom(~0/180)",
+      "predicted": "positive",
+      "verdict": "HIT"
+    },
+    {
+      "plane": "mass_ratio__chi_eff",
+      "n": 75,
+      "median_rho": 0.055,
+      "frac_pos": 0.56,
+      "frac_neg": 0.44,
+      "median_Wx_Wy": 1.33,
+      "psi_units": "physical",
+      "predicted": "negative",
+      "verdict": "WEAK"
+    },
+    {
+      "plane": "final_mass_source__final_spin",
+      "n": 74,
+      "median_rho": 0.224,
+      "frac_pos": 0.81,
+      "frac_neg": 0.19,
+      "median_Wx_Wy": 80.93,
+      "psi_units": "x-dom(~0/180)",
+      "predicted": "indeterminate",
+      "verdict": "SIGNAL-MISSED"
+    },
+    {
+      "plane": "luminosity_distance__cos_iota",
+      "n": 75,
+      "median_rho": -0.005,
+      "frac_pos": 0.45,
+      "frac_neg": 0.52,
+      "median_Wx_Wy": 860.24,
+      "psi_units": "x-dom(~0/180)",
+      "predicted": "indeterminate",
+      "verdict": "HIT"
+    },
+    {
+      "plane": "redshift__total_mass_source",
+      "n": 75,
+      "median_rho": -0.508,
+      "frac_pos": 0.0,
+      "frac_neg": 0.99,
+      "median_Wx_Wy": 0.02,
+      "psi_units": "y-dom(~90)",
+      "predicted": "positive",
+      "verdict": "MISS(wrong-sign)"
+    }
+  ],
+  "predictions_source": "workflow wf_a602622a-b52 (agents blind to measured rho)"
+}

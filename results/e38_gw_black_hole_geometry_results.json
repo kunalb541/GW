@@ -1,0 +1,7806 @@
+{
+  "prereg": "preregs/E38_gw_black_hole_geometry_prereg.md",
+  "question": "Can real GW event posteriors be explored with the value/shape geometry framework?",
+  "data_sources": {
+    "gwosc_catalog": "https://gwosc.org/eventapi/json/GWTC/",
+    "cached_hdf5": [
+      "data/chains/gw_posteriors/GW190403_051519_PE.h5",
+      "data/chains/gw_posteriors/GW190408_181802_PE.h5",
+      "data/chains/gw_posteriors/GW190412_PE.h5",
+      "data/chains/gw_posteriors/GW190413_134308_PE.h5",
+      "data/chains/gw_posteriors/GW190421_213856_PE.h5",
+      "data/chains/gw_posteriors/GW190425_PE.h5",
+      "data/chains/gw_posteriors/GW190426_190642_PE.h5",
+      "data/chains/gw_posteriors/GW190503_185404_PE.h5",
+      "data/chains/gw_posteriors/GW190512_180714_PE.h5",
+      "data/chains/gw_posteriors/GW190513_205428_PE.h5",
+      "data/chains/gw_posteriors/GW190514_065416_PE.h5",
+      "data/chains/gw_posteriors/GW190517_055101_PE.h5",
+      "data/chains/gw_posteriors/GW190519_153544_PE.h5",
+      "data/chains/gw_posteriors/GW190521_074359_PE.h5",
+      "data/chains/gw_posteriors/GW190527_092055_PE.h5",
+      "data/chains/gw_posteriors/GW190602_175927_PE.h5",
+      "data/chains/gw_posteriors/GW190620_030421_PE.h5",
+      "data/chains/gw_posteriors/GW190630_185205_PE.h5",
+      "data/chains/gw_posteriors/GW190701_203306_PE.h5",
+      "data/chains/gw_posteriors/GW190706_222641_PE.h5",
+      "data/chains/gw_posteriors/GW190707_093326_PE.h5",
+      "data/chains/gw_posteriors/GW190708_232457_PE.h5",
+      "data/chains/gw_posteriors/GW190719_215514_PE.h5",
+      "data/chains/gw_posteriors/GW190720_000836_PE.h5",
+      "data/chains/gw_posteriors/GW190725_174728_PE.h5",
+      "data/chains/gw_posteriors/GW190727_060333_PE.h5",
+      "data/chains/gw_posteriors/GW190728_064510_PE.h5",
+      "data/chains/gw_posteriors/GW190731_140936_PE.h5",
+      "data/chains/gw_posteriors/GW190803_022701_PE.h5",
+      "data/chains/gw_posteriors/GW190805_211137_PE.h5",
+      "data/chains/gw_posteriors/GW190814_PE.h5",
+      "data/chains/gw_posteriors/GW190828_063405_PE.h5",
+      "data/chains/gw_posteriors/GW190828_065509_PE.h5",
+      "data/chains/gw_posteriors/GW190910_112807_PE.h5",
+      "data/chains/gw_posteriors/GW190915_235702_PE.h5",
+      "data/chains/gw_posteriors/GW190916_200658_PE.h5",
+      "data/chains/gw_posteriors/GW190917_114630_PE.h5",
+      "data/chains/gw_posteriors/GW190924_021846_PE.h5",
+      "data/chains/gw_posteriors/GW190925_232845_PE.h5",
+      "data/chains/gw_posteriors/GW190926_050336_PE.h5",
+      "data/chains/gw_posteriors/GW190929_012149_PE.h5",
+      "data/chains/gw_posteriors/GW190930_133541_PE.h5",
+      "data/chains/gw_posteriors/GW191103_012549_PE.h5",
+      "data/chains/gw_posteriors/GW191105_143521_PE.h5",
+      "data/chains/gw_posteriors/GW191109_010717_PE.h5",
+      "data/chains/gw_posteriors/GW191113_071753_PE.h5",
+      "data/chains/gw_posteriors/GW191126_115259_PE.h5",
+      "data/chains/gw_posteriors/GW191127_050227_PE.h5",
+      "data/chains/gw_posteriors/GW191129_134029_PE.h5",
+      "data/chains/gw_posteriors/GW191204_110529_PE.h5",
+      "data/chains/gw_posteriors/GW191204_171526_PE.h5",
+      "data/chains/gw_posteriors/GW191215_223052_PE.h5",
+      "data/chains/gw_posteriors/GW191216_213338_PE.h5",
+      "data/chains/gw_posteriors/GW191219_163120_PE.h5",
+      "data/chains/gw_posteriors/GW191222_033537_PE.h5",
+      "data/chains/gw_posteriors/GW191230_180458_PE.h5",
+      "data/chains/gw_posteriors/GW200112_155838_PE.h5",
+      "data/chains/gw_posteriors/GW200115_042309_PE.h5",
+      "data/chains/gw_posteriors/GW200128_022011_PE.h5",
+      "data/chains/gw_posteriors/GW200129_065458_PE.h5",
+      "data/chains/gw_posteriors/GW200202_154313_PE.h5",
+      "data/chains/gw_posteriors/GW200208_130117_PE.h5",
+      "data/chains/gw_posteriors/GW200209_085452_PE.h5",
+      "data/chains/gw_posteriors/GW200210_092254_PE.h5",
+      "data/chains/gw_posteriors/GW200216_220804_PE.h5",
+      "data/chains/gw_posteriors/GW200219_094415_PE.h5",
+      "data/chains/gw_posteriors/GW200220_061928_PE.h5",
+      "data/chains/gw_posteriors/GW200220_124850_PE.h5",
+      "data/chains/gw_posteriors/GW200224_222234_PE.h5",
+      "data/chains/gw_posteriors/GW200225_060421_PE.h5",
+      "data/chains/gw_posteriors/GW200302_015811_PE.h5",
+      "data/chains/gw_posteriors/GW200306_093714_PE.h5",
+      "data/chains/gw_posteriors/GW200308_173609_PE.h5",
+      "data/chains/gw_posteriors/GW200311_115853_PE.h5",
+      "data/chains/gw_posteriors/GW200316_215756_PE.h5",
+      "data/chains/gw_posteriors/GW200322_091133_PE.h5"
+    ],
+    "n_cached_hdf5": 76,
+    "note": "Raw HDF5 posterior files are ignored by git; only derived geometry is committed."
+  },
+  "landmark_summaries": [
+    {
+      "event": "GW150914",
+      "class": "canonical_BBH",
+      "catalog": "GWTC-2.1-confident",
+      "version": 4,
+      "jsonurl": "https://gwosc.org/eventapi/json/GWTC-2.1-confident/GW150914/v4",
+      "summary_params": {
+        "mass_1_source": {
+          "median": 34.6,
+          "lower": -2.6,
+          "upper": 4.4,
+          "unit": "M_sun"
+        },
+        "mass_2_source": {
+          "median": 30.0,
+          "lower": -4.6,
+          "upper": 2.9,
+          "unit": "M_sun"
+        },
+        "chirp_mass_source": {
+          "median": 27.9,
+          "lower": -1.5,
+          "upper": 1.7,
+          "unit": "M_sun"
+        },
+        "total_mass_source": {
+          "median": 64.5,
+          "lower": -3.2,
+          "upper": 3.7,
+          "unit": "M_sun"
+        },
+        "final_mass_source": {
+          "median": 61.5,
+          "lower": -2.9,
+          "upper": 3.4,
+          "unit": "M_sun"
+        },
+        "chi_eff": {
+          "median": -0.04,
+          "lower": -0.14,
+          "upper": 0.12,
+          "unit": ""
+        },
+        "luminosity_distance": {
+          "median": 470.0,
+          "lower": -160.0,
+          "upper": 140.0,
+          "unit": "Mpc"
+        },
+        "redshift": {
+          "median": 0.1,
+          "lower": -0.03,
+          "upper": 0.03,
+          "unit": ""
+        },
+        "network_matched_filter_snr": {
+          "median": 26.0,
+          "lower": -0.2,
+          "upper": 0.1,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "event": "GW170817",
+      "class": "BNS_standard_siren",
+      "catalog": "GWTC-1-confident",
+      "version": 3,
+      "jsonurl": "https://gwosc.org/eventapi/json/GWTC-1-confident/GW170817/v3",
+      "summary_params": {
+        "mass_1_source": {
+          "median": 1.46,
+          "lower": -0.1,
+          "upper": 0.12,
+          "unit": "M_sun"
+        },
+        "mass_2_source": {
+          "median": 1.27,
+          "lower": -0.09,
+          "upper": 0.09,
+          "unit": "M_sun"
+        },
+        "chirp_mass_source": {
+          "median": 1.186,
+          "lower": -0.001,
+          "upper": 0.001,
+          "unit": "M_sun"
+        },
+        "final_mass_source": {
+          "median": 2.8,
+          "lower": null,
+          "upper": null,
+          "unit": "M_sun"
+        },
+        "chi_eff": {
+          "median": 0.0,
+          "lower": -0.01,
+          "upper": 0.02,
+          "unit": ""
+        },
+        "luminosity_distance": {
+          "median": 40.0,
+          "lower": -15.0,
+          "upper": 7.0,
+          "unit": "Mpc"
+        },
+        "redshift": {
+          "median": 0.01,
+          "lower": 0.0,
+          "upper": 0.0,
+          "unit": ""
+        },
+        "network_matched_filter_snr": {
+          "median": 33.0,
+          "lower": null,
+          "upper": null,
+          "unit": ""
+        },
+        "far": {
+          "median": 1e-07,
+          "lower": null,
+          "upper": null,
+          "unit": "yr^-1"
+        },
+        "p_astro": {
+          "median": 1.0,
+          "lower": null,
+          "upper": null,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "event": "GW190521_074359",
+      "class": "high_mass_BBH",
+      "catalog": "GWTC-2.1-confident",
+      "version": 2,
+      "jsonurl": "https://gwosc.org/eventapi/json/GWTC-2.1-confident/GW190521_074359/v2",
+      "summary_params": {
+        "mass_1_source": {
+          "median": 43.4,
+          "lower": -5.5,
+          "upper": 5.8,
+          "unit": "M_sun"
+        },
+        "mass_2_source": {
+          "median": 33.4,
+          "lower": -6.8,
+          "upper": 5.2,
+          "unit": "M_sun"
+        },
+        "chirp_mass_source": {
+          "median": 32.8,
+          "lower": -2.8,
+          "upper": 3.2,
+          "unit": "M_sun"
+        },
+        "total_mass_source": {
+          "median": 76.3,
+          "lower": -5.9,
+          "upper": 7.0,
+          "unit": "M_sun"
+        },
+        "final_mass_source": {
+          "median": 72.6,
+          "lower": -5.4,
+          "upper": 6.5,
+          "unit": "M_sun"
+        },
+        "chi_eff": {
+          "median": 0.1,
+          "lower": -0.13,
+          "upper": 0.13,
+          "unit": ""
+        },
+        "luminosity_distance": {
+          "median": 1080.0,
+          "lower": -530.0,
+          "upper": 580.0,
+          "unit": "Mpc"
+        },
+        "redshift": {
+          "median": 0.21,
+          "lower": -0.1,
+          "upper": 0.1,
+          "unit": ""
+        },
+        "network_matched_filter_snr": {
+          "median": 25.9,
+          "lower": -0.2,
+          "upper": 0.1,
+          "unit": ""
+        },
+        "far": {
+          "median": 1e-05,
+          "lower": null,
+          "upper": null,
+          "unit": "1/yr"
+        },
+        "p_astro": {
+          "median": 1.0,
+          "lower": null,
+          "upper": null,
+          "unit": ""
+        }
+      }
+    },
+    {
+      "event": "GW190814",
+      "class": "asymmetric_mass_ratio",
+      "catalog": "GWTC-2.1-confident",
+      "version": 3,
+      "jsonurl": "https://gwosc.org/eventapi/json/GWTC-2.1-confident/GW190814/v3",
+      "summary_params": {
+        "mass_1_source": {
+          "median": 23.3,
+          "lower": -1.4,
+          "upper": 1.4,
+          "unit": "M_sun"
+        },
+        "mass_2_source": {
+          "median": 2.6,
+          "lower": -0.1,
+          "upper": 0.1,
+          "unit": "M_sun"
+        },
+        "chirp_mass_source": {
+          "median": 6.11,
+          "lower": -0.05,
+          "upper": 0.06,
+          "unit": "M_sun"
+        },
+        "total_mass_source": {
+          "median": 25.9,
+          "lower": -1.3,
+          "upper": 1.3,
+          "unit": "M_sun"
+        },
+        "final_mass_source": {
+          "median": 25.7,
+          "lower": -1.3,
+          "upper": 1.3,
+          "unit": "M_sun"
+        },
+        "chi_eff": {
+          "median": 0.0,
+          "lower": -0.07,
+          "upper": 0.07,
+          "unit": ""
+        },
+        "luminosity_distance": {
+          "median": 230.0,
+          "lower": -50.0,
+          "upper": 40.0,
+          "unit": "Mpc"
+        },
+        "redshift": {
+          "median": 0.05,
+          "lower": -0.01,
+          "upper": 0.01,
+          "unit": ""
+        },
+        "network_matched_filter_snr": {
+          "median": 25.3,
+          "lower": -0.2,
+          "upper": 0.1,
+          "unit": ""
+        },
+        "far": {
+          "median": 1e-05,
+          "lower": null,
+          "upper": null,
+          "unit": "1/yr"
+        },
+        "p_astro": {
+          "median": 1.0,
+          "lower": null,
+          "upper": null,
+          "unit": ""
+        }
+      }
+    }
+  ],
+  "posterior_chain_geometry": [
+    {
+      "event": "GW190403_051519",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190403_051519_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 3164,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 159.25,
+          "rho": -0.508,
+          "axis_ratio": 2.23,
+          "x_median": 85.0193,
+          "y_median": 20.0152,
+          "x_q16_q84": [
+            65.3771,
+            101.9439
+          ],
+          "y_q16_q84": [
+            14.183,
+            32.9318
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.06,
+          "rho": 0.639,
+          "axis_ratio": 44.82,
+          "x_median": 34.0167,
+          "y_median": 0.2304,
+          "x_q16_q84": [
+            28.8768,
+            41.3302
+          ],
+          "y_q16_q84": [
+            0.1463,
+            0.4974
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 146.06,
+          "rho": -0.333,
+          "axis_ratio": 1.45,
+          "x_median": 0.2304,
+          "y_median": 0.6791,
+          "x_q16_q84": [
+            0.1463,
+            0.4974
+          ],
+          "y_q16_q84": [
+            0.5083,
+            0.781
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.98,
+          "rho": -0.062,
+          "axis_ratio": 222.85,
+          "x_median": 102.1873,
+          "y_median": 0.9084,
+          "x_q16_q84": [
+            87.9308,
+            117.2992
+          ],
+          "y_q16_q84": [
+            0.8338,
+            0.947
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.098,
+          "axis_ratio": 4079.43,
+          "x_median": 8283.8964,
+          "y_median": -0.2349,
+          "x_q16_q84": [
+            5436.3539,
+            11918.5703
+          ],
+          "y_q16_q84": [
+            -0.9322,
+            0.9365
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.86,
+          "rho": -0.636,
+          "axis_ratio": 55.06,
+          "x_median": 1.1753,
+          "y_median": 106.5813,
+          "x_q16_q84": [
+            0.8352,
+            1.5786
+          ],
+          "y_q16_q84": [
+            92.6872,
+            121.7536
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190408_181802",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190408_181802_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 10527,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 143.79,
+          "rho": -0.642,
+          "axis_ratio": 2.21,
+          "x_median": 24.8122,
+          "y_median": 18.5251,
+          "x_q16_q84": [
+            22.386,
+            28.047
+          ],
+          "y_q16_q84": [
+            15.9829,
+            20.7152
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 2.53,
+          "rho": 0.279,
+          "axis_ratio": 6.73,
+          "x_median": 18.4501,
+          "y_median": 0.753,
+          "x_q16_q84": [
+            17.6651,
+            19.5294
+          ],
+          "y_q16_q84": [
+            0.5783,
+            0.9095
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 0.18,
+          "rho": 0.003,
+          "axis_ratio": 1.57,
+          "x_median": 0.753,
+          "y_median": -0.026,
+          "x_q16_q84": [
+            0.5783,
+            0.9095
+          ],
+          "y_q16_q84": [
+            -0.1193,
+            0.0539
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.28,
+          "rho": 0.236,
+          "axis_ratio": 48.85,
+          "x_median": 41.4352,
+          "y_median": 0.6718,
+          "x_q16_q84": [
+            39.5891,
+            43.6882
+          ],
+          "y_q16_q84": [
+            0.6336,
+            0.7078
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.02,
+          "rho": 0.128,
+          "axis_ratio": 414.17,
+          "x_median": 1539.583,
+          "y_median": 0.5256,
+          "x_q16_q84": [
+            1172.5521,
+            1817.599
+          ],
+          "y_q16_q84": [
+            -0.8639,
+            0.9073
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.96,
+          "rho": -0.697,
+          "axis_ratio": 58.13,
+          "x_median": 0.2904,
+          "y_median": 43.3586,
+          "x_q16_q84": [
+            0.2286,
+            0.3352
+          ],
+          "y_q16_q84": [
+            41.4372,
+            45.7259
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190412",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190412_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 7886,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 165.2,
+          "rho": -0.919,
+          "axis_ratio": 9.54,
+          "x_median": 27.749,
+          "y_median": 9.0194,
+          "x_q16_q84": [
+            23.3649,
+            31.4702
+          ],
+          "y_q16_q84": [
+            8.0783,
+            10.264
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 179.2,
+          "rho": -0.042,
+          "axis_ratio": 3.3,
+          "x_median": 13.2973,
+          "y_median": 0.3254,
+          "x_q16_q84": [
+            13.009,
+            13.6127
+          ],
+          "y_q16_q84": [
+            0.2572,
+            0.4376
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 140.88,
+          "rho": -0.812,
+          "axis_ratio": 3.16,
+          "x_median": 0.3254,
+          "y_median": 0.2143,
+          "x_q16_q84": [
+            0.2572,
+            0.4376
+          ],
+          "y_q16_q84": [
+            0.1192,
+            0.2876
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.05,
+          "rho": 0.089,
+          "axis_ratio": 99.63,
+          "x_median": 35.5564,
+          "y_median": 0.6591,
+          "x_q16_q84": [
+            32.2969,
+            38.5044
+          ],
+          "y_q16_q84": [
+            0.6333,
+            0.6875
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.95,
+          "rho": -0.19,
+          "axis_ratio": 216.22,
+          "x_median": 721.0543,
+          "y_median": 0.6166,
+          "x_q16_q84": [
+            587.6937,
+            862.7408
+          ],
+          "y_q16_q84": [
+            -0.6985,
+            0.8104
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.15,
+          "rho": -0.29,
+          "axis_ratio": 116.08,
+          "x_median": 0.1474,
+          "y_median": 36.7718,
+          "x_q16_q84": [
+            0.1221,
+            0.1736
+          ],
+          "y_q16_q84": [
+            33.5884,
+            39.6195
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190413_134308",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190413_134308_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 23732,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 148.5,
+          "rho": -0.449,
+          "axis_ratio": 1.71,
+          "x_median": 51.1516,
+          "y_median": 30.5264,
+          "x_q16_q84": [
+            42.5492,
+            61.1475
+          ],
+          "y_q16_q84": [
+            22.6321,
+            37.7197
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.23,
+          "rho": 0.444,
+          "axis_ratio": 23.13,
+          "x_median": 33.3221,
+          "y_median": 0.6036,
+          "x_q16_q84": [
+            29.5814,
+            37.7489
+          ],
+          "y_q16_q84": [
+            0.3925,
+            0.8477
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 37.2,
+          "rho": 0.126,
+          "axis_ratio": 1.14,
+          "x_median": 0.6036,
+          "y_median": -0.007,
+          "x_q16_q84": [
+            0.3925,
+            0.8477
+          ],
+          "y_q16_q84": [
+            -0.2213,
+            0.1672
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.07,
+          "rho": 0.113,
+          "axis_ratio": 93.58,
+          "x_median": 77.9739,
+          "y_median": 0.6812,
+          "x_q16_q84": [
+            70.495,
+            87.445
+          ],
+          "y_q16_q84": [
+            0.5889,
+            0.7562
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.007,
+          "axis_ratio": 1890.11,
+          "x_median": 3830.2919,
+          "y_median": -0.3475,
+          "x_q16_q84": [
+            2552.2199,
+            5337.9611
+          ],
+          "y_q16_q84": [
+            -0.8644,
+            0.8074
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.7,
+          "rho": -0.605,
+          "axis_ratio": 62.23,
+          "x_median": 0.6272,
+          "y_median": 81.2627,
+          "x_q16_q84": [
+            0.4474,
+            0.8229
+          ],
+          "y_q16_q84": [
+            73.5411,
+            91.0545
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190421_213856",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190421_213856_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 30870,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 133.14,
+          "rho": -0.178,
+          "axis_ratio": 1.2,
+          "x_median": 42.023,
+          "y_median": 32.0289,
+          "x_q16_q84": [
+            37.2842,
+            47.6935
+          ],
+          "y_q16_q84": [
+            26.1823,
+            37.1704
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.14,
+          "rho": 0.4,
+          "axis_ratio": 21.9,
+          "x_median": 31.4254,
+          "y_median": 0.7836,
+          "x_q16_q84": [
+            28.432,
+            34.9546
+          ],
+          "y_q16_q84": [
+            0.5833,
+            0.9316
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 30.78,
+          "rho": 0.158,
+          "axis_ratio": 1.2,
+          "x_median": 0.7836,
+          "y_median": -0.0953,
+          "x_q16_q84": [
+            0.5833,
+            0.9316
+          ],
+          "y_q16_q84": [
+            -0.2529,
+            0.034
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.16,
+          "rho": 0.281,
+          "axis_ratio": 106.39,
+          "x_median": 70.4773,
+          "y_median": 0.6609,
+          "x_q16_q84": [
+            64.5522,
+            77.6795
+          ],
+          "y_q16_q84": [
+            0.5998,
+            0.7113
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.085,
+          "axis_ratio": 1244.84,
+          "x_median": 2595.5479,
+          "y_median": -0.3287,
+          "x_q16_q84": [
+            1768.0856,
+            3501.6422
+          ],
+          "y_q16_q84": [
+            -0.8496,
+            0.7591
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.69,
+          "rho": -0.689,
+          "axis_ratio": 79.0,
+          "x_median": 0.4538,
+          "y_median": 73.6389,
+          "x_q16_q84": [
+            0.3273,
+            0.5824
+          ],
+          "y_q16_q84": [
+            67.3855,
+            81.3389
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190425",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190425_PE.h5",
+      "posterior_dataset": "C01:IMRPhenomPv2_NRTidal:HighSpin/posterior_samples",
+      "n_samples": 20000,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 150.94,
+          "rho": -0.98,
+          "axis_ratio": 11.54,
+          "x_median": 2.0829,
+          "y_median": 1.3233,
+          "x_q16_q84": [
+            1.8023,
+            2.4622
+          ],
+          "y_q16_q84": [
+            1.1521,
+            1.5166
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 90.66,
+          "rho": -0.148,
+          "axis_ratio": 13.12,
+          "x_median": 1.441,
+          "y_median": 0.6354,
+          "x_q16_q84": [
+            1.4269,
+            1.4538
+          ],
+          "y_q16_q84": [
+            0.4684,
+            0.84
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 167.96,
+          "rho": -0.846,
+          "axis_ratio": 7.91,
+          "x_median": 0.6354,
+          "y_median": 0.0654,
+          "x_q16_q84": [
+            0.4684,
+            0.84
+          ],
+          "y_q16_q84": [
+            0.0274,
+            0.113
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.01,
+          "rho": 0.007,
+          "axis_ratio": 59.69,
+          "x_median": 145.919,
+          "y_median": -0.1319,
+          "x_q16_q84": [
+            103.6462,
+            193.0172
+          ],
+          "y_q16_q84": [
+            -0.8436,
+            0.8263
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.47,
+          "rho": -0.373,
+          "axis_ratio": 15.69,
+          "x_median": 0.0323,
+          "y_median": 3.4094,
+          "x_q16_q84": [
+            0.0231,
+            0.0424
+          ],
+          "y_q16_q84": [
+            3.3195,
+            3.6159
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190426_190642",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190426_190642_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 16781,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 145.18,
+          "rho": -0.352,
+          "axis_ratio": 1.48,
+          "x_median": 105.6955,
+          "y_median": 75.9732,
+          "x_q16_q84": [
+            90.0496,
+            128.2447
+          ],
+          "y_q16_q84": [
+            54.3698,
+            92.3893
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.55,
+          "rho": 0.488,
+          "axis_ratio": 58.24,
+          "x_median": 76.0827,
+          "y_median": 0.7617,
+          "x_q16_q84": [
+            65.4034,
+            87.4775
+          ],
+          "y_q16_q84": [
+            0.4549,
+            0.9286
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 116.32,
+          "rho": -0.2,
+          "axis_ratio": 1.29,
+          "x_median": 0.7617,
+          "y_median": 0.2265,
+          "x_q16_q84": [
+            0.4549,
+            0.9286
+          ],
+          "y_q16_q84": [
+            -0.0239,
+            0.4933
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.04,
+          "rho": 0.172,
+          "axis_ratio": 234.42,
+          "x_median": 173.3546,
+          "y_median": 0.7717,
+          "x_q16_q84": [
+            151.9644,
+            195.8259
+          ],
+          "y_q16_q84": [
+            0.6772,
+            0.8606
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.14,
+          "axis_ratio": 2663.73,
+          "x_median": 4547.9254,
+          "y_median": -0.4645,
+          "x_q16_q84": [
+            2953.7988,
+            6487.7018
+          ],
+          "y_q16_q84": [
+            -0.8929,
+            0.7096
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.37,
+          "rho": -0.666,
+          "axis_ratio": 137.84,
+          "x_median": 0.7221,
+          "y_median": 182.7482,
+          "x_q16_q84": [
+            0.5057,
+            0.9642
+          ],
+          "y_q16_q84": [
+            159.9248,
+            206.7699
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190503_185404",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190503_185404_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 24159,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 140.91,
+          "rho": -0.445,
+          "axis_ratio": 1.63,
+          "x_median": 41.3033,
+          "y_median": 28.3077,
+          "x_q16_q84": [
+            36.1879,
+            47.3109
+          ],
+          "y_q16_q84": [
+            22.6969,
+            33.0176
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.59,
+          "rho": 0.424,
+          "axis_ratio": 16.94,
+          "x_median": 29.2848,
+          "y_median": 0.6906,
+          "x_q16_q84": [
+            26.6578,
+            31.9192
+          ],
+          "y_q16_q84": [
+            0.4962,
+            0.8896
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 30.9,
+          "rho": 0.18,
+          "axis_ratio": 1.23,
+          "x_median": 0.6906,
+          "y_median": -0.0453,
+          "x_q16_q84": [
+            0.4962,
+            0.8896
+          ],
+          "y_q16_q84": [
+            -0.2115,
+            0.0917
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.43,
+          "rho": 0.52,
+          "axis_ratio": 81.87,
+          "x_median": 66.4531,
+          "y_median": 0.6638,
+          "x_q16_q84": [
+            61.6535,
+            71.9038
+          ],
+          "y_q16_q84": [
+            0.5914,
+            0.7205
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.98,
+          "rho": -0.6,
+          "axis_ratio": 1959.36,
+          "x_median": 1522.3951,
+          "y_median": -0.8062,
+          "x_q16_q84": [
+            1150.2072,
+            1894.3847
+          ],
+          "y_q16_q84": [
+            -0.9499,
+            -0.5292
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.08,
+          "rho": -0.134,
+          "axis_ratio": 92.53,
+          "x_median": 0.2875,
+          "y_median": 69.436,
+          "x_q16_q84": [
+            0.2247,
+            0.3473
+          ],
+          "y_q16_q84": [
+            64.235,
+            75.2821
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190512_180714",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190512_180714_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 19213,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 155.76,
+          "rho": -0.783,
+          "axis_ratio": 3.63,
+          "x_median": 23.1523,
+          "y_median": 12.5341,
+          "x_q16_q84": [
+            19.4869,
+            26.5259
+          ],
+          "y_q16_q84": [
+            10.9246,
+            14.6979
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.01,
+          "rho": 0.073,
+          "axis_ratio": 4.39,
+          "x_median": 14.5611,
+          "y_median": 0.5384,
+          "x_q16_q84": [
+            13.9449,
+            15.423
+          ],
+          "y_q16_q84": [
+            0.4196,
+            0.7412
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 164.59,
+          "rho": -0.441,
+          "axis_ratio": 2.35,
+          "x_median": 0.5384,
+          "y_median": 0.0242,
+          "x_q16_q84": [
+            0.4196,
+            0.7412
+          ],
+          "y_q16_q84": [
+            -0.051,
+            0.1001
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.74,
+          "rho": -0.275,
+          "axis_ratio": 62.28,
+          "x_median": 34.3171,
+          "y_median": 0.6531,
+          "x_q16_q84": [
+            32.0121,
+            36.7454
+          ],
+          "y_q16_q84": [
+            0.6136,
+            0.689
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.014,
+          "axis_ratio": 457.56,
+          "x_median": 1455.7605,
+          "y_median": -0.2125,
+          "x_q16_q84": [
+            1048.6842,
+            1776.6761
+          ],
+          "y_q16_q84": [
+            -0.8747,
+            0.8534
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.9,
+          "rho": -0.656,
+          "axis_ratio": 55.12,
+          "x_median": 0.2765,
+          "y_median": 35.7846,
+          "x_q16_q84": [
+            0.207,
+            0.3287
+          ],
+          "y_q16_q84": [
+            33.4798,
+            38.1909
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190513_205428",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190513_205428_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 13281,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 155.25,
+          "rho": -0.614,
+          "axis_ratio": 2.45,
+          "x_median": 35.956,
+          "y_median": 18.3231,
+          "x_q16_q84": [
+            29.1457,
+            42.5593
+          ],
+          "y_q16_q84": [
+            15.0514,
+            23.0135
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.46,
+          "rho": 0.249,
+          "axis_ratio": 10.2,
+          "x_median": 21.8,
+          "y_median": 0.5059,
+          "x_q16_q84": [
+            20.3488,
+            23.8729
+          ],
+          "y_q16_q84": [
+            0.3658,
+            0.7851
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 8.25,
+          "rho": 0.057,
+          "axis_ratio": 1.22,
+          "x_median": 0.5059,
+          "y_median": 0.1629,
+          "x_q16_q84": [
+            0.3658,
+            0.7851
+          ],
+          "y_q16_q84": [
+            0.0183,
+            0.3348
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.29,
+          "rho": 0.298,
+          "axis_ratio": 61.69,
+          "x_median": 52.0905,
+          "y_median": 0.7144,
+          "x_q16_q84": [
+            47.7794,
+            57.2072
+          ],
+          "y_q16_q84": [
+            0.627,
+            0.7954
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.01,
+          "rho": 0.079,
+          "axis_ratio": 763.02,
+          "x_median": 2209.8334,
+          "y_median": 0.6779,
+          "x_q16_q84": [
+            1710.8253,
+            2760.0517
+          ],
+          "y_q16_q84": [
+            -0.7858,
+            0.9202
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.32,
+          "rho": -0.334,
+          "axis_ratio": 63.28,
+          "x_median": 0.3961,
+          "y_median": 54.4229,
+          "x_q16_q84": [
+            0.3182,
+            0.4778
+          ],
+          "y_q16_q84": [
+            50.0232,
+            59.7301
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190514_065416",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190514_065416_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 6960,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 172.35,
+          "rho": -0.107,
+          "axis_ratio": 1.49,
+          "x_median": 40.8749,
+          "y_median": 28.352,
+          "x_q16_q84": [
+            34.7158,
+            49.6366
+          ],
+          "y_q16_q84": [
+            22.4996,
+            34.273
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.52,
+          "rho": 0.205,
+          "axis_ratio": 23.18,
+          "x_median": 29.1373,
+          "y_median": 0.7106,
+          "x_q16_q84": [
+            25.6893,
+            33.773
+          ],
+          "y_q16_q84": [
+            0.4987,
+            0.9002
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 77.12,
+          "rho": 0.022,
+          "axis_ratio": 1.05,
+          "x_median": 0.7106,
+          "y_median": -0.0788,
+          "x_q16_q84": [
+            0.4987,
+            0.9002
+          ],
+          "y_q16_q84": [
+            -0.2904,
+            0.0887
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.09,
+          "rho": 0.179,
+          "axis_ratio": 113.85,
+          "x_median": 66.3868,
+          "y_median": 0.657,
+          "x_q16_q84": [
+            58.8398,
+            76.7172
+          ],
+          "y_q16_q84": [
+            0.5767,
+            0.7237
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.011,
+          "axis_ratio": 1955.7,
+          "x_median": 3890.1868,
+          "y_median": 0.0999,
+          "x_q16_q84": [
+            2550.0823,
+            5464.7049
+          ],
+          "y_q16_q84": [
+            -0.8558,
+            0.8724
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.68,
+          "rho": -0.627,
+          "axis_ratio": 67.61,
+          "x_median": 0.6352,
+          "y_median": 69.3137,
+          "x_q16_q84": [
+            0.4471,
+            0.8388
+          ],
+          "y_q16_q84": [
+            61.3964,
+            80.0975
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190517_055101",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190517_055101_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 15688,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 155.28,
+          "rho": -0.554,
+          "axis_ratio": 2.21,
+          "x_median": 39.2387,
+          "y_median": 24.0159,
+          "x_q16_q84": [
+            33.2605,
+            47.248
+          ],
+          "y_q16_q84": [
+            19.3319,
+            28.6893
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.19,
+          "rho": 0.268,
+          "axis_ratio": 13.5,
+          "x_median": 26.4683,
+          "y_median": 0.6186,
+          "x_q16_q84": [
+            23.9628,
+            28.797
+          ],
+          "y_q16_q84": [
+            0.4245,
+            0.8401
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 33.18,
+          "rho": 0.558,
+          "axis_ratio": 1.98,
+          "x_median": 0.6186,
+          "y_median": 0.491,
+          "x_q16_q84": [
+            0.4245,
+            0.8401
+          ],
+          "y_q16_q84": [
+            0.3387,
+            0.6185
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.02,
+          "rho": 0.059,
+          "axis_ratio": 158.14,
+          "x_median": 60.1239,
+          "y_median": 0.8694,
+          "x_q16_q84": [
+            54.3617,
+            65.8828
+          ],
+          "y_q16_q84": [
+            0.8312,
+            0.8984
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.353,
+          "axis_ratio": 1712.01,
+          "x_median": 1791.5593,
+          "y_median": -0.5106,
+          "x_q16_q84": [
+            1156.1025,
+            2764.6452
+          ],
+          "y_q16_q84": [
+            -0.839,
+            0.2884
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.81,
+          "rho": -0.702,
+          "axis_ratio": 70.08,
+          "x_median": 0.3311,
+          "y_median": 64.1243,
+          "x_q16_q84": [
+            0.2257,
+            0.4785
+          ],
+          "y_q16_q84": [
+            58.0825,
+            69.8979
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190519_153544",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190519_153544_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 11339,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 122.81,
+          "rho": -0.236,
+          "axis_ratio": 1.3,
+          "x_median": 65.1033,
+          "y_median": 40.8265,
+          "x_q16_q84": [
+            58.6986,
+            71.5183
+          ],
+          "y_q16_q84": [
+            32.8782,
+            47.8543
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.05,
+          "rho": 0.556,
+          "axis_ratio": 36.6,
+          "x_median": 44.2699,
+          "y_median": 0.6272,
+          "x_q16_q84": [
+            39.5905,
+            48.6124
+          ],
+          "y_q16_q84": [
+            0.4856,
+            0.7789
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 39.36,
+          "rho": 0.343,
+          "axis_ratio": 1.44,
+          "x_median": 0.6272,
+          "y_median": 0.3311,
+          "x_q16_q84": [
+            0.4856,
+            0.7789
+          ],
+          "y_q16_q84": [
+            0.192,
+            0.4524
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.08,
+          "rho": 0.198,
+          "axis_ratio": 136.34,
+          "x_median": 100.0139,
+          "y_median": 0.7921,
+          "x_q16_q84": [
+            91.8223,
+            108.1371
+          ],
+          "y_q16_q84": [
+            0.7273,
+            0.8394
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.077,
+          "axis_ratio": 1610.3,
+          "x_median": 2601.6757,
+          "y_median": -0.0371,
+          "x_q16_q84": [
+            1955.5217,
+            3608.4493
+          ],
+          "y_q16_q84": [
+            -0.6257,
+            0.5839
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.47,
+          "rho": -0.596,
+          "axis_ratio": 89.79,
+          "x_median": 0.4547,
+          "y_median": 105.6245,
+          "x_q16_q84": [
+            0.3569,
+            0.5971
+          ],
+          "y_q16_q84": [
+            96.6953,
+            114.5669
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190521_074359",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190521_074359_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 8111,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 131.3,
+          "rho": -0.365,
+          "axis_ratio": 1.47,
+          "x_median": 43.3944,
+          "y_median": 33.4281,
+          "x_q16_q84": [
+            39.8723,
+            46.84
+          ],
+          "y_q16_q84": [
+            29.302,
+            36.6933
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.36,
+          "rho": 0.372,
+          "axis_ratio": 16.97,
+          "x_median": 32.7654,
+          "y_median": 0.7749,
+          "x_q16_q84": [
+            30.9004,
+            34.7351
+          ],
+          "y_q16_q84": [
+            0.6424,
+            0.8944
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 13.99,
+          "rho": 0.221,
+          "axis_ratio": 1.6,
+          "x_median": 0.7749,
+          "y_median": 0.0958,
+          "x_q16_q84": [
+            0.6424,
+            0.8944
+          ],
+          "y_q16_q84": [
+            0.0185,
+            0.1733
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.19,
+          "rho": 0.322,
+          "axis_ratio": 103.75,
+          "x_median": 72.5765,
+          "y_median": 0.7106,
+          "x_q16_q84": [
+            69.02,
+            76.6107
+          ],
+          "y_q16_q84": [
+            0.6773,
+            0.7478
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.044,
+          "axis_ratio": 520.45,
+          "x_median": 1079.7035,
+          "y_median": 0.0844,
+          "x_q16_q84": [
+            730.6984,
+            1478.6065
+          ],
+          "y_q16_q84": [
+            -0.777,
+            0.796
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.61,
+          "rho": -0.699,
+          "axis_ratio": 92.03,
+          "x_median": 0.2124,
+          "y_median": 76.3208,
+          "x_q16_q84": [
+            0.1493,
+            0.2803
+          ],
+          "y_q16_q84": [
+            72.4468,
+            80.6434
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190527_092055",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190527_092055_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 13819,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 170.41,
+          "rho": -0.205,
+          "axis_ratio": 1.82,
+          "x_median": 35.6037,
+          "y_median": 22.155,
+          "x_q16_q84": [
+            30.3614,
+            43.4197
+          ],
+          "y_q16_q84": [
+            17.0909,
+            27.2995
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.76,
+          "rho": 0.257,
+          "axis_ratio": 20.01,
+          "x_median": 23.8907,
+          "y_median": 0.6355,
+          "x_q16_q84": [
+            21.3599,
+            27.1399
+          ],
+          "y_q16_q84": [
+            0.4227,
+            0.8589
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 20.57,
+          "rho": 0.308,
+          "axis_ratio": 1.61,
+          "x_median": 0.6355,
+          "y_median": 0.0964,
+          "x_q16_q84": [
+            0.4227,
+            0.8589
+          ],
+          "y_q16_q84": [
+            -0.0207,
+            0.2495
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.06,
+          "rho": 0.115,
+          "axis_ratio": 118.76,
+          "x_median": 55.4892,
+          "y_median": 0.7064,
+          "x_q16_q84": [
+            50.0259,
+            62.5733
+          ],
+          "y_q16_q84": [
+            0.6265,
+            0.7745
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.0,
+          "axis_ratio": 1550.78,
+          "x_median": 2516.1792,
+          "y_median": 0.4053,
+          "x_q16_q84": [
+            1679.9376,
+            3603.0832
+          ],
+          "y_q16_q84": [
+            -0.7902,
+            0.8779
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.13,
+          "rho": -0.148,
+          "axis_ratio": 67.17,
+          "x_median": 0.4421,
+          "y_median": 58.0751,
+          "x_q16_q84": [
+            0.3132,
+            0.5963
+          ],
+          "y_q16_q84": [
+            52.409,
+            65.5024
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190602_175927",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190602_175927_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 34485,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 131.94,
+          "rho": -0.51,
+          "axis_ratio": 1.76,
+          "x_median": 71.9075,
+          "y_median": 44.8007,
+          "x_q16_q84": [
+            62.1285,
+            82.6489
+          ],
+          "y_q16_q84": [
+            32.2307,
+            54.9094
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.25,
+          "rho": 0.63,
+          "axis_ratio": 37.34,
+          "x_median": 47.9912,
+          "y_median": 0.6297,
+          "x_q16_q84": [
+            42.2811,
+            53.663
+          ],
+          "y_q16_q84": [
+            0.4044,
+            0.8565
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 22.66,
+          "rho": 0.219,
+          "axis_ratio": 1.37,
+          "x_median": 0.6297,
+          "y_median": 0.1162,
+          "x_q16_q84": [
+            0.4044,
+            0.8565
+          ],
+          "y_q16_q84": [
+            -0.0382,
+            0.272
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.11,
+          "rho": 0.225,
+          "axis_ratio": 116.82,
+          "x_median": 110.594,
+          "y_median": 0.7167,
+          "x_q16_q84": [
+            101.5916,
+            120.8571
+          ],
+          "y_q16_q84": [
+            0.6297,
+            0.7873
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.224,
+          "axis_ratio": 1249.46,
+          "x_median": 2835.5375,
+          "y_median": -0.5256,
+          "x_q16_q84": [
+            2000.4219,
+            3912.0531
+          ],
+          "y_q16_q84": [
+            -0.9184,
+            0.8849
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.38,
+          "rho": -0.508,
+          "axis_ratio": 88.6,
+          "x_median": 0.4887,
+          "y_median": 115.6847,
+          "x_q16_q84": [
+            0.3639,
+            0.6382
+          ],
+          "y_q16_q84": [
+            106.166,
+            126.708
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190620_030421",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190620_030421_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 8895,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 145.2,
+          "rho": -0.46,
+          "axis_ratio": 1.7,
+          "x_median": 58.0163,
+          "y_median": 34.997,
+          "x_q16_q84": [
+            49.0875,
+            69.0919
+          ],
+          "y_q16_q84": [
+            25.7092,
+            43.263
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.2,
+          "rho": 0.489,
+          "axis_ratio": 26.73,
+          "x_median": 38.1153,
+          "y_median": 0.6063,
+          "x_q16_q84": [
+            33.7999,
+            43.0753
+          ],
+          "y_q16_q84": [
+            0.389,
+            0.8511
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 28.14,
+          "rho": 0.388,
+          "axis_ratio": 1.63,
+          "x_median": 0.6063,
+          "y_median": 0.3397,
+          "x_q16_q84": [
+            0.389,
+            0.8511
+          ],
+          "y_q16_q84": [
+            0.1875,
+            0.4764
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.13,
+          "rho": 0.31,
+          "axis_ratio": 138.71,
+          "x_median": 87.97,
+          "y_median": 0.8021,
+          "x_q16_q84": [
+            79.8946,
+            97.8133
+          ],
+          "y_q16_q84": [
+            0.7323,
+            0.8502
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.122,
+          "axis_ratio": 1309.47,
+          "x_median": 2907.1993,
+          "y_median": -0.4613,
+          "x_q16_q84": [
+            2039.276,
+            3906.6631
+          ],
+          "y_q16_q84": [
+            -0.8722,
+            0.7791
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.4,
+          "rho": -0.526,
+          "axis_ratio": 87.69,
+          "x_median": 0.499,
+          "y_median": 92.697,
+          "x_q16_q84": [
+            0.37,
+            0.6375
+          ],
+          "y_q16_q84": [
+            84.1415,
+            103.3682
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190630_185205",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190630_185205_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 16770,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 139.97,
+          "rho": -0.669,
+          "axis_ratio": 2.27,
+          "x_median": 35.1395,
+          "y_median": 23.9684,
+          "x_q16_q84": [
+            31.4114,
+            39.0319
+          ],
+          "y_q16_q84": [
+            20.5945,
+            27.7427
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 2.78,
+          "rho": 0.43,
+          "axis_ratio": 9.92,
+          "x_median": 25.0777,
+          "y_median": 0.6804,
+          "x_q16_q84": [
+            23.7102,
+            26.4724
+          ],
+          "y_q16_q84": [
+            0.5398,
+            0.8766
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 2.54,
+          "rho": 0.055,
+          "axis_ratio": 1.8,
+          "x_median": 0.6804,
+          "y_median": 0.101,
+          "x_q16_q84": [
+            0.5398,
+            0.8766
+          ],
+          "y_q16_q84": [
+            0.0208,
+            0.1851
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.23,
+          "rho": 0.272,
+          "axis_ratio": 71.51,
+          "x_median": 56.611,
+          "y_median": 0.7035,
+          "x_q16_q84": [
+            53.8063,
+            59.2687
+          ],
+          "y_q16_q84": [
+            0.6654,
+            0.7389
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.03,
+          "rho": 0.184,
+          "axis_ratio": 408.55,
+          "x_median": 873.2666,
+          "y_median": 0.158,
+          "x_q16_q84": [
+            625.3977,
+            1195.4351
+          ],
+          "y_q16_q84": [
+            -0.8139,
+            0.8724
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.65,
+          "rho": -0.663,
+          "axis_ratio": 78.16,
+          "x_median": 0.1755,
+          "y_median": 59.4002,
+          "x_q16_q84": [
+            0.1294,
+            0.2325
+          ],
+          "y_q16_q84": [
+            56.4206,
+            62.2468
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190701_203306",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190701_203306_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 22577,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 135.13,
+          "rho": -0.473,
+          "axis_ratio": 1.67,
+          "x_median": 54.0985,
+          "y_median": 40.4958,
+          "x_q16_q84": [
+            48.646,
+            61.1609
+          ],
+          "y_q16_q84": [
+            33.3364,
+            46.0536
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.35,
+          "rho": 0.457,
+          "axis_ratio": 21.91,
+          "x_median": 40.1977,
+          "y_median": 0.7607,
+          "x_q16_q84": [
+            37.2505,
+            43.3025
+          ],
+          "y_q16_q84": [
+            0.5619,
+            0.9192
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 43.47,
+          "rho": 0.102,
+          "axis_ratio": 1.11,
+          "x_median": 0.7607,
+          "y_median": -0.0824,
+          "x_q16_q84": [
+            0.5619,
+            0.9192
+          ],
+          "y_q16_q84": [
+            -0.2589,
+            0.054
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.23,
+          "rho": 0.346,
+          "axis_ratio": 92.84,
+          "x_median": 90.2308,
+          "y_median": 0.6605,
+          "x_q16_q84": [
+            84.7185,
+            96.5956
+          ],
+          "y_q16_q84": [
+            0.5926,
+            0.7147
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.01,
+          "rho": 0.633,
+          "axis_ratio": 3358.73,
+          "x_median": 2090.7693,
+          "y_median": 0.8457,
+          "x_q16_q84": [
+            1647.3544,
+            2552.3227
+          ],
+          "y_q16_q84": [
+            0.6289,
+            0.9602
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.17,
+          "rho": -0.279,
+          "axis_ratio": 97.24,
+          "x_median": 0.3779,
+          "y_median": 94.2946,
+          "x_q16_q84": [
+            0.3079,
+            0.4474
+          ],
+          "y_q16_q84": [
+            88.3842,
+            101.1216
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190706_222641",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190706_222641_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 6316,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 146.68,
+          "rho": -0.196,
+          "axis_ratio": 1.24,
+          "x_median": 73.9714,
+          "y_median": 39.3544,
+          "x_q16_q84": [
+            63.6144,
+            85.2616
+          ],
+          "y_q16_q84": [
+            29.7518,
+            50.3254
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.79,
+          "rho": 0.531,
+          "axis_ratio": 45.58,
+          "x_median": 45.5628,
+          "y_median": 0.5379,
+          "x_q16_q84": [
+            39.9336,
+            53.2287
+          ],
+          "y_q16_q84": [
+            0.3751,
+            0.732
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 46.15,
+          "rho": 0.346,
+          "axis_ratio": 1.43,
+          "x_median": 0.5379,
+          "y_median": 0.2821,
+          "x_q16_q84": [
+            0.3751,
+            0.732
+          ],
+          "y_q16_q84": [
+            0.0982,
+            0.4418
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.05,
+          "rho": 0.129,
+          "axis_ratio": 147.36,
+          "x_median": 107.2994,
+          "y_median": 0.7822,
+          "x_q16_q84": [
+            96.733,
+            122.2309
+          ],
+          "y_q16_q84": [
+            0.6826,
+            0.8441
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.034,
+          "axis_ratio": 1934.21,
+          "x_median": 3625.2059,
+          "y_median": -0.2671,
+          "x_q16_q84": [
+            2266.411,
+            5127.6595
+          ],
+          "y_q16_q84": [
+            -0.8512,
+            0.8299
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.56,
+          "rho": -0.693,
+          "axis_ratio": 98.45,
+          "x_median": 0.5994,
+          "y_median": 112.5914,
+          "x_q16_q84": [
+            0.4047,
+            0.7964
+          ],
+          "y_q16_q84": [
+            101.4659,
+            128.8257
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190707_093326",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190707_093326_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 19897,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 154.12,
+          "rho": -0.756,
+          "axis_ratio": 3.25,
+          "x_median": 12.0701,
+          "y_median": 7.9346,
+          "x_q16_q84": [
+            10.8018,
+            13.4461
+          ],
+          "y_q16_q84": [
+            7.1256,
+            8.8885
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 3.34,
+          "rho": 0.103,
+          "axis_ratio": 2.22,
+          "x_median": 8.446,
+          "y_median": 0.6602,
+          "x_q16_q84": [
+            8.1752,
+            8.8145
+          ],
+          "y_q16_q84": [
+            0.5384,
+            0.8144
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 160.83,
+          "rho": -0.719,
+          "axis_ratio": 3.61,
+          "x_median": 0.6602,
+          "y_median": -0.0372,
+          "x_q16_q84": [
+            0.5384,
+            0.8144
+          ],
+          "y_q16_q84": [
+            -0.0955,
+            0.0216
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.93,
+          "rho": -0.068,
+          "axis_ratio": 54.56,
+          "x_median": 19.1908,
+          "y_median": 0.6568,
+          "x_q16_q84": [
+            18.4207,
+            20.1435
+          ],
+          "y_q16_q84": [
+            0.639,
+            0.673
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.02,
+          "rho": 0.083,
+          "axis_ratio": 287.58,
+          "x_median": 851.819,
+          "y_median": -0.5205,
+          "x_q16_q84": [
+            590.196,
+            1072.7126
+          ],
+          "y_q16_q84": [
+            -0.9221,
+            0.8894
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.33,
+          "rho": -0.588,
+          "axis_ratio": 31.26,
+          "x_median": 0.1716,
+          "y_median": 20.0566,
+          "x_q16_q84": [
+            0.1226,
+            0.2112
+          ],
+          "y_q16_q84": [
+            19.2717,
+            21.0234
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190708_232457",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190708_232457_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 17719,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 151.79,
+          "rho": -0.858,
+          "axis_ratio": 4.25,
+          "x_median": 19.8096,
+          "y_median": 11.6086,
+          "x_q16_q84": [
+            16.6613,
+            22.2096
+          ],
+          "y_q16_q84": [
+            10.417,
+            13.6865
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.89,
+          "rho": 0.078,
+          "axis_ratio": 2.73,
+          "x_median": 13.0543,
+          "y_median": 0.5848,
+          "x_q16_q84": [
+            12.6762,
+            13.551
+          ],
+          "y_q16_q84": [
+            0.4744,
+            0.8233
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 164.14,
+          "rho": -0.682,
+          "axis_ratio": 3.81,
+          "x_median": 0.5848,
+          "y_median": 0.0537,
+          "x_q16_q84": [
+            0.4744,
+            0.8233
+          ],
+          "y_q16_q84": [
+            -0.0083,
+            0.1148
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.73,
+          "rho": -0.276,
+          "axis_ratio": 60.1,
+          "x_median": 30.0701,
+          "y_median": 0.6769,
+          "x_q16_q84": [
+            28.6606,
+            31.7199
+          ],
+          "y_q16_q84": [
+            0.6509,
+            0.7011
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.98,
+          "rho": -0.09,
+          "axis_ratio": 256.19,
+          "x_median": 927.7876,
+          "y_median": 0.1928,
+          "x_q16_q84": [
+            694.6658,
+            1123.3899
+          ],
+          "y_q16_q84": [
+            -0.9221,
+            0.9245
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.86,
+          "rho": -0.607,
+          "axis_ratio": 50.6,
+          "x_median": 0.1854,
+          "y_median": 31.4484,
+          "x_q16_q84": [
+            0.1425,
+            0.22
+          ],
+          "y_q16_q84": [
+            30.0426,
+            33.0791
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190719_215514",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190719_215514_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 20337,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 171.1,
+          "rho": -0.376,
+          "axis_ratio": 2.99,
+          "x_median": 36.7827,
+          "y_median": 19.8219,
+          "x_q16_q84": [
+            28.8423,
+            50.502
+          ],
+          "y_q16_q84": [
+            14.3076,
+            25.5674
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.33,
+          "rho": 0.103,
+          "axis_ratio": 18.03,
+          "x_median": 22.857,
+          "y_median": 0.5481,
+          "x_q16_q84": [
+            20.0365,
+            26.9597
+          ],
+          "y_q16_q84": [
+            0.3158,
+            0.8329
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 169.7,
+          "rho": -0.065,
+          "axis_ratio": 1.2,
+          "x_median": 0.5481,
+          "y_median": 0.2507,
+          "x_q16_q84": [
+            0.3158,
+            0.8329
+          ],
+          "y_q16_q84": [
+            0.0501,
+            0.4479
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.1,
+          "rho": 0.264,
+          "axis_ratio": 155.67,
+          "x_median": 54.6288,
+          "y_median": 0.7637,
+          "x_q16_q84": [
+            47.1352,
+            67.2947
+          ],
+          "y_q16_q84": [
+            0.664,
+            0.8451
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.011,
+          "axis_ratio": 2325.45,
+          "x_median": 3697.3359,
+          "y_median": -0.0276,
+          "x_q16_q84": [
+            2345.2239,
+            5378.5958
+          ],
+          "y_q16_q84": [
+            -0.8439,
+            0.8443
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.17,
+          "rho": -0.206,
+          "axis_ratio": 69.86,
+          "x_median": 0.6092,
+          "y_median": 57.3422,
+          "x_q16_q84": [
+            0.4166,
+            0.828
+          ],
+          "y_q16_q84": [
+            49.5288,
+            70.5193
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190720_000836",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190720_000836_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 26439,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 158.92,
+          "rho": -0.862,
+          "axis_ratio": 5.25,
+          "x_median": 14.2073,
+          "y_median": 7.4801,
+          "x_q16_q84": [
+            12.0181,
+            17.2543
+          ],
+          "y_q16_q84": [
+            6.3063,
+            8.7546
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.9,
+          "rho": 0.048,
+          "axis_ratio": 1.96,
+          "x_median": 8.9549,
+          "y_median": 0.5289,
+          "x_q16_q84": [
+            8.6164,
+            9.1819
+          ],
+          "y_q16_q84": [
+            0.3692,
+            0.7154
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 159.06,
+          "rho": -0.815,
+          "axis_ratio": 4.44,
+          "x_median": 0.5289,
+          "y_median": 0.1933,
+          "x_q16_q84": [
+            0.3692,
+            0.7154
+          ],
+          "y_q16_q84": [
+            0.1188,
+            0.2688
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.1,
+          "rho": 0.111,
+          "axis_ratio": 62.65,
+          "x_median": 20.8453,
+          "y_median": 0.7122,
+          "x_q16_q84": [
+            19.6369,
+            22.845
+          ],
+          "y_q16_q84": [
+            0.6852,
+            0.7391
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.05,
+          "rho": 0.416,
+          "axis_ratio": 579.67,
+          "x_median": 773.4085,
+          "y_median": -0.8349,
+          "x_q16_q84": [
+            624.7239,
+            1019.2576
+          ],
+          "y_q16_q84": [
+            -0.9576,
+            -0.5113
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.58,
+          "rho": -0.407,
+          "axis_ratio": 43.85,
+          "x_median": 0.1572,
+          "y_median": 21.8299,
+          "x_q16_q84": [
+            0.1292,
+            0.2017
+          ],
+          "y_q16_q84": [
+            20.6347,
+            23.761
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190725_174728",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190725_174728_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 79172,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 167.15,
+          "rho": -0.823,
+          "axis_ratio": 6.82,
+          "x_median": 11.8121,
+          "y_median": 6.2945,
+          "x_q16_q84": [
+            9.4631,
+            15.6962
+          ],
+          "y_q16_q84": [
+            4.9131,
+            7.8217
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 4.09,
+          "rho": 0.048,
+          "axis_ratio": 1.39,
+          "x_median": 7.4474,
+          "y_median": 0.5329,
+          "x_q16_q84": [
+            7.1294,
+            7.7879
+          ],
+          "y_q16_q84": [
+            0.3163,
+            0.8269
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 146.66,
+          "rho": -0.758,
+          "axis_ratio": 2.88,
+          "x_median": 0.5329,
+          "y_median": -0.0391,
+          "x_q16_q84": [
+            0.3163,
+            0.8269
+          ],
+          "y_q16_q84": [
+            -0.1401,
+            0.1209
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.22,
+          "rho": 0.315,
+          "axis_ratio": 85.31,
+          "x_median": 17.5672,
+          "y_median": 0.6458,
+          "x_q16_q84": [
+            16.3289,
+            20.1457
+          ],
+          "y_q16_q84": [
+            0.6043,
+            0.6885
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.063,
+          "axis_ratio": 420.5,
+          "x_median": 1026.0466,
+          "y_median": 0.5035,
+          "x_q16_q84": [
+            741.9432,
+            1332.5401
+          ],
+          "y_q16_q84": [
+            -0.762,
+            0.8807
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.12,
+          "rho": -0.161,
+          "axis_ratio": 80.88,
+          "x_median": 0.2029,
+          "y_median": 18.3051,
+          "x_q16_q84": [
+            0.1514,
+            0.2559
+          ],
+          "y_q16_q84": [
+            17.0628,
+            20.7723
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190727_060333",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190727_060333_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 11530,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 137.13,
+          "rho": -0.304,
+          "axis_ratio": 1.37,
+          "x_median": 38.9011,
+          "y_median": 30.1546,
+          "x_q16_q84": [
+            34.955,
+            43.91
+          ],
+          "y_q16_q84": [
+            25.4397,
+            34.1221
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.3,
+          "rho": 0.371,
+          "axis_ratio": 17.71,
+          "x_median": 29.397,
+          "y_median": 0.7915,
+          "x_q16_q84": [
+            27.2,
+            31.9893
+          ],
+          "y_q16_q84": [
+            0.6083,
+            0.931
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 51.04,
+          "rho": 0.096,
+          "axis_ratio": 1.1,
+          "x_median": 0.7915,
+          "y_median": 0.0943,
+          "x_q16_q84": [
+            0.6083,
+            0.931
+          ],
+          "y_q16_q84": [
+            -0.0577,
+            0.2456
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.14,
+          "rho": 0.206,
+          "axis_ratio": 83.32,
+          "x_median": 65.447,
+          "y_median": 0.7264,
+          "x_q16_q84": [
+            61.0134,
+            70.7886
+          ],
+          "y_q16_q84": [
+            0.667,
+            0.784
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.054,
+          "axis_ratio": 1012.39,
+          "x_median": 3071.913,
+          "y_median": 0.0415,
+          "x_q16_q84": [
+            2309.7399,
+            3821.0182
+          ],
+          "y_q16_q84": [
+            -0.8811,
+            0.8757
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.67,
+          "rho": -0.578,
+          "axis_ratio": 60.76,
+          "x_median": 0.5225,
+          "y_median": 68.7883,
+          "x_q16_q84": [
+            0.4113,
+            0.6259
+          ],
+          "y_q16_q84": [
+            64.0655,
+            74.5067
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190728_064510",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190728_064510_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 11756,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 163.37,
+          "rho": -0.848,
+          "axis_ratio": 6.01,
+          "x_median": 12.4506,
+          "y_median": 8.0297,
+          "x_q16_q84": [
+            10.7082,
+            16.0551
+          ],
+          "y_q16_q84": [
+            6.4712,
+            9.254
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 175.37,
+          "rho": -0.05,
+          "axis_ratio": 1.36,
+          "x_median": 8.6281,
+          "y_median": 0.6443,
+          "x_q16_q84": [
+            8.406,
+            9.0041
+          ],
+          "y_q16_q84": [
+            0.4061,
+            0.8652
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 158.02,
+          "rho": -0.823,
+          "axis_ratio": 4.4,
+          "x_median": 0.6443,
+          "y_median": 0.1333,
+          "x_q16_q84": [
+            0.4061,
+            0.8652
+          ],
+          "y_q16_q84": [
+            0.0825,
+            0.2339
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.17,
+          "rho": 0.324,
+          "axis_ratio": 117.21,
+          "x_median": 19.7177,
+          "y_median": 0.7137,
+          "x_q16_q84": [
+            18.7073,
+            21.7117
+          ],
+          "y_q16_q84": [
+            0.6925,
+            0.7326
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.0,
+          "axis_ratio": 269.15,
+          "x_median": 877.956,
+          "y_median": 0.4347,
+          "x_q16_q84": [
+            607.8945,
+            1044.8177
+          ],
+          "y_q16_q84": [
+            -0.8505,
+            0.908
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.14,
+          "rho": -0.192,
+          "axis_ratio": 79.8,
+          "x_median": 0.1764,
+          "y_median": 20.7062,
+          "x_q16_q84": [
+            0.126,
+            0.2063
+          ],
+          "y_q16_q84": [
+            19.6785,
+            22.6306
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190731_140936",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190731_140936_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 5529,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 155.26,
+          "rho": -0.107,
+          "axis_ratio": 1.15,
+          "x_median": 41.8067,
+          "y_median": 29.0214,
+          "x_q16_q84": [
+            35.7954,
+            48.9519
+          ],
+          "y_q16_q84": [
+            22.8515,
+            35.2626
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.95,
+          "rho": 0.355,
+          "axis_ratio": 23.07,
+          "x_median": 29.7436,
+          "y_median": 0.7164,
+          "x_q16_q84": [
+            26.2947,
+            34.0574
+          ],
+          "y_q16_q84": [
+            0.5051,
+            0.9043
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 30.95,
+          "rho": 0.224,
+          "axis_ratio": 1.29,
+          "x_median": 0.7164,
+          "y_median": 0.0741,
+          "x_q16_q84": [
+            0.5051,
+            0.9043
+          ],
+          "y_q16_q84": [
+            -0.0711,
+            0.2381
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.15,
+          "rho": 0.266,
+          "axis_ratio": 107.35,
+          "x_median": 67.421,
+          "y_median": 0.7058,
+          "x_q16_q84": [
+            60.2576,
+            76.142
+          ],
+          "y_q16_q84": [
+            0.6342,
+            0.7759
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.008,
+          "axis_ratio": 1662.49,
+          "x_median": 3327.7426,
+          "y_median": 0.3261,
+          "x_q16_q84": [
+            2157.0914,
+            4770.7864
+          ],
+          "y_q16_q84": [
+            -0.8722,
+            0.8964
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.78,
+          "rho": -0.662,
+          "axis_ratio": 64.76,
+          "x_median": 0.5584,
+          "y_median": 70.6516,
+          "x_q16_q84": [
+            0.3881,
+            0.7509
+          ],
+          "y_q16_q84": [
+            63.0999,
+            80.0294
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190803_022701",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190803_022701_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 20702,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 144.28,
+          "rho": -0.251,
+          "axis_ratio": 1.31,
+          "x_median": 37.5765,
+          "y_median": 27.685,
+          "x_q16_q84": [
+            33.1342,
+            43.1805
+          ],
+          "y_q16_q84": [
+            22.6264,
+            32.2339
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.22,
+          "rho": 0.358,
+          "axis_ratio": 18.07,
+          "x_median": 27.5893,
+          "y_median": 0.7536,
+          "x_q16_q84": [
+            25.195,
+            30.656
+          ],
+          "y_q16_q84": [
+            0.5538,
+            0.9183
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 32.05,
+          "rho": 0.191,
+          "axis_ratio": 1.24,
+          "x_median": 0.7536,
+          "y_median": -0.0148,
+          "x_q16_q84": [
+            0.5538,
+            0.9183
+          ],
+          "y_q16_q84": [
+            -0.1717,
+            0.1177
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.15,
+          "rho": 0.236,
+          "axis_ratio": 90.87,
+          "x_median": 62.15,
+          "y_median": 0.6831,
+          "x_q16_q84": [
+            57.2027,
+            68.495
+          ],
+          "y_q16_q84": [
+            0.6212,
+            0.7365
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.031,
+          "axis_ratio": 1337.61,
+          "x_median": 3188.6345,
+          "y_median": 0.5457,
+          "x_q16_q84": [
+            2239.3602,
+            4154.2319
+          ],
+          "y_q16_q84": [
+            -0.7884,
+            0.9041
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.82,
+          "rho": -0.657,
+          "axis_ratio": 61.27,
+          "x_median": 0.5389,
+          "y_median": 65.034,
+          "x_q16_q84": [
+            0.4006,
+            0.6705
+          ],
+          "y_q16_q84": [
+            59.8438,
+            71.7575
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190805_211137",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190805_211137_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 6196,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 159.64,
+          "rho": -0.135,
+          "axis_ratio": 1.23,
+          "x_median": 46.1699,
+          "y_median": 30.6255,
+          "x_q16_q84": [
+            38.8511,
+            55.1883
+          ],
+          "y_q16_q84": [
+            23.4555,
+            37.5611
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.83,
+          "rho": 0.348,
+          "axis_ratio": 25.6,
+          "x_median": 31.9184,
+          "y_median": 0.6832,
+          "x_q16_q84": [
+            28.0303,
+            36.9612
+          ],
+          "y_q16_q84": [
+            0.4625,
+            0.8882
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 75.41,
+          "rho": 0.05,
+          "axis_ratio": 1.11,
+          "x_median": 0.6832,
+          "y_median": 0.3678,
+          "x_q16_q84": [
+            0.4625,
+            0.8882
+          ],
+          "y_q16_q84": [
+            0.1416,
+            0.5514
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 180.0,
+          "rho": -0.001,
+          "axis_ratio": 124.54,
+          "x_median": 72.397,
+          "y_median": 0.8198,
+          "x_q16_q84": [
+            63.9649,
+            82.6881
+          ],
+          "y_q16_q84": [
+            0.7327,
+            0.8789
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.016,
+          "axis_ratio": 3194.52,
+          "x_median": 6127.8522,
+          "y_median": 0.5175,
+          "x_q16_q84": [
+            4064.8274,
+            8331.9475
+          ],
+          "y_q16_q84": [
+            -0.7049,
+            0.8847
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.1,
+          "rho": -0.756,
+          "axis_ratio": 60.04,
+          "x_median": 0.9206,
+          "y_median": 76.6672,
+          "x_q16_q84": [
+            0.6586,
+            1.1809
+          ],
+          "y_q16_q84": [
+            67.8753,
+            87.5851
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190814",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190814_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 78224,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 175.46,
+          "rho": -0.945,
+          "axis_ratio": 36.73,
+          "x_median": 23.3108,
+          "y_median": 2.5914,
+          "x_q16_q84": [
+            22.6416,
+            24.0398
+          ],
+          "y_q16_q84": [
+            2.5341,
+            2.6467
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 177.83,
+          "rho": -0.129,
+          "axis_ratio": 3.71,
+          "x_median": 6.1078,
+          "y_median": 0.1112,
+          "x_q16_q84": [
+            6.0749,
+            6.1418
+          ],
+          "y_q16_q84": [
+            0.1056,
+            0.1167
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 99.81,
+          "rho": -0.955,
+          "axis_ratio": 19.15,
+          "x_median": 0.1112,
+          "y_median": 0.0037,
+          "x_q16_q84": [
+            0.1056,
+            0.1167
+          ],
+          "y_q16_q84": [
+            -0.034,
+            0.0447
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.93,
+          "rho": 0.789,
+          "axis_ratio": 78.83,
+          "x_median": 25.6624,
+          "y_median": 0.2826,
+          "x_q16_q84": [
+            25.0349,
+            26.3435
+          ],
+          "y_q16_q84": [
+            0.2715,
+            0.2948
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.16,
+          "rho": 0.182,
+          "axis_ratio": 64.86,
+          "x_median": 232.6987,
+          "y_median": 0.6355,
+          "x_q16_q84": [
+            205.2773,
+            258.9407
+          ],
+          "y_q16_q84": [
+            0.4339,
+            0.7504
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.0,
+          "rho": -0.0,
+          "axis_ratio": 162.09,
+          "x_median": 0.0508,
+          "y_median": 25.9043,
+          "x_q16_q84": [
+            0.045,
+            0.0563
+          ],
+          "y_q16_q84": [
+            25.2801,
+            26.5826
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190828_063405",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190828_063405_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 42966,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 130.37,
+          "rho": -0.226,
+          "axis_ratio": 1.26,
+          "x_median": 31.9201,
+          "y_median": 25.8119,
+          "x_q16_q84": [
+            29.1681,
+            35.1408
+          ],
+          "y_q16_q84": [
+            22.6476,
+            28.7085
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.37,
+          "rho": 0.319,
+          "axis_ratio": 14.12,
+          "x_median": 24.5995,
+          "y_median": 0.8234,
+          "x_q16_q84": [
+            23.3068,
+            26.6317
+          ],
+          "y_q16_q84": [
+            0.671,
+            0.9432
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 17.56,
+          "rho": 0.213,
+          "axis_ratio": 1.45,
+          "x_median": 0.8234,
+          "y_median": 0.154,
+          "x_q16_q84": [
+            0.671,
+            0.9432
+          ],
+          "y_q16_q84": [
+            0.0609,
+            0.2469
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.2,
+          "rho": 0.298,
+          "axis_ratio": 89.48,
+          "x_median": 54.268,
+          "y_median": 0.7425,
+          "x_q16_q84": [
+            51.6297,
+            58.4227
+          ],
+          "y_q16_q84": [
+            0.7034,
+            0.7811
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.118,
+          "axis_ratio": 719.82,
+          "x_median": 2074.3274,
+          "y_median": -0.7013,
+          "x_q16_q84": [
+            1460.3931,
+            2486.1932
+          ],
+          "y_q16_q84": [
+            -0.9259,
+            0.6938
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.85,
+          "rho": -0.729,
+          "axis_ratio": 71.86,
+          "x_median": 0.3754,
+          "y_median": 57.2082,
+          "x_q16_q84": [
+            0.2773,
+            0.4377
+          ],
+          "y_q16_q84": [
+            54.3568,
+            61.6523
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190828_065509",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190828_065509_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 71641,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 160.51,
+          "rho": -0.763,
+          "axis_ratio": 4.01,
+          "x_median": 23.6584,
+          "y_median": 10.4382,
+          "x_q16_q84": [
+            19.5908,
+            27.5744
+          ],
+          "y_q16_q84": [
+            9.0083,
+            12.5473
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.46,
+          "rho": 0.113,
+          "axis_ratio": 4.68,
+          "x_median": 13.3883,
+          "y_median": 0.4411,
+          "x_q16_q84": [
+            12.7326,
+            14.2169
+          ],
+          "y_q16_q84": [
+            0.3332,
+            0.6296
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 154.94,
+          "rho": -0.556,
+          "axis_ratio": 2.2,
+          "x_median": 0.4411,
+          "y_median": 0.0543,
+          "x_q16_q84": [
+            0.3332,
+            0.6296
+          ],
+          "y_q16_q84": [
+            -0.0421,
+            0.151
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.88,
+          "rho": -0.142,
+          "axis_ratio": 66.63,
+          "x_median": 32.9896,
+          "y_median": 0.6405,
+          "x_q16_q84": [
+            30.2628,
+            35.9532
+          ],
+          "y_q16_q84": [
+            0.595,
+            0.6858
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.064,
+          "axis_ratio": 554.05,
+          "x_median": 1545.4419,
+          "y_median": -0.3069,
+          "x_q16_q84": [
+            1128.3018,
+            1953.3709
+          ],
+          "y_q16_q84": [
+            -0.8696,
+            0.8444
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.69,
+          "rho": -0.548,
+          "axis_ratio": 54.45,
+          "x_median": 0.2913,
+          "y_median": 34.2633,
+          "x_q16_q84": [
+            0.2209,
+            0.3566
+          ],
+          "y_q16_q84": [
+            31.5681,
+            37.1719
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190910_112807",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190910_112807_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 17857,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 140.9,
+          "rho": -0.15,
+          "axis_ratio": 1.17,
+          "x_median": 43.7989,
+          "y_median": 34.1516,
+          "x_q16_q84": [
+            39.5752,
+            48.3593
+          ],
+          "y_q16_q84": [
+            29.7788,
+            38.3793
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.79,
+          "rho": 0.27,
+          "axis_ratio": 20.3,
+          "x_median": 33.4827,
+          "y_median": 0.7905,
+          "x_q16_q84": [
+            30.8888,
+            36.0088
+          ],
+          "y_q16_q84": [
+            0.6434,
+            0.9261
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 31.29,
+          "rho": 0.281,
+          "axis_ratio": 1.38,
+          "x_median": 0.7905,
+          "y_median": -0.0026,
+          "x_q16_q84": [
+            0.6434,
+            0.9261
+          ],
+          "y_q16_q84": [
+            -0.1124,
+            0.0997
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.17,
+          "rho": 0.33,
+          "axis_ratio": 118.55,
+          "x_median": 74.3998,
+          "y_median": 0.6864,
+          "x_q16_q84": [
+            68.9483,
+            79.6285
+          ],
+          "y_q16_q84": [
+            0.6435,
+            0.7299
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.035,
+          "axis_ratio": 882.18,
+          "x_median": 1517.1381,
+          "y_median": -0.0459,
+          "x_q16_q84": [
+            1099.1654,
+            2198.0839
+          ],
+          "y_q16_q84": [
+            -0.7508,
+            0.7093
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.63,
+          "rho": -0.714,
+          "axis_ratio": 92.6,
+          "x_median": 0.2867,
+          "y_median": 78.0081,
+          "x_q16_q84": [
+            0.2158,
+            0.3944
+          ],
+          "y_q16_q84": [
+            72.2191,
+            83.6228
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190915_235702",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190915_235702_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 21302,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 148.93,
+          "rho": -0.515,
+          "axis_ratio": 1.89,
+          "x_median": 32.5749,
+          "y_median": 24.4518,
+          "x_q16_q84": [
+            29.2967,
+            37.284
+          ],
+          "y_q16_q84": [
+            20.9017,
+            27.4945
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.21,
+          "rho": 0.218,
+          "axis_ratio": 10.62,
+          "x_median": 24.367,
+          "y_median": 0.7603,
+          "x_q16_q84": [
+            22.8942,
+            26.0912
+          ],
+          "y_q16_q84": [
+            0.5775,
+            0.9141
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 7.28,
+          "rho": 0.053,
+          "axis_ratio": 1.23,
+          "x_median": 0.7603,
+          "y_median": -0.0253,
+          "x_q16_q84": [
+            0.5775,
+            0.9141
+          ],
+          "y_q16_q84": [
+            -0.1573,
+            0.0873
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.32,
+          "rho": 0.375,
+          "axis_ratio": 73.53,
+          "x_median": 54.6655,
+          "y_median": 0.6903,
+          "x_q16_q84": [
+            51.3812,
+            58.5325
+          ],
+          "y_q16_q84": [
+            0.6391,
+            0.7393
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.98,
+          "rho": -0.164,
+          "axis_ratio": 559.49,
+          "x_median": 1747.0489,
+          "y_median": -0.2747,
+          "x_q16_q84": [
+            1325.5304,
+            2183.1092
+          ],
+          "y_q16_q84": [
+            -0.8747,
+            0.8525
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.53,
+          "rho": -0.534,
+          "axis_ratio": 67.67,
+          "x_median": 0.324,
+          "y_median": 57.2111,
+          "x_q16_q84": [
+            0.2547,
+            0.3921
+          ],
+          "y_q16_q84": [
+            53.7494,
+            61.3143
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190916_200658",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190916_200658_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 7011,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 156.55,
+          "rho": -0.42,
+          "axis_ratio": 1.82,
+          "x_median": 43.8447,
+          "y_median": 23.3251,
+          "x_q16_q84": [
+            35.1061,
+            55.3565
+          ],
+          "y_q16_q84": [
+            16.6588,
+            30.9077
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.27,
+          "rho": 0.407,
+          "axis_ratio": 20.22,
+          "x_median": 26.94,
+          "y_median": 0.5468,
+          "x_q16_q84": [
+            23.5213,
+            31.4306
+          ],
+          "y_q16_q84": [
+            0.3167,
+            0.8354
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 29.25,
+          "rho": 0.224,
+          "axis_ratio": 1.31,
+          "x_median": 0.5468,
+          "y_median": 0.2035,
+          "x_q16_q84": [
+            0.3167,
+            0.8354
+          ],
+          "y_q16_q84": [
+            0.0066,
+            0.409
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.07,
+          "rho": 0.099,
+          "axis_ratio": 80.58,
+          "x_median": 64.975,
+          "y_median": 0.735,
+          "x_q16_q84": [
+            56.8768,
+            74.8231
+          ],
+          "y_q16_q84": [
+            0.6044,
+            0.8234
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.024,
+          "axis_ratio": 2548.58,
+          "x_median": 4937.1599,
+          "y_median": -0.0425,
+          "x_q16_q84": [
+            3337.8806,
+            7048.8295
+          ],
+          "y_q16_q84": [
+            -0.874,
+            0.8745
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.52,
+          "rho": -0.368,
+          "axis_ratio": 43.42,
+          "x_median": 0.7722,
+          "y_median": 68.0242,
+          "x_q16_q84": [
+            0.5598,
+            1.0313
+          ],
+          "y_q16_q84": [
+            59.617,
+            78.2618
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190917_114630",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190917_114630_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 12260,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 169.88,
+          "rho": -0.894,
+          "axis_ratio": 11.63,
+          "x_median": 9.7244,
+          "y_median": 2.0547,
+          "x_q16_q84": [
+            7.1618,
+            11.2737
+          ],
+          "y_q16_q84": [
+            1.8252,
+            2.6103
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 89.72,
+          "rho": 0.002,
+          "axis_ratio": 1.19,
+          "x_median": 3.6713,
+          "y_median": 0.21,
+          "x_q16_q84": [
+            3.5766,
+            3.7868
+          ],
+          "y_q16_q84": [
+            0.1641,
+            0.365
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 122.46,
+          "rho": -0.911,
+          "axis_ratio": 5.09,
+          "x_median": 0.21,
+          "y_median": -0.0747,
+          "x_q16_q84": [
+            0.1641,
+            0.365
+          ],
+          "y_q16_q84": [
+            -0.3463,
+            0.0436
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.27,
+          "rho": 0.148,
+          "axis_ratio": 31.2,
+          "x_median": 11.5546,
+          "y_median": 0.4158,
+          "x_q16_q84": [
+            9.5193,
+            12.9525
+          ],
+          "y_q16_q84": [
+            0.3859,
+            0.4698
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.03,
+          "rho": 0.103,
+          "axis_ratio": 233.49,
+          "x_median": 718.0903,
+          "y_median": 0.261,
+          "x_q16_q84": [
+            528.0554,
+            884.4214
+          ],
+          "y_q16_q84": [
+            -0.9064,
+            0.9203
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.17,
+          "rho": -0.158,
+          "axis_ratio": 55.5,
+          "x_median": 0.1469,
+          "y_median": 11.7667,
+          "x_q16_q84": [
+            0.1106,
+            0.1776
+          ],
+          "y_q16_q84": [
+            9.7679,
+            13.147
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190924_021846",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190924_021846_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 34848,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 162.01,
+          "rho": -0.895,
+          "axis_ratio": 6.98,
+          "x_median": 8.7837,
+          "y_median": 5.1088,
+          "x_q16_q84": [
+            7.4349,
+            10.6016
+          ],
+          "y_q16_q84": [
+            4.339,
+            5.9213
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 96.21,
+          "rho": -0.068,
+          "axis_ratio": 1.37,
+          "x_median": 5.7774,
+          "y_median": 0.58,
+          "x_q16_q84": [
+            5.6434,
+            5.9372
+          ],
+          "y_q16_q84": [
+            0.4112,
+            0.7933
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 155.28,
+          "rho": -0.856,
+          "axis_ratio": 4.58,
+          "x_median": 0.58,
+          "y_median": 0.0252,
+          "x_q16_q84": [
+            0.4112,
+            0.7933
+          ],
+          "y_q16_q84": [
+            -0.0307,
+            0.1129
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.08,
+          "rho": 0.084,
+          "axis_ratio": 57.69,
+          "x_median": 13.3222,
+          "y_median": 0.6655,
+          "x_q16_q84": [
+            12.6899,
+            14.462
+          ],
+          "y_q16_q84": [
+            0.6404,
+            0.6858
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.97,
+          "rho": -0.09,
+          "axis_ratio": 203.22,
+          "x_median": 549.2908,
+          "y_median": 0.6665,
+          "x_q16_q84": [
+            395.26,
+            686.0978
+          ],
+          "y_q16_q84": [
+            -0.7017,
+            0.9257
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.16,
+          "rho": -0.169,
+          "axis_ratio": 61.46,
+          "x_median": 0.1147,
+          "y_median": 13.9243,
+          "x_q16_q84": [
+            0.0842,
+            0.1409
+          ],
+          "y_q16_q84": [
+            13.2968,
+            15.0102
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190925_232845",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190925_232845_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 29450,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 155.38,
+          "rho": -0.765,
+          "axis_ratio": 3.42,
+          "x_median": 20.8408,
+          "y_median": 15.546,
+          "x_q16_q84": [
+            18.7504,
+            24.2219
+          ],
+          "y_q16_q84": [
+            13.417,
+            17.2837
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.76,
+          "rho": 0.05,
+          "axis_ratio": 4.01,
+          "x_median": 15.6457,
+          "y_median": 0.7478,
+          "x_q16_q84": [
+            15.0216,
+            16.2669
+          ],
+          "y_q16_q84": [
+            0.5607,
+            0.9149
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 163.87,
+          "rho": -0.348,
+          "axis_ratio": 1.91,
+          "x_median": 0.7478,
+          "y_median": 0.0861,
+          "x_q16_q84": [
+            0.5607,
+            0.9149
+          ],
+          "y_q16_q84": [
+            -0.0016,
+            0.1814
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.23,
+          "rho": 0.251,
+          "axis_ratio": 64.42,
+          "x_median": 34.9426,
+          "y_median": 0.7105,
+          "x_q16_q84": [
+            33.4006,
+            36.7813
+          ],
+          "y_q16_q84": [
+            0.6758,
+            0.7482
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.98,
+          "rho": -0.103,
+          "axis_ratio": 337.44,
+          "x_median": 926.9039,
+          "y_median": 0.6997,
+          "x_q16_q84": [
+            711.9406,
+            1161.9954
+          ],
+          "y_q16_q84": [
+            -0.8196,
+            0.9329
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.51,
+          "rho": -0.496,
+          "axis_ratio": 63.72,
+          "x_median": 0.1852,
+          "y_median": 36.7184,
+          "x_q16_q84": [
+            0.1457,
+            0.2268
+          ],
+          "y_q16_q84": [
+            35.0865,
+            38.5972
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190926_050336",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190926_050336_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 20412,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 173.38,
+          "rho": -0.14,
+          "axis_ratio": 1.79,
+          "x_median": 41.0873,
+          "y_median": 20.4424,
+          "x_q16_q84": [
+            32.879,
+            51.4005
+          ],
+          "y_q16_q84": [
+            15.0308,
+            27.0168
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.64,
+          "rho": 0.25,
+          "axis_ratio": 23.31,
+          "x_median": 24.3286,
+          "y_median": 0.4979,
+          "x_q16_q84": [
+            21.1986,
+            28.6969
+          ],
+          "y_q16_q84": [
+            0.3175,
+            0.7677
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 9.09,
+          "rho": 0.058,
+          "axis_ratio": 1.2,
+          "x_median": 0.4979,
+          "y_median": -0.0201,
+          "x_q16_q84": [
+            0.3175,
+            0.7677
+          ],
+          "y_q16_q84": [
+            -0.1955,
+            0.1222
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.01,
+          "rho": 0.028,
+          "axis_ratio": 110.46,
+          "x_median": 59.5323,
+          "y_median": 0.6404,
+          "x_q16_q84": [
+            51.982,
+            69.3043
+          ],
+          "y_q16_q84": [
+            0.5284,
+            0.7242
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.045,
+          "axis_ratio": 2783.21,
+          "x_median": 3282.2848,
+          "y_median": -0.1002,
+          "x_q16_q84": [
+            2095.2165,
+            5160.2255
+          ],
+          "y_q16_q84": [
+            -0.7151,
+            0.6686
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.39,
+          "rho": -0.365,
+          "axis_ratio": 58.01,
+          "x_median": 0.5521,
+          "y_median": 61.7718,
+          "x_q16_q84": [
+            0.3786,
+            0.8005
+          ],
+          "y_q16_q84": [
+            54.1139,
+            71.8885
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190929_012149",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190929_012149_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 30673,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 170.18,
+          "rho": -0.255,
+          "axis_ratio": 2.06,
+          "x_median": 66.2945,
+          "y_median": 26.7752,
+          "x_q16_q84": [
+            56.2817,
+            77.2856
+          ],
+          "y_q16_q84": [
+            19.9516,
+            35.3536
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.7,
+          "rho": 0.425,
+          "axis_ratio": 38.28,
+          "x_median": 35.5617,
+          "y_median": 0.4035,
+          "x_q16_q84": [
+            30.7803,
+            41.2795
+          ],
+          "y_q16_q84": [
+            0.2723,
+            0.5849
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 33.56,
+          "rho": 0.132,
+          "axis_ratio": 1.15,
+          "x_median": 0.4035,
+          "y_median": -0.0321,
+          "x_q16_q84": [
+            0.2723,
+            0.5849
+          ],
+          "y_q16_q84": [
+            -0.1843,
+            0.0984
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.1,
+          "rho": 0.233,
+          "axis_ratio": 131.4,
+          "x_median": 90.3628,
+          "y_median": 0.5993,
+          "x_q16_q84": [
+            81.1858,
+            101.387
+          ],
+          "y_q16_q84": [
+            0.4838,
+            0.6981
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.03,
+          "axis_ratio": 2134.81,
+          "x_median": 3125.4369,
+          "y_median": 0.0635,
+          "x_q16_q84": [
+            2228.4747,
+            4458.1776
+          ],
+          "y_q16_q84": [
+            -0.6482,
+            0.6752
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.29,
+          "rho": -0.454,
+          "axis_ratio": 101.31,
+          "x_median": 0.5301,
+          "y_median": 93.3644,
+          "x_q16_q84": [
+            0.399,
+            0.7104
+          ],
+          "y_q16_q84": [
+            83.9569,
+            104.9353
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW190930_133541",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW190930_133541_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 34482,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 162.8,
+          "rho": -0.883,
+          "axis_ratio": 6.81,
+          "x_median": 14.1909,
+          "y_median": 6.9103,
+          "x_q16_q84": [
+            11.3302,
+            17.7492
+          ],
+          "y_q16_q84": [
+            5.7054,
+            8.4759
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 177.92,
+          "rho": -0.024,
+          "axis_ratio": 1.38,
+          "x_median": 8.5075,
+          "y_median": 0.4877,
+          "x_q16_q84": [
+            8.249,
+            8.7984
+          ],
+          "y_q16_q84": [
+            0.323,
+            0.7494
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 153.62,
+          "rho": -0.776,
+          "axis_ratio": 3.39,
+          "x_median": 0.4877,
+          "y_median": 0.193,
+          "x_q16_q84": [
+            0.323,
+            0.7494
+          ],
+          "y_q16_q84": [
+            0.0943,
+            0.3026
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.28,
+          "rho": 0.34,
+          "axis_ratio": 74.62,
+          "x_median": 20.2489,
+          "y_median": 0.712,
+          "x_q16_q84": [
+            18.8381,
+            22.75
+          ],
+          "y_q16_q84": [
+            0.6747,
+            0.7498
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.021,
+          "axis_ratio": 293.66,
+          "x_median": 768.1936,
+          "y_median": 0.7317,
+          "x_q16_q84": [
+            572.9683,
+            956.3122
+          ],
+          "y_q16_q84": [
+            -0.6536,
+            0.9386
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.11,
+          "rho": -0.146,
+          "axis_ratio": 78.1,
+          "x_median": 0.1562,
+          "y_median": 21.1572,
+          "x_q16_q84": [
+            0.1193,
+            0.1905
+          ],
+          "y_q16_q84": [
+            19.7834,
+            23.5994
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191103_012549",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191103_012549_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 9859,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 158.77,
+          "rho": -0.827,
+          "axis_ratio": 4.58,
+          "x_median": 11.7889,
+          "y_median": 7.8777,
+          "x_q16_q84": [
+            10.2236,
+            14.8604
+          ],
+          "y_q16_q84": [
+            6.3597,
+            9.0587
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.71,
+          "rho": 0.04,
+          "axis_ratio": 1.88,
+          "x_median": 8.3395,
+          "y_median": 0.6722,
+          "x_q16_q84": [
+            7.9763,
+            8.7661
+          ],
+          "y_q16_q84": [
+            0.4319,
+            0.882
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 162.97,
+          "rho": -0.685,
+          "axis_ratio": 3.63,
+          "x_median": 0.6722,
+          "y_median": 0.2106,
+          "x_q16_q84": [
+            0.4319,
+            0.882
+          ],
+          "y_q16_q84": [
+            0.1467,
+            0.3008
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.16,
+          "rho": 0.174,
+          "axis_ratio": 63.52,
+          "x_median": 18.9523,
+          "y_median": 0.7454,
+          "x_q16_q84": [
+            17.8047,
+            20.6007
+          ],
+          "y_q16_q84": [
+            0.7194,
+            0.7757
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.047,
+          "axis_ratio": 386.92,
+          "x_median": 988.125,
+          "y_median": 0.1954,
+          "x_q16_q84": [
+            672.6264,
+            1293.8558
+          ],
+          "y_q16_q84": [
+            -0.8916,
+            0.9011
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.63,
+          "rho": -0.402,
+          "axis_ratio": 40.01,
+          "x_median": 0.1962,
+          "y_median": 19.9624,
+          "x_q16_q84": [
+            0.1383,
+            0.2494
+          ],
+          "y_q16_q84": [
+            18.771,
+            21.5665
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191105_143521",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191105_143521_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 16861,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 154.21,
+          "rho": -0.809,
+          "axis_ratio": 3.78,
+          "x_median": 10.6682,
+          "y_median": 7.6641,
+          "x_q16_q84": [
+            9.5043,
+            12.6234
+          ],
+          "y_q16_q84": [
+            6.5033,
+            8.5772
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 3.62,
+          "rho": 0.083,
+          "axis_ratio": 1.86,
+          "x_median": 7.8152,
+          "y_median": 0.7214,
+          "x_q16_q84": [
+            7.5359,
+            8.1796
+          ],
+          "y_q16_q84": [
+            0.5224,
+            0.8989
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 163.53,
+          "rho": -0.648,
+          "axis_ratio": 3.42,
+          "x_median": 0.7214,
+          "y_median": -0.0177,
+          "x_q16_q84": [
+            0.5224,
+            0.8989
+          ],
+          "y_q16_q84": [
+            -0.0716,
+            0.0432
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.83,
+          "rho": -0.13,
+          "axis_ratio": 43.37,
+          "x_median": 17.6499,
+          "y_median": 0.6694,
+          "x_q16_q84": [
+            16.8535,
+            18.7191
+          ],
+          "y_q16_q84": [
+            0.6433,
+            0.69
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.01,
+          "rho": 0.065,
+          "axis_ratio": 362.1,
+          "x_median": 1154.456,
+          "y_median": 0.4728,
+          "x_q16_q84": [
+            849.7138,
+            1414.3539
+          ],
+          "y_q16_q84": [
+            -0.8756,
+            0.9139
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.33,
+          "rho": -0.568,
+          "axis_ratio": 29.75,
+          "x_median": 0.2254,
+          "y_median": 18.4723,
+          "x_q16_q84": [
+            0.1712,
+            0.2696
+          ],
+          "y_q16_q84": [
+            17.6619,
+            19.5538
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191109_010717",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191109_010717_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 32415,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 84.93,
+          "rho": 0.046,
+          "axis_ratio": 1.29,
+          "x_median": 65.1063,
+          "y_median": 46.9005,
+          "x_q16_q84": [
+            58.6431,
+            71.3317
+          ],
+          "y_q16_q84": [
+            38.5393,
+            55.7385
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.86,
+          "rho": 0.543,
+          "axis_ratio": 43.09,
+          "x_median": 47.5133,
+          "y_median": 0.7319,
+          "x_q16_q84": [
+            42.813,
+            52.7415
+          ],
+          "y_q16_q84": [
+            0.5759,
+            0.8917
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 67.8,
+          "rho": 0.429,
+          "axis_ratio": 1.89,
+          "x_median": 0.7319,
+          "y_median": -0.293,
+          "x_q16_q84": [
+            0.5759,
+            0.8917
+          ],
+          "y_q16_q84": [
+            -0.4954,
+            -0.0807
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.36,
+          "rho": 0.591,
+          "axis_ratio": 115.45,
+          "x_median": 107.2217,
+          "y_median": 0.6104,
+          "x_q16_q84": [
+            98.0424,
+            117.4087
+          ],
+          "y_q16_q84": [
+            0.5013,
+            0.7064
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.041,
+          "axis_ratio": 982.29,
+          "x_median": 1294.3331,
+          "y_median": -0.3987,
+          "x_q16_q84": [
+            852.7917,
+            1924.8033
+          ],
+          "y_q16_q84": [
+            -0.8307,
+            0.4588
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.27,
+          "rho": -0.555,
+          "axis_ratio": 143.42,
+          "x_median": 0.2494,
+          "y_median": 111.5191,
+          "x_q16_q84": [
+            0.1718,
+            0.3521
+          ],
+          "y_q16_q84": [
+            101.7326,
+            122.581
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191113_071753",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191113_071753_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 20354,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 170.15,
+          "rho": -0.798,
+          "axis_ratio": 8.0,
+          "x_median": 28.6743,
+          "y_median": 5.8705,
+          "x_q16_q84": [
+            19.6168,
+            34.0937
+          ],
+          "y_q16_q84": [
+            5.0937,
+            8.0157
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.27,
+          "rho": 0.017,
+          "axis_ratio": 3.79,
+          "x_median": 10.6681,
+          "y_median": 0.2022,
+          "x_q16_q84": [
+            10.0396,
+            11.2848
+          ],
+          "y_q16_q84": [
+            0.1533,
+            0.4085
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 124.62,
+          "rho": -0.26,
+          "axis_ratio": 1.33,
+          "x_median": 0.2022,
+          "y_median": 0.0032,
+          "x_q16_q84": [
+            0.1533,
+            0.4085
+          ],
+          "y_q16_q84": [
+            -0.1411,
+            0.1847
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.89,
+          "rho": -0.091,
+          "axis_ratio": 47.11,
+          "x_median": 33.8497,
+          "y_median": 0.4523,
+          "x_q16_q84": [
+            26.7443,
+            38.9028
+          ],
+          "y_q16_q84": [
+            0.3735,
+            0.6825
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.005,
+          "axis_ratio": 896.18,
+          "x_median": 1371.1386,
+          "y_median": -0.1309,
+          "x_q16_q84": [
+            929.1661,
+            1999.8296
+          ],
+          "y_q16_q84": [
+            -0.7817,
+            0.7488
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.33,
+          "rho": -0.43,
+          "axis_ratio": 81.89,
+          "x_median": 0.2624,
+          "y_median": 34.4825,
+          "x_q16_q84": [
+            0.1857,
+            0.3638
+          ],
+          "y_q16_q84": [
+            27.6809,
+            39.4781
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191126_115259",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191126_115259_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 23523,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 158.6,
+          "rho": -0.739,
+          "axis_ratio": 3.51,
+          "x_median": 12.1412,
+          "y_median": 8.2562,
+          "x_q16_q84": [
+            10.5521,
+            14.9141
+          ],
+          "y_q16_q84": [
+            6.8188,
+            9.4842
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.13,
+          "rho": 0.045,
+          "axis_ratio": 2.65,
+          "x_median": 8.65,
+          "y_median": 0.6852,
+          "x_q16_q84": [
+            8.2049,
+            9.2264
+          ],
+          "y_q16_q84": [
+            0.466,
+            0.8871
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 164.27,
+          "rho": -0.599,
+          "axis_ratio": 3.18,
+          "x_median": 0.6852,
+          "y_median": 0.2074,
+          "x_q16_q84": [
+            0.466,
+            0.8871
+          ],
+          "y_q16_q84": [
+            0.1381,
+            0.289
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.11,
+          "rho": 0.121,
+          "axis_ratio": 61.53,
+          "x_median": 19.6201,
+          "y_median": 0.7451,
+          "x_q16_q84": [
+            18.3351,
+            21.3606
+          ],
+          "y_q16_q84": [
+            0.7171,
+            0.7754
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.002,
+          "axis_ratio": 584.12,
+          "x_median": 1620.9174,
+          "y_median": -0.1398,
+          "x_q16_q84": [
+            1137.989,
+            2065.582
+          ],
+          "y_q16_q84": [
+            -0.9046,
+            0.8976
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.23,
+          "rho": -0.559,
+          "axis_ratio": 31.5,
+          "x_median": 0.3037,
+          "y_median": 20.6553,
+          "x_q16_q84": [
+            0.2226,
+            0.374
+          ],
+          "y_q16_q84": [
+            19.3292,
+            22.401
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191127_050227",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191127_050227_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 7811,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 166.55,
+          "rho": -0.448,
+          "axis_ratio": 2.6,
+          "x_median": 53.1645,
+          "y_median": 24.0151,
+          "x_q16_q84": [
+            39.0637,
+            78.4543
+          ],
+          "y_q16_q84": [
+            14.4486,
+            34.0929
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.76,
+          "rho": 0.321,
+          "axis_ratio": 25.59,
+          "x_median": 29.8588,
+          "y_median": 0.4666,
+          "x_q16_q84": [
+            24.1159,
+            36.641
+          ],
+          "y_q16_q84": [
+            0.1962,
+            0.8175
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 9.05,
+          "rho": 0.067,
+          "axis_ratio": 1.24,
+          "x_median": 0.4666,
+          "y_median": 0.1786,
+          "x_q16_q84": [
+            0.1962,
+            0.8175
+          ],
+          "y_q16_q84": [
+            -0.0329,
+            0.3957
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.11,
+          "rho": 0.262,
+          "axis_ratio": 147.06,
+          "x_median": 76.3971,
+          "y_median": 0.7484,
+          "x_q16_q84": [
+            62.2549,
+            97.9489
+          ],
+          "y_q16_q84": [
+            0.612,
+            0.8359
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.06,
+          "axis_ratio": 2380.71,
+          "x_median": 3380.8477,
+          "y_median": 0.0605,
+          "x_q16_q84": [
+            2088.1942,
+            5187.4742
+          ],
+          "y_q16_q84": [
+            -0.7804,
+            0.8008
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.12,
+          "rho": -0.186,
+          "axis_ratio": 89.44,
+          "x_median": 0.5658,
+          "y_median": 79.5195,
+          "x_q16_q84": [
+            0.3775,
+            0.804
+          ],
+          "y_q16_q84": [
+            64.9456,
+            101.3958
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191129_134029",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191129_134029_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 24169,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 154.52,
+          "rho": -0.908,
+          "axis_ratio": 5.77,
+          "x_median": 10.6757,
+          "y_median": 6.7477,
+          "x_q16_q84": [
+            9.1219,
+            13.011
+          ],
+          "y_q16_q84": [
+            5.6417,
+            7.8208
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 7.31,
+          "rho": 0.041,
+          "axis_ratio": 1.18,
+          "x_median": 7.3137,
+          "y_median": 0.6347,
+          "x_q16_q84": [
+            7.1276,
+            7.5807
+          ],
+          "y_q16_q84": [
+            0.4351,
+            0.8576
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 160.89,
+          "rho": -0.842,
+          "axis_ratio": 5.24,
+          "x_median": 0.6347,
+          "y_median": 0.0643,
+          "x_q16_q84": [
+            0.4351,
+            0.8576
+          ],
+          "y_q16_q84": [
+            0.0137,
+            0.157
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.6,
+          "rho": -0.346,
+          "axis_ratio": 52.89,
+          "x_median": 16.7526,
+          "y_median": 0.6856,
+          "x_q16_q84": [
+            15.9441,
+            18.0223
+          ],
+          "y_q16_q84": [
+            0.6609,
+            0.7036
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.01,
+          "axis_ratio": 235.97,
+          "x_median": 789.5048,
+          "y_median": -0.1604,
+          "x_q16_q84": [
+            575.1475,
+            956.841
+          ],
+          "y_q16_q84": [
+            -0.8901,
+            0.88
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.64,
+          "rho": -0.377,
+          "axis_ratio": 36.56,
+          "x_median": 0.1602,
+          "y_median": 17.5484,
+          "x_q16_q84": [
+            0.1197,
+            0.1906
+          ],
+          "y_q16_q84": [
+            16.7379,
+            18.762
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191204_110529",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191204_110529_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 13750,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 166.91,
+          "rho": -0.353,
+          "axis_ratio": 2.17,
+          "x_median": 27.3142,
+          "y_median": 19.216,
+          "x_q16_q84": [
+            23.3839,
+            32.7269
+          ],
+          "y_q16_q84": [
+            15.631,
+            22.7612
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.73,
+          "rho": 0.144,
+          "axis_ratio": 11.56,
+          "x_median": 19.816,
+          "y_median": 0.7256,
+          "x_q16_q84": [
+            17.6979,
+            22.0817
+          ],
+          "y_q16_q84": [
+            0.5128,
+            0.9051
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 158.11,
+          "rho": -0.157,
+          "axis_ratio": 1.26,
+          "x_median": 0.7256,
+          "y_median": 0.052,
+          "x_q16_q84": [
+            0.5128,
+            0.9051
+          ],
+          "y_q16_q84": [
+            -0.0898,
+            0.1938
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.19,
+          "rho": 0.298,
+          "axis_ratio": 95.39,
+          "x_median": 44.9708,
+          "y_median": 0.7073,
+          "x_q16_q84": [
+            40.0205,
+            50.1286
+          ],
+          "y_q16_q84": [
+            0.649,
+            0.7755
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.032,
+          "axis_ratio": 1219.4,
+          "x_median": 1866.4679,
+          "y_median": 0.0676,
+          "x_q16_q84": [
+            1105.9022,
+            2878.9505
+          ],
+          "y_q16_q84": [
+            -0.8367,
+            0.8533
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.67,
+          "rho": -0.568,
+          "axis_ratio": 58.75,
+          "x_median": 0.343,
+          "y_median": 47.1165,
+          "x_q16_q84": [
+            0.217,
+            0.495
+          ],
+          "y_q16_q84": [
+            41.9759,
+            52.5991
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191204_171526",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191204_171526_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 17844,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 150.61,
+          "rho": -0.914,
+          "axis_ratio": 5.46,
+          "x_median": 11.9027,
+          "y_median": 8.2219,
+          "x_q16_q84": [
+            10.5206,
+            13.7376
+          ],
+          "y_q16_q84": [
+            7.1808,
+            9.2419
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 5.49,
+          "rho": 0.046,
+          "axis_ratio": 1.27,
+          "x_median": 8.5535,
+          "y_median": 0.6913,
+          "x_q16_q84": [
+            8.3748,
+            8.7863
+          ],
+          "y_q16_q84": [
+            0.5255,
+            0.8796
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 169.27,
+          "rho": -0.727,
+          "axis_ratio": 5.96,
+          "x_median": 0.6913,
+          "y_median": 0.1593,
+          "x_q16_q84": [
+            0.5255,
+            0.8796
+          ],
+          "y_q16_q84": [
+            0.1274,
+            0.2032
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.88,
+          "rho": -0.091,
+          "axis_ratio": 42.17,
+          "x_median": 19.2066,
+          "y_median": 0.7305,
+          "x_q16_q84": [
+            18.5621,
+            20.106
+          ],
+          "y_q16_q84": [
+            0.7118,
+            0.7465
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.014,
+          "axis_ratio": 170.4,
+          "x_median": 647.1623,
+          "y_median": -0.6277,
+          "x_q16_q84": [
+            493.4046,
+            774.119
+          ],
+          "y_q16_q84": [
+            -0.9241,
+            0.8801
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.93,
+          "rho": -0.521,
+          "axis_ratio": 37.82,
+          "x_median": 0.1335,
+          "y_median": 20.2111,
+          "x_q16_q84": [
+            0.1038,
+            0.1573
+          ],
+          "y_q16_q84": [
+            19.5571,
+            21.0858
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191215_223052",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191215_223052_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 8884,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 152.57,
+          "rho": -0.555,
+          "axis_ratio": 2.11,
+          "x_median": 24.9456,
+          "y_median": 18.1159,
+          "x_q16_q84": [
+            22.1254,
+            28.8587
+          ],
+          "y_q16_q84": [
+            15.5834,
+            20.5012
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.0,
+          "rho": 0.126,
+          "axis_ratio": 7.46,
+          "x_median": 18.3564,
+          "y_median": 0.7302,
+          "x_q16_q84": [
+            17.2939,
+            19.7062
+          ],
+          "y_q16_q84": [
+            0.558,
+            0.9049
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 166.13,
+          "rho": -0.173,
+          "axis_ratio": 1.45,
+          "x_median": 0.7302,
+          "y_median": -0.0412,
+          "x_q16_q84": [
+            0.558,
+            0.9049
+          ],
+          "y_q16_q84": [
+            -0.1612,
+            0.061
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.09,
+          "rho": 0.107,
+          "axis_ratio": 68.66,
+          "x_median": 41.4309,
+          "y_median": 0.6772,
+          "x_q16_q84": [
+            38.7424,
+            44.5395
+          ],
+          "y_q16_q84": [
+            0.6377,
+            0.7174
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.051,
+          "axis_ratio": 859.05,
+          "x_median": 1934.9892,
+          "y_median": 0.2892,
+          "x_q16_q84": [
+            1350.7479,
+            2489.4832
+          ],
+          "y_q16_q84": [
+            -0.6859,
+            0.8041
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.24,
+          "rho": -0.753,
+          "axis_ratio": 53.04,
+          "x_median": 0.3537,
+          "y_median": 43.3382,
+          "x_q16_q84": [
+            0.259,
+            0.4381
+          ],
+          "y_q16_q84": [
+            40.5633,
+            46.5655
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191216_213338",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191216_213338_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 13919,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 160.04,
+          "rho": -0.904,
+          "axis_ratio": 6.74,
+          "x_median": 12.0691,
+          "y_median": 7.6742,
+          "x_q16_q84": [
+            10.3514,
+            14.3328
+          ],
+          "y_q16_q84": [
+            6.5986,
+            8.846
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 94.91,
+          "rho": -0.068,
+          "axis_ratio": 1.47,
+          "x_median": 8.3304,
+          "y_median": 0.6347,
+          "x_q16_q84": [
+            8.2065,
+            8.4707
+          ],
+          "y_q16_q84": [
+            0.4614,
+            0.8551
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 161.04,
+          "rho": -0.808,
+          "axis_ratio": 4.67,
+          "x_median": 0.6347,
+          "y_median": 0.1108,
+          "x_q16_q84": [
+            0.4614,
+            0.8551
+          ],
+          "y_q16_q84": [
+            0.0703,
+            0.1763
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 180.0,
+          "rho": -0.008,
+          "axis_ratio": 96.78,
+          "x_median": 18.8676,
+          "y_median": 0.7033,
+          "x_q16_q84": [
+            18.2051,
+            20.1217
+          ],
+          "y_q16_q84": [
+            0.6819,
+            0.7164
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.91,
+          "rho": -0.35,
+          "axis_ratio": 245.54,
+          "x_median": 341.5441,
+          "y_median": -0.801,
+          "x_q16_q84": [
+            255.9739,
+            418.7946
+          ],
+          "y_q16_q84": [
+            -0.9441,
+            -0.5358
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.04,
+          "rho": -0.083,
+          "axis_ratio": 120.39,
+          "x_median": 0.0733,
+          "y_median": 19.8019,
+          "x_q16_q84": [
+            0.0556,
+            0.089
+          ],
+          "y_q16_q84": [
+            19.1484,
+            20.9908
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191219_163120",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191219_163120_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 27115,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 178.96,
+          "rho": -0.622,
+          "axis_ratio": 43.97,
+          "x_median": 31.1235,
+          "y_median": 1.1687,
+          "x_q16_q84": [
+            29.532,
+            32.5258
+          ],
+          "y_q16_q84": [
+            1.133,
+            1.2069
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 179.59,
+          "rho": -0.137,
+          "axis_ratio": 19.22,
+          "x_median": 4.3144,
+          "y_median": 0.0375,
+          "x_q16_q84": [
+            4.2181,
+            4.3917
+          ],
+          "y_q16_q84": [
+            0.0353,
+            0.0403
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 93.5,
+          "rho": -0.884,
+          "axis_ratio": 31.06,
+          "x_median": 0.0375,
+          "y_median": -0.0002,
+          "x_q16_q84": [
+            0.0353,
+            0.0403
+          ],
+          "y_q16_q84": [
+            -0.0459,
+            0.0399
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.51,
+          "rho": 0.377,
+          "axis_ratio": 45.36,
+          "x_median": 32.2072,
+          "y_median": 0.1445,
+          "x_q16_q84": [
+            30.6284,
+            33.593
+          ],
+          "y_q16_q84": [
+            0.11,
+            0.182
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.008,
+          "axis_ratio": 184.16,
+          "x_median": 551.0705,
+          "y_median": -0.2584,
+          "x_q16_q84": [
+            447.4306,
+            690.52
+          ],
+          "y_q16_q84": [
+            -0.9339,
+            0.9311
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.38,
+          "rho": -0.429,
+          "axis_ratio": 71.97,
+          "x_median": 0.115,
+          "y_median": 32.2936,
+          "x_q16_q84": [
+            0.0947,
+            0.1417
+          ],
+          "y_q16_q84": [
+            30.7145,
+            33.6792
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191222_033537",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191222_033537_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 8528,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 116.55,
+          "rho": -0.027,
+          "axis_ratio": 1.03,
+          "x_median": 45.0724,
+          "y_median": 34.7155,
+          "x_q16_q84": [
+            39.781,
+            51.1966
+          ],
+          "y_q16_q84": [
+            28.53,
+            40.4342
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.86,
+          "rho": 0.364,
+          "axis_ratio": 26.15,
+          "x_median": 33.7834,
+          "y_median": 0.7936,
+          "x_q16_q84": [
+            30.5045,
+            38.1245
+          ],
+          "y_q16_q84": [
+            0.6067,
+            0.9316
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 26.16,
+          "rho": 0.161,
+          "axis_ratio": 1.23,
+          "x_median": 0.7936,
+          "y_median": -0.0406,
+          "x_q16_q84": [
+            0.6067,
+            0.9316
+          ],
+          "y_q16_q84": [
+            -0.1837,
+            0.0759
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.08,
+          "rho": 0.175,
+          "axis_ratio": 133.46,
+          "x_median": 75.4717,
+          "y_median": 0.6735,
+          "x_q16_q84": [
+            68.7667,
+            84.4997
+          ],
+          "y_q16_q84": [
+            0.6191,
+            0.7207
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.005,
+          "axis_ratio": 1475.01,
+          "x_median": 2986.3075,
+          "y_median": -0.0492,
+          "x_q16_q84": [
+            1914.0463,
+            4058.3589
+          ],
+          "y_q16_q84": [
+            -0.8428,
+            0.8319
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.76,
+          "rho": -0.739,
+          "axis_ratio": 82.63,
+          "x_median": 0.5103,
+          "y_median": 79.0568,
+          "x_q16_q84": [
+            0.3504,
+            0.6577
+          ],
+          "y_q16_q84": [
+            71.9374,
+            88.6069
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW191230_180458",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW191230_180458_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 7026,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 166.91,
+          "rho": -0.169,
+          "axis_ratio": 1.46,
+          "x_median": 49.4035,
+          "y_median": 36.7201,
+          "x_q16_q84": [
+            43.0781,
+            57.3078
+          ],
+          "y_q16_q84": [
+            30.0179,
+            43.2902
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.67,
+          "rho": 0.289,
+          "axis_ratio": 25.95,
+          "x_median": 36.4526,
+          "y_median": 0.7719,
+          "x_q16_q84": [
+            32.8681,
+            41.1617
+          ],
+          "y_q16_q84": [
+            0.5588,
+            0.9243
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 53.61,
+          "rho": 0.071,
+          "axis_ratio": 1.08,
+          "x_median": 0.7719,
+          "y_median": -0.0493,
+          "x_q16_q84": [
+            0.5588,
+            0.9243
+          ],
+          "y_q16_q84": [
+            -0.2281,
+            0.1057
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.11,
+          "rho": 0.271,
+          "axis_ratio": 144.47,
+          "x_median": 82.0176,
+          "y_median": 0.6792,
+          "x_q16_q84": [
+            74.5172,
+            91.8289
+          ],
+          "y_q16_q84": [
+            0.6114,
+            0.7441
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.014,
+          "axis_ratio": 1718.92,
+          "x_median": 4283.2881,
+          "y_median": -0.4813,
+          "x_q16_q84": [
+            3000.8204,
+            5531.2661
+          ],
+          "y_q16_q84": [
+            -0.8917,
+            0.8047
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.51,
+          "rho": -0.589,
+          "axis_ratio": 81.5,
+          "x_median": 0.6875,
+          "y_median": 85.6985,
+          "x_q16_q84": [
+            0.5124,
+            0.8471
+          ],
+          "y_q16_q84": [
+            77.9215,
+            96.1956
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200112_155838",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200112_155838_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 4323,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 140.28,
+          "rho": -0.538,
+          "axis_ratio": 1.84,
+          "x_median": 35.5701,
+          "y_median": 28.3021,
+          "x_q16_q84": [
+            32.6428,
+            39.5364
+          ],
+          "y_q16_q84": [
+            24.7324,
+            31.0863
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.52,
+          "rho": 0.278,
+          "axis_ratio": 10.98,
+          "x_median": 27.3956,
+          "y_median": 0.8065,
+          "x_q16_q84": [
+            26.0712,
+            28.836
+          ],
+          "y_q16_q84": [
+            0.6354,
+            0.9337
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 8.92,
+          "rho": 0.13,
+          "axis_ratio": 1.51,
+          "x_median": 0.8065,
+          "y_median": 0.0646,
+          "x_q16_q84": [
+            0.6354,
+            0.9337
+          ],
+          "y_q16_q84": [
+            -0.0229,
+            0.1533
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.32,
+          "rho": 0.423,
+          "axis_ratio": 84.61,
+          "x_median": 60.7989,
+          "y_median": 0.7063,
+          "x_q16_q84": [
+            58.0009,
+            63.7686
+          ],
+          "y_q16_q84": [
+            0.6698,
+            0.7426
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.05,
+          "axis_ratio": 330.87,
+          "x_median": 1252.0803,
+          "y_median": 0.6213,
+          "x_q16_q84": [
+            967.4899,
+            1531.781
+          ],
+          "y_q16_q84": [
+            -0.9034,
+            0.932
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.42,
+          "rho": -0.493,
+          "axis_ratio": 78.1,
+          "x_median": 0.2422,
+          "y_median": 63.8617,
+          "x_q16_q84": [
+            0.1925,
+            0.2891
+          ],
+          "y_q16_q84": [
+            60.8811,
+            67.0449
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200115_042309",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200115_042309_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 31903,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 166.86,
+          "rho": -0.945,
+          "axis_ratio": 13.12,
+          "x_median": 5.9168,
+          "y_median": 1.4376,
+          "x_q16_q84": [
+            4.2208,
+            7.1388
+          ],
+          "y_q16_q84": [
+            1.2468,
+            1.8848
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 90.75,
+          "rho": -0.059,
+          "axis_ratio": 4.71,
+          "x_median": 2.427,
+          "y_median": 0.2429,
+          "x_q16_q84": [
+            2.3918,
+            2.4569
+          ],
+          "y_q16_q84": [
+            0.175,
+            0.4468
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 128.67,
+          "rho": -0.943,
+          "axis_ratio": 5.97,
+          "x_median": 0.2429,
+          "y_median": -0.1528,
+          "x_q16_q84": [
+            0.175,
+            0.4468
+          ],
+          "y_q16_q84": [
+            -0.4188,
+            0.0081
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.68,
+          "rho": -0.136,
+          "axis_ratio": 24.82,
+          "x_median": 7.2032,
+          "y_median": 0.416,
+          "x_q16_q84": [
+            5.9351,
+            8.2617
+          ],
+          "y_q16_q84": [
+            0.3859,
+            0.4728
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.94,
+          "rho": -0.139,
+          "axis_ratio": 140.23,
+          "x_median": 290.8166,
+          "y_median": 0.8079,
+          "x_q16_q84": [
+            229.1624,
+            367.0061
+          ],
+          "y_q16_q84": [
+            0.3644,
+            0.9484
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.04,
+          "rho": -0.052,
+          "axis_ratio": 71.59,
+          "x_median": 0.0629,
+          "y_median": 7.3477,
+          "x_q16_q84": [
+            0.05,
+            0.0785
+          ],
+          "y_q16_q84": [
+            6.109,
+            8.3917
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200128_022011",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200128_022011_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 6638,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 29.43,
+          "rho": 0.136,
+          "axis_ratio": 1.17,
+          "x_median": 42.1726,
+          "y_median": 32.6349,
+          "x_q16_q84": [
+            36.9867,
+            48.684
+          ],
+          "y_q16_q84": [
+            27.0023,
+            38.3626
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.56,
+          "rho": 0.258,
+          "axis_ratio": 27.29,
+          "x_median": 32.0168,
+          "y_median": 0.7971,
+          "x_q16_q84": [
+            28.3621,
+            36.1775
+          ],
+          "y_q16_q84": [
+            0.613,
+            0.9331
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 42.92,
+          "rho": 0.115,
+          "axis_ratio": 1.12,
+          "x_median": 0.7971,
+          "y_median": 0.121,
+          "x_q16_q84": [
+            0.613,
+            0.9331
+          ],
+          "y_q16_q84": [
+            -0.0267,
+            0.2647
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.14,
+          "rho": 0.321,
+          "axis_ratio": 143.12,
+          "x_median": 71.0599,
+          "y_median": 0.7434,
+          "x_q16_q84": [
+            63.5978,
+            79.756
+          ],
+          "y_q16_q84": [
+            0.6816,
+            0.8017
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.005,
+          "axis_ratio": 1707.33,
+          "x_median": 3352.349,
+          "y_median": 0.1516,
+          "x_q16_q84": [
+            2144.7649,
+            4666.0324
+          ],
+          "y_q16_q84": [
+            -0.8224,
+            0.8201
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.81,
+          "rho": -0.744,
+          "axis_ratio": 78.75,
+          "x_median": 0.5618,
+          "y_median": 74.7828,
+          "x_q16_q84": [
+            0.3862,
+            0.7374
+          ],
+          "y_q16_q84": [
+            66.8048,
+            84.0947
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200129_065458",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200129_065458_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 1993,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 136.17,
+          "rho": -0.807,
+          "axis_ratio": 3.06,
+          "x_median": 34.5138,
+          "y_median": 28.9436,
+          "x_q16_q84": [
+            32.3061,
+            40.0194
+          ],
+          "y_q16_q84": [
+            23.2182,
+            31.1524
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 4.3,
+          "rho": 0.581,
+          "axis_ratio": 9.63,
+          "x_median": 27.1588,
+          "y_median": 0.8539,
+          "x_q16_q84": [
+            25.9236,
+            28.4333
+          ],
+          "y_q16_q84": [
+            0.5784,
+            0.9448
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 12.96,
+          "rho": 0.368,
+          "axis_ratio": 2.25,
+          "x_median": 0.8539,
+          "y_median": 0.1122,
+          "x_q16_q84": [
+            0.5784,
+            0.9448
+          ],
+          "y_q16_q84": [
+            0.0294,
+            0.1832
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.34,
+          "rho": 0.402,
+          "axis_ratio": 75.09,
+          "x_median": 60.2594,
+          "y_median": 0.732,
+          "x_q16_q84": [
+            58.1115,
+            62.702
+          ],
+          "y_q16_q84": [
+            0.7042,
+            0.7676
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.03,
+          "rho": 0.399,
+          "axis_ratio": 756.32,
+          "x_median": 901.7754,
+          "y_median": 0.7965,
+          "x_q16_q84": [
+            663.8321,
+            1091.1982
+          ],
+          "y_q16_q84": [
+            0.5192,
+            0.9569
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.48,
+          "rho": -0.552,
+          "axis_ratio": 78.84,
+          "x_median": 0.1807,
+          "y_median": 63.3724,
+          "x_q16_q84": [
+            0.1367,
+            0.2144
+          ],
+          "y_q16_q84": [
+            61.1001,
+            65.9555
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200202_154313",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200202_154313_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 43480,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 154.04,
+          "rho": -0.922,
+          "axis_ratio": 6.2,
+          "x_median": 10.1465,
+          "y_median": 7.344,
+          "x_q16_q84": [
+            9.0598,
+            12.0097
+          ],
+          "y_q16_q84": [
+            6.3002,
+            8.189
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 89.47,
+          "rho": 0.005,
+          "axis_ratio": 1.32,
+          "x_median": 7.491,
+          "y_median": 0.7247,
+          "x_q16_q84": [
+            7.3693,
+            7.6334
+          ],
+          "y_q16_q84": [
+            0.5255,
+            0.9035
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 163.52,
+          "rho": -0.797,
+          "axis_ratio": 5.05,
+          "x_median": 0.7247,
+          "y_median": 0.0394,
+          "x_q16_q84": [
+            0.5255,
+            0.9035
+          ],
+          "y_q16_q84": [
+            0.0024,
+            0.1017
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.8,
+          "rho": -0.18,
+          "axis_ratio": 51.69,
+          "x_median": 16.7556,
+          "y_median": 0.6887,
+          "x_q16_q84": [
+            16.3203,
+            17.592
+          ],
+          "y_q16_q84": [
+            0.6707,
+            0.7039
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.91,
+          "rho": -0.761,
+          "axis_ratio": 764.32,
+          "x_median": 413.6318,
+          "y_median": -0.8384,
+          "x_q16_q84": [
+            314.6761,
+            501.3485
+          ],
+          "y_q16_q84": [
+            -0.9585,
+            -0.5908
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.26,
+          "rho": -0.242,
+          "axis_ratio": 55.17,
+          "x_median": 0.0879,
+          "y_median": 17.5805,
+          "x_q16_q84": [
+            0.0678,
+            0.1053
+          ],
+          "y_q16_q84": [
+            17.1414,
+            18.3742
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200208_130117",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200208_130117_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 14981,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 143.24,
+          "rho": -0.496,
+          "axis_ratio": 1.76,
+          "x_median": 37.8207,
+          "y_median": 27.4159,
+          "x_q16_q84": [
+            33.7318,
+            43.085
+          ],
+          "y_q16_q84": [
+            22.8465,
+            31.2771
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.56,
+          "rho": 0.343,
+          "axis_ratio": 13.49,
+          "x_median": 27.6803,
+          "y_median": 0.734,
+          "x_q16_q84": [
+            25.8109,
+            29.7897
+          ],
+          "y_q16_q84": [
+            0.5476,
+            0.9023
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 30.62,
+          "rho": 0.163,
+          "axis_ratio": 1.21,
+          "x_median": 0.734,
+          "y_median": -0.0683,
+          "x_q16_q84": [
+            0.5476,
+            0.9023
+          ],
+          "y_q16_q84": [
+            -0.2255,
+            0.0567
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.26,
+          "rho": 0.292,
+          "axis_ratio": 67.27,
+          "x_median": 62.521,
+          "y_median": 0.6584,
+          "x_q16_q84": [
+            58.5581,
+            66.8368
+          ],
+          "y_q16_q84": [
+            0.5928,
+            0.7082
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.227,
+          "axis_ratio": 2175.13,
+          "x_median": 2229.084,
+          "y_median": -0.8136,
+          "x_q16_q84": [
+            1685.9172,
+            2794.2785
+          ],
+          "y_q16_q84": [
+            -0.9492,
+            -0.5578
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.45,
+          "rho": -0.404,
+          "axis_ratio": 56.77,
+          "x_median": 0.3991,
+          "y_median": 65.3604,
+          "x_q16_q84": [
+            0.3142,
+            0.4828
+          ],
+          "y_q16_q84": [
+            61.1285,
+            69.965
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200209_085452",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200209_085452_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 9015,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 177.88,
+          "rho": -0.011,
+          "axis_ratio": 1.16,
+          "x_median": 35.6148,
+          "y_median": 27.1395,
+          "x_q16_q84": [
+            31.1862,
+            41.356
+          ],
+          "y_q16_q84": [
+            22.6566,
+            31.7888
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.69,
+          "rho": 0.24,
+          "axis_ratio": 20.58,
+          "x_median": 26.7389,
+          "y_median": 0.7844,
+          "x_q16_q84": [
+            24.0301,
+            30.2373
+          ],
+          "y_q16_q84": [
+            0.5985,
+            0.9311
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 62.9,
+          "rho": 0.084,
+          "axis_ratio": 1.11,
+          "x_median": 0.7844,
+          "y_median": -0.1166,
+          "x_q16_q84": [
+            0.5985,
+            0.9311
+          ],
+          "y_q16_q84": [
+            -0.2957,
+            0.033
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.13,
+          "rho": 0.222,
+          "axis_ratio": 99.61,
+          "x_median": 59.9275,
+          "y_median": 0.6603,
+          "x_q16_q84": [
+            54.2077,
+            67.4028
+          ],
+          "y_q16_q84": [
+            0.5951,
+            0.7198
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.023,
+          "axis_ratio": 1606.07,
+          "x_median": 3418.8632,
+          "y_median": -0.1061,
+          "x_q16_q84": [
+            2327.0312,
+            4554.0341
+          ],
+          "y_q16_q84": [
+            -0.8517,
+            0.8241
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.6,
+          "rho": -0.484,
+          "axis_ratio": 52.4,
+          "x_median": 0.571,
+          "y_median": 62.6259,
+          "x_q16_q84": [
+            0.4139,
+            0.7229
+          ],
+          "y_q16_q84": [
+            56.5608,
+            70.5649
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200210_092254",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200210_092254_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 28099,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 176.52,
+          "rho": -0.782,
+          "axis_ratio": 20.78,
+          "x_median": 24.1424,
+          "y_median": 2.8281,
+          "x_q16_q84": [
+            21.5744,
+            28.2046
+          ],
+          "y_q16_q84": [
+            2.5723,
+            3.0759
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 178.82,
+          "rho": -0.171,
+          "axis_ratio": 8.55,
+          "x_median": 6.5565,
+          "y_median": 0.1178,
+          "x_q16_q84": [
+            6.318,
+            6.7866
+          ],
+          "y_q16_q84": [
+            0.0921,
+            0.1398
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 101.63,
+          "rho": -0.929,
+          "axis_ratio": 12.83,
+          "x_median": 0.1178,
+          "y_median": 0.0203,
+          "x_q16_q84": [
+            0.0921,
+            0.1398
+          ],
+          "y_q16_q84": [
+            -0.0804,
+            0.1539
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.81,
+          "rho": 0.737,
+          "axis_ratio": 77.01,
+          "x_median": 26.7237,
+          "y_median": 0.3433,
+          "x_q16_q84": [
+            24.2746,
+            30.5771
+          ],
+          "y_q16_q84": [
+            0.2941,
+            0.4254
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.02,
+          "rho": 0.133,
+          "axis_ratio": 373.4,
+          "x_median": 940.1664,
+          "y_median": -0.5556,
+          "x_q16_q84": [
+            726.2813,
+            1186.364
+          ],
+          "y_q16_q84": [
+            -0.8802,
+            0.7754
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.28,
+          "rho": -0.37,
+          "axis_ratio": 81.62,
+          "x_median": 0.1876,
+          "y_median": 27.0008,
+          "x_q16_q84": [
+            0.1484,
+            0.231
+          ],
+          "y_q16_q84": [
+            24.5528,
+            30.8359
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200216_220804",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200216_220804_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 6038,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 155.4,
+          "rho": -0.446,
+          "axis_ratio": 1.85,
+          "x_median": 51.2882,
+          "y_median": 30.0602,
+          "x_q16_q84": [
+            42.3656,
+            63.1698
+          ],
+          "y_q16_q84": [
+            18.8403,
+            38.7337
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.49,
+          "rho": 0.577,
+          "axis_ratio": 27.26,
+          "x_median": 32.915,
+          "y_median": 0.6092,
+          "x_q16_q84": [
+            27.7037,
+            38.1676
+          ],
+          "y_q16_q84": [
+            0.3075,
+            0.8707
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 16.15,
+          "rho": 0.085,
+          "axis_ratio": 1.17,
+          "x_median": 0.6092,
+          "y_median": 0.0956,
+          "x_q16_q84": [
+            0.3075,
+            0.8707
+          ],
+          "y_q16_q84": [
+            -0.1051,
+            0.3048
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.13,
+          "rho": 0.241,
+          "axis_ratio": 108.86,
+          "x_median": 77.9473,
+          "y_median": 0.7042,
+          "x_q16_q84": [
+            69.5722,
+            88.2562
+          ],
+          "y_q16_q84": [
+            0.5847,
+            0.7966
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.025,
+          "axis_ratio": 2338.98,
+          "x_median": 3818.1463,
+          "y_median": 0.5724,
+          "x_q16_q84": [
+            2462.0955,
+            5529.1829
+          ],
+          "y_q16_q84": [
+            -0.6556,
+            0.9064
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.31,
+          "rho": -0.33,
+          "axis_ratio": 65.43,
+          "x_median": 0.6255,
+          "y_median": 81.4008,
+          "x_q16_q84": [
+            0.4341,
+            0.8468
+          ],
+          "y_q16_q84": [
+            72.5647,
+            92.3662
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200219_094415",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200219_094415_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 9991,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 150.15,
+          "rho": -0.191,
+          "axis_ratio": 1.25,
+          "x_median": 37.5278,
+          "y_median": 27.9473,
+          "x_q16_q84": [
+            32.8452,
+            43.2831
+          ],
+          "y_q16_q84": [
+            22.9663,
+            32.5745
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.98,
+          "rho": 0.301,
+          "axis_ratio": 18.5,
+          "x_median": 27.6176,
+          "y_median": 0.7663,
+          "x_q16_q84": [
+            25.1799,
+            31.0096
+          ],
+          "y_q16_q84": [
+            0.564,
+            0.9244
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 34.31,
+          "rho": 0.098,
+          "axis_ratio": 1.11,
+          "x_median": 0.7663,
+          "y_median": -0.08,
+          "x_q16_q84": [
+            0.564,
+            0.9244
+          ],
+          "y_q16_q84": [
+            -0.2474,
+            0.0614
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.17,
+          "rho": 0.255,
+          "axis_ratio": 88.89,
+          "x_median": 62.2044,
+          "y_median": 0.6642,
+          "x_q16_q84": [
+            57.0711,
+            69.304
+          ],
+          "y_q16_q84": [
+            0.5981,
+            0.7216
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.103,
+          "axis_ratio": 1501.52,
+          "x_median": 3417.6592,
+          "y_median": 0.3315,
+          "x_q16_q84": [
+            2393.1293,
+            4470.8629
+          ],
+          "y_q16_q84": [
+            -0.7361,
+            0.8667
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.79,
+          "rho": -0.647,
+          "axis_ratio": 61.3,
+          "x_median": 0.5709,
+          "y_median": 64.9795,
+          "x_q16_q84": [
+            0.4238,
+            0.7121
+          ],
+          "y_q16_q84": [
+            59.5856,
+            72.5218
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200220_061928",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200220_061928_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 3032,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 179.46,
+          "rho": -0.014,
+          "axis_ratio": 2.01,
+          "x_median": 87.3018,
+          "y_median": 60.7899,
+          "x_q16_q84": [
+            72.0271,
+            106.3517
+          ],
+          "y_q16_q84": [
+            46.0383,
+            76.4249
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.15,
+          "rho": 0.16,
+          "axis_ratio": 62.06,
+          "x_median": 62.1625,
+          "y_median": 0.7315,
+          "x_q16_q84": [
+            52.3241,
+            74.6761
+          ],
+          "y_q16_q84": [
+            0.4847,
+            0.9146
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 91.16,
+          "rho": -0.006,
+          "axis_ratio": 1.15,
+          "x_median": 0.7315,
+          "y_median": 0.0597,
+          "x_q16_q84": [
+            0.4847,
+            0.9146
+          ],
+          "y_q16_q84": [
+            -0.1601,
+            0.3016
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.01,
+          "rho": 0.061,
+          "axis_ratio": 347.29,
+          "x_median": 141.2145,
+          "y_median": 0.7092,
+          "x_q16_q84": [
+            120.9433,
+            167.0595
+          ],
+          "y_q16_q84": [
+            0.6203,
+            0.8011
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.042,
+          "axis_ratio": 3585.12,
+          "x_median": 5985.9526,
+          "y_median": 0.2736,
+          "x_q16_q84": [
+            3893.9626,
+            8674.7597
+          ],
+          "y_q16_q84": [
+            -0.7828,
+            0.8506
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.33,
+          "rho": -0.676,
+          "axis_ratio": 161.56,
+          "x_median": 0.9032,
+          "y_median": 148.0424,
+          "x_q16_q84": [
+            0.6358,
+            1.2201
+          ],
+          "y_q16_q84": [
+            126.478,
+            175.7926
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200220_124850",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200220_124850_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 4861,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 174.38,
+          "rho": -0.049,
+          "axis_ratio": 1.28,
+          "x_median": 38.9095,
+          "y_median": 27.8515,
+          "x_q16_q84": [
+            32.9708,
+            46.5924
+          ],
+          "y_q16_q84": [
+            22.4439,
+            33.128
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 0.6,
+          "rho": 0.229,
+          "axis_ratio": 22.52,
+          "x_median": 28.1938,
+          "y_median": 0.7375,
+          "x_q16_q84": [
+            24.9304,
+            32.3101
+          ],
+          "y_q16_q84": [
+            0.5312,
+            0.9133
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 57.46,
+          "rho": 0.072,
+          "axis_ratio": 1.08,
+          "x_median": 0.7375,
+          "y_median": -0.0749,
+          "x_q16_q84": [
+            0.5312,
+            0.9133
+          ],
+          "y_q16_q84": [
+            -0.2701,
+            0.0814
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.08,
+          "rho": 0.155,
+          "axis_ratio": 108.64,
+          "x_median": 63.8495,
+          "y_median": 0.6676,
+          "x_q16_q84": [
+            56.6722,
+            73.0901
+          ],
+          "y_q16_q84": [
+            0.5934,
+            0.73
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.032,
+          "axis_ratio": 2285.36,
+          "x_median": 4046.4495,
+          "y_median": -0.0799,
+          "x_q16_q84": [
+            2580.5647,
+            5777.2809
+          ],
+          "y_q16_q84": [
+            -0.8214,
+            0.8089
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 91.0,
+          "rho": -0.751,
+          "axis_ratio": 64.84,
+          "x_median": 0.6562,
+          "y_median": 66.7161,
+          "x_q16_q84": [
+            0.4516,
+            0.8776
+          ],
+          "y_q16_q84": [
+            59.1692,
+            76.3325
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200224_222234",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200224_222234_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 11459,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 132.41,
+          "rho": -0.465,
+          "axis_ratio": 1.66,
+          "x_median": 40.011,
+          "y_median": 32.5369,
+          "x_q16_q84": [
+            36.9623,
+            43.9836
+          ],
+          "y_q16_q84": [
+            28.4582,
+            35.5865
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.67,
+          "rho": 0.395,
+          "axis_ratio": 14.81,
+          "x_median": 31.0765,
+          "y_median": 0.8216,
+          "x_q16_q84": [
+            29.5009,
+            32.8613
+          ],
+          "y_q16_q84": [
+            0.6645,
+            0.9398
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 17.59,
+          "rho": 0.252,
+          "axis_ratio": 1.55,
+          "x_median": 0.8216,
+          "y_median": 0.0991,
+          "x_q16_q84": [
+            0.6645,
+            0.9398
+          ],
+          "y_q16_q84": [
+            0.0069,
+            0.1912
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.29,
+          "rho": 0.427,
+          "axis_ratio": 92.8,
+          "x_median": 68.6093,
+          "y_median": 0.7275,
+          "x_q16_q84": [
+            65.6224,
+            72.3276
+          ],
+          "y_q16_q84": [
+            0.6876,
+            0.7669
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.02,
+          "rho": 0.573,
+          "axis_ratio": 1833.67,
+          "x_median": 1707.4722,
+          "y_median": 0.8071,
+          "x_q16_q84": [
+            1311.923,
+            2019.1334
+          ],
+          "y_q16_q84": [
+            0.5486,
+            0.9517
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.4,
+          "rho": -0.468,
+          "axis_ratio": 75.42,
+          "x_median": 0.3176,
+          "y_median": 72.185,
+          "x_q16_q84": [
+            0.2524,
+            0.3668
+          ],
+          "y_q16_q84": [
+            68.9476,
+            76.2125
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200225_060421",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200225_060421_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 15593,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 146.9,
+          "rho": -0.612,
+          "axis_ratio": 2.16,
+          "x_median": 19.3325,
+          "y_median": 13.9877,
+          "x_q16_q84": [
+            17.2833,
+            22.1346
+          ],
+          "y_q16_q84": [
+            11.8855,
+            15.8242
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 2.98,
+          "rho": 0.271,
+          "axis_ratio": 5.61,
+          "x_median": 14.205,
+          "y_median": 0.7278,
+          "x_q16_q84": [
+            13.3705,
+            15.0792
+          ],
+          "y_q16_q84": [
+            0.5493,
+            0.9012
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 17.41,
+          "rho": 0.095,
+          "axis_ratio": 1.18,
+          "x_median": 0.7278,
+          "y_median": -0.1155,
+          "x_q16_q84": [
+            0.5493,
+            0.9012
+          ],
+          "y_q16_q84": [
+            -0.2927,
+            -0.0024
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.74,
+          "rho": 0.391,
+          "axis_ratio": 32.94,
+          "x_median": 32.0595,
+          "y_median": 0.6586,
+          "x_q16_q84": [
+            30.2986,
+            34.0539
+          ],
+          "y_q16_q84": [
+            0.5775,
+            0.7021
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.0,
+          "rho": 0.012,
+          "axis_ratio": 451.79,
+          "x_median": 1148.9576,
+          "y_median": 0.2145,
+          "x_q16_q84": [
+            822.8791,
+            1465.8956
+          ],
+          "y_q16_q84": [
+            -0.798,
+            0.8352
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.82,
+          "rho": -0.521,
+          "axis_ratio": 42.85,
+          "x_median": 0.2245,
+          "y_median": 33.4733,
+          "x_q16_q84": [
+            0.1663,
+            0.2782
+          ],
+          "y_q16_q84": [
+            31.6077,
+            35.5693
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200302_015811",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200302_015811_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 18183,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 147.45,
+          "rho": -0.458,
+          "axis_ratio": 1.72,
+          "x_median": 37.7703,
+          "y_median": 19.9803,
+          "x_q16_q84": [
+            32.4665,
+            42.9735
+          ],
+          "y_q16_q84": [
+            16.2327,
+            24.8664
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 1.88,
+          "rho": 0.459,
+          "axis_ratio": 15.82,
+          "x_median": 23.3618,
+          "y_median": 0.5306,
+          "x_q16_q84": [
+            21.4623,
+            25.9469
+          ],
+          "y_q16_q84": [
+            0.3923,
+            0.7387
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 36.83,
+          "rho": 0.299,
+          "axis_ratio": 1.38,
+          "x_median": 0.5306,
+          "y_median": 0.0144,
+          "x_q16_q84": [
+            0.3923,
+            0.7387
+          ],
+          "y_q16_q84": [
+            -0.123,
+            0.1592
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.34,
+          "rho": 0.314,
+          "axis_ratio": 56.5,
+          "x_median": 55.5301,
+          "y_median": 0.6574,
+          "x_q16_q84": [
+            51.326,
+            60.375
+          ],
+          "y_q16_q84": [
+            0.5718,
+            0.7387
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.033,
+          "axis_ratio": 788.35,
+          "x_median": 1483.2572,
+          "y_median": 0.2326,
+          "x_q16_q84": [
+            1019.9281,
+            2074.7547
+          ],
+          "y_q16_q84": [
+            -0.773,
+            0.8287
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.31,
+          "rho": -0.314,
+          "axis_ratio": 61.23,
+          "x_median": 0.2811,
+          "y_median": 57.8049,
+          "x_q16_q84": [
+            0.2019,
+            0.3754
+          ],
+          "y_q16_q84": [
+            53.4584,
+            62.9997
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200306_093714",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200306_093714_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 14034,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 162.2,
+          "rho": -0.609,
+          "axis_ratio": 2.97,
+          "x_median": 28.3116,
+          "y_median": 14.8193,
+          "x_q16_q84": [
+            22.9983,
+            36.2717
+          ],
+          "y_q16_q84": [
+            10.6217,
+            18.9357
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 2.25,
+          "rho": 0.351,
+          "axis_ratio": 9.65,
+          "x_median": 17.4569,
+          "y_median": 0.5273,
+          "x_q16_q84": [
+            15.4411,
+            19.5553
+          ],
+          "y_q16_q84": [
+            0.3062,
+            0.802
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 55.16,
+          "rho": 0.154,
+          "axis_ratio": 1.18,
+          "x_median": 0.5273,
+          "y_median": 0.3155,
+          "x_q16_q84": [
+            0.3062,
+            0.802
+          ],
+          "y_q16_q84": [
+            0.0122,
+            0.5037
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.13,
+          "rho": 0.133,
+          "axis_ratio": 59.81,
+          "x_median": 41.6749,
+          "y_median": 0.7845,
+          "x_q16_q84": [
+            37.3361,
+            47.4249
+          ],
+          "y_q16_q84": [
+            0.625,
+            0.8598
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 179.99,
+          "rho": -0.103,
+          "axis_ratio": 1134.12,
+          "x_median": 2112.949,
+          "y_median": 0.463,
+          "x_q16_q84": [
+            1389.3436,
+            3064.6032
+          ],
+          "y_q16_q84": [
+            -0.8632,
+            0.907
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.34,
+          "rho": -0.321,
+          "axis_ratio": 56.5,
+          "x_median": 0.3813,
+          "y_median": 43.897,
+          "x_q16_q84": [
+            0.2655,
+            0.5215
+          ],
+          "y_q16_q84": [
+            39.2159,
+            49.8096
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200308_173609",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200308_173609_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 1073,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 5.05,
+          "rho": 0.347,
+          "axis_ratio": 4.45,
+          "x_median": 59.5731,
+          "y_median": 23.7616,
+          "x_q16_q84": [
+            36.1877,
+            119.2848
+          ],
+          "y_q16_q84": [
+            12.8226,
+            43.8185
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 180.0,
+          "rho": -0.007,
+          "axis_ratio": 91.96,
+          "x_median": 34.1584,
+          "y_median": 0.3864,
+          "x_q16_q84": [
+            18.8041,
+            54.7802
+          ],
+          "y_q16_q84": [
+            0.2025,
+            0.6824
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 94.52,
+          "rho": -0.068,
+          "axis_ratio": 1.53,
+          "x_median": 0.3864,
+          "y_median": 0.1578,
+          "x_q16_q84": [
+            0.2025,
+            0.6824
+          ],
+          "y_q16_q84": [
+            -0.1363,
+            0.6243
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 179.93,
+          "rho": -0.492,
+          "axis_ratio": 483.63,
+          "x_median": 87.9965,
+          "y_median": 0.7174,
+          "x_q16_q84": [
+            47.7151,
+            154.9234
+          ],
+          "y_q16_q84": [
+            0.5311,
+            0.9044
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.06,
+          "axis_ratio": 8707.96,
+          "x_median": 7113.6404,
+          "y_median": 0.0382,
+          "x_q16_q84": [
+            4273.4651,
+            14218.3338
+          ],
+          "y_q16_q84": [
+            -0.7334,
+            0.8212
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.04,
+          "rho": -0.081,
+          "axis_ratio": 124.45,
+          "x_median": 1.039,
+          "y_median": 91.8611,
+          "x_q16_q84": [
+            0.6862,
+            1.8224
+          ],
+          "y_q16_q84": [
+            50.7896,
+            161.6874
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200311_115853",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200311_115853_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 20276,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 136.56,
+          "rho": -0.563,
+          "axis_ratio": 1.89,
+          "x_median": 34.2318,
+          "y_median": 27.7242,
+          "x_q16_q84": [
+            31.6733,
+            37.74
+          ],
+          "y_q16_q84": [
+            24.3155,
+            30.3311
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 2.07,
+          "rho": 0.361,
+          "axis_ratio": 10.81,
+          "x_median": 26.5966,
+          "y_median": 0.8193,
+          "x_q16_q84": [
+            25.3691,
+            27.9718
+          ],
+          "y_q16_q84": [
+            0.6578,
+            0.9397
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 20.48,
+          "rho": 0.183,
+          "axis_ratio": 1.32,
+          "x_median": 0.8193,
+          "y_median": -0.0193,
+          "x_q16_q84": [
+            0.6578,
+            0.9397
+          ],
+          "y_q16_q84": [
+            -0.1332,
+            0.0722
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.55,
+          "rho": 0.57,
+          "axis_ratio": 72.36,
+          "x_median": 59.0381,
+          "y_median": 0.6855,
+          "x_q16_q84": [
+            56.6328,
+            61.8084
+          ],
+          "y_q16_q84": [
+            0.6438,
+            0.7241
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 0.03,
+          "rho": 0.739,
+          "axis_ratio": 1901.68,
+          "x_median": 1172.1161,
+          "y_median": 0.8554,
+          "x_q16_q84": [
+            946.6614,
+            1346.894
+          ],
+          "y_q16_q84": [
+            0.6442,
+            0.9632
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.21,
+          "rho": -0.299,
+          "axis_ratio": 84.8,
+          "x_median": 0.2285,
+          "y_median": 61.8842,
+          "x_q16_q84": [
+            0.1888,
+            0.2583
+          ],
+          "y_q16_q84": [
+            59.2456,
+            64.9088
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200316_215756",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200316_215756_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 129267,
+      "planes": {
+        "mass_1_source__mass_2_source": {
+          "psi": 162.29,
+          "rho": -0.889,
+          "axis_ratio": 6.83,
+          "x_median": 13.1428,
+          "y_median": 7.812,
+          "x_q16_q84": [
+            10.9273,
+            17.4154
+          ],
+          "y_q16_q84": [
+            6.1905,
+            9.1496
+          ]
+        },
+        "chirp_mass_source__mass_ratio": {
+          "psi": 172.13,
+          "rho": -0.149,
+          "axis_ratio": 1.7,
+          "x_median": 8.7541,
+          "y_median": 0.5948,
+          "x_q16_q84": [
+            8.4077,
+            9.1513
+          ],
+          "y_q16_q84": [
+            0.3585,
+            0.8345
+          ]
+        },
+        "mass_ratio__chi_eff": {
+          "psi": 155.31,
+          "rho": -0.857,
+          "axis_ratio": 4.6,
+          "x_median": 0.5948,
+          "y_median": 0.126,
+          "x_q16_q84": [
+            0.3585,
+            0.8345
+          ],
+          "y_q16_q84": [
+            0.0596,
+            0.2496
+          ]
+        },
+        "final_mass_source__final_spin": {
+          "psi": 0.03,
+          "rho": 0.058,
+          "axis_ratio": 105.84,
+          "x_median": 20.1849,
+          "y_median": 0.7028,
+          "x_q16_q84": [
+            18.8522,
+            22.9211
+          ],
+          "y_q16_q84": [
+            0.6773,
+            0.7265
+          ]
+        },
+        "luminosity_distance__cos_iota": {
+          "psi": 180.0,
+          "rho": -0.02,
+          "axis_ratio": 462.02,
+          "x_median": 1123.5334,
+          "y_median": -0.6783,
+          "x_q16_q84": [
+            828.1427,
+            1406.5151
+          ],
+          "y_q16_q84": [
+            -0.9116,
+            0.5067
+          ]
+        },
+        "redshift__total_mass_source": {
+          "psi": 90.34,
+          "rho": -0.351,
+          "axis_ratio": 62.68,
+          "x_median": 0.2201,
+          "y_median": 21.1577,
+          "x_q16_q84": [
+            0.1673,
+            0.2683
+          ],
+          "y_q16_q84": [
+            19.8076,
+            23.8085
+          ]
+        }
+      }
+    },
+    {
+      "event": "GW200322_091133",
+      "source": "posterior_hdf5",
+      "path": "data/chains/gw_posteriors/GW200322_091133_PE.h5",
+      "posterior_dataset": "C01:Mixed/posterior_samples",
+      "n_samples": 69,
+      "planes": {}
+    }
+  ],
+  "supported": [
+    "Actual GW posterior chains can be reduced to the same value/shape geometry objects used in the cosmology atlas.",
+    "GW190814 is geometrically sharp and asymmetric: its mass plane has rho=-0.945 and axis_ratio=36.73, while mass-ratio/spin has rho=-0.955.",
+    "GW190521_074359 provides a high-mass BBH geometry anchor, including final-mass/final-spin rho=0.322 and axis_ratio=103.75."
+  ],
+  "disfavored": [
+    "The idea that all compact-binary events have interchangeable posterior geometry.",
+    "A first-pass claim of quantum-gravity or no-hair violation; E38 is an observational-geometry test, not a GR-deviation fit."
+  ],
+  "open": [
+    "Extend to more posterior HDF5 files from GWOSC/Zenodo and run event-family clustering.",
+    "For actual GR tests, ingest LVK inspiral-merger-ringdown, ringdown, dispersion, polarization, or parameterized-deviation products.",
+    "For cosmological gravity, use standard-siren distance-redshift likelihoods rather than BBH mass/spin geometry."
+  ],
+  "bottom_line": "Supported: real GW posterior samples can be mapped into the same geometry language, and landmark events occupy visibly different black-hole geometry regimes. Not supported: any claim of quantum-gravity or GR violation from this first geometry pass."
+}

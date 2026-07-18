@@ -1,0 +1,157 @@
+{
+  "prereg": "preregs/E46_parameterized_deviations_prereg.md",
+  "n_params": 10,
+  "n_events": 9,
+  "D1_all_GR_consistent": false,
+  "D2_frac_event_param_consistent": 0.833,
+  "D3_coherent_p05": [
+    "dchi0",
+    "dchi1",
+    "dchi2"
+  ],
+  "D3_coherent_bonferroni": [
+    "dchi0"
+  ],
+  "per_parameter": [
+    {
+      "param": "dchi0",
+      "combined_median": 0.109,
+      "combined_ci90": [
+        0.0403,
+        0.1774
+      ],
+      "GR_inside": false,
+      "n_events": 9,
+      "n_pos": 9,
+      "sign_binom_p": 0.0039,
+      "coherent_p05": true,
+      "coherent_bonf": true
+    },
+    {
+      "param": "dchi1",
+      "combined_median": 0.1733,
+      "combined_ci90": [
+        -0.017,
+        0.3611
+      ],
+      "GR_inside": true,
+      "n_events": 9,
+      "n_pos": 8,
+      "sign_binom_p": 0.0391,
+      "coherent_p05": true,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi2",
+      "combined_median": 0.1133,
+      "combined_ci90": [
+        -0.0052,
+        0.2292
+      ],
+      "GR_inside": true,
+      "n_events": 9,
+      "n_pos": 8,
+      "sign_binom_p": 0.0391,
+      "coherent_p05": true,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi3",
+      "combined_median": -0.0944,
+      "combined_ci90": [
+        -0.1644,
+        -0.0126
+      ],
+      "GR_inside": false,
+      "n_events": 9,
+      "n_pos": 2,
+      "sign_binom_p": 0.1797,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi4",
+      "combined_median": 0.6451,
+      "combined_ci90": [
+        -0.0268,
+        1.3618
+      ],
+      "GR_inside": true,
+      "n_events": 9,
+      "n_pos": 7,
+      "sign_binom_p": 0.1797,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi5l",
+      "combined_median": -0.4021,
+      "combined_ci90": [
+        -0.7494,
+        -0.0318
+      ],
+      "GR_inside": false,
+      "n_events": 9,
+      "n_pos": 4,
+      "sign_binom_p": 1.0,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi6",
+      "combined_median": 0.3983,
+      "combined_ci90": [
+        -0.3097,
+        0.9894
+      ],
+      "GR_inside": true,
+      "n_events": 9,
+      "n_pos": 6,
+      "sign_binom_p": 0.5078,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi6l",
+      "combined_median": -2.5145,
+      "combined_ci90": [
+        -4.5594,
+        -0.2537
+      ],
+      "GR_inside": false,
+      "n_events": 9,
+      "n_pos": 3,
+      "sign_binom_p": 0.5078,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchi7",
+      "combined_median": -1.6162,
+      "combined_ci90": [
+        -3.2755,
+        0.0405
+      ],
+      "GR_inside": true,
+      "n_events": 9,
+      "n_pos": 3,
+      "sign_binom_p": 0.5078,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    },
+    {
+      "param": "dchiMinus2",
+      "combined_median": 0.0004,
+      "combined_ci90": [
+        -0.0003,
+        0.0012
+      ],
+      "GR_inside": true,
+      "n_events": 9,
+      "n_pos": 4,
+      "sign_binom_p": 1.0,
+      "coherent_p05": false,
+      "coherent_bonf": false
+    }
+  ]
+}

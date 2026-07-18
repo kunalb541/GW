@@ -1,0 +1,606 @@
+{
+  "prereg": "preregs/E55_multiwaveform_robustness_prereg.md",
+  "n_events_both_waveforms": 59,
+  "n_elongated": 17,
+  "median_dpsi_chirp_phenom": 9.11,
+  "median_dpsi_chirp_seob": 6.09,
+  "median_dpsi_chirp_phenom_elong": 7.83,
+  "median_dpsi_chirp_seob_elong": 6.03,
+  "median_interwaveform_dpsi": 4.68,
+  "median_interwaveform_dpsi_elong": 3.31,
+  "D1_chirp_law_both_waveforms": true,
+  "D2_orientation_waveform_robust": true,
+  "E45_E46_multiwaveform": "DATA-BLOCKED: GWTC-3 par is FTI/SEOBNR-only (TIGER/IMRPhenom delayed); imr single-waveform",
+  "per_event": [
+    {
+      "event": "GW190403_051519",
+      "psi_phenom": 158.51,
+      "psi_seob": 162.6,
+      "interwaveform_dpsi": 4.09,
+      "axr_phenom": 2.53,
+      "axr_seob": 1.97,
+      "dpsi_chirp_phenom": 12.59,
+      "dpsi_chirp_seob": 4.99
+    },
+    {
+      "event": "GW190408_181802",
+      "psi_phenom": 142.42,
+      "psi_seob": 145.86,
+      "interwaveform_dpsi": 3.45,
+      "axr_phenom": 2.19,
+      "axr_seob": 2.2,
+      "dpsi_chirp_phenom": 3.04,
+      "dpsi_chirp_seob": 1.56
+    },
+    {
+      "event": "GW190412",
+      "psi_phenom": 167.01,
+      "psi_seob": 163.69,
+      "interwaveform_dpsi": 3.31,
+      "axr_phenom": 9.09,
+      "axr_seob": 6.5,
+      "dpsi_chirp_phenom": 0.3,
+      "dpsi_chirp_seob": 2.76
+    },
+    {
+      "event": "GW190503_185404",
+      "psi_phenom": 140.52,
+      "psi_seob": 142.08,
+      "interwaveform_dpsi": 1.55,
+      "axr_phenom": 1.71,
+      "axr_seob": 1.53,
+      "dpsi_chirp_phenom": 7.78,
+      "dpsi_chirp_seob": 4.5
+    },
+    {
+      "event": "GW190512_180714",
+      "psi_phenom": 156.65,
+      "psi_seob": 155.21,
+      "interwaveform_dpsi": 1.44,
+      "axr_phenom": 3.97,
+      "axr_seob": 3.23,
+      "dpsi_chirp_phenom": 0.92,
+      "dpsi_chirp_seob": 2.27
+    },
+    {
+      "event": "GW190513_205428",
+      "psi_phenom": 153.84,
+      "psi_seob": 157.44,
+      "interwaveform_dpsi": 3.6,
+      "axr_phenom": 2.75,
+      "axr_seob": 2.33,
+      "dpsi_chirp_phenom": 3.66,
+      "dpsi_chirp_seob": 3.17
+    },
+    {
+      "event": "GW190514_065416",
+      "psi_phenom": 173.72,
+      "psi_seob": 171.37,
+      "interwaveform_dpsi": 2.36,
+      "axr_phenom": 1.54,
+      "axr_seob": 1.32,
+      "dpsi_chirp_phenom": 26.85,
+      "dpsi_chirp_seob": 24.33
+    },
+    {
+      "event": "GW190517_055101",
+      "psi_phenom": 154.35,
+      "psi_seob": 160.48,
+      "interwaveform_dpsi": 6.13,
+      "axr_phenom": 2.42,
+      "axr_seob": 1.77,
+      "dpsi_chirp_phenom": 0.89,
+      "dpsi_chirp_seob": 13.01
+    },
+    {
+      "event": "GW190519_153544",
+      "psi_phenom": 119.0,
+      "psi_seob": 131.5,
+      "interwaveform_dpsi": 12.5,
+      "axr_phenom": 1.41,
+      "axr_seob": 1.31,
+      "dpsi_chirp_phenom": 31.4,
+      "dpsi_chirp_seob": 18.71
+    },
+    {
+      "event": "GW190521_074359",
+      "psi_phenom": 123.76,
+      "psi_seob": 135.76,
+      "interwaveform_dpsi": 12.0,
+      "axr_phenom": 1.42,
+      "axr_seob": 1.66,
+      "dpsi_chirp_phenom": 20.31,
+      "dpsi_chirp_seob": 7.43
+    },
+    {
+      "event": "GW190527_092055",
+      "psi_phenom": 173.0,
+      "psi_seob": 150.31,
+      "interwaveform_dpsi": 22.69,
+      "axr_phenom": 1.91,
+      "axr_seob": 1.52,
+      "dpsi_chirp_phenom": 20.53,
+      "dpsi_chirp_seob": 0.89
+    },
+    {
+      "event": "GW190620_030421",
+      "psi_phenom": 146.96,
+      "psi_seob": 147.41,
+      "interwaveform_dpsi": 0.45,
+      "axr_phenom": 2.01,
+      "axr_seob": 1.49,
+      "dpsi_chirp_phenom": 7.4,
+      "dpsi_chirp_seob": 1.7
+    },
+    {
+      "event": "GW190630_185205",
+      "psi_phenom": 136.95,
+      "psi_seob": 144.22,
+      "interwaveform_dpsi": 7.26,
+      "axr_phenom": 2.41,
+      "axr_seob": 2.07,
+      "dpsi_chirp_phenom": 9.11,
+      "dpsi_chirp_seob": 4.64
+    },
+    {
+      "event": "GW190701_203306",
+      "psi_phenom": 133.5,
+      "psi_seob": 137.41,
+      "interwaveform_dpsi": 3.92,
+      "axr_phenom": 1.73,
+      "axr_seob": 1.68,
+      "dpsi_chirp_phenom": 11.38,
+      "dpsi_chirp_seob": 7.14
+    },
+    {
+      "event": "GW190706_222641",
+      "psi_phenom": 148.47,
+      "psi_seob": 154.84,
+      "interwaveform_dpsi": 6.38,
+      "axr_phenom": 1.33,
+      "axr_seob": 1.14,
+      "dpsi_chirp_phenom": 7.4,
+      "dpsi_chirp_seob": 1.31
+    },
+    {
+      "event": "GW190707_093326",
+      "psi_phenom": 155.19,
+      "psi_seob": 157.6,
+      "interwaveform_dpsi": 2.42,
+      "axr_phenom": 3.55,
+      "axr_seob": 2.76,
+      "dpsi_chirp_phenom": 9.37,
+      "dpsi_chirp_seob": 6.93
+    },
+    {
+      "event": "GW190708_232457",
+      "psi_phenom": 150.76,
+      "psi_seob": 161.06,
+      "interwaveform_dpsi": 10.3,
+      "axr_phenom": 4.18,
+      "axr_seob": 3.16,
+      "dpsi_chirp_phenom": 5.14,
+      "dpsi_chirp_seob": 6.33
+    },
+    {
+      "event": "GW190720_000836",
+      "psi_phenom": 158.16,
+      "psi_seob": 161.6,
+      "interwaveform_dpsi": 3.44,
+      "axr_phenom": 6.77,
+      "axr_seob": 4.14,
+      "dpsi_chirp_phenom": 4.44,
+      "dpsi_chirp_seob": 5.79
+    },
+    {
+      "event": "GW190727_060333",
+      "psi_phenom": 132.93,
+      "psi_seob": 146.16,
+      "interwaveform_dpsi": 13.23,
+      "axr_phenom": 1.5,
+      "axr_seob": 1.24,
+      "dpsi_chirp_phenom": 10.86,
+      "dpsi_chirp_seob": 2.49
+    },
+    {
+      "event": "GW190728_064510",
+      "psi_phenom": 165.01,
+      "psi_seob": 154.47,
+      "interwaveform_dpsi": 10.54,
+      "axr_phenom": 6.84,
+      "axr_seob": 5.37,
+      "dpsi_chirp_phenom": 13.59,
+      "dpsi_chirp_seob": 6.42
+    },
+    {
+      "event": "GW190731_140936",
+      "psi_phenom": 145.63,
+      "psi_seob": 164.65,
+      "interwaveform_dpsi": 19.02,
+      "axr_phenom": 1.16,
+      "axr_seob": 1.22,
+      "dpsi_chirp_phenom": 1.78,
+      "dpsi_chirp_seob": 17.72
+    },
+    {
+      "event": "GW190805_211137",
+      "psi_phenom": 156.33,
+      "psi_seob": 162.51,
+      "interwaveform_dpsi": 6.18,
+      "axr_phenom": 1.19,
+      "axr_seob": 1.31,
+      "dpsi_chirp_phenom": 7.45,
+      "dpsi_chirp_seob": 14.23
+    },
+    {
+      "event": "GW190910_112807",
+      "psi_phenom": 137.34,
+      "psi_seob": 140.0,
+      "interwaveform_dpsi": 2.66,
+      "axr_phenom": 1.21,
+      "axr_seob": 1.19,
+      "dpsi_chirp_phenom": 6.36,
+      "dpsi_chirp_seob": 3.0
+    },
+    {
+      "event": "GW190915_235702",
+      "psi_phenom": 144.61,
+      "psi_seob": 149.99,
+      "interwaveform_dpsi": 5.39,
+      "axr_phenom": 1.79,
+      "axr_seob": 1.96,
+      "dpsi_chirp_phenom": 0.37,
+      "dpsi_chirp_seob": 4.77
+    },
+    {
+      "event": "GW190916_200658",
+      "psi_phenom": 155.0,
+      "psi_seob": 157.29,
+      "interwaveform_dpsi": 2.29,
+      "axr_phenom": 1.82,
+      "axr_seob": 1.8,
+      "dpsi_chirp_phenom": 0.45,
+      "dpsi_chirp_seob": 2.37
+    },
+    {
+      "event": "GW190924_021846",
+      "psi_phenom": 163.78,
+      "psi_seob": 152.45,
+      "interwaveform_dpsi": 11.33,
+      "axr_phenom": 7.93,
+      "axr_seob": 5.28,
+      "dpsi_chirp_phenom": 7.89,
+      "dpsi_chirp_seob": 3.05
+    },
+    {
+      "event": "GW190925_232845",
+      "psi_phenom": 156.62,
+      "psi_seob": 152.98,
+      "interwaveform_dpsi": 3.64,
+      "axr_phenom": 4.01,
+      "axr_seob": 2.79,
+      "dpsi_chirp_phenom": 11.43,
+      "dpsi_chirp_seob": 8.39
+    },
+    {
+      "event": "GW190930_133541",
+      "psi_phenom": 163.12,
+      "psi_seob": 165.64,
+      "interwaveform_dpsi": 2.52,
+      "axr_phenom": 7.34,
+      "axr_seob": 7.5,
+      "dpsi_chirp_phenom": 12.83,
+      "dpsi_chirp_seob": 6.03
+    },
+    {
+      "event": "GW191103_012549",
+      "psi_phenom": 159.35,
+      "psi_seob": 157.19,
+      "interwaveform_dpsi": 2.17,
+      "axr_phenom": 4.91,
+      "axr_seob": 4.1,
+      "dpsi_chirp_phenom": 10.08,
+      "dpsi_chirp_seob": 9.51
+    },
+    {
+      "event": "GW191105_143521",
+      "psi_phenom": 155.78,
+      "psi_seob": 151.52,
+      "interwaveform_dpsi": 4.25,
+      "axr_phenom": 4.27,
+      "axr_seob": 3.09,
+      "dpsi_chirp_phenom": 8.48,
+      "dpsi_chirp_seob": 6.09
+    },
+    {
+      "event": "GW191109_010717",
+      "psi_phenom": 75.61,
+      "psi_seob": 120.87,
+      "interwaveform_dpsi": 45.27,
+      "axr_phenom": 1.49,
+      "axr_seob": 1.21,
+      "dpsi_chirp_phenom": 70.65,
+      "dpsi_chirp_seob": 24.92
+    },
+    {
+      "event": "GW191113_071753",
+      "psi_phenom": 170.24,
+      "psi_seob": 170.5,
+      "interwaveform_dpsi": 0.26,
+      "axr_phenom": 7.83,
+      "axr_seob": 8.0,
+      "dpsi_chirp_phenom": 1.46,
+      "dpsi_chirp_seob": 0.51
+    },
+    {
+      "event": "GW191126_115259",
+      "psi_phenom": 157.73,
+      "psi_seob": 158.48,
+      "interwaveform_dpsi": 0.75,
+      "axr_phenom": 3.59,
+      "axr_seob": 3.54,
+      "dpsi_chirp_phenom": 9.85,
+      "dpsi_chirp_seob": 10.88
+    },
+    {
+      "event": "GW191127_050227",
+      "psi_phenom": 165.9,
+      "psi_seob": 170.79,
+      "interwaveform_dpsi": 4.89,
+      "axr_phenom": 2.88,
+      "axr_seob": 1.79,
+      "dpsi_chirp_phenom": 2.06,
+      "dpsi_chirp_seob": 16.51
+    },
+    {
+      "event": "GW191129_134029",
+      "psi_phenom": 154.72,
+      "psi_seob": 154.45,
+      "interwaveform_dpsi": 0.27,
+      "axr_phenom": 5.97,
+      "axr_seob": 5.36,
+      "dpsi_chirp_phenom": 3.1,
+      "dpsi_chirp_seob": 6.28
+    },
+    {
+      "event": "GW191204_110529",
+      "psi_phenom": 168.21,
+      "psi_seob": 162.18,
+      "interwaveform_dpsi": 6.03,
+      "axr_phenom": 2.47,
+      "axr_seob": 1.75,
+      "dpsi_chirp_phenom": 21.57,
+      "dpsi_chirp_seob": 15.98
+    },
+    {
+      "event": "GW191204_171526",
+      "psi_phenom": 151.25,
+      "psi_seob": 149.33,
+      "interwaveform_dpsi": 1.91,
+      "axr_phenom": 6.17,
+      "axr_seob": 4.74,
+      "dpsi_chirp_phenom": 2.5,
+      "dpsi_chirp_seob": 3.81
+    },
+    {
+      "event": "GW191215_223052",
+      "psi_phenom": 151.32,
+      "psi_seob": 152.7,
+      "interwaveform_dpsi": 1.37,
+      "axr_phenom": 2.09,
+      "axr_seob": 2.09,
+      "dpsi_chirp_phenom": 6.02,
+      "dpsi_chirp_seob": 6.4
+    },
+    {
+      "event": "GW191216_213338",
+      "psi_phenom": 162.33,
+      "psi_seob": 153.36,
+      "interwaveform_dpsi": 8.97,
+      "axr_phenom": 7.46,
+      "axr_seob": 6.63,
+      "dpsi_chirp_phenom": 9.91,
+      "dpsi_chirp_seob": 6.25
+    },
+    {
+      "event": "GW191222_033537",
+      "psi_phenom": 113.16,
+      "psi_seob": 152.84,
+      "interwaveform_dpsi": 39.68,
+      "axr_phenom": 1.08,
+      "axr_seob": 1.01,
+      "dpsi_chirp_phenom": 30.97,
+      "dpsi_chirp_seob": 9.06
+    },
+    {
+      "event": "GW191230_180458",
+      "psi_phenom": 171.66,
+      "psi_seob": 154.01,
+      "interwaveform_dpsi": 17.65,
+      "axr_phenom": 1.76,
+      "axr_seob": 1.17,
+      "dpsi_chirp_phenom": 26.75,
+      "dpsi_chirp_seob": 8.93
+    },
+    {
+      "event": "GW200112_155838",
+      "psi_phenom": 139.67,
+      "psi_seob": 149.1,
+      "interwaveform_dpsi": 9.43,
+      "axr_phenom": 2.16,
+      "axr_seob": 1.56,
+      "dpsi_chirp_phenom": 4.84,
+      "dpsi_chirp_seob": 7.81
+    },
+    {
+      "event": "GW200128_022011",
+      "psi_phenom": 34.06,
+      "psi_seob": 23.11,
+      "interwaveform_dpsi": 10.95,
+      "axr_phenom": 1.14,
+      "axr_seob": 1.22,
+      "dpsi_chirp_phenom": 70.14,
+      "dpsi_chirp_seob": 59.61
+    },
+    {
+      "event": "GW200129_065458",
+      "psi_phenom": 136.4,
+      "psi_seob": 131.72,
+      "interwaveform_dpsi": 4.68,
+      "axr_phenom": 3.35,
+      "axr_seob": 1.2,
+      "dpsi_chirp_phenom": 9.77,
+      "dpsi_chirp_seob": 7.21
+    },
+    {
+      "event": "GW200202_154313",
+      "psi_phenom": 155.82,
+      "psi_seob": 150.46,
+      "interwaveform_dpsi": 5.36,
+      "axr_phenom": 6.37,
+      "axr_seob": 6.39,
+      "dpsi_chirp_phenom": 9.5,
+      "dpsi_chirp_seob": 5.11
+    },
+    {
+      "event": "GW200208_130117",
+      "psi_phenom": 140.86,
+      "psi_seob": 146.73,
+      "interwaveform_dpsi": 5.87,
+      "axr_phenom": 1.78,
+      "axr_seob": 1.65,
+      "dpsi_chirp_phenom": 5.36,
+      "dpsi_chirp_seob": 1.18
+    },
+    {
+      "event": "GW200209_085452",
+      "psi_phenom": 8.7,
+      "psi_seob": 175.32,
+      "interwaveform_dpsi": 13.39,
+      "axr_phenom": 1.14,
+      "axr_seob": 1.17,
+      "dpsi_chirp_phenom": 44.54,
+      "dpsi_chirp_seob": 31.3
+    },
+    {
+      "event": "GW200210_092254",
+      "psi_phenom": 176.42,
+      "psi_seob": 176.64,
+      "interwaveform_dpsi": 0.22,
+      "axr_phenom": 24.15,
+      "axr_seob": 15.38,
+      "dpsi_chirp_phenom": 1.11,
+      "dpsi_chirp_seob": 1.63
+    },
+    {
+      "event": "GW200216_220804",
+      "psi_phenom": 161.11,
+      "psi_seob": 146.25,
+      "interwaveform_dpsi": 14.85,
+      "axr_phenom": 2.04,
+      "axr_seob": 1.75,
+      "dpsi_chirp_phenom": 8.11,
+      "dpsi_chirp_seob": 5.31
+    },
+    {
+      "event": "GW200219_094415",
+      "psi_phenom": 154.24,
+      "psi_seob": 150.48,
+      "interwaveform_dpsi": 3.76,
+      "axr_phenom": 1.24,
+      "axr_seob": 1.28,
+      "dpsi_chirp_phenom": 9.14,
+      "dpsi_chirp_seob": 5.79
+    },
+    {
+      "event": "GW200220_061928",
+      "psi_phenom": 178.01,
+      "psi_seob": 11.67,
+      "interwaveform_dpsi": 13.65,
+      "axr_phenom": 2.43,
+      "axr_seob": 1.18,
+      "dpsi_chirp_phenom": 30.63,
+      "dpsi_chirp_seob": 45.57
+    },
+    {
+      "event": "GW200220_124850",
+      "psi_phenom": 5.31,
+      "psi_seob": 169.39,
+      "interwaveform_dpsi": 15.92,
+      "axr_phenom": 1.26,
+      "axr_seob": 1.36,
+      "dpsi_chirp_phenom": 39.52,
+      "dpsi_chirp_seob": 22.3
+    },
+    {
+      "event": "GW200224_222234",
+      "psi_phenom": 129.72,
+      "psi_seob": 136.46,
+      "interwaveform_dpsi": 6.74,
+      "axr_phenom": 1.72,
+      "axr_seob": 1.58,
+      "dpsi_chirp_phenom": 13.06,
+      "dpsi_chirp_seob": 5.09
+    },
+    {
+      "event": "GW200225_060421",
+      "psi_phenom": 144.24,
+      "psi_seob": 147.91,
+      "interwaveform_dpsi": 3.67,
+      "axr_phenom": 2.1,
+      "axr_seob": 2.21,
+      "dpsi_chirp_phenom": 1.51,
+      "dpsi_chirp_seob": 1.98
+    },
+    {
+      "event": "GW200302_015811",
+      "psi_phenom": 146.64,
+      "psi_seob": 150.64,
+      "interwaveform_dpsi": 4.0,
+      "axr_phenom": 1.87,
+      "axr_seob": 1.61,
+      "dpsi_chirp_phenom": 10.26,
+      "dpsi_chirp_seob": 2.43
+    },
+    {
+      "event": "GW200306_093714",
+      "psi_phenom": 163.96,
+      "psi_seob": 161.45,
+      "interwaveform_dpsi": 2.51,
+      "axr_phenom": 2.98,
+      "axr_seob": 2.82,
+      "dpsi_chirp_phenom": 9.26,
+      "dpsi_chirp_seob": 5.49
+    },
+    {
+      "event": "GW200308_173609",
+      "psi_phenom": 4.38,
+      "psi_seob": 7.78,
+      "interwaveform_dpsi": 3.4,
+      "axr_phenom": 5.36,
+      "axr_seob": 2.59,
+      "dpsi_chirp_phenom": 20.58,
+      "dpsi_chirp_seob": 26.16
+    },
+    {
+      "event": "GW200311_115853",
+      "psi_phenom": 135.37,
+      "psi_seob": 143.17,
+      "interwaveform_dpsi": 7.8,
+      "axr_phenom": 2.15,
+      "axr_seob": 1.64,
+      "dpsi_chirp_phenom": 7.61,
+      "dpsi_chirp_seob": 1.71
+    },
+    {
+      "event": "GW200316_215756",
+      "psi_phenom": 163.3,
+      "psi_seob": 159.0,
+      "interwaveform_dpsi": 4.29,
+      "axr_phenom": 7.95,
+      "axr_seob": 4.87,
+      "dpsi_chirp_phenom": 7.83,
+      "dpsi_chirp_seob": 10.62
+    }
+  ]
+}

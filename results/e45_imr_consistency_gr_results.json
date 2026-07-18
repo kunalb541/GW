@@ -1,0 +1,207 @@
+{
+  "prereg": "preregs/E45_imr_consistency_gr_prereg.md",
+  "n_events": 18,
+  "D1_combined": {
+    "mean_dev": [
+      -0.035,
+      0.002
+    ],
+    "Q_comb": 0.671,
+    "consistent": true
+  },
+  "D2_per_event": {
+    "n_consistent_Q_lt_0.90": 17,
+    "n_discrepant_Q_gt_0.95": 1,
+    "discrepant": [
+      "S190814bv"
+    ]
+  },
+  "D3_coherence": {
+    "resultant_R": 0.59,
+    "mean_direction_deg": 122.4,
+    "rayleigh_p": 0.0012,
+    "isotropic": false
+  },
+  "per_event": [
+    {
+      "event": "S190814bv",
+      "mx": -0.827,
+      "my": -0.22,
+      "phi_deg": -165.1,
+      "rho": 0.169,
+      "psi": 81.6,
+      "GR_credible_level": 0.992,
+      "sigma_from_GR": 4.77
+    },
+    {
+      "event": "GW170823",
+      "mx": 0.088,
+      "my": 0.678,
+      "phi_deg": 82.6,
+      "rho": 0.379,
+      "psi": 55.6,
+      "GR_credible_level": 0.825,
+      "sigma_from_GR": 2.9
+    },
+    {
+      "event": "S190503bf",
+      "mx": 0.256,
+      "my": 0.629,
+      "phi_deg": 67.8,
+      "rho": 0.504,
+      "psi": 67.9,
+      "GR_credible_level": 0.707,
+      "sigma_from_GR": 1.98
+    },
+    {
+      "event": "GW150914",
+      "mx": 0.08,
+      "my": 0.182,
+      "phi_deg": 66.1,
+      "rho": 0.531,
+      "psi": 30.8,
+      "GR_credible_level": 0.557,
+      "sigma_from_GR": 1.36
+    },
+    {
+      "event": "S190630ag",
+      "mx": -0.084,
+      "my": -0.095,
+      "phi_deg": -131.8,
+      "rho": 0.458,
+      "psi": 25.5,
+      "GR_credible_level": 0.466,
+      "sigma_from_GR": 0.76
+    },
+    {
+      "event": "GW170818",
+      "mx": -0.057,
+      "my": 0.146,
+      "phi_deg": 111.3,
+      "rho": 0.434,
+      "psi": 37.5,
+      "GR_credible_level": 0.255,
+      "sigma_from_GR": 1.02
+    },
+    {
+      "event": "GW170104",
+      "mx": -0.05,
+      "my": -0.053,
+      "phi_deg": -133.3,
+      "rho": 0.502,
+      "psi": 33.5,
+      "GR_credible_level": 0.242,
+      "sigma_from_GR": 0.36
+    },
+    {
+      "event": "S190828j",
+      "mx": -0.062,
+      "my": 0.031,
+      "phi_deg": 153.7,
+      "rho": 0.632,
+      "psi": 39.6,
+      "GR_credible_level": 0.219,
+      "sigma_from_GR": 0.65
+    },
+    {
+      "event": "S190513bm",
+      "mx": -0.111,
+      "my": -0.024,
+      "phi_deg": -168.0,
+      "rho": 0.297,
+      "psi": 24.1,
+      "GR_credible_level": 0.195,
+      "sigma_from_GR": 0.53
+    },
+    {
+      "event": "S200224ca",
+      "mx": 0.12,
+      "my": 0.256,
+      "phi_deg": 64.9,
+      "rho": 0.588,
+      "psi": 63.8,
+      "GR_credible_level": 0.195,
+      "sigma_from_GR": 1.01
+    },
+    {
+      "event": "S200311bg",
+      "mx": -0.169,
+      "my": 0.085,
+      "phi_deg": 153.2,
+      "rho": 0.369,
+      "psi": 22.1,
+      "GR_credible_level": 0.157,
+      "sigma_from_GR": 1.03
+    },
+    {
+      "event": "GW170809",
+      "mx": -0.116,
+      "my": -0.016,
+      "phi_deg": -172.1,
+      "rho": 0.435,
+      "psi": 35.8,
+      "GR_credible_level": 0.148,
+      "sigma_from_GR": 0.61
+    },
+    {
+      "event": "S190408an",
+      "mx": -0.012,
+      "my": 0.018,
+      "phi_deg": 122.9,
+      "rho": 0.405,
+      "psi": 34.0,
+      "GR_credible_level": 0.08,
+      "sigma_from_GR": 0.16
+    },
+    {
+      "event": "GW170814",
+      "mx": -0.032,
+      "my": 0.253,
+      "phi_deg": 97.3,
+      "rho": 0.222,
+      "psi": 83.7,
+      "GR_credible_level": 0.075,
+      "sigma_from_GR": 0.74
+    },
+    {
+      "event": "S200208q",
+      "mx": -0.029,
+      "my": 0.136,
+      "phi_deg": 102.2,
+      "rho": 0.38,
+      "psi": 61.3,
+      "GR_credible_level": 0.032,
+      "sigma_from_GR": 0.53
+    },
+    {
+      "event": "S200129m",
+      "mx": -0.029,
+      "my": 0.048,
+      "phi_deg": 121.7,
+      "rho": 0.505,
+      "psi": 27.7,
+      "GR_credible_level": 0.009,
+      "sigma_from_GR": 0.58
+    },
+    {
+      "event": "S200225q",
+      "mx": 0.027,
+      "my": 0.077,
+      "phi_deg": 70.5,
+      "rho": 0.236,
+      "psi": 61.5,
+      "GR_credible_level": 0.003,
+      "sigma_from_GR": 0.33
+    },
+    {
+      "event": "S190521r",
+      "mx": 0.047,
+      "my": 0.083,
+      "phi_deg": 60.5,
+      "rho": 0.621,
+      "psi": 45.5,
+      "GR_credible_level": 0.0,
+      "sigma_from_GR": 0.57
+    }
+  ]
+}

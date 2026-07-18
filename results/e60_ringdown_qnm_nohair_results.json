@@ -1,0 +1,36 @@
+{
+  "prereg": "preregs/E60_ringdown_qnm_nohair_prereg.md",
+  "n_events": 3,
+  "median_abs_z": 0.78,
+  "n_gt_2sigma": 0,
+  "events_gt_2sigma": [],
+  "combined_z": 0.34,
+  "deviation_frac_pos": 0.67,
+  "coherent": false,
+  "D1_no_event_violation": true,
+  "D2_no_population_deviation": true,
+  "method": "DS_1mode measured 220 freq (no Kerr assumption) vs Berti Kerr f_220(Mf,af) from imr inspiral (independent data); detector frame",
+  "per_event": [
+    {
+      "event": "170104",
+      "f_DS_med": 219.5,
+      "f_Kerr_med": 287.6,
+      "delta_f_frac_med": -0.215,
+      "z_from_Kerr": -0.85
+    },
+    {
+      "event": "170814",
+      "f_DS_med": 525.3,
+      "f_Kerr_med": 290.0,
+      "delta_f_frac_med": 0.772,
+      "z_from_Kerr": 0.78
+    },
+    {
+      "event": "150914",
+      "f_DS_med": 246.8,
+      "f_Kerr_med": 236.6,
+      "delta_f_frac_med": 0.051,
+      "z_from_Kerr": 0.66
+    }
+  ]
+}

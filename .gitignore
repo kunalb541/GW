@@ -9,3 +9,4 @@ data/
 *.toc
 paper/*.pdf
 !paper/manuscript.pdf
+!paper/gw_lab_notebook.pdf

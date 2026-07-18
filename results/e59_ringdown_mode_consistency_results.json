@@ -1,0 +1,244 @@
+{
+  "prereg": "preregs/E59_ringdown_mode_consistency_prereg.md",
+  "n_events": 22,
+  "median_shift_sigma": 1.52,
+  "max_shift_sigma": 6.06,
+  "n_shift_gt_2sigma": 7,
+  "events_gt_2sigma": [
+    "S150914",
+    "S190519bj",
+    "S190521g",
+    "S190521r",
+    "S191109d",
+    "S200129m",
+    "S200224ca"
+  ],
+  "coherence_frac_dMf_neg": 1.0,
+  "coherence_frac_daf_neg": 0.95,
+  "shift_is_coherent_systematic": true,
+  "D2_no_stochastic_violation": true,
+  "interpretation": "coherent all-event down-shift of Mf,af with the overtone = known ringdown-overtone SYSTEMATIC, NOT a no-hair violation; clean no-hair result is E47 (221 deviation params ~0, isotropic)",
+  "note": "shift relative to the 220-fundamental posterior width; 221 shares data with 220 so this is a consistency check, not an independent difference significance",
+  "per_event": [
+    {
+      "event": "S191109d",
+      "Mf_220": 222.3,
+      "af_220": 0.943,
+      "Mf_221": 183.4,
+      "af_221": 0.839,
+      "dMf": -38.92,
+      "daf": -0.104,
+      "shift_in_fundamental_sigma": 6.06
+    },
+    {
+      "event": "S190521g",
+      "Mf_220": 363.9,
+      "af_220": 0.935,
+      "Mf_221": 296.9,
+      "af_221": 0.818,
+      "dMf": -67.06,
+      "daf": -0.117,
+      "shift_in_fundamental_sigma": 4.68
+    },
+    {
+      "event": "S190519bj",
+      "Mf_220": 171.9,
+      "af_220": 0.853,
+      "Mf_221": 128.4,
+      "af_221": 0.556,
+      "dMf": -43.43,
+      "daf": -0.298,
+      "shift_in_fundamental_sigma": 3.56
+    },
+    {
+      "event": "S200129m",
+      "Mf_220": 75.3,
+      "af_220": 0.571,
+      "Mf_221": 67.3,
+      "af_221": 0.565,
+      "dMf": -8.06,
+      "daf": -0.006,
+      "shift_in_fundamental_sigma": 2.93
+    },
+    {
+      "event": "S190521r",
+      "Mf_220": 114.0,
+      "af_220": 0.889,
+      "Mf_221": 90.4,
+      "af_221": 0.725,
+      "dMf": -23.58,
+      "daf": -0.164,
+      "shift_in_fundamental_sigma": 2.66
+    },
+    {
+      "event": "S200224ca",
+      "Mf_220": 109.1,
+      "af_220": 0.81,
+      "Mf_221": 86.8,
+      "af_221": 0.571,
+      "dMf": -22.26,
+      "daf": -0.239,
+      "shift_in_fundamental_sigma": 2.36
+    },
+    {
+      "event": "S150914",
+      "Mf_220": 81.7,
+      "af_220": 0.795,
+      "Mf_221": 67.3,
+      "af_221": 0.614,
+      "dMf": -14.4,
+      "daf": -0.181,
+      "shift_in_fundamental_sigma": 2.31
+    },
+    {
+      "event": "S190513bm",
+      "Mf_220": 87.8,
+      "af_220": 0.74,
+      "Mf_221": 71.4,
+      "af_221": 0.344,
+      "dMf": -16.4,
+      "daf": -0.396,
+      "shift_in_fundamental_sigma": 1.98
+    },
+    {
+      "event": "S191222n",
+      "Mf_220": 134.7,
+      "af_220": 0.632,
+      "Mf_221": 105.2,
+      "af_221": 0.472,
+      "dMf": -29.52,
+      "daf": -0.16,
+      "shift_in_fundamental_sigma": 1.9
+    },
+    {
+      "event": "S190706ai",
+      "Mf_220": 196.5,
+      "af_220": 0.838,
+      "Mf_221": 153.1,
+      "af_221": 0.579,
+      "dMf": -43.47,
+      "daf": -0.259,
+      "shift_in_fundamental_sigma": 1.86
+    },
+    {
+      "event": "S190910s",
+      "Mf_220": 128.6,
+      "af_220": 0.88,
+      "Mf_221": 107.4,
+      "af_221": 0.753,
+      "dMf": -21.17,
+      "daf": -0.126,
+      "shift_in_fundamental_sigma": 1.69
+    },
+    {
+      "event": "S170104",
+      "Mf_220": 70.4,
+      "af_220": 0.753,
+      "Mf_221": 61.5,
+      "af_221": 0.47,
+      "dMf": -8.88,
+      "daf": -0.283,
+      "shift_in_fundamental_sigma": 1.34
+    },
+    {
+      "event": "S190602aq",
+      "Mf_220": 195.1,
+      "af_220": 0.763,
+      "Mf_221": 173.2,
+      "af_221": 0.575,
+      "dMf": -21.88,
+      "daf": -0.188,
+      "shift_in_fundamental_sigma": 1.31
+    },
+    {
+      "event": "S200311bg",
+      "Mf_220": 83.5,
+      "af_220": 0.717,
+      "Mf_221": 69.2,
+      "af_221": 0.55,
+      "dMf": -14.34,
+      "daf": -0.167,
+      "shift_in_fundamental_sigma": 1.2
+    },
+    {
+      "event": "S170823",
+      "Mf_220": 99.2,
+      "af_220": 0.695,
+      "Mf_221": 83.6,
+      "af_221": 0.45,
+      "dMf": -15.61,
+      "daf": -0.245,
+      "shift_in_fundamental_sigma": 1.11
+    },
+    {
+      "event": "S190727h",
+      "Mf_220": 101.3,
+      "af_220": 0.564,
+      "Mf_221": 98.6,
+      "af_221": 0.628,
+      "dMf": -2.77,
+      "daf": 0.065,
+      "shift_in_fundamental_sigma": 0.95
+    },
+    {
+      "event": "S190828j",
+      "Mf_220": 96.9,
+      "af_220": 0.923,
+      "Mf_221": 82.3,
+      "af_221": 0.836,
+      "dMf": -14.65,
+      "daf": -0.087,
+      "shift_in_fundamental_sigma": 0.9
+    },
+    {
+      "event": "S190512at",
+      "Mf_220": 57.1,
+      "af_220": 0.599,
+      "Mf_221": 41.3,
+      "af_221": 0.458,
+      "dMf": -15.8,
+      "daf": -0.141,
+      "shift_in_fundamental_sigma": 0.54
+    },
+    {
+      "event": "S170814",
+      "Mf_220": 61.7,
+      "af_220": 0.544,
+      "Mf_221": 56.2,
+      "af_221": 0.535,
+      "dMf": -5.45,
+      "daf": -0.009,
+      "shift_in_fundamental_sigma": 0.51
+    },
+    {
+      "event": "S190408an",
+      "Mf_220": 56.5,
+      "af_220": 0.621,
+      "Mf_221": 51.0,
+      "af_221": 0.509,
+      "dMf": -5.51,
+      "daf": -0.112,
+      "shift_in_fundamental_sigma": 0.46
+    },
+    {
+      "event": "S190915ak",
+      "Mf_220": 73.8,
+      "af_220": 0.458,
+      "Mf_221": 72.0,
+      "af_221": 0.421,
+      "dMf": -1.81,
+      "daf": -0.037,
+      "shift_in_fundamental_sigma": 0.16
+    },
+    {
+      "event": "S190708ap",
+      "Mf_220": 37.9,
+      "af_220": 0.402,
+      "Mf_221": 35.1,
+      "af_221": 0.369,
+      "dMf": -2.75,
+      "daf": -0.033,
+      "shift_in_fundamental_sigma": 0.14
+    }
+  ]
+}

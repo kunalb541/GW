@@ -1,0 +1,71 @@
+{
+  "prereg": "preregs/E44_chieff_hierarchical_prereg.md",
+  "n_events": 75,
+  "flat_effective_prior": {
+    "mu": {
+      "map": 0.06,
+      "ci90": [
+        0.038,
+        0.078
+      ],
+      "median": 0.058
+    },
+    "sigma": {
+      "map": 0.045,
+      "ci90": [
+        0.026,
+        0.067
+      ],
+      "median": 0.044
+    },
+    "f_neg": {
+      "ci90": [
+        0.01,
+        0.233
+      ],
+      "median": 0.093
+    },
+    "truncated_best": {
+      "mu": 0.0,
+      "sigma": 0.072
+    },
+    "delta_lnL": -1.0,
+    "D1_pass": false,
+    "D2_pass": false,
+    "D3_pass": false
+  },
+  "prior_reweighted": {
+    "mu": {
+      "map": 0.09,
+      "ci90": [
+        0.063,
+        0.12
+      ],
+      "median": 0.09
+    },
+    "sigma": {
+      "map": 0.061,
+      "ci90": [
+        0.033,
+        0.115
+      ],
+      "median": 0.067
+    },
+    "f_neg": {
+      "ci90": [
+        0.004,
+        0.232
+      ],
+      "median": 0.094
+    },
+    "truncated_best": {
+      "mu": 0.0,
+      "sigma": 0.123
+    },
+    "delta_lnL": -0.74,
+    "D1_pass": false,
+    "D2_pass": false,
+    "D3_pass": false
+  },
+  "note": "flat = locked primary (conservative, biases sigma low); reweighted = pre-anticipated proper analysis (seed 44)"
+}

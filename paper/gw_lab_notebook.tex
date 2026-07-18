@@ -1,0 +1,205 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{longtable}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\newcommand{\entry}[2]{\vspace{5pt}\noindent\textbf{#1}\quad #2\par}
+\newcommand{\grouphead}[1]{\vspace{9pt}\noindent\rule{\linewidth}{0.4pt}\\[-2pt]{\small\textbf{#1}}\\[-4pt]\rule{\linewidth}{0.4pt}\par\vspace{2pt}}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{document}
+{\large\textbf{GW --- lab notebook (gravitational-wave program)}}\\
+K. Bhatia \quad ORCID 0009-0007-4447-6325 \quad repo: GW (ported from kunalb541/cosmo2, E-numbering preserved)\\
+Data of record: GWTC-2.1/3 PE (GWOSC/Zenodo, 76 events); GWTC-4.0 PE (Zenodo 16053484, 86 events);
+LVK TGR products (Zenodo 17461225: imr/par/rin/liv); GWTC-3 cosmology icarogw (Zenodo 5645777);
+PTA chains: NANOGrav 15yr fig-1 release, EPTA DR2 (Zenodo 8091568), PPTA DR3 (github).
+Every battery locked-preregistered before running; every headline independently re-derived;
+numbers of record in \texttt{results/}, per-battery detail in \texttt{reports/}.
+
+\grouphead{Black-hole posterior geometry: the event atlas and its laws (E38, E40--E44)}
+
+\entry{E38 GW posterior-geometry atlas.}{Value/shape geometry on real compact-binary posteriors:
+all 76 confident GWTC-1/2.1/3 events (1.54M samples; GWOSC/Zenodo PE releases), 6 black-hole planes
+each --- $(m_1,m_2)$, $(\mathcal{M},q)$, $(q,\chi_{\rm eff})$, $(M_f,a_f)$, $(d_L,\cos\iota)$,
+$(z,M_{\rm tot})$; $74/76$ produce all six. The foundation for E40--E47.}
+
+\entry{E40 GW chirp-mass lawfulness.}{Is the $(m_1,m_2)$ posterior degeneracy just the
+constant-chirp-mass line? Predict each event's orientation from the constant-$\mathcal{M}$ tangent
+at its median masses, vs a constant-total-mass null, 75 events. PASS: median $|\Delta\psi_{\rm
+chirp}|=7.49^\circ$ vs total-mass $20.38^\circ$; chirp wins $61/75$; on the elongated subset
+(axis ratio $\ge3$, $n{=}28$) $4.68^\circ$; Spearman(error, axis-ratio)$=-0.42$ (more elongated
+$\to$ tighter, as predicted). A rare POSITIVE geometric-lawfulness result --- geometry is lawful
+where a dominant physical combination (chirp mass) exists.}
+
+\entry{E41 GW plane lawfulness map.}{A-priori correlation-sign predictions for all 6 planes,
+derived by 12 physicist/verifier agents blind to the data, tested against measured within-event
+$\rho$ (75 events). 3/6 HIT:}
+
+\entry{E42 BH population + precision lawfulness.}{Precision test: chirp-mass fractional precision
+$\sigma_{\mathcal M}/\mathcal M$ vs SNR (75 events). PASS: $r=-0.50$ ($p{=}7{\times}10^{-7}$), OLS
+slope $-1.22$ (Fisher $-1$), and partial correlation with $\log\mathcal M$ at fixed SNR $=+0.94$
+(the cycle-count law $N\propto\mathcal{M}^{-5/3}$). Posterior SIZE is lawful --- completing
+orientation (E40) $+$ correlation (E41) $+$ size (E42). Population map: $\chi_{\rm eff}$ mean
+$+0.076$, $36\%$ median-negative, $m_1$ peaks near $10$ and $35\,M_\odot$, 7 IMBH-scale remnants,
+1 BNS; the geometric outliers are the physically extreme events (GW190814 $q{=}0.11$, GW191219
+$q{=}0.04$ NSBH, GW200115 NSBH, GW190425 BNS).}
+
+\entry{E43 $\chi_{\rm eff}$ per-event negatives.}{Does any event securely have $\chi_{\rm eff}<0$
+(dynamical-formation signature)? From the full posteriors (75 events): $0$ events with
+$P(\chi_{\rm eff}<0)>0.90$ (GW191109 sits at exactly $0.900$, 90\% CI $[-0.60,+0.12]$ spans 0),
+$0$ with a 95\% CI below 0. NULL: E42's $36\%$ median-negative is largely measurement scatter, not
+per-event-secure negatives.}
+
+\entry{E44 $\chi_{\rm eff}$ hierarchical.}{Does the POPULATION require support below 0? Gaussian
+fit (flat and induced-prior-reweighted, 75 events) $+$ a positive-truncation comparison. $\mu\approx
+0.06$--$0.09$, $\sigma\approx0.045$--$0.061$, negative fraction median $\sim9\%$ --- but a
+$\chi_{\rm eff}\ge0$ truncated population fits as well or better ($\Delta\ln L=-1.0/-0.74$), so the
+negative tail is a Gaussian-tail artifact, NOT required. Reinforces E43. (Does not overturn the
+LVK negative tail: a simplified pipeline --- Gaussian-only, approximate prior, no selection
+function --- simply does not independently demand it.)}
+
+\grouphead{Testing general relativity with black holes (E45--E47, E55, E57--E60)}
+
+\entry{E45 IMR-consistency test.}{LVK GWTC-3 Tests-of-GR: the inspiral- vs post-inspiral-inferred
+final mass/spin, deviation $(\Delta M_f/M_f,\Delta a_f/a_f)$, GR $=(0,0)$, 18 events. GR UPHELD ---
+$D_1$ combined deviation $(-0.035,+0.002)$, GR at credible level $0.671$; $D_2$ $17/18$ consistent
+(outlier GW190814 has an absent post-inspiral, a known systematic). $D_3$ (the framework's added
+test): the mean-deviation directions are COHERENT (Rayleigh $p=0.001$, $13/18$ with positive
+final-spin deviation), only partly along the shared degeneracy --- a coherent sub-threshold
+waveform systematic that per-event tests miss.}
+
+\entry{E46 parameterized PN deviations.}{Fractional PN inspiral-phase deviations
+$\delta\hat\varphi_i$ (GR $=0$), 9 events $\times$ 10 coefficients (SEOBNRv4). GR NOT violated. The
+cross-event sign-coherence test isolates \texttt{dchi0} (leading 0PN): $9/9$ events positive,
+Bonferroni $p=0.004$, combined $+0.109\,[0.040,0.177]$ excluding 0 --- the documented low-PN
+WAVEFORM SYSTEMATIC of a single-waveform analysis, not new physics. The non-coherent combined
+exclusions (\texttt{dchi3/5l/6l}, only $2$--$4/9$ positive) are naive-product artifacts the
+coherence test correctly discounts. Single waveform; multi-waveform robustness (not run) would
+confirm the systematic origin.}
+
+\entry{E47 ringdown no-hair test.}{Black-hole spectroscopy: fractional deviation of the 221
+overtone frequency/damping $(\delta f,\delta\tau)$ from the Kerr prediction, GR $=(0,0)$, 22 events.
+GR/Kerr UPHELD --- $D_1$ combined $0.75\sigma$ from GR ($Q=0.246$, via a robust Gaussian product);
+$D_2$ $22/22$ consistent; $D_3$ ISOTROPIC (Rayleigh $p=0.79$), no coherent deviation (unlike
+E45/E46 --- the coherent systematics are inspiral-specific, absent in the overtone). A first-pass
+histogram-density product spuriously reported a $99.9\%$ ``no-hair violation'' that contradicted
+$D_2/D_3$ (an event at $Q{=}0.987$ was only $0.25\sigma$ from GR); the Mahalanobis cross-check
+caught the binning artifact and the Gaussian product corrects it.}
+
+\entry{E55 multi-waveform robustness.}{E40's chirp-mass orientation across two independent waveform
+families (IMRPhenomXPHM vs SEOBNRv4PHM, 59 events): PASS --- the law holds for both (median
+$|\Delta\psi_{\rm chirp}|$ $9.1^\circ/6.1^\circ$) and the orientations agree to $3.3^\circ$
+(elongated). Real geometry is waveform-robust; E46's low-PN \texttt{dchi0} coherence, by contrast,
+is a known waveform systematic (would not survive). DATA-BLOCK (honest): a direct same-event
+multi-waveform test of the E45/E46 GR-test coherences is impossible with GWTC-3 (the parameterized
+set is FTI/SEOBNR-only; TIGER/IMRPhenom was delayed) --- would need the GWTC-2 (different events).}
+
+\entry{E57 black-hole area theorem.}{Hawking's 2nd law from GWTC-3: $A_{\rm final}\ge A_{\rm initial}$
+using the inspiral progenitors (initial areas) vs the ringdown remnant (final area), disjoint/
+independent (Isi 2021 setup). Only 4 loud events carry a ringdown remnant. HELD: no violations, area
+increases $5$--$79\%$, GW170104 strong single-event confirmation $0.92$, stacked $0.92\sigma$. Honest:
+crude independent-pairing + broad inspiral spin priors give GW150914 $P{=}0.74$, below Isi's $0.97$ --
+a consistency check, not a stringent bound.}
+
+\entry{E58 massive graviton / Lorentz-violation.}{GW-propagation gravity test: modified dispersion
+$E^2=p^2c^2+A\,p^\alpha$ over 12 events $\times$ 8 orders ($\alpha{=}0$ = graviton mass). GR UPHELD:
+no Lorentz-violation/dispersion signal in any event or order. Graviton mass (per-event, robust): best
+single-event $m_g < 6.7\times10^{-24}$ eV/$c^2$, median $1.8\times10^{-23}$ (LVK combined $1.27\times
+10^{-23}$). Honesty catch: a naive posterior-product combined bound gave an absurd $5.9\times10^{-27}$
+(3 orders too tight, grid-unstable) --- LVK use a flat-in-$A$ prior and the prior samples are empty in
+the release, so it cannot be divided out; the per-event bounds are reported and the LVK combined quoted,
+not a fabricated number.}
+
+\entry{E59 ringdown mode consistency.}{Does adding the 221 overtone shift the remnant $(M_f,a_f)$ from
+the 220-fundamental value? rin.zip Kerr\_220 vs plain Kerr\_221, 22 events. A naive test ``fails'' (7
+events $>2\sigma$, max $6.1$), BUT the shift is COHERENT --- $M_f$ decreases in $22/22$ ($100\%$) and
+$a_f$ in $21/22$ ($95\%$) with the overtone. A uniform all-event down-shift is the known ringdown-
+overtone SYSTEMATIC (start-time/modeling; the GW150914 overtone controversy), NOT a no-hair violation.
+The coherence lens (as in E45/E46) prevents a false violation claim; the clean no-hair result remains
+E47 (221 deviation params $\sim0$, isotropic).}
+
+\entry{E60 model-independent ringdown no-hair.}{The strongest-in-principle ringdown test: the
+MEASURED 220 QNM frequency (damped-sinusoid fit, no Kerr assumption) vs the Kerr prediction
+$f_{220}(M_f,a_f)$ from the INSPIRAL remnant (Berti fit) --- independent data. Kerr CONSISTENT: no
+event deviates $>2\sigma$ (max $|z|{=}0.85$), combined $0.34\sigma$. GW150914 clean: Kerr $236.6$ vs
+measured $246.8$ Hz ($+5\%$). Weak (only 3 events have both a DS ringdown and an inspiral remnant;
+GW170814's DS frequency is broad/poorly constrained), GW150914 carries the confirmation. Ringdown
+no-hair trilogy: E47 (deviation params $\sim0$) + E59 (remnant shift = systematic) + E60 (frequency
+matches Kerr) all uphold the Kerr nature.}
+
+\grouphead{Deriving the mass-plane law; the curved chirp-mass law (E65, E67)}
+
+\entry{E65 the E40 law derived --- locked Fisher-rotation REFUTED; the posterior IS the constant-$\mathcal{M}_c$ curve.}{
+Locked hypothesis: E40's residual pattern (heavy events fail toward constant-$M_\mathrm{tot}$) is a
+Fisher-mixture rotation --- inspiral cycles measure $\mathcal{M}_c$, the merger band measures
+$M_\mathrm{tot}$, so orientation should rotate with detector-frame mass. Model: two-direction Fisher
+mixture, analytic aLIGO PSD, one constant $\kappa$ fit ONLY on the 14 locked E40-prereg events,
+scored out-of-sample on the other 61. OUTCOME: D1 marginal pass ($7.45$ vs $7.72^\circ$), D2 FAIL,
+D3 (parameter-free sign test) FAIL decisively --- measured $\psi$ does NOT sit between the chirp and
+total tangents; rotation fractions are mostly NEGATIVE (light elongated events overshoot PAST the
+chirp tangent, away from total), a sign no rotation model can produce. What the failure revealed
+(post-hoc, labelled): the posterior lies along the constant-$\mathcal{M}_c$ CURVE; the principal
+axis of a curved arc is its chord, not the median-point tangent. Zero-free-parameter curved law
+(uses only the $\mathcal{M}_c$ median $+$ $q$ marginal): median error $4.85$ vs $7.49^\circ$
+(all 75), $\mathbf{0.81}$ vs $4.68^\circ$ (elongated, $6\times$); GW190728's $14^\circ$ ``violation''
+reproduced to $1^\circ$. On-record GWTC-4 out-of-sample prediction: $<2^\circ$ for elongated O4a
+events. 5 contract tests; transient errno-60 read handled by retry; headlines re-derived by hand.}
+
+\entry{E67 GWTC-4 out-of-sample: the curved chirp-mass law PASSES at $1.26^\circ$.}{The E65
+prediction --- locked on record (commit 8d09cbf) from GWTC-1/2.1/3 data only, prereg pushed BEFORE
+any GWTC-4 file was opened --- scored on the fully disjoint GWTC-4.0 O4a catalog (Zenodo 16053484;
+86 events, all processed, zero dropped, all files h5py-validated). \textbf{D1 PASS: median
+$|\psi_\mathrm{curve}-\psi_\mathrm{meas}| = 1.26^\circ$ on the 19 elongated events (threshold
+$2^\circ$)} --- 18 of 19 land at $0.2$--$3.3^\circ$ while the tangent carries systematic
+$4$--$11^\circ$ errors that the curvature term removes (GW231118\_090602: $10.7\to0.5$;
+GW231020: $8.0\to0.2$; GW230529 mass-gap: $2.9\to0.3$). D2 PASS: curve beats tangent on all 86
+($7.53$ vs $9.36^\circ$). D3: the E40 tangent law itself replicates out-of-sample ($86\%$ wins vs
+$81\%$; Spearman $-0.40$ vs $-0.42$). The E65 finding is hereby PROMOTED from post-hoc to
+out-of-sample confirmed: the $(m_1,m_2)$ posterior geometry of GW events is the
+constant-$\mathcal{M}_c$ curve (zero free parameters --- each prediction uses only the event's own
+median source $\mathcal{M}_c$ and $q$ marginal). Headlines re-derived independently + one event
+recomputed end-to-end by hand (exact match).}
+
+\grouphead{Gravitational-wave cosmology: the spectral-siren lever (E66)}
+
+\entry{E66 spectral-siren H0 obstruction --- REFUTED at GWTC-3 precision.}{Radical claim (E61's
+obstruction logic on GW): the spectral-siren H0 program is blocked by the $\sim\!33\,M_\odot$
+mass-peak location $\mu_g$ acting as an uncalibrated ruler. Test: linear-response couplings on the
+REAL LVK GWTC-3 joint cosmology$+$population posterior (icarogw release, $n=13{,}533$; power-law$+$
+peak, restricted flat-$\Lambda$CDM). Locked stop-and-diagnose fired mid-run: the multivariate
+response $C_{AB}C_{BB}^{-1}$ (partial) disagreed with the mandatory decile cross-check (marginal)
+--- an apples-to-oranges comparison in the implementation, caught exactly as the two-estimator rule
+intends; fixed to the marginal degeneracy track, after which all sanity gates pass. RESULT: a
+$4\,M_\odot$ coherent $\mu_g$ drift moves $H_0$ by only $-0.51$ km/s/Mpc ($<1$ $\Rightarrow$
+REFUTED; robust $-0.41/-0.32$ across SNR cuts) --- an order of magnitude below the CMB-vs-SH0ES gap
+and inside the chain's own $\pm3.3$ statistical error. What survives: $\mu_g$ IS the single largest
+systematic lever (mass group $0.38$ vs rate group $0.22$ km/s/Mpc per $1\sigma$), so the obstruction
+becomes live when spectral-siren precision reaches $\sim\!1$ km/s/Mpc (O5/XG) --- then an
+independently pinned or $z$-dependent peak is mandatory. Conservative caveat: the restricted
+$H_0\in[65,77]$ prior compresses couplings (lower bounds), but the verdict does not hinge on it.}
+
+\grouphead{The nanohertz band: the GW background across pulsar-timing arrays (E68)}
+
+\entry{E68 cross-PTA GWB anatomy --- pure degeneracy-sliding; $\gamma$ marches with time span.}{
+First value/shape battery in the nanohertz band, on real validated chains: NANOGrav 15yr
+(HD-correlated), EPTA DR2full (HD), PPTA DR3 (CRN), + EPTA DR2new as robustness; CPTA has no
+public GWB chain. D1: all pairs mutually consistent ($1.0$--$1.8\sigma$), Gaussian-faithful
+(sliced-W ratios $0.98$--$1.01$). D2 HEADLINE: the constraint geometry is UNIVERSAL
+($\rho(A,\gamma) = -0.85$..$-0.95$, $\psi = 110$--$116^\circ$ --- one measurement kernel) and the
+pairwise mean offsets lie \textbf{94.6--99.9\%} along the common $A$--$\gamma$ degeneracy axis
+(mean $0.98$; locked threshold $2/3$) $\Rightarrow$ classified degeneracy-sliding: everything the
+PTAs disagree about lives along the direction a common power-law fit slides when read over
+different bands. D3: the SMBHB circular prediction $\gamma = 13/3$ is excluded $>2\sigma$ by
+NANOGrav ALONE ($z=+3.03$; EPTA-full $+0.29$, PPTA $+1.25$) --- the SH0ES pattern (E52): one
+experiment carries the narrative; no combined number fabricated (E58 lesson). POST-HOC (labelled):
+$\hat\gamma$ is STRICTLY MONOTONIC in observing span ($10.3\to24.7$ yr: $2.79\to3.25\to3.87\to4.21$),
+including EPTA's internal DR2new-vs-DR2full split ($1.89\sigma$, same telescopes, offset also along
+the degeneracy) --- the coherent signature of a spectrum that flattens at high frequency relative to
+a single power law (or a span-correlated systematic). Successor prediction on record: longer-span
+subsets of the same array should fit systematically steeper $\gamma$ (preregisterable at IPTA DR3 /
+NG 20yr). 4 contract tests; every headline independently re-derived; all probe values match the
+publications.}
+
+\end{document}

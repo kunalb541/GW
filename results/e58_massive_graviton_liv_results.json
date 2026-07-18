@@ -1,0 +1,168 @@
+{
+  "prereg": "preregs/E58_massive_graviton_liv_prereg.md",
+  "n_events": 12,
+  "graviton_per_event": {
+    "S191129u": {
+      "log10lambda_g_lower_90": 16.32,
+      "q95": 25.42,
+      "max": 26.0,
+      "m_g_upper_eV": 5.987574513734998e-23
+    },
+    "S191204r": {
+      "log10lambda_g_lower_90": 16.47,
+      "q95": 25.52,
+      "max": 26.0,
+      "m_g_upper_eV": 4.19176247699599e-23
+    },
+    "S191215w": {
+      "log10lambda_g_lower_90": 17.03,
+      "q95": 25.54,
+      "max": 26.0,
+      "m_g_upper_eV": 1.1520655722127861e-23
+    },
+    "S191216ap": {
+      "log10lambda_g_lower_90": 15.95,
+      "q95": 25.37,
+      "max": 26.0,
+      "m_g_upper_eV": 1.3805991264377381e-22
+    },
+    "S191222n": {
+      "log10lambda_g_lower_90": 17.2,
+      "q95": 25.53,
+      "max": 26.0,
+      "m_g_upper_eV": 7.891154147386943e-24
+    },
+    "S200129m": {
+      "log10lambda_g_lower_90": 16.42,
+      "q95": 25.5,
+      "max": 26.0,
+      "m_g_upper_eV": 4.71035921887397e-23
+    },
+    "S200202ac": {
+      "log10lambda_g_lower_90": 16.49,
+      "q95": 25.5,
+      "max": 26.0,
+      "m_g_upper_eV": 3.990293000379705e-23
+    },
+    "S200208q": {
+      "log10lambda_g_lower_90": 17.06,
+      "q95": 25.54,
+      "max": 26.0,
+      "m_g_upper_eV": 1.0801411806046069e-23
+    },
+    "S200219ac": {
+      "log10lambda_g_lower_90": 17.27,
+      "q95": 25.52,
+      "max": 26.0,
+      "m_g_upper_eV": 6.727869719635939e-24
+    },
+    "S200224ca": {
+      "log10lambda_g_lower_90": 16.95,
+      "q95": 25.51,
+      "max": 26.0,
+      "m_g_upper_eV": 1.3987968862096114e-23
+    },
+    "S200225q": {
+      "log10lambda_g_lower_90": 16.82,
+      "q95": 25.49,
+      "max": 26.0,
+      "m_g_upper_eV": 1.893070653023302e-23
+    },
+    "S200311bg": {
+      "log10lambda_g_lower_90": 16.88,
+      "q95": 25.52,
+      "max": 26.0,
+      "m_g_upper_eV": 1.632191751634688e-23
+    }
+  },
+  "best_single_event_m_g_eV": 6.727869719635939e-24,
+  "median_event_m_g_eV": 1.762631202328995e-23,
+  "naive_combined_m_g_eV_PRIOR_DEPENDENT": 5.88096091189247e-27,
+  "LVK_GWTC3_combined_m_g_eV": 1.27e-23,
+  "GR_consistent_no_LIV": true,
+  "liv_per_alpha": {
+    "alpha=0": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": 16.85,
+        "best_event": 17.27
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": 16.67,
+        "best_event": 16.87
+      }
+    },
+    "alpha=0.5": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": 19.9,
+        "best_event": 20.61
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": 19.63,
+        "best_event": 20.06
+      }
+    },
+    "alpha=1": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": 26.41,
+        "best_event": 27.08
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": 26.0,
+        "best_event": 26.37
+      }
+    },
+    "alpha=1.5": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": 44.77,
+        "best_event": 46.03
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": 44.63,
+        "best_event": 44.79
+      }
+    },
+    "alpha=2.5": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": -39.55,
+        "best_event": -39.01
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": -39.64,
+        "best_event": -39.43
+      }
+    },
+    "alpha=3": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": -16.78,
+        "best_event": -16.42
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": -16.83,
+        "best_event": -16.75
+      }
+    },
+    "alpha=3.5": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": -14.58,
+        "best_event": -14.44
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": -14.6,
+        "best_event": -14.56
+      }
+    },
+    "alpha=4": {
+      "Aplus": {
+        "median_event_log10lambda_lower_90": -7.78,
+        "best_event": -7.59
+      },
+      "Aminus": {
+        "median_event_log10lambda_lower_90": -7.78,
+        "best_event": -7.69
+      }
+    }
+  },
+  "D1_GR_consistent": true,
+  "D2_graviton_bound_order": true,
+  "combination_caveat": "LVK use flat-in-A prior; prior samples empty in release; naive posterior-product assumes flat-in-log10lambda and is NOT the LVK combined bound"
+}

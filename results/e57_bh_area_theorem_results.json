@@ -1,0 +1,48 @@
+{
+  "prereg": "preregs/E57_bh_area_theorem_prereg.md",
+  "n_events": 4,
+  "n_strong_confirm": 1,
+  "n_violations": 0,
+  "violation_events": [],
+  "stacked_combined_z_sigma": 0.92,
+  "D1_no_violation": true,
+  "D2_strong_confirmation": true,
+  "per_event": [
+    {
+      "event": "GW170104",
+      "P_area_theorem_holds": 0.916,
+      "median_frac_area_increase": 0.793,
+      "A_init_median": 69507.2,
+      "A_final_median": 125899.9,
+      "z_deltaA": 1.35,
+      "n_pairs": 16872
+    },
+    {
+      "event": "GW150914",
+      "P_area_theorem_holds": 0.7378,
+      "median_frac_area_increase": 0.224,
+      "A_init_median": 130030.6,
+      "A_final_median": 162369.7,
+      "z_deltaA": 0.24,
+      "n_pairs": 16523
+    },
+    {
+      "event": "S190814bv",
+      "P_area_theorem_holds": 0.7247,
+      "median_frac_area_increase": 0.25,
+      "A_init_median": 27512.9,
+      "A_final_median": 34689.1,
+      "z_deltaA": 0.27,
+      "n_pairs": 24916
+    },
+    {
+      "event": "GW170814",
+      "P_area_theorem_holds": 0.5295,
+      "median_frac_area_increase": 0.047,
+      "A_init_median": 83777.3,
+      "A_final_median": 95567.3,
+      "z_deltaA": -0.02,
+      "n_pairs": 25813
+    }
+  ]
+}
