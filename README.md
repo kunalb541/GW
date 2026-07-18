@@ -46,12 +46,20 @@ GW/
 ├── src/        self-contained analysis code (ported + frozen from cosmo2)
 ├── results/    numbers of record (JSON)
 ├── reports/    lab-notebook reports
-├── docs/       SCOPE (paper plan), DATA_AVAILABILITY
+├── docs/       WORKFLOW (battery discipline), TESTING, HANDOFF, SCOPE, DATA_AVAILABILITY
 ├── paper/      manuscript
 ├── scripts/    data fetchers
 ├── tests/      contract tests
 └── data/       chains/posteriors (gitignored)
 ```
+
+## Working in this repo
+
+Start with [`docs/WORKFLOW.md`](docs/WORKFLOW.md) (the locked-prereg battery cycle + the
+GW-specific rules learned the hard way), [`docs/TESTING.md`](docs/TESTING.md) (run: `python3 -m
+pytest tests/ -q`; 17 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
+state, data routes, next steps), and [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md)
+(every source pinned with record numbers). Next free experiment number: **E71**.
 
 ## License
 
