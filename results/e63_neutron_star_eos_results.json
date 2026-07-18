@@ -1,0 +1,247 @@
+{
+  "prereg": "preregs/E63_neutron_star_eos_prereg.md",
+  "probes": {
+    "Riley2019 (X-PSI ST+PST)": {
+      "star": "J0030",
+      "kind": "xray",
+      "M": 1.336,
+      "R": 12.7,
+      "sigma_M": 0.146,
+      "sigma_R": 1.12,
+      "rho_MR": 0.837,
+      "axis_ratio": 14.13,
+      "N": 12242
+    },
+    "Miller2019 2-oval (2spot)": {
+      "star": "J0030",
+      "kind": "xray",
+      "M": 1.45,
+      "R": 13.35,
+      "sigma_M": 0.167,
+      "sigma_R": 1.24,
+      "rho_MR": 0.891,
+      "axis_ratio": 16.53,
+      "N": 400000
+    },
+    "Miller2019 3-oval (3spot)": {
+      "star": "J0030",
+      "kind": "xray",
+      "M": 1.443,
+      "R": 13.09,
+      "sigma_M": 0.149,
+      "sigma_R": 1.17,
+      "rho_MR": 0.857,
+      "axis_ratio": 15.34,
+      "N": 1000000
+    },
+    "Riley2021 (X-PSI STU)": {
+      "star": "J0740",
+      "kind": "xray",
+      "M": 2.071,
+      "R": 12.3,
+      "sigma_M": 0.065,
+      "sigma_R": 0.94,
+      "rho_MR": 0.294,
+      "axis_ratio": 15.18,
+      "N": 41212
+    },
+    "Miller2021 (NICER+XMM)": {
+      "star": "J0740",
+      "kind": "xray",
+      "M": 2.093,
+      "R": 14.05,
+      "sigma_M": 0.09,
+      "sigma_R": 2.08,
+      "rho_MR": 0.211,
+      "axis_ratio": 23.54,
+      "N": 1600920
+    },
+    "GW170817 (tidal->C-Love)": {
+      "star": "GW170817",
+      "kind": "gw",
+      "M": 1.369,
+      "R": 11.35,
+      "sigma_M": 0.128,
+      "sigma_R": 1.87,
+      "rho_MR": 0.276,
+      "axis_ratio": 15.23,
+      "N": 16156
+    }
+  },
+  "D1_analysis_dependence": {
+    "Riley2019 (X-PSI ST+PST) | Miller2019 2-oval (2spot)": {
+      "sigma": 0.74,
+      "value_raw": 0.4343,
+      "shape_raw": 0.0151,
+      "vf_raw": 0.966,
+      "vf_joint_whitened": 0.955,
+      "vf_orientation_only": 0.957,
+      "delta_rho": 0.053,
+      "rho_A": 0.837,
+      "rho_B": 0.891,
+      "vol_ratio_B_over_A": 1.05,
+      "sliced_emp": 0.227,
+      "sliced_gauss": 0.2383,
+      "nongauss_ratio": 0.953,
+      "gauss_faithful": true,
+      "classification": "value-dominated"
+    },
+    "Riley2019 (X-PSI ST+PST) | Miller2019 3-oval (3spot)": {
+      "sigma": 0.88,
+      "value_raw": 0.1652,
+      "shape_raw": 0.0026,
+      "vf_raw": 0.985,
+      "vf_joint_whitened": 0.996,
+      "vf_orientation_only": 0.996,
+      "delta_rho": 0.02,
+      "rho_A": 0.837,
+      "rho_B": 0.857,
+      "vol_ratio_B_over_A": 1.01,
+      "sliced_emp": 0.0867,
+      "sliced_gauss": 0.0867,
+      "nongauss_ratio": 1.0,
+      "gauss_faithful": true,
+      "classification": "value-dominated"
+    },
+    "Miller2019 2-oval (2spot) | Miller2019 3-oval (3spot)": {
+      "sigma": 0.36,
+      "value_raw": 0.0661,
+      "shape_raw": 0.0052,
+      "vf_raw": 0.926,
+      "vf_joint_whitened": 0.89,
+      "vf_orientation_only": 0.895,
+      "delta_rho": 0.033,
+      "rho_A": 0.891,
+      "rho_B": 0.857,
+      "vol_ratio_B_over_A": 0.96,
+      "sliced_emp": 0.0349,
+      "sliced_gauss": 0.0425,
+      "nongauss_ratio": 0.82,
+      "gauss_faithful": true,
+      "classification": "value-dominated"
+    },
+    "Riley2021 (X-PSI STU) | Miller2021 (NICER+XMM)": {
+      "sigma": 1.09,
+      "value_raw": 3.0543,
+      "shape_raw": 1.2966,
+      "vf_raw": 0.702,
+      "vf_joint_whitened": 0.652,
+      "vf_orientation_only": 0.908,
+      "delta_rho": 0.083,
+      "rho_A": 0.294,
+      "rho_B": 0.211,
+      "vol_ratio_B_over_A": 3.16,
+      "sliced_emp": 2.1209,
+      "sliced_gauss": 2.1952,
+      "nongauss_ratio": 0.966,
+      "gauss_faithful": true,
+      "classification": "value-dominated"
+    }
+  },
+  "D3_orientation": {
+    "rho_by_probe": {
+      "Riley2019 (X-PSI ST+PST)": 0.837,
+      "Miller2019 2-oval (2spot)": 0.891,
+      "Miller2019 3-oval (3spot)": 0.857,
+      "Riley2021 (X-PSI STU)": 0.294,
+      "Miller2021 (NICER+XMM)": 0.211,
+      "GW170817 (tidal->C-Love)": 0.276
+    },
+    "mean_rho_J0030_lowmass_xray": 0.862,
+    "mean_rho_J0740_highmass_xray": 0.252,
+    "rho_gw170817": 0.276,
+    "mass_regime_split_dRho": 0.609,
+    "note": "rho(M,R) is organized by mass regime (steep low-mass banana vs flat high-mass top), consistent across pipelines. GW170817 rho is mapping-induced (C-Love), flagged."
+  },
+  "D4_cross_messenger": {
+    "Miller2019 3-oval (3spot) | GW170817": {
+      "sigma": 1.11,
+      "value_raw": 3.0103,
+      "shape_raw": 0.5023,
+      "vf_raw": 0.857,
+      "vf_joint_whitened": 0.595,
+      "vf_orientation_only": 0.582,
+      "delta_rho": 0.581,
+      "rho_A": 0.857,
+      "rho_B": 0.276,
+      "vol_ratio_B_over_A": 2.55,
+      "sliced_emp": 1.7289,
+      "sliced_gauss": 1.7592,
+      "nongauss_ratio": 0.983,
+      "gauss_faithful": true,
+      "classification": "mixed (value+orientation)"
+    },
+    "Riley2019 (X-PSI ST+PST) | GW170817": {
+      "sigma": 1.15,
+      "value_raw": 1.8,
+      "shape_raw": 0.5743,
+      "vf_raw": 0.758,
+      "vf_joint_whitened": 0.618,
+      "vf_orientation_only": 0.616,
+      "delta_rho": 0.561,
+      "rho_A": 0.837,
+      "rho_B": 0.276,
+      "vol_ratio_B_over_A": 2.57,
+      "sliced_emp": 1.1414,
+      "sliced_gauss": 1.1617,
+      "nongauss_ratio": 0.983,
+      "gauss_faithful": true,
+      "classification": "mixed (value+orientation)"
+    }
+  },
+  "D5_qinfo": {
+    "per_probe": {
+      "Riley2019 (X-PSI ST+PST)": {
+        "purity": 0.9901,
+        "vn_entropy": 0.0314
+      },
+      "Miller2019 2-oval (2spot)": {
+        "purity": 0.9927,
+        "vn_entropy": 0.0241
+      },
+      "Miller2019 3-oval (3spot)": {
+        "purity": 0.9916,
+        "vn_entropy": 0.0274
+      },
+      "Riley2021 (X-PSI STU)": {
+        "purity": 0.9914,
+        "vn_entropy": 0.0278
+      },
+      "Miller2021 (NICER+XMM)": {
+        "purity": 0.9964,
+        "vn_entropy": 0.0132
+      },
+      "GW170817 (tidal->C-Love)": {
+        "purity": 0.9915,
+        "vn_entropy": 0.0277
+      }
+    },
+    "pairwise": {
+      "Riley2019 (X-PSI ST+PST) | Miller2019 2-oval (2spot)": {
+        "quantum_chernoff_shape": 0.0001,
+        "quantum_fidelity_shape": 0.9998,
+        "classical_gauss_chernoff": 0.075
+      },
+      "Riley2019 (X-PSI ST+PST) | Miller2019 3-oval (3spot)": {
+        "quantum_chernoff_shape": 0.0,
+        "quantum_fidelity_shape": 1.0,
+        "classical_gauss_chernoff": 0.097
+      },
+      "Miller2019 2-oval (2spot) | Miller2019 3-oval (3spot)": {
+        "quantum_chernoff_shape": 0.0001,
+        "quantum_fidelity_shape": 0.9999,
+        "classical_gauss_chernoff": 0.021
+      },
+      "Riley2021 (X-PSI STU) | Miller2021 (NICER+XMM)": {
+        "quantum_chernoff_shape": 0.0004,
+        "quantum_fidelity_shape": 0.9993,
+        "classical_gauss_chernoff": 0.355
+      },
+      "Miller2019 3-oval (3spot) | GW170817 (tidal->C-Love)": {
+        "quantum_chernoff_shape": 0.0072,
+        "quantum_fidelity_shape": 0.9919,
+        "classical_gauss_chernoff": 0.466
+      }
+    }
+  }
+}

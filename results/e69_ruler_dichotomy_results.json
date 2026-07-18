@@ -1,0 +1,109 @@
+{
+  "prereg": "preregs/E69_ruler_dichotomy_prereg.md",
+  "classes": {
+    "R (sound-horizon ruler)": {
+      "members": {
+        "Planck CMB": {
+          "H0": 67.36,
+          "sigma": 0.54
+        },
+        "DESI DR2 BAO + BBN": {
+          "H0": 68.51,
+          "sigma": 0.58
+        }
+      },
+      "consensus_H0": 67.89,
+      "sigma": 0.4,
+      "chi2": 2.11,
+      "dof": 1
+    },
+    "L (distance ladder)": {
+      "members": {
+        "SH0ES Cepheid": {
+          "H0": 73.04,
+          "sigma": 1.04
+        },
+        "JWST-CCHP (TRGB/JAGB)": {
+          "H0": 69.96,
+          "sigma": 1.53
+        }
+      },
+      "consensus_H0": 72.07,
+      "sigma": 0.86,
+      "chi2": 2.77,
+      "dof": 1
+    },
+    "F (arbiters: ruler-free & ladder-free)": {
+      "members": {
+        "cosmic chronometers": {
+          "H0": 67.8,
+          "sigma": 3.0
+        },
+        "TDCOSMO time-delay": {
+          "H0": 71.6,
+          "sigma": 3.6
+        },
+        "MCP megamasers": {
+          "H0": 73.9,
+          "sigma": 3.0
+        },
+        "GW sirens": {
+          "H0": 69.3,
+          "sigma": 12.9
+        }
+      },
+      "consensus_H0": 71.01,
+      "sigma": 1.81,
+      "chi2": 2.12,
+      "dof": 3
+    }
+  },
+  "pairwise_tensions": {
+    "F_vs_R": 1.68,
+    "F_vs_SH0ES": 0.97,
+    "F_vs_L": 0.53,
+    "R_vs_L": 4.41,
+    "R_vs_SH0ES": 4.63
+  },
+  "D1_verdict": "UNDERPOWERED/INCONCLUSIVE at current precision",
+  "F_leave_one_out": {
+    "cosmic chronometers": {
+      "F_consensus": 72.84,
+      "sigma": 2.27,
+      "t_vs_R": 2.15,
+      "t_vs_SH0ES": 0.08
+    },
+    "TDCOSMO time-delay": {
+      "F_consensus": 70.81,
+      "sigma": 2.09,
+      "t_vs_R": 1.37,
+      "t_vs_SH0ES": 0.95
+    },
+    "MCP megamasers": {
+      "F_consensus": 69.36,
+      "sigma": 2.27,
+      "t_vs_R": 0.63,
+      "t_vs_SH0ES": 1.48
+    },
+    "GW sirens": {
+      "F_consensus": 71.04,
+      "sigma": 1.83,
+      "t_vs_R": 1.68,
+      "t_vs_SH0ES": 0.95
+    }
+  },
+  "D2_required_precision": {
+    "current_sigma_F": 1.81,
+    "sigma_F_to_reject_R_at_3sig": 0.96,
+    "sigma_F_to_reject_SH0ES_at_3sig": null,
+    "note": "computed holding the current F central value fixed"
+  },
+  "D3": {
+    "chi2_ok": {
+      "R (sound-horizon ruler)": true,
+      "L (distance ladder)": true,
+      "F (arbiters: ruler-free & ladder-free)": true
+    },
+    "R_internal_split_sigma": 1.45
+  }
+}

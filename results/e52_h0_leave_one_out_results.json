@@ -1,0 +1,79 @@
+{
+  "prereg": "preregs/E52_h0_leave_one_out_prereg.md",
+  "cmb_ref": [
+    67.36,
+    0.54
+  ],
+  "individual_tension_vs_CMB": {
+    "cosmic chronometers": 0.14,
+    "JWST-CCHP combined": 1.6,
+    "GW dark sirens": 0.15,
+    "TDCOSMO time-delay": 1.16,
+    "SH0ES Cepheid": 4.85
+  },
+  "outliers_gt_2.5sigma": [
+    "SH0ES Cepheid"
+  ],
+  "full_consensus": {
+    "H0": 71.73,
+    "sigma": 0.8,
+    "tension_vs_CMB": 4.51,
+    "chi2": 4.68,
+    "dof": 4
+  },
+  "leave_one_out": {
+    "cosmic chronometers": {
+      "consensus_H0": 72.03,
+      "sigma": 0.83,
+      "tension_vs_CMB": 4.7
+    },
+    "JWST-CCHP combined": {
+      "consensus_H0": 72.4,
+      "sigma": 0.95,
+      "tension_vs_CMB": 4.63
+    },
+    "GW dark sirens": {
+      "consensus_H0": 71.74,
+      "sigma": 0.81,
+      "tension_vs_CMB": 4.51
+    },
+    "TDCOSMO time-delay": {
+      "consensus_H0": 71.73,
+      "sigma": 0.83,
+      "tension_vs_CMB": 4.43
+    },
+    "SH0ES Cepheid": {
+      "consensus_H0": 69.77,
+      "sigma": 1.27,
+      "tension_vs_CMB": 1.75
+    }
+  },
+  "leave_two_out_with_SH0ES": {
+    "SH0ES+cosmic chronometers": {
+      "consensus_H0": 70.2,
+      "tension_vs_CMB": 1.89
+    },
+    "SH0ES+JWST-CCHP combined": {
+      "consensus_H0": 69.36,
+      "tension_vs_CMB": 0.86
+    },
+    "SH0ES+GW dark sirens": {
+      "consensus_H0": 69.78,
+      "tension_vs_CMB": 1.74
+    },
+    "SH0ES+TDCOSMO time-delay": {
+      "consensus_H0": 69.51,
+      "tension_vs_CMB": 1.47
+    }
+  },
+  "no_SH0ES": {
+    "consensus_H0": 69.77,
+    "sigma": 1.27,
+    "tension_vs_CMB": 1.75,
+    "chi2_over_dof": 0.24,
+    "max_pairwise_sigma": 0.81
+  },
+  "D1_SH0ES_sole_outlier": true,
+  "D2_SH0ES_drives_tension": true,
+  "D3_others_consistent": true
+}

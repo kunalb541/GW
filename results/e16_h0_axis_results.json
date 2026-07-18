@@ -1,0 +1,63 @@
+{
+  "prereg": "preregs/E16_h0_axis_all_instruments_prereg.md",
+  "cmb_reference": {
+    "H0": 67.36,
+    "sigma": 0.54
+  },
+  "anchors": {
+    "DESI+CMB chain": {
+      "H0": 67.0,
+      "sigma": 0.5,
+      "class": "standard-ruler",
+      "tension_vs_CMB": 0.49
+    },
+    "cosmic chronometers": {
+      "H0": 67.8,
+      "sigma": 3.0,
+      "class": "rd-free",
+      "tension_vs_CMB": 0.14
+    },
+    "JWST CCHP JAGB": {
+      "H0": 67.8,
+      "sigma": 2.72,
+      "class": "rd-free (ladder)",
+      "tension_vs_CMB": 0.16
+    },
+    "JWST CCHP TRGB": {
+      "H0": 68.81,
+      "sigma": 2.22,
+      "class": "rd-free (ladder)",
+      "tension_vs_CMB": 0.63
+    },
+    "GW dark-siren GWTC-3 (real posterior)": {
+      "H0": 69.3,
+      "sigma": 12.9,
+      "class": "rd-free (ladder-free)",
+      "tension_vs_CMB": 0.15
+    },
+    "JWST CCHP combined": {
+      "H0": 69.96,
+      "sigma": 1.53,
+      "class": "rd-free (ladder)",
+      "tension_vs_CMB": 1.6
+    },
+    "TDCOSMO 2025 time-delay": {
+      "H0": 71.6,
+      "sigma": 3.6,
+      "class": "rd-free (ladder-free)",
+      "tension_vs_CMB": 1.16
+    },
+    "SH0ES HST Cepheid": {
+      "H0": 73.04,
+      "sigma": 1.04,
+      "class": "rd-free (ladder)",
+      "tension_vs_CMB": 4.85
+    }
+  },
+  "gw_real_posterior": {
+    "H0": 69.32994847536929,
+    "sd": 12.886668058162536
+  },
+  "outcome": "SH0ES-outlier",
+  "finding": "Complete H0-axis map over 8 independent instruments (GW as a REAL computed posterior, 69.3+/-12.9 from 46 GWTC-3 dark sirens). SH0ES is the only anchor >2.5 sigma from the CMB early value (4.8 sigma); every independent probe -- GW (ladder-free), the JWST CCHP ladders, cosmic chronometers, TDCOSMO -- clusters within 2.5 sigma of the early value. So across ALL instruments the H0 tension is SH0ES-specific: the sound-horizon-free / ladder-free probes side with the early value, not with SH0ES."
+}

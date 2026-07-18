@@ -30,9 +30,11 @@ diagnostic of cross-experiment consistency.
 ## Status
 
 - [x] All underlying batteries locked-preregistered, run, independently re-derived (in cosmo2).
-- [x] **Full port complete**: all 18 GW experiments (E38, E40–E47, E55, E57–E60, E65–E68) live here
-      self-contained — preregs/, src/, results/ (numbers of record), reports/, tests, fetch scripts.
-- [x] GW-only lab notebook: [`paper/gw_lab_notebook.pdf`](paper/gw_lab_notebook.pdf) (4 pp, all 18 entries).
+- [x] **Full port complete**: all 18 GW experiments (E38, E40–E47, E55, E57–E60, E65–E68) plus the
+      GW-adjacent set (E63 NS-EOS via GW170817; E16/E52/E69 H0-anchor context; qinfo) live here
+      self-contained — preregs/, src/, results/ (numbers of record), reports/, 17 tests, fetch scripts.
+      All files byte-identical copies; originals remain in cosmo2.
+- [x] GW lab notebook: [`paper/gw_lab_notebook.pdf`](paper/gw_lab_notebook.pdf) (19 GW-data entries incl. E63).
 - [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
 - [ ] Manuscript draft.
 
