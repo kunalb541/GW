@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+data/
+*.aux
+*.log
+*.out
+*.toc
+paper/*.pdf
+!paper/manuscript.pdf
