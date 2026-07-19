@@ -59,7 +59,8 @@ cosmo2 subdirectory names exactly.
   anatomy), E74 (GW250114), E78/E79 (GR exponent). cosmo2 numbers: through E75 (its E73 = curved
   S8 law — different from GW-E73). RULE going forward: qualify cross-repo references as
   "GW-E<n>" / "cosmo2-E<n>". Taken since: **E82** (inference manifold — catalog-as-one-object). E80/E81
-  stay reserved for the deferred sloppy/curvature preregs (renumbered when run). Next free HERE: **E83**.
+  stay reserved for the deferred sloppy/curvature preregs (renumbered when run). Also taken: **E83**
+  (from-scratch strain pipeline / GW250114 ringdown validation). Next free HERE: **E84**.
   Do not renumber committed batteries; **`git log` before claiming a number**.
 - The user's standing instructions: lean orchestration (no agent swarms), always double-check /
   independently re-derive, comprehensive data sweeps in one pass, lab-notebook (never
