@@ -4,12 +4,12 @@ Captured 2026-07-18. These are candidate experiments beyond the ported record (E
 Discipline: **one battery at a time**, full WORKFLOW.md cycle each, lean orchestration.
 Numbering continues cosmo2's sequence; next free number was E71.
 
-**Currently executing: E71 only.** Everything below E71 is proposed, not started.
+**Done this session: E71 (PASS 1.22°) + E72 (physical null).** E73–E77 below are proposed, not started.
 
 | # | deliverable slug | one-line | reuses | new build | data | gate/dep | status |
 |---|---|---|---|---|---|---|---|
 | **E71** | `gwtc5_chirp_curve_stress_test` | Score GWTC-5/O4b with the locked zero-parameter chirp-curve law (D1<2°, D2 curve>tangent, D3 E40 replication) | E67/E65 scorer verbatim | data path + O4b disjointness assert only | GWTC-5 PE Zenodo 20276106 + 20348006 (~53 GB) | prereg locked (d19a7a8); layout validated | **in progress** |
-| E72 | `gw_geometry_outlier_atlas` | Rank O4b events by chirp-curve residual; inspect the top outliers, not the median | E71 per-event residuals | correlation engine | E71 output + per-event precession/χ_eff/q/higher-mode/waveform-disagreement proxies | needs E71 done | proposed |
+| E72 | `gw_geometry_outlier_atlas` | Rank O4b events by chirp-curve residual; inspect the top outliers, not the median | E71 per-event residuals | correlation engine | E71 output + per-event precession/χ_eff/q/higher-mode/waveform-disagreement proxies | needs E71 done | **DONE `a35069e`: physical null — no physical axis (precession/spin/q/z/mass/NSBH) drives the residual; only waveform-disagreement (systematic) survives FDR; one weak marginal flag GW240507** |
 | E73 | `frequency_resolved_information_geometry` | Go to strain for a few loud events: time-frequency tracks, inspiral-only vs merger-only geometry, where in frequency the chirp-curve law emerges; test the E65 rotation hypothesis on high-freq merger data | E65 geometry | strain/TF pipeline (GWOSC strain, not just posteriors) | loud-event strain (GWOSC) | new modality | proposed |
 | E74 | `o4_ringdown_kerr_stress_test` | Loudest O4/O4b ringdowns → rerun no-hair/area (Kerr freq + damping consistency, overtone systematics) | E47/E59/E60 | loud-event selection | GWTC-5 (rides E71 download) + LVK TGR rin products | ringdown SNR still binding; manage expectations | proposed |
 | E75 | `cross_band_gw_fundamental_physics` | PTA (nHz) + LVK (stellar-mass) in ONE framework: do both prefer GR tensor correlations/propagation? one modified-gravity parameter across bands? PTA curvature vs SMBHB/strings/phase-transition as a cross-band falsifier | E58 (propagation) + E68 (PTA) | cross-band linkage | LVK propagation posteriors + PTA chains | genuinely fundamental; medium-high build | proposed |
