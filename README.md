@@ -34,9 +34,14 @@ diagnostic of cross-experiment consistency.
       GW-adjacent set (E63 NS-EOS via GW170817; E16/E52/E69 H0-anchor context; qinfo) live here
       self-contained — preregs/, src/, results/ (numbers of record), reports/, 17 tests, fetch scripts.
       All files byte-identical copies; originals remain in cosmo2.
-- [x] GW lab notebook: [`paper/gw_lab_notebook.pdf`](paper/gw_lab_notebook.pdf) (19 GW-data entries incl. E63).
+- [x] GW lab notebook: [`paper/gw_lab_notebook.pdf`](paper/gw_lab_notebook.pdf) (26 entries; new this cycle: E71, E72, E73, E74, E78, E79).
+- [x] **New results (this cycle):** E71 curved law reconfirmed out-of-sample on GWTC-5/O4b (1.22°, 3rd catalog);
+      E72 physics-blind null (no source class breaks the law); E78/E79 geometric GR-exponent test
+      (0.628±0.009±0.016, GR-consistent at 1.5σ; a naive 3σ false alarm caught by the coherence lens);
+      E73 information anatomy; E74 GW250114 no-hair. Math foundations + novelty in `docs/LITERATURE.md`.
+- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (5 pp; all numbers verified against results of record).
 - [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
-- [ ] Manuscript draft.
+- [ ] Manuscript: figures, full author list, journal formatting, referee-verification of remaining citations.
 
 ## Layout (cosmo2 conventions)
 
