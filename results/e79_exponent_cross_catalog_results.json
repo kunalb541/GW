@@ -1,0 +1,295 @@
+{
+  "prereg": "preregs/E79_exponent_cross_catalog_prereg.md",
+  "gr_value": 0.6,
+  "O4a": {
+    "catalog": "O4a",
+    "n_elong": 19,
+    "p_hat": 0.6473947368421051,
+    "stat_err": 0.014221132493834734,
+    "injection_bias_at_GR": 0.00047368421052640386
+  },
+  "O4b": {
+    "catalog": "O4b",
+    "n_elong": 32,
+    "p_hat": 0.616109375,
+    "stat_err": 0.011208548217451228,
+    "injection_bias_at_GR": 0.0003749999999999032
+  },
+  "D1_O4a_consistent_GR": false,
+  "D2_O4a_reproduces_O4b": true,
+  "disjoint": true,
+  "overlap": [],
+  "combined_exponent": 0.6277647058823529,
+  "combined_err": 0.00903541191011581,
+  "systematic_followup": {
+    "catalog_spread": 0.031285361842105175,
+    "syst_floor": 0.015642680921052587,
+    "honest_total_err": 0.01806466536593815,
+    "honest_sigma_from_GR": 1.5369620925668896,
+    "spearman_pstar_axr": -0.4073864537466245,
+    "p_axr": 0.0030064657192215767,
+    "p_hat_most_elongated_half": 0.6060576923076922,
+    "verdict": "Coherent offset above 0.600 is a SYSTEMATIC of the leading-order geometric model, NOT a GR violation: (i) catalog spread ~= offset -> stat error underestimated; (ii) p* trends with elongation (rho~-0.41, both catalogs) and the cleanest events -> 0.606 ~ GR. Exponent is GR-consistent at 1.5 sigma once the systematic floor is included. No claim (per prereg)."
+  },
+  "per_event": {
+    "O4a": [
+      {
+        "event": "GW230518_125908",
+        "axr": 16.83,
+        "p_star": 0.6279999999999999
+      },
+      {
+        "event": "GW230529_181500",
+        "axr": 10.37,
+        "p_star": 0.6094999999999999
+      },
+      {
+        "event": "GW230605_065343",
+        "axr": 3.98,
+        "p_star": 0.7115
+      },
+      {
+        "event": "GW230627_015337",
+        "axr": 8.32,
+        "p_star": 0.588
+      },
+      {
+        "event": "GW230630_234532",
+        "axr": 3.68,
+        "p_star": 0.644
+      },
+      {
+        "event": "GW230702_185453",
+        "axr": 3.42,
+        "p_star": 0.5514999999999999
+      },
+      {
+        "event": "GW230729_082317",
+        "axr": 4.39,
+        "p_star": 0.6404999999999998
+      },
+      {
+        "event": "GW230731_215307",
+        "axr": 3.37,
+        "p_star": 0.59
+      },
+      {
+        "event": "GW230904_051013",
+        "axr": 3.91,
+        "p_star": 0.6465000000000001
+      },
+      {
+        "event": "GW231018_233037",
+        "axr": 3.53,
+        "p_star": 0.6775
+      },
+      {
+        "event": "GW231020_142947",
+        "axr": 5.75,
+        "p_star": 0.5934999999999999
+      },
+      {
+        "event": "GW231104_133418",
+        "axr": 3.36,
+        "p_star": 0.6519999999999999
+      },
+      {
+        "event": "GW231113_200417",
+        "axr": 4.07,
+        "p_star": 0.6744999999999999
+      },
+      {
+        "event": "GW231114_043211",
+        "axr": 5.78,
+        "p_star": 0.6509999999999999
+      },
+      {
+        "event": "GW231118_005626",
+        "axr": 3.1,
+        "p_star": 0.8354999999999999
+      },
+      {
+        "event": "GW231118_090602",
+        "axr": 7.56,
+        "p_star": 0.617
+      },
+      {
+        "event": "GW231223_075055",
+        "axr": 5.61,
+        "p_star": 0.637
+      },
+      {
+        "event": "GW231223_202619",
+        "axr": 3.26,
+        "p_star": 0.732
+      },
+      {
+        "event": "GW231224_024321",
+        "axr": 3.14,
+        "p_star": 0.6209999999999999
+      }
+    ],
+    "O4b": [
+      {
+        "event": "GW240413_022019",
+        "axr": 7.08,
+        "p_star": 0.587
+      },
+      {
+        "event": "GW240428_225440",
+        "axr": 4.41,
+        "p_star": 0.5205
+      },
+      {
+        "event": "GW240507_041632",
+        "axr": 4.88,
+        "p_star": 0.5009999999999999
+      },
+      {
+        "event": "GW240512_024139",
+        "axr": 3.87,
+        "p_star": 0.6555
+      },
+      {
+        "event": "GW240520_213616",
+        "axr": 3.08,
+        "p_star": 0.71
+      },
+      {
+        "event": "GW240527_230910",
+        "axr": 7.02,
+        "p_star": 0.58
+      },
+      {
+        "event": "GW240530_012417",
+        "axr": 4.44,
+        "p_star": 0.6054999999999999
+      },
+      {
+        "event": "GW240601_231004",
+        "axr": 3.15,
+        "p_star": 0.5974999999999999
+      },
+      {
+        "event": "GW240622_004008",
+        "axr": 4.28,
+        "p_star": 0.6209999999999999
+      },
+      {
+        "event": "GW240627_131622",
+        "axr": 3.98,
+        "p_star": 0.6209999999999999
+      },
+      {
+        "event": "GW240629_145256",
+        "axr": 3.44,
+        "p_star": 0.6759999999999999
+      },
+      {
+        "event": "GW240825_055146",
+        "axr": 3.85,
+        "p_star": 0.6479999999999999
+      },
+      {
+        "event": "GW240830_211120",
+        "axr": 3.53,
+        "p_star": 0.7164999999999999
+      },
+      {
+        "event": "GW240910_103535",
+        "axr": 6.04,
+        "p_star": 0.6009999999999999
+      },
+      {
+        "event": "GW240915_001357",
+        "axr": 5.01,
+        "p_star": 0.6004999999999998
+      },
+      {
+        "event": "GW240915_105151",
+        "axr": 7.34,
+        "p_star": 0.572
+      },
+      {
+        "event": "GW240920_073424",
+        "axr": 3.58,
+        "p_star": 0.6409999999999999
+      },
+      {
+        "event": "GW240921_201835",
+        "axr": 5.63,
+        "p_star": 0.6819999999999999
+      },
+      {
+        "event": "GW240922_142106",
+        "axr": 3.79,
+        "p_star": 0.6604999999999999
+      },
+      {
+        "event": "GW240925_005809",
+        "axr": 6.5,
+        "p_star": 0.5165
+      },
+      {
+        "event": "GW240930_035959",
+        "axr": 4.3,
+        "p_star": 0.701
+      },
+      {
+        "event": "GW241009_084816",
+        "axr": 3.04,
+        "p_star": 0.6335
+      },
+      {
+        "event": "GW241011_233834",
+        "axr": 17.26,
+        "p_star": 0.5794999999999999
+      },
+      {
+        "event": "GW241102_124058",
+        "axr": 8.25,
+        "p_star": 0.5694999999999999
+      },
+      {
+        "event": "GW241109_115924",
+        "axr": 4.84,
+        "p_star": 0.636
+      },
+      {
+        "event": "GW241110_124123",
+        "axr": 6.52,
+        "p_star": 0.6455
+      },
+      {
+        "event": "GW241114_235258",
+        "axr": 3.67,
+        "p_star": 0.626
+      },
+      {
+        "event": "GW241130_110422",
+        "axr": 3.79,
+        "p_star": 0.6595
+      },
+      {
+        "event": "GW241225_042553",
+        "axr": 4.89,
+        "p_star": 0.712
+      },
+      {
+        "event": "GW241231_054133",
+        "axr": 5.58,
+        "p_star": 0.5625
+      },
+      {
+        "event": "GW250118_055802",
+        "axr": 3.79,
+        "p_star": 0.644
+      },
+      {
+        "event": "GW250119_190238",
+        "axr": 3.28,
+        "p_star": 0.43349999999999994
+      }
+    ]
+  }
+}
