@@ -365,4 +365,24 @@ $10^{-8}$; MDS recovers synthetic 1D/2D dimensionality); suite 41/41. Honest: th
 eff-dim$\sim$1 are mass-range-dominated (not oversold); Gaussian approximation; mass plane only. Successor:
 the full-parameter-space (spin, distance) Fisher-Rao version --- the deferred E80 sloppy-spectrum program.}
 
+\grouphead{A strain-level pipeline, validated on GW250114 (E83)}
+
+\entry{E83 from-scratch strain pipeline.}{CAPABILITY $+$ consistency check (``science first''): the
+strain-level analysis the exotic-test class requires, built with numpy/scipy only (no gwpy). Download
+GWOSC O4b strain $\to$ whiten (off-source Welch PSD) $\to$ bandpass $\to$ instantaneous frequency (Hilbert)
+for the chirp; post-peak dominant-frequency $+$ log-envelope damping for the ringdown. GW250114 (H1):
+whitened peak $388\sigma$ (loudest to date); the CHIRP is recovered ($f_{\mathrm{inst}}$ rising through
+merger $89\to117\to187\to220$ Hz across $\pm5$ ms) and the RINGDOWN is recovered $f_{\mathrm{dom}}=241$ Hz
+($3.2$\% from E74's Kerr $248.9$ Hz), $\tau=4.7$ ms (E74 $4.10$) --- CONSISTENT with the E74 Kerr
+prediction. This independently cross-checks E74: the strain ringdown matches the Kerr QNM computed from the
+INSPIRAL-derived remnant --- inspiral$\to$remnant$\to$ringdown closes in the actual data. Verify: 4 contract
+tests (a $250$ Hz$/4$ ms damped sinusoid injected into noise is recovered; whitening flattens red noise;
+the bandpass suppresses out-of-band tones $>1000\times$; a chirp's instantaneous frequency rises); suite
+45/45. HONEST: a consistency check, NOT a measurement of record --- single-detector, single-mode,
+fixed-start point estimate (few-\% frequency / $\sim$15\% $\tau$ bias vs a proper Bayesian multi-mode
+ringdown). Successor: a Bayesian ringdown; the data-driven frequency-geometry test (E73 successor); the
+exotic echo / dark-matter-frequency-rotation tests ONLY after multi-event validation $+$
+coherence-lens/systematic controls (per E79/E72, a positive there is likelier a systematic than new
+physics).}
+
 \end{document}

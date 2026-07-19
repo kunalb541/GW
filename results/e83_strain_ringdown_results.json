@@ -1,0 +1,22 @@
+{
+  "battery": "E83 strain pipeline + GW250114 validation (capability/consistency)",
+  "event": "GW250114_082203",
+  "peak_sigma_whitened": 387.50982316059503,
+  "chirp_f_inst_Hz": {
+    "-20ms": 72.4,
+    "-10ms": 89.2,
+    "-5ms": 117.3,
+    "+0ms": 187.0,
+    "+5ms": 220.2
+  },
+  "ringdown_fdom_Hz": 240.94117647058823,
+  "ringdown_tau_ms": 4.654559101198351,
+  "E74_kerr_prediction": {
+    "f220_Hz": 248.9,
+    "tau220_ms": 4.1
+  },
+  "frac_freq_diff": 0.03197598846690146,
+  "frac_tau_diff": 0.13525831736545155,
+  "consistent_with_E74": true,
+  "note": "from-scratch numpy/scipy pipeline (no gwpy). Establishes strain-level analysis; the single-mode point-estimate has few-% bias vs a proper Bayesian multi-mode ringdown. Successor: Bayesian ringdown + the data-driven frequency-geometry test (E73 successor); exotic-echo/DM-rotation tests only AFTER pipeline validation on more events + controls."
+}
