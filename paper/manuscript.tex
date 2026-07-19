@@ -1,0 +1,222 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\setcitestyle{numbers,square}
+
+\title{\textbf{The Geometry of Gravitational-Wave Inference:\\
+a lawful anatomy of posteriors, systematics, and a geometric test of general relativity}}
+\author{Kunal Bhatia\\
+\small Independent researcher, Meerut, India \\
+\small ORCID: 0009-0007-4447-6325}
+\date{Draft --- \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The parameter-estimation posteriors of compact-binary gravitational-wave events have a shape that is
+usually treated as a nuisance. We show instead that this shape is \emph{lawful}: the principal-axis
+orientation of each source-frame $(m_1,m_2)$ posterior is quantitatively predicted, with \emph{no fitted
+parameters}, by the constant-chirp-mass curve evaluated at the event's own median chirp mass over its
+mass-ratio marginal. The local constant-$\mathcal{M}_c$ tangent --- the Fisher/metric approximation
+underlying rapid parameter-estimation tools --- leaves residuals that grow with posterior elongation; the
+curve (chord) term removes them. Derived on GWTC-3 and locked before opening later catalogs, the law
+predicts the measured orientation out-of-sample on the disjoint GWTC-4.0/O4a and GWTC-5.0/O4b releases to a
+median mismatch of $1.26^\circ$ and $1.22^\circ$ respectively. A physics-blind search finds \emph{no}
+source-class dependence of the residuals: precession, spin, mass ratio, redshift, mass and neutron-star--black-hole
+character all fail to correlate after multiple-comparison control; the only surviving correlate is
+waveform-model disagreement, a systematic. Inverting the law to \emph{measure} the leading inspiral
+mass-combination exponent yields $0.628\pm0.009\,(\mathrm{stat})\pm0.016\,(\mathrm{syst})$, consistent with
+the general-relativistic value $3/5$; a naive analysis produced a spurious $3\sigma$ ``deviation'' that a
+coherence and systematic-floor analysis correctly demotes to $1.5\sigma$. We ground these results in the
+established mathematics of measurement (Fisher--Rao information geometry, sloppy models, principal curves,
+Backus--Gilbert resolution theory), from which the lawfulness is expected, and argue that the contribution
+is the predictive, catalog-validated \emph{application} to gravitational-wave posteriors and its use as a
+systematics diagnostic and an independent test of gravity.
+\end{abstract}
+
+\section{Introduction}
+Gravitational-wave (GW) parameter estimation delivers, for each detected compact-binary coalescence, a
+posterior probability distribution over the source parameters. It is a commonplace that the chirp mass
+$\mathcal{M}_c = (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$ is the best-measured mass combination and that the
+component-mass posterior forms an elongated ``banana'' lying along near-constant-$\mathcal{M}_c$ contours
+\citep{CutlerFlanagan1994,PoissonWill1995,Hannam2013}. This paper asks a sharper question: is the
+\emph{geometry} of that posterior --- specifically the orientation of its principal axis --- quantitatively
+\emph{predictable}, event by event, with no free parameters, and does the prediction survive out-of-sample
+across independent catalogs?
+
+We answer yes. The organizing thesis is that the uncertainty geometry of GW inference is \emph{measurement
+optics}: it is a property of what the instrument and signal can and cannot resolve, largely independent of
+source astrophysics. This viewpoint is not new mathematically --- it is the content of Fisher--Rao
+information geometry \citep{Amari2016}, the ``sloppy model'' framework \citep{Transtrum2015}, principal
+curves \citep{HastieStuetzle1989}, and Backus--Gilbert resolution theory \citep{BackusGilbert1968}. Our
+contribution is to make it \emph{predictive and validated} for GW posteriors, and to turn it into two tools:
+a systematics detector and an independent, waveform-fit-free test of general relativity (GR).
+
+\section{The curved chirp-mass law}
+\subsection{Definition}
+For an event with source-frame samples $\{(m_1,m_2)\}$, let $\psi_{\rm meas}$ be the position angle of the
+principal axis of the sample covariance, and let the axis ratio $\mathrm{axr}$ be the ratio of its
+principal standard deviations. The constant-$\mathcal{M}_c$ \emph{curve} through the plane is
+\begin{equation}
+m_1(q) = \mathcal{M}_c\,(1+q)^{1/5} q^{-3/5}, \qquad m_2 = q\,m_1,
+\end{equation}
+where $q=m_2/m_1\in(0,1]$ and $\mathcal{M}_c$ is the event's median source-frame chirp mass. The predicted
+orientation $\psi_{\rm curve}$ is the principal axis of this curve evaluated over the event's own $q$
+marginal. The local linear approximation $\psi_{\rm tangent}$ is the tangent to the contour at the median
+point. There are no calibration constants: every ingredient is supplied by the event.
+
+\subsection{Out-of-sample validation across three catalogs}
+The law was derived from GWTC-1/2.1/3 events and its prediction placed on record before any later-catalog
+file was opened. Table~\ref{tab:curve} reports the locked decision on two subsequent, disjoint catalogs.
+On elongated events ($\mathrm{axr}\ge 3$, where orientation is well defined) the median mismatch
+$|\psi_{\rm curve}-\psi_{\rm meas}|$ is $1.26^\circ$ (GWTC-4.0/O4a) and $1.22^\circ$ (GWTC-5.0/O4b); the
+curve beats the tangent on the full catalogs, and the tangent-law replication statistics reproduce the
+training-set values. The catalogs are mutually disjoint (zero shared events).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\hline
+ & GWTC-3 (train) & GWTC-4.0/O4a & GWTC-5.0/O4b \\
+\hline
+median $|\psi_{\rm curve}-\psi_{\rm meas}|$ (elongated) & --- & $\mathbf{1.26^\circ}$ & $\mathbf{1.22^\circ}$ \\
+median $|\psi_{\rm curve}-\psi_{\rm meas}|$ (all) & --- & $7.53^\circ$ & $5.41^\circ$ \\
+median $|\psi_{\rm tangent}-\psi_{\rm meas}|$ (all) & $7.49^\circ$ & $9.36^\circ$ & $8.23^\circ$ \\
+chirp-vs-total win fraction & $81\%$ & $86\%$ & $88\%$ \\
+Spearman$(|\Delta\psi_{\rm tangent}|,\mathrm{axr})$ & $-0.42$ & $-0.40$ & $-0.69$ \\
+$N$ events (elongated) & --- & $86\ (19)$ & $104\ (32)$ \\
+\hline
+\end{tabular}
+\caption{The curved chirp-mass law, locked before data and scored out-of-sample. The curve prediction
+lands within $\sim1.2^\circ$ of the measured orientation on elongated events across two independent
+catalogs; the tangent leaves a systematic residual that grows with elongation (negative Spearman).}
+\label{tab:curve}
+\end{table}
+
+\section{Why it is lawful: the mathematics of measurement}
+The law is a consequence, not a coincidence. The GW inspiral phase is dominated at leading (0PN) order by
+$\mathcal{M}_c$, so the Fisher information has one sharply-measured (``stiff'') direction --- constant
+$\mathcal{M}_c$ --- and poorly-measured (``sloppy'') directions transverse to it \citep{Transtrum2015}. By
+the Bernstein--von Mises theorem the posterior tends to a Gaussian with covariance equal to the inverse
+Fisher matrix \citep{Amari2016}, so its long axis aligns with the constant-$\mathcal{M}_c$ level set; by
+{\v C}encov's theorem the Fisher--Rao metric is the unique metric invariant under sufficient statistics, and
+$\mathcal{M}_c$ is approximately sufficient for the inspiral. The distinction between the tangent and the
+curve is precisely the distinction between linear principal-component analysis and a \emph{principal curve}
+\citep{HastieStuetzle1989}: a chord of a curved level set deviates from its tangent by an amount that grows
+with the chord length, which is the observed elongation dependence. The ``resolved vs.\ unresolved
+directions'' of Backus--Gilbert resolution theory \citep{BackusGilbert1968} are the same split in the
+inverse-problem language. To our knowledge, none of this literature predicts the per-event $(m_1,m_2)$
+posterior orientation from the chirp-mass curve, decomposes the tangent-vs-curve residual against
+elongation, or validates such a law out-of-sample across catalogs; that predictive application is the
+contribution here.
+
+\section{Coherence as a systematics detector}
+If the geometry is measurement optics, then \emph{departures} from it are informative, and departures that
+are \emph{coherent} across events are systematics rather than physics. We test this in two ways. First, a
+physics-blind ``outlier atlas'': ranking the elongated O4b events by their curve residual and correlating
+against nine pre-declared axes (precession $\chi_p$, aligned spin $\chi_{\rm eff}$, mass ratio, redshift,
+signal-to-noise ratio, chirp mass, total mass, secondary mass, and waveform-family disagreement) with
+Benjamini--Hochberg control and a partial correlation removing the axis-ratio confound, \emph{no physical
+axis} survives; the only surviving correlate is waveform-model disagreement --- a measurement systematic,
+with a sign indicating that the curve tracks the waveform \emph{ensemble} consensus better than any single
+waveform tracks another. Second, and more sharply, the geometric GR-exponent measurement of
+Section~\ref{sec:gr} exhibits a coherent $3\sigma$ ``deviation'' that the same lens correctly identifies as
+a systematic. The methodological rule --- an anomaly coherent across independent datasets is a systematic,
+not a signal --- is thus both stated and exercised.
+
+\section{A geometric test of general relativity}
+\label{sec:gr}
+The exponents of $\mathcal{M}_c$ are fixed by the 0PN quadrupole formula. Generalize to the one-parameter
+family
+\begin{equation}
+\mathcal{M}_p = (m_1 m_2)^p (m_1+m_2)^{1-2p}, \qquad \text{GR: } p = 3/5 = 0.600,
+\end{equation}
+and \emph{measure} $p$ from the posterior orientations: because orientation is scale-free
+($m_1(q;p)\propto q^{-p}(1+q)^{2p-1}$), the fit isolates the exponent from the mass scale. A deviation would
+signal modified inspiral phasing (e.g.\ dipole radiation). On the O4b elongated events alone we find
+$p = 0.616\pm0.011$; combining O4a and O4b, $p = 0.628\pm0.009$.
+
+Taken naively this is a coherent $3.1\sigma$ departure from GR --- and it is a false alarm. Two
+pre-committed checks demote it. (i) The two independent catalogs disagree with each other by $0.031$, as
+large as the offset from GR ($0.028$); this catalog-to-catalog spread is a systematic that the
+bootstrap statistical error ($0.009$) does not capture. Including it, $p = 0.628\pm0.009\,(\mathrm{stat})\pm
+0.016\,(\mathrm{syst})$, or $1.5\sigma$ from GR. (ii) The per-event exponent depends on elongation
+(Spearman $= -0.41$, coherent in both catalogs); the cleanest, most-elongated half yields $p=0.606$,
+consistent with GR. The offset is therefore a finite-width imperfection of the leading-order geometric
+model, coherent across catalogs, and vanishing in the clean limit --- not a violation of GR. We stress that
+this test is a methodologically \emph{independent} cross-check, not more sensitive than direct
+parameterized-deviation bounds; its value is that it shares none of the waveform-template machinery.
+
+\section{The information anatomy of a detection}
+The same Fisher structure that fixes the posterior orientation also fixes \emph{when}, in frequency, each
+parameter's information arrives. Computing the cumulative Fisher information for the chirp mass (0PN), mass
+ratio (1PN) and spin (1.5PN) across all $190$ real O4a+O4b events, the ordering $\mathcal{M}_c<\eta<\chi$
+holds universally: the chirp mass is always determined earliest ($\sim35$~Hz), spin latest, and the
+frequency separation --- the anatomy's ``richness'' --- is a monotonic function of total mass (Spearman
+$-1.00$), widest for light, long-inspiral systems and compressed for heavy ones that merge immediately in
+band. This is a frequency-resolved, per-event map of what each detection measured and when. It is a forward
+prediction from the waveform model; a fully data-driven version (re-analysing loud events in frequency
+slices and comparing empirical to GR-predicted information accumulation) is left to future work.
+
+\section{The loudest event: GW250114}
+As an application, GW250114 --- the loudest event to date (network SNR $\sim80$), a near-equal-mass binary
+black hole with remnant $M_f^{\rm src}\approx62.7\,M_\odot$, $\chi_f\approx0.68$ --- is essentially a much
+louder counterpart of the first detection GW150914. Its remnant predicts Kerr quasi-normal-mode frequencies
+of $248.9$~Hz ($\tau=4.10$~ms) for the fundamental and $243.4$~Hz ($\tau=1.35$~ms) for the first overtone;
+published ringdown spectroscopy detects the overtone at $99.9\%$ confidence and finds no deviation from the
+Kerr prediction \citep{Suzuki2026}, confirming the no-hair theorem at record signal-to-noise. Being
+near-equal-mass, its posterior is nearly round and it is (by construction) outside the elongated set used
+for the curved law --- an illustration that the loudest events are not always the most informative for a
+given geometric probe.
+
+\section{Discussion}
+We have shown that the mass-plane posterior geometry of GW events obeys a predictive, zero-parameter
+constant-chirp-mass curve law, validated out-of-sample across three catalogs; that its residuals are
+physics-blind (a systematics detector, not a source-class probe); and that inverting it yields an
+independent geometric test of GR's inspiral mass structure, consistent with general relativity once
+systematics are controlled. The results rest on well-understood measurement mathematics, which is a
+strength: the lawfulness is expected, and the value lies in the predictive application, the out-of-sample
+discipline, and the diagnostic uses.
+
+\paragraph{Honest limitations.} (1) The curved law is validated on elongated events; round posteriors have
+ill-defined orientation and are excluded by design. (2) The geometric GR test is a cross-check, less
+sensitive than dedicated waveform-based bounds, and is currently systematics-limited by a finite-width
+model imperfection. (3) The information anatomy is model-predicted, not strain-extracted. (4) The
+first-principles derivation of the curve's exact width and curvature from the Fisher information remains
+open. (5) Waveform-model choice contributes a per-event orientation scatter of a few degrees; it is
+incoherent and averages out of population-level quantities, but is the dominant per-event systematic.
+
+\paragraph{Data availability.} All data are public: GWTC-4.0 PE (Zenodo 16053484) and GWTC-5.0 PE (Zenodo
+20276106, 20348006). Analysis code, locked pre-registrations, per-event results, and a reproducibility
+notebook accompany this work.
+
+\begin{thebibliography}{99}
+\bibitem[Cutler \& Flanagan(1994)]{CutlerFlanagan1994} C.~Cutler and {\'E}.~{\'E}.~Flanagan,
+\emph{Phys.\ Rev.\ D} \textbf{49}, 2658 (1994).
+\bibitem[Poisson \& Will(1995)]{PoissonWill1995} E.~Poisson and C.~M.~Will,
+\emph{Phys.\ Rev.\ D} \textbf{52}, 848 (1995).
+\bibitem[Baird et al.(2013)]{Baird2013} E.~Baird, S.~Fairhurst, M.~Hannam, and P.~Murphy,
+\emph{Phys.\ Rev.\ D} \textbf{87}, 024035 (2013).
+\bibitem[Hannam et al.(2013)]{Hannam2013} M.~Hannam, D.~A.~Brown, S.~Fairhurst, C.~L.~Fryer, and
+I.~W.~Harry, \emph{Astrophys.\ J.\ Lett.} \textbf{766}, L14 (2013).
+\bibitem[Ohme et al.(2013)]{Ohme2013} F.~Ohme, A.~B.~Nielsen, D.~Keppel, and A.~Lundgren,
+\emph{Phys.\ Rev.\ D} \textbf{88}, 042002 (2013).
+\bibitem[Fairhurst et al.(2023)]{Fairhurst2023} S.~Fairhurst, C.~Hoy, R.~Green, C.~Mills, and
+S.~A.~Usman, \emph{Phys.\ Rev.\ D} \textbf{108}, 082006 (2023).
+\bibitem[Amari(2016)]{Amari2016} S.~Amari, \emph{Information Geometry and Its Applications}
+(Springer, 2016).
+\bibitem[Transtrum et al.(2015)]{Transtrum2015} M.~K.~Transtrum et al.,
+\emph{J.\ Chem.\ Phys.} \textbf{143}, 010901 (2015).
+\bibitem[Hastie \& Stuetzle(1989)]{HastieStuetzle1989} T.~Hastie and W.~Stuetzle,
+\emph{J.\ Amer.\ Statist.\ Assoc.} \textbf{84}, 502 (1989).
+\bibitem[Backus \& Gilbert(1968)]{BackusGilbert1968} G.~Backus and F.~Gilbert,
+\emph{Geophys.\ J.\ R.\ Astron.\ Soc.} \textbf{16}, 169 (1968).
+\bibitem[Suzuki et al.(2026)]{Suzuki2026} M.~Suzuki, K.~Kubota, S.~Morisaki, H.~Motohashi, and
+D.~Watarai, arXiv:2605.03576 (2026).
+\end{thebibliography}
+
+\end{document}
