@@ -4,7 +4,9 @@ Captured 2026-07-18. These are candidate experiments beyond the ported record (E
 Discipline: **one battery at a time**, full WORKFLOW.md cycle each, lean orchestration.
 Numbering continues cosmo2's sequence; next free number was E71.
 
-**Done this session: E71 (PASS 1.22°) + E72 (physical null) + E74 (GW250114 deep-dive) + E78 (geometric GR-exponent test).** E73, E75–E77 below are proposed, not started.
+**Done this session: E71 (PASS 1.22°) + E72 (physical null) + E74 (GW250114 deep-dive) + E78 (geometric GR-exponent) + E79 (cross-catalog exponent — false-alarm caught).** E73, E75–E77 below are proposed, not started.
+
+> **E79 `exponent_cross_catalog` (DONE `f8f5473`)** — tested E78's successor on GWTC-4/O4a (14.6 GB, downloaded, disjoint from O4b). Raw: p̂(O4a)=0.647±0.014 (3.3σ), p̂(O4b)=0.616±0.011; reproduce each other (D2 PASS) but combined 0.628±0.009 = naive **3.1σ above GR** (D1 FAIL). Pre-committed follow-up **dissolved it**: (i) the two catalogs disagree by 0.031 ≈ the offset → systematic floor ±0.016 → **1.5σ**; (ii) offset is elongation-dependent (Spearman(p*,axr)=−0.41, coherent both catalogs), cleanest events → **0.606 ≈ GR**. Coherence lens ⇒ systematic (finite-width/higher-order imperfection of the 0PN model), **NOT a GR violation**. A textbook false-alarm catch (E47/E58 live). Successor: a 1PN geometric model should reproduce+flatten the trend; add GWTC-3.
 
 > **E78 `geometric_gr_exponent` (new, DONE `f3b99da`, exploratory/post-hoc)** — invert the curved law to MEASURE the GW inspiral's leading mass-combination exponent from posterior orientation alone (scale-free → isolates the exponent from the mass scale). Generalize Mc_p=(m1 m2)^p (m1+m2)^(1-2p), GR p=0.600. On 32 elongated O4b events: **p̂ = 0.616 ± 0.011 (stat) ± 0.004 (waveform), consistent with GR at 1.3σ** — a ~2%, waveform-fit-free, methodologically-independent test of GR (a deviation would signal dipole radiation / varying-G). Estimator injection-verified unbiased. Successor (preregisterable): the fitted exponent is reproducible across GWTC-3/O4a/O4b and = 0.600 (needs those catalogs re-scored).
 
