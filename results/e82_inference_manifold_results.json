@@ -1,0 +1,31 @@
+{
+  "battery": "E82 inference manifold (characterization)",
+  "n_events": 190,
+  "location_fraction": 0.9502581269116929,
+  "shape_fraction": 0.04974187308830718,
+  "orientation_median_residual_deg": 1.26,
+  "mds_variance_top3": [
+    0.9656470016526536,
+    0.02731920713093883,
+    0.004906820605401402
+  ],
+  "mds_axes": [
+    {
+      "var_frac": 0.9656470016526536,
+      "abs_spearman_Mc": 0.9932291461638391,
+      "abs_spearman_axr": 0.6787974500725951
+    },
+    {
+      "var_frac": 0.02731920713093883,
+      "abs_spearman_Mc": 0.19691200076981288,
+      "abs_spearman_axr": 0.5073180128404832
+    },
+    {
+      "var_frac": 0.004906820605401402,
+      "abs_spearman_Mc": 0.12726143456372171,
+      "abs_spearman_axr": 0.40634781837592504
+    }
+  ],
+  "effective_dimensionality_participation_ratio": 1.0715279887863955,
+  "note": "location/shape split is mass-range-dominated (partly trivial); the non-trivial result is the dimensionality collapse (eff dim ~2 vs naive 5) because the E71 law slaves orientation to location. Successor: repeat in the full parameter space (add spin, distance) to separate population from measurement across all params."
+}
