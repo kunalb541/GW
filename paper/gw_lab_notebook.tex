@@ -402,4 +402,27 @@ band-limited Bayesian PE (a major build), not more signal processing. Verify: 5 
 $\mathcal{M}_c$; noise false-positive rate $<15$\%); suite 50/50; the injection-bias table ships in the
 results JSON.}
 
+\entry{E85 Bayesian ringdown of GW250114 --- Kerr-consistent, honestly wide, three artifacts defeated.}{The
+Bayesian layer over the E83 pipeline: posterior on $(f,\tau)$ for the 220 mode $\to$ BCW inversion $\to$ a
+ringdown-ONLY $(M_f,a_f)$ posterior vs the IMR remnant. Final likelihood: TRUNCATED time-domain
+(pyRing-style) --- the window is compared to the model under the empirical noise AUTOCOVARIANCE (Toeplitz
+$+$ Cholesky), amplitude/phase marginalized analytically (linear params), $(f,\tau)$ gridded exactly
+($\sim$1 s/fit, deterministic). RESULT (H1-only, 220-only): $f_{220}=254\,[167,333]$ Hz (start$+3$ ms) and
+$256\,[169,333]$ Hz (start$+5$ ms) --- start-time STABLE, median at the IMR-Kerr prediction ($248.6$ Hz);
+ringdown-only remnant $M_f=79\,[45,122]\,M_\odot$, $a_f=0.87\,[0.19,0.98]$ --- the IMR remnant
+$(68.4,0.679)$ lies INSIDE the 90\% region. A no-hair consistency check closed end-to-end with our own
+machinery, at the honest precision of a single-detector single-mode segment (ringdown SNR $\sim6$). The
+build defeated three diagnosed artifacts, each now regression-guarded: (1) an amplitude prior that
+EXCLUDED the true $\sim2\times10^{-21}$ strain scale; (2) an ensemble-sampler convergence failure (fixed
+by analytic linear-amplitude marginalization $+$ exact gridding); (3) the important one ---
+whiten-then-window ACAUSAL LEAKAGE: the $388\sigma$ merger rings forward through the PSD structure into
+the window, manufacturing start-time-unstable fake modes (192 vs 273 Hz); cured by the truncated
+autocovariance likelihood, and guarded by a regression test in which a $500\times$-noise pre-window burst
+must yield a flat likelihood surface. Verify: 6 contract tests (sampler on a known Gaussian; BCW roundtrip
+to $10^{-6}$; grid injection recovery; surface peaks at injection; leakage regression); suite 56/56.
+Limits: H1-only, 220-only, fixed start, weak-consistency precision. Successor: L1 $+$ coherent network,
+221 overtone (4 linear amplitudes, same marginalization), start-time marginalization --- then
+overtone/area-theorem questions in-house, and only then the exotic-echo class on this artifact-safe
+foundation.}
+
 \end{document}
