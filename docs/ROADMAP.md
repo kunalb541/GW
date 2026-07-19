@@ -4,7 +4,9 @@ Captured 2026-07-18. These are candidate experiments beyond the ported record (E
 Discipline: **one battery at a time**, full WORKFLOW.md cycle each, lean orchestration.
 Numbering continues cosmo2's sequence; next free number was E71.
 
-**Done this session: E71 (PASS 1.22°) + E72 (physical null) + E74 (GW250114 deep-dive).** E73, E75–E77 below are proposed, not started.
+**Done this session: E71 (PASS 1.22°) + E72 (physical null) + E74 (GW250114 deep-dive) + E78 (geometric GR-exponent test).** E73, E75–E77 below are proposed, not started.
+
+> **E78 `geometric_gr_exponent` (new, DONE `f3b99da`, exploratory/post-hoc)** — invert the curved law to MEASURE the GW inspiral's leading mass-combination exponent from posterior orientation alone (scale-free → isolates the exponent from the mass scale). Generalize Mc_p=(m1 m2)^p (m1+m2)^(1-2p), GR p=0.600. On 32 elongated O4b events: **p̂ = 0.616 ± 0.011 (stat) ± 0.004 (waveform), consistent with GR at 1.3σ** — a ~2%, waveform-fit-free, methodologically-independent test of GR (a deviation would signal dipole radiation / varying-G). Estimator injection-verified unbiased. Successor (preregisterable): the fitted exponent is reproducible across GWTC-3/O4a/O4b and = 0.600 (needs those catalogs re-scored).
 
 > Note on E74: the genuine no-hair *battery* (Kerr spectroscopy / area theorem on loud O4b ringdowns) is **blocked** — the O4b TGR/pyRing products are not public (only through O4a; PE-only area theorem is circular). Done instead as a **single-event deep-dive on GW250114** (loudest O4b, SNR~80): PE characterization + independent Kerr-QNM spectrum, with the no-hair verdict taken from the published ringdown (arXiv:2605.03576). Re-open the full battery when the O4b TGR release lands.
 
