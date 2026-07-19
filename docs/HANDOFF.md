@@ -53,9 +53,13 @@ cosmo2 subdirectory names exactly.
 
 - Read docs/WORKFLOW.md first — the "GW-specific rules learned the hard way" section is the
   distilled cost of three near-miss false alarms; do not re-learn them.
-- E-numbering is shared with cosmo2 history. E71/E72 preregs are LOCKED HERE but DEFERRED (not
-  yet run — the user redirected the sloppy/principal-curve program to cosmology first; cosmo2
-  ran it as E73, all gates passed). Next free number: **E74**. Do not renumber ported batteries.
+- **E-numbering FORKED on 2026-07-19** (two sessions worked in parallel): this repo and cosmo2
+  now have SEPARATE sequences. GW-repo numbers in use: E71 (gwtc5 curved law) + E71 (sloppy-spectrum
+  prereg, deferred), E72 (outlier atlas) + E72 (curvature-law prereg, deferred), E73 (information
+  anatomy), E74 (GW250114), E78/E79 (GR exponent). cosmo2 numbers: through E75 (its E73 = curved
+  S8 law — different from GW-E73). RULE going forward: qualify cross-repo references as
+  "GW-E<n>" / "cosmo2-E<n>"; next free HERE: **E80**; deferred sloppy/curvature preregs will be
+  renumbered E80/E81 when run. Do not renumber committed batteries.
 - The user's standing instructions: lean orchestration (no agent swarms), always double-check /
   independently re-derive, comprehensive data sweeps in one pass, lab-notebook (never
   paper-style) reports.
