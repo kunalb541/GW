@@ -385,4 +385,21 @@ exotic echo / dark-matter-frequency-rotation tests ONLY after multi-event valida
 coherence-lens/systematic controls (per E79/E72, a positive there is likelier a systematic than new
 physics).}
 
+\entry{E84 data-driven chirp mass --- ballpark result, honest bias, feasibility boundary.}{First physics
+from the E83 pipeline: fit the textbook 0PN law $f^{-8/3}(t)=K(t_c-t)$ to the spectrogram RIDGE of
+GW250114's whitened H1 strain --- a template-free chirp mass. Raw: $\mathcal{M}_c^{\rm det}=33.0\,M_\odot$
+vs PE $31.1$ ($+6$\%). BUT injection calibration shows the estimator is biased $+15$--$30$\% HIGH
+(frequency quantization $+$ window smearing in an accelerating sweep; grows with $\mathcal{M}_c$), so the
+raw agreement is PARTLY FORTUITOUS --- honest claim: ballpark-consistent with a $\sim$20--30\%
+template-free systematic, NOT precision. (The double-check caught this before it was banked --- the E79
+lesson again; a scipy STFT window-center double-offset bug was also caught by the contract tests.)
+NEGATIVE RESULT with mechanism: the band-resolved version (the frequency-geometry observable) is
+INFEASIBLE via ridge methods --- GW250114 sweeps $64\to200$ Hz in $<25$ ms, less than one STFT window
+(upper bands: 4 and 1 confident points), while light events are too faint per-slice; this is E73's
+anatomy COMPRESSION observed in data. The data-driven frequency-geometry test therefore requires
+band-limited Bayesian PE (a major build), not more signal processing. Verify: 5 contract tests
+(slope-inversion roundtrip; recovery within the characterized bias envelope, never low; bias GROWS with
+$\mathcal{M}_c$; noise false-positive rate $<15$\%); suite 50/50; the injection-bias table ships in the
+results JSON.}
+
 \end{document}

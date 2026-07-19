@@ -1,0 +1,33 @@
+{
+  "battery": "E84 data-driven chirp + band-resolved feasibility (characterization)",
+  "event": "GW250114_082203",
+  "mc_det_strain_ridge_raw": 32.98491741018185,
+  "mc_det_pe": 31.1,
+  "frac_diff_raw": 0.06060827685472183,
+  "estimator_bias_injections_recovered_over_true": {
+    "10": 1.153,
+    "15": 1.171,
+    "30": 1.29
+  },
+  "honest_claim": "ballpark-consistent template-free chirp mass (~20-30% systematic from frequency quantization + window smearing in an accelerating sweep); the raw -3..+6% agreement is partly fortuitous and NOT precision",
+  "n_ridge_points": 39,
+  "band_resolved_attempt": {
+    "32-64Hz": {
+      "mc": 38.7,
+      "n_ridge_points": 34
+    },
+    "64-110Hz": {
+      "mc": null,
+      "n_ridge_points": 4
+    },
+    "110-200Hz": {
+      "mc": null,
+      "n_ridge_points": 1
+    }
+  },
+  "negative_result": "band-resolved Mc infeasible via ridge: heavy events sweep upper bands faster than STFT resolution (<25 ms for 64-200 Hz); light events too faint per-slice. Matches E73's anatomy compression. Real version needs band-limited Bayesian PE.",
+  "pipeline_strands": [
+    "E83 ringdown 241 Hz vs Kerr 248.9 (3.2%)",
+    "E84 chirp-phase Mc ~ballpark (bias-characterized)"
+  ]
+}
