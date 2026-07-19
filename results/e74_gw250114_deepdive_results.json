@@ -1,0 +1,95 @@
+{
+  "event": "GW250114_082203",
+  "role": "loudest O4b event (deep-dive; not a locked battery)",
+  "published_refs": {
+    "ringdown": "Suzuki et al. 2026 arXiv:2605.03576 (orthonormal QNMs)",
+    "imr": "GWTC-5 / ref [15] therein"
+  },
+  "published_ringdown_result": {
+    "overtone_221_significance": "99.9% (orthonormal) vs 82.5% (nonorthogonal)",
+    "kerr_deviation": "df221, dgamma221 consistent with 0 (no-hair upheld)"
+  },
+  "characterization": {
+    "group": "C00:NRSur7dq4",
+    "n_samples": 17253,
+    "m1_source": [
+      33.76842442574614,
+      32.88033929919863,
+      35.03135041975349
+    ],
+    "m2_source": [
+      32.21236480806122,
+      30.779040300028303,
+      33.126189398580976
+    ],
+    "mass_ratio": [
+      0.9557753907661568,
+      0.8841643367444874,
+      0.9953364899213374
+    ],
+    "chi_eff": [
+      -0.023227136531000656,
+      -0.06202971934074516,
+      0.0005764891755856442
+    ],
+    "redshift": [
+      0.08721927871337114,
+      0.07251877438827,
+      0.1024758231267414
+    ],
+    "network_snr": [
+      76.90682196002562,
+      75.25870419704736,
+      78.54227317103528
+    ],
+    "Mf_source": [
+      62.83096961629713,
+      61.827082330926174,
+      63.745868527438645
+    ],
+    "Mf_detector": [
+      68.36072117045012,
+      67.48421321354093,
+      68.87473170516239
+    ],
+    "final_spin_af": [
+      0.679286718621102,
+      0.6681931111164255,
+      0.6866188500098014
+    ]
+  },
+  "kerr_qnm_prediction": {
+    "f_220_Hz": [
+      248.87658901316107,
+      247.83988120457695,
+      250.17805236099846
+    ],
+    "tau_220_ms": [
+      4.097277569679805,
+      4.025465574527431,
+      4.140729495187719
+    ],
+    "f_221_Hz": [
+      243.37105191420616,
+      242.37873075287027,
+      244.49438384348156
+    ],
+    "tau_221_ms": [
+      1.3490214569612844,
+      1.324826831444368,
+      1.3636854989688352
+    ],
+    "note": "Kerr (no-hair) prediction from (Mf_det, af); the published ringdown measures these and finds df221,dgamma221 ~ 0 (no deviation); 221 overtone detected at 99.9%."
+  },
+  "published_value_validation": {
+    "m1_match": true,
+    "m2_match": true,
+    "Mf_match": true,
+    "af_match": true
+  },
+  "ref_check_GW150914like": {
+    "f220_Hz": 250.2584976587926,
+    "tau220_ms": 4.076613030027623
+  },
+  "curved_law_note": "near-equal-mass (q~0.95) -> near-round posterior (axr~2) -> geometry-law orientation weakly defined; correctly outside the E71 axr>=3 elongated set."
+}
