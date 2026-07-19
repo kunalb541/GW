@@ -53,8 +53,9 @@ cosmo2 subdirectory names exactly.
 
 - Read docs/WORKFLOW.md first — the "GW-specific rules learned the hard way" section is the
   distilled cost of three near-miss false alarms; do not re-learn them.
-- E-numbering is shared with cosmo2 history; next free number is **E71** (E70 is cosmology, in
-  cosmo2 only). Do not renumber ported batteries.
+- E-numbering is shared with cosmo2 history. E71/E72 preregs are LOCKED HERE but DEFERRED (not
+  yet run — the user redirected the sloppy/principal-curve program to cosmology first; cosmo2
+  ran it as E73, all gates passed). Next free number: **E74**. Do not renumber ported batteries.
 - The user's standing instructions: lean orchestration (no agent swarms), always double-check /
   independently re-derive, comprehensive data sweeps in one pass, lab-notebook (never
   paper-style) reports.
