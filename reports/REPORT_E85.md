@@ -1,5 +1,18 @@
 # E85 lab notebook - Bayesian ringdown of GW250114: Kerr-consistent, honestly wide, and three defeated artifacts
 
+> **RETRACTED - SUPERSEDED BY E87 (`reports/REPORT_E87.md`). Do not cite the numbers below.**
+>
+> The posterior reported here was **prior-dominated**: the entire 160-340 Hz grid sat within 4 lnL, so the
+> "90% CI" [167, 333] was the grid, not a measurement, and it was statistically indistinguishable from no
+> signal at all. Two defects in the noise covariance (a destructive ACF taper and a broadband-scaled ridge)
+> destroyed ~33x of matched-filter SNR. Every "wide but Kerr-consistent" reading below is therefore
+> vacuous: the IMR remnant fell inside the interval because *everything* did, and the apparent start-time
+> stability was a flat surface, not a stable peak. The tell was that adding L1 to H1 failed to tighten the
+> posterior. E87 fixes the covariance and passes the validation gate against LVK's own pyRing posteriors
+> (median offset 2.0 Hz over 2M-18M). The machinery described below - analytic amplitude/phase
+> marginalization, the Kerr inversion, and the truncation that defeats acausal whitening leakage - is
+> sound and is reused unchanged in E87.
+
 **CHARACTERIZATION (no prereg; a measurement with credible intervals).** The Bayesian layer over the E83
 strain pipeline, built from scratch and applied to GW250114's ringdown: posterior on (f, tau) for the 220
 mode -> mapped through the Berti-Cardoso-Will fits to a ringdown-ONLY (Mf, af) posterior -> compared to
