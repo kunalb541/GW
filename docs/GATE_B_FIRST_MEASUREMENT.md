@@ -95,3 +95,28 @@ Outstanding: Gate C (frame and parameterization audit), Gate D (prereg timestamp
 reporting), Gate E (precision-law multivariate fit or removal). The thickness term is the natural
 next battery and would upgrade the paper from "a good reconstruction" to "a reconstruction with a
 quantified, explained residual."
+
+---
+
+## Addendum — the thickness mechanism, measured on real data (PARTIAL)
+
+B1c proposed arc-varying posterior thickness as the residual's cause and showed it produces rotations of the
+right magnitude synthetically. Measured on the 79 elongated events, by extracting each posterior's
+perpendicular offset from the curve at its own $q$, binning to get $w(q)$, and rebuilding the model as
+curve + measured per-$q$ thickness:
+
+| model | median signed | median $|\Delta\psi|$ |
+|---|---|---|
+| pure curve (zero thickness) | −0.725° | 1.038° |
+| **curve + measured thickness** | **−0.532°** | **0.803°** |
+
+Improved on **71%** of events; Wilcoxon $p=3.4\times10^{-4}$.
+
+Two structural facts: the perpendicular width is **~35% of the total spread** (these are not thin curves),
+and thickness **grows along the arc in every single event** (median Spearman $w$ vs $q$ = **+1.000**).
+
+**This is a partial explanation, not a solution.** It removes roughly a quarter of the residual, and the
+per-event residual does not track the per-event taper ($\rho=+0.069$), so the remaining ~0.8° is still
+unexplained. Note also that measured thickness is genuinely two-dimensional information, so this is a
+MECHANISM test — it does not extend the "two 1-D summaries" compression claim, and must not be presented
+as an improved reconstruction.
