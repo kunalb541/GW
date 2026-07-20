@@ -11,10 +11,12 @@ diagnostic of cross-experiment consistency.
 
 ## The four results forming the paper's spine
 
-1. **The curved chirp-mass law** (cosmo2 E40 → E65 → E67). The (m₁, m₂) posterior of a compact
-   binary *is* the constant-chirp-mass curve — location set by the measured M_c, extent by the
-   mass-ratio marginal, zero free parameters. Confirmed **out-of-sample** on GWTC-4.0:
-   median |Δψ| = 1.26° on elongated O4a events, prediction locked before the data were opened.
+1. **The curved chirp-mass law** (E40 → E65 → E67 → E71). Two one-dimensional summaries of a
+   compact-binary mass posterior — its median chirp mass and its mass-ratio marginal — **reconstruct**
+   the orientation of the full two-dimensional posterior to ~1° on elongated events, with **zero
+   coefficients calibrated on the validation catalogs**. Out-of-sample: 1.26° on O4a, 1.22° on O4b.
+   *This is a posterior-reconstruction law, not a prediction from source medians, and the residual ~1°
+   is a genuine systematic — see the claim-status note below before citing it.*
 2. **Coherence as a systematics detector** (E45–E47, E55, E57–E60). Across the GR-test battery,
    apparent anomalies that are *coherent across events* are method artifacts, not physics —
    the lens that kept three naive-combination false alarms out of the record; GR passes every test.
@@ -43,6 +45,42 @@ diagnostic of cross-experiment consistency.
 - [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
 - [ ] Manuscript: figures, full author list, journal formatting, referee-verification of remaining citations.
 
+## Claim status (read before citing any number)
+
+This repository contains a **submission-gate audit** of its own headline result. The gates narrowed
+several claims; the current status lives in
+[`docs/PAPER_PLAN.md`](docs/PAPER_PLAN.md) and the five gate notes in `docs/`:
+
+| item | status |
+|---|---|
+| curved-law reconstruction (Gates A/C/D) | reproducible via `src/e94` + `src/e95` |
+| uncertainty & threshold (Gate B) | reproducible via `src/e92`; the ~1° residual is a real systematic at ~6× Monte Carlo resolution, **not** sampling noise |
+| precision law (Gate E) | **NOT PASSED — exploratory**; the mass-band split is post-hoc (`src/e93`) |
+| thickness mechanism | finite thickness supported out-of-sample; **arc-variation NOT established** (`src/e96`) |
+| E85 Bayesian ringdown | **RETRACTED** — superseded by E87; its posterior was prior-dominated |
+
+Two provenance caveats stated plainly: E71's preregistration lock is publicly timestamped in this
+repo's history (17 h before its result); **E67's is not** — its prereg and results entered in the same
+port commit, so its out-of-sample status rests on a private history. And O4a/O4b are *disjoint event
+catalogs*, not independent experiments.
+
+## Data and reproducibility
+
+**Raw parameter-estimation data are NOT included in this repository.**
+
+- `data/` is gitignored (~68 GB of LVK PE releases). Fetch it separately — every source is pinned with
+  record numbers and DOIs in [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md), with helpers in
+  `scripts/`.
+- `results/e94_posterior_cache.npz` (~100 MB) is also **not** tracked. It is regenerable:
+  ```
+  python3 src/e94_build_posterior_cache.py
+  ```
+  This takes **about 5 minutes locally** (one HDF5 pass, ~284 s measured) and **requires the downloaded
+  PE files** to be present under `data/`.
+- The cache is the single provenance source for the gate batteries: `src/e92`, `src/e93`, `src/e95` and
+  `src/e96` read it and perform **no HDF5 access of their own**. Without it they will not run.
+- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (108 tests).
+
 ## Layout (cosmo2 conventions)
 
 ```
@@ -62,9 +100,9 @@ GW/
 
 Start with [`docs/WORKFLOW.md`](docs/WORKFLOW.md) (the locked-prereg battery cycle + the
 GW-specific rules learned the hard way), [`docs/TESTING.md`](docs/TESTING.md) (run: `python3 -m
-pytest tests/ -q`; 17 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
+pytest tests/ -q`; 108 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
 state, data routes, next steps), and [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md)
-(every source pinned with record numbers). Next free experiment number: **E71**.
+(every source pinned with record numbers). Next free experiment number: **E97**.
 
 ## License
 
