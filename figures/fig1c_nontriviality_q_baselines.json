@@ -1,0 +1,63 @@
+{
+ "figure": "fig1c_nontriviality_q_baselines",
+ "source_artifacts": [
+  "results/e95_gate_regeneration_results.json"
+ ],
+ "axr_min": 3.0,
+ "catalogs": {
+  "GWTC-3": {
+   "n_elongated": 30,
+   "own_q_deg": 0.8297044886110285,
+   "tangent_deg": 5.321458355266074,
+   "pooled_q_deg": 9.87370089974182,
+   "perm_null": {
+    "n": 300,
+    "mean": 9.246005365248026,
+    "sd": 1.6622318590605956,
+    "min": 4.5376913758313435,
+    "p05": 6.833231272011182,
+    "p95": 12.254180801262873,
+    "own_percentile": 0.0,
+    "own_below_all": true
+   }
+  },
+  "O4a": {
+   "n_elongated": 19,
+   "own_q_deg": 1.3183011179800133,
+   "tangent_deg": 6.603459291919364,
+   "pooled_q_deg": 4.189331554026296,
+   "perm_null": {
+    "n": 300,
+    "mean": 6.521174153826731,
+    "sd": 1.3182197708680257,
+    "min": 2.873357058913882,
+    "p05": 4.5277491381957775,
+    "p95": 8.84452051093402,
+    "own_percentile": 0.0,
+    "own_below_all": true
+   }
+  },
+  "O4b": {
+   "n_elongated": 32,
+   "own_q_deg": 1.0022543526344236,
+   "tangent_deg": 3.899166935206395,
+   "pooled_q_deg": 3.72749602778579,
+   "perm_null": {
+    "n": 300,
+    "mean": 4.789898302935167,
+    "sd": 0.9003877240249105,
+    "min": 2.3024871147586197,
+    "p05": 3.413665130030079,
+    "p95": 6.425803457474637,
+    "own_percentile": 0.0,
+    "own_below_all": true
+   }
+  }
+ },
+ "interval_meaning": "grey band = permutation null p05-p95 (own-q replaced by another event's q marginal, 300 catalog-stratified draws). NOT a confidence interval, NOT coverage, NOT uncertainty on own-q.",
+ "outputs": [
+  "figures/fig1c_nontriviality_q_baselines.png",
+  "figures/fig1c_nontriviality_q_baselines.pdf"
+ ],
+ "note": "own-q lies below the MINIMUM of 300 catalog-stratified permutations in every catalog, so the permutation p-value is < 1/300 in each. The single-shuffle figure from earlier prose is deliberately not plotted: re-drawing it moved the O4a value from 3.04 to 8.62 deg, i.e. one permutation is not a null."
+}
