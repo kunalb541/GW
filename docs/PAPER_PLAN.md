@@ -172,4 +172,8 @@ dismiss than a broad claim assembled from several unrelated analyses.
 `results/e94_posterior_cache.npz` (100 MB) is gitignored and regenerable via `python3 src/e94_build_posterior_cache.py`
 (~284 s, one HDF5 pass). Its manifest IS committed. No other module touches HDF5.
 
-Still without any committed artifact: the arc-varying **thickness mechanism** (in-sample explanatory fit only).
+| thickness mechanism | `results/e96_curve_thickness_mechanism_results.json` (`src/e96`) | **finite thickness supported out-of-sample; arc-variation NOT established** |
+
+Every major claim now has a committed artifact. The thickness result is EXPLANATORY only: it is
+two-dimensional information and does not extend the two-summary compression claim, and no fraction of the
+residual may be attributed to the measured taper (a constant taper does as well in one direction).

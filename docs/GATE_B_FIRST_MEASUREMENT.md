@@ -64,25 +64,48 @@ quantified explanation of the residual.
 
 ---
 
-## Addendum — the thickness mechanism, measured on real data (PARTIAL)
+## Addendum — the thickness mechanism, REGENERATED from the E96 artifact
 
-B1c proposed arc-varying posterior thickness as the residual's cause and showed it produces rotations of the
-right magnitude synthetically. Measured on the 79 elongated events, by extracting each posterior's
-perpendicular offset from the curve at its own $q$, binning to get $w(q)$, and rebuilding the model as
-curve + measured per-$q$ thickness:
+**Status: reproducible.** Read from `results/e96_curve_thickness_mechanism_results.json`
+(`src/e96_curve_thickness_mechanism.py`, E94 cache, no HDF5, seed 96).
+**Verdict: finite thickness SUPPORTED OUT-OF-SAMPLE; arc variation NOT ESTABLISHED.**
 
-| model | median signed | median $|\Delta\psi|$ |
+### The estimator, declared
+curve point at the event's median Mc; unit normal from a finite difference dq=0.0001;
+per-sample perpendicular offset; **6 equal-count q bins**, minimum **20** samples/bin and
+**4** good bins required; width = std of the offset in each bin; **none; linear interpolation between bin centres, clamped**.
+
+### Estimator control — the +1.000 is NOT imposed by binning
+Constant true thickness → Spearman(w,q) = -0.31, -0.71, -0.37, +0.77 (random signs, flat profiles).
+Genuinely growing thickness → +1.00, +1.00. So the real-data monotonicity is
+genuine. On real events the median is **0.943**, with only 35% exactly +1 — the earlier
+prose figure of "+1.000 in every event" came from an unfiltered binning and is corrected here.
+
+### In-sample (weak by construction)
+| model | median signed | median \|Δψ\| |
 |---|---|---|
-| pure curve (zero thickness) | −0.725° | 1.038° |
-| **curve + measured thickness** | **−0.532°** | **0.803°** |
+| pure curve (zero thickness) | -0.779° | 1.028° |
+| curve + measured thickness | -0.609° | 0.884° |
 
-Improved on **71%** of events; Wilcoxon $p=3.4\times10^{-4}$.
+n=81, improved on 63%, Wilcoxon p=1.8e-03; median relative thickness
+0.327 of the total spread. *IN-SAMPLE: w(q) is learned from the same posterior it then helps reconstruct, and adds flexibility. Improvement here is not evidence of mechanism.*
 
-Two structural facts: the perpendicular width is **~35% of the total spread** (these are not thin curves),
-and thickness **grows along the arc in every single event** (median Spearman $w$ vs $q$ = **+1.000**).
+### Out-of-sample — learn w(q) on one waveform family, predict the other's axis
+| direction | n | pure curve | measured | constant | linear | quadratic |
+|---|---|---|---|---|---|---|
+| AtoB | 64 | 1.14° | **0.96°** (p=0.005) | 0.97° | 0.90° | 0.86° |
+| BtoA | 64 | 1.00° | **0.74°** (p=0.028) | 0.87° | 0.72° | 0.81° |
 
-**This is a partial explanation, not a solution.** It removes roughly a quarter of the residual, and the
-per-event residual does not track the per-event taper ($\rho=+0.069$), so the remaining ~0.8° is still
-unexplained. Note also that measured thickness is genuinely two-dimensional information, so this is a
-MECHANISM test — it does not extend the "two 1-D summaries" compression claim, and must not be presented
-as an improved reconstruction.
+**Finite thickness genuinely helps out of sample**: the measured profile beats the zero-thickness curve in
+both directions (1.14→0.96, p=0.005; 1.00→0.74, p=0.028), using only the
+source family's widths. So the zero-thickness idealization IS part of the residual.
+
+**But the arc-VARYING part is not established.** A *constant* thickness does essentially as well as the
+measured profile in A→B (0.97° vs 0.96°), and simple linear/quadratic tapers match or beat it in
+both directions. So what matters is *having* thickness, not the specific measured taper.
+
+> FINITE thickness improves cross-family prediction in both directions, so the zero-thickness idealization is genuinely part of the residual. But the ARC-VARYING part is NOT established: a constant or simple linear taper does as well as or better than the measured profile. Do not claim the measured taper is the mechanism, and do not quote a fraction of the residual explained.
+
+**Withdrawn:** the earlier claim that arc-varying thickness "explains roughly a quarter of the residual."
+E96 does not support attributing any fraction of the residual to the measured taper. Thickness is also
+two-dimensional information and is NOT part of the two-summary compression claim.
