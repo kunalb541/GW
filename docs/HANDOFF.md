@@ -66,8 +66,10 @@ cosmo2 subdirectory names exactly.
   sides on GW241011 — definitive negative; ridge methods carry no band-resolved chirp-mass information),
   and **E87** (E85 corrected: two covariance bugs cost ~33x matched-filter SNR and left E85's posterior
   equal to the PRIOR; the corrected pipeline reproduces LVK's own pyRing Kerr_220 start-time scan to a
-  median 2.0 Hz over 2M–18M).
-  Next free HERE: **E88**.
+  median 2.0 Hz over 2M–18M), and **E88** (221 overtone: a two-mode preference significant at 8.4σ vs a
+  pure-220 null but FLAT in start time, so not a decaying overtone — an unidentified ~+5 systematic;
+  plus the measured fact that remnant freedom absorbs 99% of an injected overtone).
+  Next free HERE: **E89**.
   Do not renumber committed batteries; **`git log` before claiming a number**.
 - The user's standing instructions: lean orchestration (no agent swarms), always double-check /
   independently re-derive, comprehensive data sweeps in one pass, lab-notebook (never
