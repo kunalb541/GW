@@ -62,7 +62,9 @@ cosmo2 subdirectory names exactly.
   stay reserved for the deferred sloppy/curvature preregs (renumbered when run). Also taken: **E83**
   (from-scratch strain pipeline / GW250114 ringdown validation), **E84** (data-driven chirp mass +
   band-resolved feasibility boundary), and **E85** (Bayesian ringdown: truncated time-domain likelihood,
-  Kerr-consistent remnant, three artifacts defeated). Next free HERE: **E86**.
+  Kerr-consistent remnant, three artifacts defeated), and **E86** (band-resolved boundary closed from both
+  sides on GW241011 — definitive negative; ridge methods carry no band-resolved chirp-mass information).
+  Next free HERE: **E87**.
   Do not renumber committed batteries; **`git log` before claiming a number**.
 - The user's standing instructions: lean orchestration (no agent swarms), always double-check /
   independently re-derive, comprehensive data sweeps in one pass, lab-notebook (never
