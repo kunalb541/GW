@@ -1,0 +1,77 @@
+{
+ "figure": "fig1b_tangent_vs_curve_residual",
+ "source_artifacts": [
+  "results/e92_curve_uncertainty_results.json",
+  "results/e95_gate_regeneration_results.json"
+ ],
+ "axr_min": 3.0,
+ "seed": 1,
+ "n_boot_median_ci": 5000,
+ "catalogs": {
+  "GWTC-3": {
+   "tangent": {
+    "median_deg": 5.321458355266074,
+    "ci16_deg": 4.002477985618441,
+    "ci84_deg": 8.153710478717286,
+    "n": 30
+   },
+   "curve": {
+    "median_deg": 0.8297044886110427,
+    "ci16_deg": 0.7668356919770076,
+    "ci84_deg": 1.0751949010500255,
+    "n": 30
+   },
+   "n_elongated": 30,
+   "e95_crosscheck": {
+    "own_q": 0.8297044886110285,
+    "tangent": 5.321458355266074,
+    "n_elong": 30
+   }
+  },
+  "O4a": {
+   "tangent": {
+    "median_deg": 6.603459291919364,
+    "ci16_deg": 5.207843757609737,
+    "ci84_deg": 7.181725679847659,
+    "n": 19
+   },
+   "curve": {
+    "median_deg": 1.3183011179800133,
+    "ci16_deg": 1.0278973773188227,
+    "ci84_deg": 1.4696448027193014,
+    "n": 19
+   },
+   "n_elongated": 19,
+   "e95_crosscheck": {
+    "own_q": 1.3183011179800133,
+    "tangent": 6.603459291919364,
+    "n_elong": 19
+   }
+  },
+  "O4b": {
+   "tangent": {
+    "median_deg": 3.899166935206395,
+    "ci16_deg": 2.8559142047814987,
+    "ci84_deg": 5.022608687108857,
+    "n": 32
+   },
+   "curve": {
+    "median_deg": 1.0022543526344236,
+    "ci16_deg": 0.7690095361768385,
+    "ci84_deg": 1.2211462219402307,
+    "n": 32
+   },
+   "n_elongated": 32,
+   "e95_crosscheck": {
+    "own_q": 1.0022543526344236,
+    "tangent": 3.899166935206395,
+    "n_elong": 32
+   }
+  }
+ },
+ "outputs": [
+  "figures/fig1b_tangent_vs_curve_residual.png",
+  "figures/fig1b_tangent_vs_curve_residual.pdf"
+ ],
+ "note": "medians are over elongated events per catalog; the interval is a bootstrap CI on the MEDIAN across events, not the per-event Monte Carlo resolution reported by E92. Every median is asserted equal to the independently written E95 value."
+}
