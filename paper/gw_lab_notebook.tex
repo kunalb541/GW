@@ -402,7 +402,13 @@ band-limited Bayesian PE (a major build), not more signal processing. Verify: 5 
 $\mathcal{M}_c$; noise false-positive rate $<15$\%); suite 50/50; the injection-bias table ships in the
 results JSON.}
 
-\entry{E85 Bayesian ringdown of GW250114 --- Kerr-consistent, honestly wide, three artifacts defeated.}{The
+\entry{E85 Bayesian ringdown of GW250114 --- \textbf{RETRACTED, superseded by E87.}}{\textbf{The numbers in
+this entry are withdrawn: the posterior was PRIOR-DOMINATED (the whole $160$--$340$ Hz grid sat within
+4 lnL, so the ``$90$\% CI'' was the grid) and was statistically indistinguishable from no signal. Two
+covariance defects cost ${\sim}33\times$ in matched-filter SNR; see E87 for the diagnosis, the fix, and
+the validated measurement. The machinery below --- analytic amplitude/phase marginalization, the Kerr
+inversion, and the truncation that defeats acausal whitening leakage --- is sound and is reused unchanged.
+Retained verbatim as the record of the error.} The
 Bayesian layer over the E83 pipeline: posterior on $(f,\tau)$ for the 220 mode $\to$ BCW inversion $\to$ a
 ringdown-ONLY $(M_f,a_f)$ posterior vs the IMR remnant. Final likelihood: TRUNCATED time-domain
 (pyRing-style) --- the window is compared to the model under the empirical noise AUTOCOVARIANCE (Toeplitz
@@ -444,5 +450,132 @@ frequency-geometry observable REQUIRES matched-filter or banded Bayesian PE, now
 rather than a guess. Verify: 5 contract tests (notch suppresses a planted 60 Hz line; monotonicity
 discriminates injected chirp from noise; estimator $\sim$unbiased where the window IS adequate; and the
 compressed response slope is itself regression-guarded at $<0.75$); suite 61/61.}
+
+\entry{E87 E85 retracted --- its ringdown posterior WAS the prior; covariance fixed, validated vs LVK
+pyRing.}{E85 reported $f_{220}=253.9\,[167,333]$ Hz as an ``honestly wide'' Kerr-consistent measurement. It
+was not a measurement: the entire grid sat within \textbf{4 lnL}, so the interval was the grid, the IMR
+remnant fell inside because EVERYTHING did, and the ``start-time stability'' was a flat surface. THE TELL:
+adding L1 to H1 failed to tighten the posterior ($162.0$ vs $160.0$ Hz) --- impossible if there were
+information to add. Diagnosis: the fraction of the $(f,\tau)$ grid within 2 lnL of the peak was
+\textbf{1.00} on real data (0.02 on a loud injection), and both detectors railed at the grid's LOW edge.
+ROOT CAUSE, two defects in the truncated-likelihood noise covariance, together ${\sim}33\times$ of lost
+matched-filter SNR: (1) an ACF taper applied to force positive-definiteness crushed the off-diagonal
+correlations while keeping $\mathrm{acf}[0]$, driving $C$ toward white noise at the BROADBAND rms of
+high-passed strain, so a 250 Hz filter was charged 25--60 Hz seismic power ($8\times$); (2) a diagonal
+ridge of $10^{-3}\times$ the BROADBAND variance was itself a white floor far above the true in-band noise
+(a further ${\sim}3.5\times$). FIX: build the ACF as the Wiener--Khinchin transform of a Welch PSD ---
+positive-definite BY CONSTRUCTION, so no taper is needed and the noise colour survives --- with the ridge
+at $10^{-6}$. A bug introduced WHILE fixing it and caught by an explicit check: the one-sided PSD must be
+halved before the inverse FFT, or $C$ comes out exactly $2\times$ too large, inflating every credible
+interval by $\sqrt{2}$ WITHOUT moving the peak (invisible to any peak-location test; caught only by
+testing $\mathrm{acf}[0]$ against $\mathrm{var}$(noise): ratio $2.0012\to1.0006$). VALIDATION GATE, the
+point of the exercise, PASSED: against LVK's own pyRing Kerr\_220 posteriors at 19 start times (Zenodo
+17018009), mapped to $f_{220}$ through the SAME BCW relation --- median offset \textbf{2.0 Hz} over
+2--18$M$ (max 5.8), LVK's median inside our 90\% CI at \textbf{10/11} start times, and the credible-interval
+WIDTHS track ($16.4$ vs $16.3$ Hz at $12M$), i.e. the covariance is CALIBRATED, not merely centred.
+PHYSICS: the network start-time scan reproduces the early-time bias of a single-220 fit --- $230$ Hz with
+an \textbf{8 Hz} CI at $t_{\rm peak}$ (tight and WRONG), rising to a $251$--$254$ Hz plateau at 12--18$M_f$,
+then back to the prior past $24M_f$. \emph{The tightest interval is the one that most confidently excludes
+the right answer.} Also withdrawn: a ``$251.7^{+5.1}_{-5.0}$ Hz LVK figure'' used earlier in the session was
+never sourced and is not in the release; all comparison now reads LVK's actual samples at runtime. Verify:
+9 contract tests (WK normalization; PD-without-taper; corrected covariance $>5\times$ the E85 construction;
+pure noise gives an UNINFORMATIVE posterior; inherited pre-window-burst leak guard; injection recovery;
+adding a detector must not broaden; Kerr roundtrip; peak location) --- with the synthetic-noise fixture
+CALIBRATED (a gentle $60\times$ spectral step reproduces only a $1.8\times$ taper penalty vs ${\sim}20\times$
+for real H1, so it was steepened until it reproduced ${\sim}40\times$; a fixture too tame to exhibit the bug
+would make the regression test vacuous --- the same failure mode as the bug). Suite 70/70.}
+
+\entry{E88 the 221 overtone in GW250114 --- a significant two-mode preference that is NOT the overtone.}{
+A negative with a named cause. GEOMETRY FIRST, computed before looking at any published result: at the IMR
+remnant the 221 sits $5.5$ Hz from the 220 ($243.1$ vs $248.6$) but decays $3\times$ faster ($1.35$ vs
+$4.10$ ms), so over a 40 ms window the bases are \textbf{${\sim}76$\% collinear} --- most of the overtone is
+something the 220 can already absorb, and only the ORTHOGONALIZED SNR$_\perp$ is available:
+$6.9$ at $t_{\rm peak}$, $3.3$ at $3M$, $0.9$ at $8M$. So any overtone evidence must live at 0--3$M$ and be
+gone by $6M$; this independently predicts the profile of LVK's own evidences. TWO METHOD RESULTS were
+needed first: (a) a Bayes factor needs a PROPER amplitude prior --- E85/E87 marginalized amplitudes with a
+flat, improper one (fine for a posterior, undefined for model comparison); replaced by a Gaussian prior,
+formula verified against brute-force 2-D integration to $3\times10^{-14}$. (b) The naive multi-detector
+model DESTROYS the test: a free 221 amplitude per detector adds 4 linear parameters and costs
+\textbf{${\sim}11$ lnB of pure Occam penalty on signal-free data}. But the 221 and 220 share a detector's
+antenna pattern, so the complex ratio $\rho=A_{221}/A_{220}$ is COMMON across detectors; writing
+$\mathrm{Re}[A_{\rm det}(T_{220}+\rho T_{221})]$ keeps it linear in $A_{\rm det}$ via
+$M_{\rm red}=M_{\rm full}K(\rho)$ (exact to $8\times10^{-16}$). Both models then carry two linear
+amplitudes per detector: $\sigma_A$ cancels (at most $0.32$, median $0.13$, over a $33\times$ range), the
+whole overtone cost is the $\rho$ prior volume (synthetic injections with $\rho$ contained:
+$2.00/2.12/1.83$ vs $\ln 9=2.20$; real data $1.01$--$2.06$, median $1.52$, i.e.\ $\rho$ is only weakly
+measured), and the signal-free penalty drops to $+0.9$.
+DOMINANT SYSTEMATIC, measured: with the remnant PINNED an injected $|\rho|=1$ overtone gives
+$\Delta\ln B=+21.2$; with $(M_f,a_f)$ MARGINALIZED it collapses to $-0.05$ --- \textbf{essentially ALL
+absorbed} (at $|\rho|=2$: $+110.0\to+15.1$, 86\%). The
+single-mode model just moves the remnant, peaking at $(54.0,0.150)$ whose 220 mode is $f=234.8$ Hz,
+$\tau=3.04$ ms. \emph{That is E87's early-time bias seen from the other side: same mechanism, two
+batteries.} Window length does not rescue it ($\Delta\ln B\sim0$--$1$ for 20--320 ms). RESULT:
+$\Delta\ln B = 6.15/6.09/6.33/5.88$ at $0/1/2/3M$, still $4.94$ at $8M$, negative by $10M$. Against the
+CORRECT null --- a loud 220 with NO overtone injected into real noise, 13 realizations, $-2.06\pm0.98$ ---
+the observed $+6.15$ is \textbf{8.4$\sigma$}, 0/13. (The signal-free null, $+0.91\pm0.58$, is the WRONG one:
+it contains no 220 either and would flatter the result to $9.4\sigma$.) THE DISCRIMINATOR: a genuine 221
+must fade with a 2.01 ms e-folding, and an injected $|\rho_0|=1.5$ template duly falls $+5.69$ from $0M$ to
+$8M$ (undetectable already by $1M$); the observed preference falls only $\mathbf{+1.21}$, persisting to $8M$
+where SNR$_\perp=0.94$ and no overtone can survive. \textbf{A preference that does not decay like an
+overtone is not the overtone} --- by the standing coherence lens, a systematic of roughly constant size
+${\sim}+5$. LVK's profile DOES decay ($20.8\to10.1\to5.7\to0.7$ over 0--3$M$), matching the SNR$_\perp$
+prediction; theirs, not ours, is the analysis that supports an overtone claim. We match them at 2, 8, 10
+and 12$M$ and differ most at 0--1$M$, where our looser detector model costs us. The systematic is NOT
+identified; sky-position-tied amplitudes are the first suspect. Verify: 10 contract tests; suite 80/80.}
+
+\entry{E89 spin magnitude rises with mass across 265 events --- a hierarchical-assembly signature.}{
+THE PHYSICS: a comparable-mass BBH merger leaves a remnant with $a_f\approx0.69$ almost independently of
+what went in --- one of GR's cleanest predictions, and visible directly in this catalog (\texttt{final\_spin}
+sits at $0.690$--$0.707$ in EVERY mass bin). Black holes that are themselves merger remnants should
+therefore carry $a\sim0.7$ and sit preferentially at high mass. WHY E42--E44 SAW NOTHING: those batteries
+hunted this channel in $\chi_{\rm eff}$ and found no requirement for it, which is exactly right ---
+dynamical assembly gives ISOTROPIC orientations, so large spin magnitudes average to $\chi_{\rm eff}\approx0$.
+$\chi_{\rm eff}$ is structurally blind to the population; the magnitude $a_1$ is not. This is E44's question
+asked in the observable that can see it, on 265 events instead of 75. RESULT: hierarchical fit of
+$p(a_1|m_1)=\mathrm{Beta}(\mathrm{mean}=\mathrm{sigmoid}(b_0+b_1\ln(m_1/30)))$ gives $b_1=\mathbf{+1.193}$,
+$\Delta\ln L=10.94$, population mean $a_1$ running $0.083\to0.304\to0.499\to\mathbf{0.647}$ at
+$m_1=8/30/60/100\,M_\odot$ against the $0.69$ remnant reference. Descriptive Spearman $+0.554$
+($p=9\times10^{-23}$), repeating independently in GWTC-3 ($+0.683$), O4a ($+0.490$) and O4b ($+0.475$). The
+$a_1$ prior is uniform$(0,1)$ --- verified against the \texttt{priors} group --- so each marginal posterior
+is proportional to its marginal likelihood. SIGNIFICANCE against nulls, not $\chi^2$, because heavier events
+are genuinely less informative (Spearman$(\ln m_1,$ concentration$)=-0.517$): forward simulation with
+mass-independent truth gives $b_1=-0.046\pm0.138$; permuting masses within concentration strata gives
+$-0.002\pm0.173$. Both sit at ZERO, so the estimator is not biased by the confound, and the observed
+$+1.193$ exceeds the maximum of all \textbf{300} null trials. REMNANT-SPIN LEAK REFUTED: a leak would put
+heavy $a_1$ at \texttt{final\_spin} (gap ${\sim}0$, per-event correlation ${\sim}+1$); the measured gap stays
+$-0.197$ above $60\,M_\odot$ and the per-event correlation is ${\sim}0.4$--$0.5$ for LIGHT events too.
+TWO TRAPS, both now contract-tested: (1) an ``informative events'' cut is CIRCULAR --- among heavy events
+spin is well measured precisely WHEN IT IS LARGE (Spearman$(a_1,$KS-from-prior$)=+0.93$ across the 10
+heaviest), and the cut manufactures the very trend it appears to confirm; not used in the result. (2) The
+first null generator was WRONG and would have made this battery UNDER-report itself: modelling a posterior
+as a Beta centred on the truth makes a small true spin pile against $a_1=0$ and look informative, whereas
+real uninformative posteriors relax to the FLAT prior (real heavy low-information events sit at median
+$a_1=0.474$). The wrong shape produced a spurious null slope of $+0.42\pm0.11$ that would have been
+subtracted from $+1.19$ as estimator bias; fixed to a truth/uniform mixture. A tempting analytic argument
+--- that a flat posterior contributes $\ln 1=0$ to every model and so cannot bias anything --- holds only
+in the exact-flat limit; NEAR-flat posteriors do not obey it, which is why the nulls had to be run rather
+than reasoned about. LIMIT, and it is not small: \textbf{SELECTION EFFECTS ARE NOT MODELLED} --- this is the
+DETECTED population, not the astrophysical one, and aligned spin raises SNR, so the astrophysical amplitude
+is not established without a VT/injection campaign. The effect is also not novel; what is new here is the
+independent measurement with the artifact and null calibration spelled out. Verify: 9 contract tests;
+suite 89/89. Successor: a 1G$+$2G mixture with a selection function, and the tilt-isotropy test.}
+
+\entry{E90 superradiance / ultralight bosons (SCOUT, not committed) --- no exclusion survives calibration.}{
+Penrose's rotational-energy extraction in its wave form: an ultralight boson forms a bound cloud around a
+spinning BH and spins it down, so if a boson of mass $\mu$ exists every BH must satisfy
+$a<a_{\rm crit}=4\alpha/(1+4\alpha^2)$ with $\alpha=GM\mu/\hbar c^3$ (derived from scratch; $\alpha=0.7485$
+for $M=10\,M_\odot$, $\mu=10^{-11}$ eV vs the literature's ${\sim}0.75$). Applied to the 265 E89 posteriors,
+a naive analysis ``excludes'' $\mu\in[2\times10^{-14},4\times10^{-12}]$ eV. FOUR successive controls each
+killed a version: (i) $P(a>a_{\rm crit})$ is prior-dominated (the uniform spin prior alone gives
+$0.5$--$0.95$); (ii) a Bayes factor against a UNIFORM null makes the boson look FAVOURED ($\ln B=+40$), but
+shuffling spins across events also gives $+16$ --- real spins are simply low, so ANY truncation wins; (iii)
+using the E89 astrophysical population as the null (the right structure) gives $\ln B=-1403$, but
+$-690=\ln 10^{-300}$ is the numerical floor: single events' posterior TAILS, exactly where PE is least
+trustworthy; (iv) with an E79-style systematics floor ($\epsilon=0.1$, capping any one event at $\ln 0.1$),
+$\ln B=-69$ --- but mock catalogs drawn from the E89 population with \emph{no boson at all} give
+$-63.0\pm2.8$. VERDICT: the real data sit $\mathbf{1.95\sigma}$ below the no-boson expectation; the
+``excluded band'' was a look-elsewhere artifact across 60 $\mu$ values. \textbf{No boson mass is excluded.}
+Kept as a scout (no src/results committed): the reusable content is the $\alpha$/$a_{\rm crit}$/$\tau_{\rm SR}$
+machinery and the demonstration that E89's population is the correct null for exotic-spin tests.}
 
 \end{document}

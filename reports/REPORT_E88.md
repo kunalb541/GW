@@ -35,21 +35,31 @@ in a given detector, so the complex ratio **rho = A221/A220 is shared across det
 detector keeps a free complex amplitude. Writing the model as `Re[A_det (T220 + rho T221)]` keeps it linear
 in `A_det` for fixed rho via `M_red = M_full @ K(rho)` (**exact to 8e-16**). Both models then carry exactly
 two linear amplitudes per detector, so:
-- the linear-amplitude Occam factor **cancels** - measured sigma_A sensitivity is **< 0.3 over a 33x range**;
-- the entire extra cost of the overtone is the rho prior volume - widening the disc R = 1 -> 3 costs
-  **2.00 / 2.12 / 1.83** in three tests against the expected ln(9) = 2.20;
+- the linear-amplitude Occam factor **cancels** - across every start time and rho_max the sigma_A
+  sensitivity over a 33x range is at most **0.32** (median 0.13);
+- the entire extra cost of the overtone is the rho prior volume. On SYNTHETIC injections whose true rho is
+  contained inside every disc tested, widening R = 1 -> 3 costs **2.00 / 2.12 / 1.83** against the expected
+  ln(9) = 2.20. On the REAL data the same widening costs 1.01-2.06 (median 1.52) - smaller, because the rho
+  posterior is not fully contained, which is itself the statement that rho is weakly measured;
 - the signal-free Occam penalty falls from ~11 to **+0.9**.
 
 ## The dominant systematic: the remnant absorbs the overtone
-With (Mf, af) **pinned** at the truth, an injected |rho| = 1 overtone gives dlnB = **+24.93**. With
-(Mf, af) **marginalized** - the honest analysis - it collapses to **+0.21**. The single-mode model simply
+With (Mf, af) **pinned** at the truth, an injected |rho| = 1 overtone gives dlnB = **+21.22**. With
+(Mf, af) **marginalized** - the honest analysis - it collapses to **-0.05**. The single-mode model simply
 moves the remnant: given an injected 220+221 it peaks at **(Mf, af) = (54.0, 0.150)**, whose 220 mode is
 **f = 234.8 Hz, tau = 3.04 ms**, versus the true 248.6 Hz / 4.10 ms.
 
 | injected \|rho\| | dlnB, remnant PINNED | dlnB, marginalized | absorbed |
 |---|---|---|---|
-| 1.0 | +24.93 | +0.21 | **99%** |
-| 2.0 | +96.93 | +14.75 | 85% |
+| 0.5 | +0.77 | -1.71 | (all) |
+| 1.0 | +21.22 | -0.05 | **~100%** |
+| 2.0 | +110.01 | +15.12 | 86% |
+
+(These are the values written by `src/e88_overtone_evidence.py` into the results JSON, at off-source
+-150 s with injection phase 0.7. An earlier draft of this report quoted +24.93 / +0.21 / +96.93 / +14.75
+from an exploratory run that used a different noise stretch and injection phase; those were not
+reproducible from the committed code and are withdrawn. The conclusion is unchanged, and slightly
+stronger: at |rho| = 1 the remnant freedom absorbs essentially ALL of the overtone.)
 
 **This is E87's early-time bias, seen from the other side.** E87 found the single-220 fit returns ~230 Hz
 at t_peak instead of the 251 Hz plateau; here a *known injected* overtone drives the single-mode fit to

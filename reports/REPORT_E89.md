@@ -24,9 +24,9 @@ marginal posterior is proportional to its marginal likelihood and needs no rewei
 
 | | value |
 |---|---|
-| slope **b1** | **+1.193** |
+| slope **b1** | **+1.193** (raw fit; no bias correction is applied, because both nulls sit at zero) |
 | dlnL vs slope = 0 | 10.94 |
-| population mean a_1 at m1 = 8 / 30 / 60 / 100 Msun | **0.078 / 0.304 / 0.507 / 0.660** |
+| population mean a_1 at m1 = 8 / 30 / 60 / 100 Msun | **0.083 / 0.304 / 0.499 / 0.647** |
 | remnant-spin reference a_f | 0.69 |
 
 Descriptive: Spearman(m1, median a_1) = **+0.554**, p = 9e-23, n = 265.
