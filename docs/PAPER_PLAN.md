@@ -155,3 +155,21 @@ Draft the manuscript only after gates A-D pass. The paper succeeds if it demonst
 out-of-sample posterior reconstruction that beats honest baselines and survives cross-waveform transfer. It
 does not need to be a new test of GR. A narrower true claim will be substantially harder for a referee to
 dismiss than a broad claim assembled from several unrelated analyses.
+
+
+---
+
+## Reproducibility status (2026-07-21, appended)
+
+| gate | artifact | status |
+|---|---|---|
+| A | `results/e95_gate_regeneration_results.json` (via `src/e94`,`src/e95`) | **reproducible** |
+| B | `results/e92_curve_uncertainty_results.json` (`src/e92`) | **reproducible**; coverage language removed; signed residual NOT significant in O4b |
+| C | `results/e95_gate_regeneration_results.json` | **reproducible**; mediation only *consistent with*, not established |
+| D | `results/e95_gate_regeneration_results.json` | **reproducible** (per-family sweep); E67 prereg lock not publicly timestamped |
+| E | `results/e93_precision_law_results.json` (`src/e93`) | **NOT PASSED — exploratory**; post-hoc mass split unresolved |
+
+`results/e94_posterior_cache.npz` (100 MB) is gitignored and regenerable via `python3 src/e94_build_posterior_cache.py`
+(~284 s, one HDF5 pass). Its manifest IS committed. No other module touches HDF5.
+
+Still without any committed artifact: the arc-varying **thickness mechanism** (in-sample explanatory fit only).

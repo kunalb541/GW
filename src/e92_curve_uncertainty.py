@@ -1,178 +1,145 @@
 #!/usr/bin/env python3
-"""E92 - uncertainty and permutation layer for the curved chirp-mass law.
+"""E92 - uncertainty layer for the curved chirp-mass law, read from the E94 posterior cache.
 
-Bootstraps the sample-aligned residual psi_curve - psi_meas and builds a permutation null for the
-own-q advantage. O4a/O4b are recomputed from local HDF5 chains. GWTC-3 is excluded here because raw
-posterior samples are not present in this workspace. Seed 92.
+Provenance: `results/e94_posterior_cache.npz` (+ manifest) is the SINGLE source. No HDF5 access here --
+a full sweep costs ~276 s wall and that cost is paid once, in E94. This also lets GWTC-3 back in: the
+earlier HDF5-backed version excluded it because raw sweeps were too slow.
+
+WHAT THIS MEASURES, AND WHAT IT DOES NOT. Bootstrapping posterior samples measures **Monte Carlo
+resolution**: how well the released sample set pins down the functional psi_curve - psi_meas. It is NOT
+repeated-experiment uncertainty and NOT model coverage. The bootstrap sigma shrinks as more samples are
+released and encodes nothing about detector noise, calibration, waveform systematics or population
+variation. Earlier prose called the |z|<1 / |z|<2 rates "coverage against nominal 68%/95%"; that was
+wrong and is not repeated here. The supported statement is only that the ~1 deg discrepancy greatly
+exceeds finite-sample Monte Carlo error.
+
+Joint resampling matters: psi_meas and psi_curve come from the SAME samples, so each bootstrap draws ONE
+index set and recomputes both from it, bootstrapping the difference directly. E94 guarantees m1/m2/q are
+sample-aligned; the committed `load_event` does NOT align q with the finite-mass mask, and that mismatch
+would silently pair mismatched samples.
+
+Signed residuals use `sdiff` (from E95), NOT the repo's `adiff` -- adiff returns an ABSOLUTE value, and
+using it for a sign test produced a tautological "100% positive, p=3e-24". Seed 92.
 """
-import json
-import math
-import os
-import sys
-
-import h5py
+import json, math, os, sys
 import numpy as np
-from scipy.stats import binomtest, spearmanr, wilcoxon
+from scipy.stats import binomtest, spearmanr
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
+from src.e94_build_posterior_cache import load, CACHE, MANIFEST
+from src.e95_gate_regeneration import sdiff, primary_rows, AXR_MIN
+from src.e71_gwtc5_curved_law import psi_axr_rho, tangent_angles, curve_psi
 from src.e65_pn_fisher_rotation import adiff
-from src.e91_curve_submission_gates import CATALOGS, aligned_samples, event_name, psi_axr_rho, signed_adiff
-from src.e71_gwtc5_curved_law import curve_psi, pick_group
 
 SEED = 92
 N_BOOT = 200
-N_PERM = 400
+THRESHOLDS = (1.5, 2.0, 2.5, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0)
 RESULT_JSON = os.path.join(ROOT, "results/e92_curve_uncertainty_results.json")
 
 
 def circular_std_deg(x):
-    """Std for mod-180 axis residuals by doubling angles onto the circle."""
-    x = np.asarray(x, float)
-    rad = np.deg2rad(2.0 * x)
+    """Std for mod-180 axis residuals, via angle doubling onto the circle."""
+    rad = np.deg2rad(2.0 * np.asarray(x, float))
     c, s = np.mean(np.cos(rad)), np.mean(np.sin(rad))
     r = max(math.hypot(c, s), 1e-12)
     return float(np.rad2deg(math.sqrt(-2.0 * math.log(r))) / 2.0)
 
 
-def load_preferred_samples():
-    rows = []
-    for cat, data_dir in CATALOGS.items():
-        for name in sorted(os.listdir(data_dir)):
-            if not (name.startswith("GW") and name.endswith(".hdf5")):
-                continue
-            fp = os.path.join(data_dir, name)
-            with h5py.File(fp, "r") as h:
-                g = pick_group(h)
-                if g is None:
-                    continue
-                m1, m2, q, mc = aligned_samples(h[g]["posterior_samples"], "source")
-            psi_m, axr, _ = psi_axr_rho(m1, m2)
-            psi_c = curve_psi(float(np.median(mc)), q)
-            rows.append({
-                "catalog": cat,
-                "event": event_name(fp),
-                "group": g,
-                "m1": m1,
-                "m2": m2,
-                "q": q,
-                "mc": mc,
-                "psi_meas": psi_m,
-                "psi_curve": psi_c,
-                "axr": axr,
-                "err_curve": adiff(psi_c, psi_m),
-                "signed_curve_minus_meas": signed_adiff(psi_c, psi_m),
-            })
-    return rows
-
-
-def bootstrap_event(row, rng, n_boot=N_BOOT):
-    n = len(row["q"])
-    signed = []
-    for _ in range(n_boot):
-        idx = rng.integers(0, n, n)
-        psi_m, _, _ = psi_axr_rho(row["m1"][idx], row["m2"][idx])
-        psi_c = curve_psi(float(np.median(row["mc"][idx])), row["q"][idx])
-        signed.append(signed_adiff(psi_c, psi_m))
-    signed = np.asarray(signed)
-    return {
-        "event": row["event"],
-        "catalog": row["catalog"],
-        "group": row["group"],
-        "axr": row["axr"],
-        "signed_residual": row["signed_curve_minus_meas"],
-        "abs_residual": row["err_curve"],
-        "boot_sigma_signed": circular_std_deg(signed),
-        "boot_ci16": float(np.quantile(signed, 0.16)),
-        "boot_ci84": float(np.quantile(signed, 0.84)),
-    }
-
-
-def threshold_curve(rows):
-    out = []
-    for thr in [1.5, 2.0, 2.5, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0]:
-        xs = [r for r in rows if r["axr"] >= thr]
-        out.append({
-            "axr_threshold": thr,
-            "n": len(xs),
-            "median_curve": None if not xs else float(np.median([r["err_curve"] for r in xs])),
-        })
-    return out
-
-
-def permutation_null(rows, rng, n_perm=N_PERM):
-    out = {}
-    for cat in sorted({r["catalog"] for r in rows}):
-        xs = [r for r in rows if r["catalog"] == cat and r["axr"] >= 3.0]
-        own = float(np.median([r["err_curve"] for r in xs]))
-        errs = []
-        for _ in range(n_perm):
-            donor = rng.permutation(len(xs))
-            pe = []
-            for i, j in enumerate(donor):
-                r, d = xs[i], xs[j]
-                pe.append(adiff(curve_psi(float(np.median(r["mc"])), d["q"]), r["psi_meas"]))
-            errs.append(float(np.median(pe)))
-        errs = np.asarray(errs)
-        out[cat] = {
-            "n_elong": len(xs),
-            "own_q_median": own,
-            "permuted_median_mean": float(np.mean(errs)),
-            "permuted_median_ci05_95": [float(np.quantile(errs, 0.05)), float(np.quantile(errs, 0.95))],
-            "own_q_percentile_low_is_better": float(np.mean(errs <= own)),
-        }
-    return out
+def bootstrap_event(d, rng, n_boot=N_BOOT):
+    """JOINT bootstrap of the signed residual from cache-aligned arrays."""
+    m1 = d["m1s"].astype(float); m2 = d["m2s"].astype(float)
+    q = d["q"].astype(float); mcs = d["mcs"].astype(float)
+    assert len(m1) == len(m2) == len(q) == len(mcs), "cache arrays must be sample-aligned"
+    n = len(m1)
+    psi, _, _ = psi_axr_rho(m1, m2)
+    obs = float(sdiff(curve_psi(float(np.median(mcs)), q), psi))
+    draws = np.empty(n_boot)
+    for b in range(n_boot):
+        j = rng.integers(0, n, n)                       # ONE index set for both quantities
+        pb, _, _ = psi_axr_rho(m1[j], m2[j])
+        draws[b] = sdiff(curve_psi(float(np.median(mcs[j])), q[j]), pb)
+    return (obs, circular_std_deg(draws), float(np.quantile(draws, 0.16)),
+            float(np.quantile(draws, 0.84)), n)
 
 
 def main():
     rng = np.random.default_rng(SEED)
-    rows = load_preferred_samples()
-    elong = [r for r in rows if r["axr"] >= 3.0]
-    boot = [bootstrap_event(r, rng) for r in elong]
-    z = np.array([b["signed_residual"] / b["boot_sigma_signed"] for b in boot if b["boot_sigma_signed"] > 0])
-    signed = np.array([b["signed_residual"] for b in boot])
-    positive = int(np.sum(signed > 0))
-    signed_by_cat = {}
-    for cat in sorted({b["catalog"] for b in boot}):
-        xs = [b for b in boot if b["catalog"] == cat]
-        pos = int(sum(b["signed_residual"] > 0 for b in xs))
-        signed_by_cat[cat] = {
-            "n": len(xs),
-            "median_signed": float(np.median([b["signed_residual"] for b in xs])),
-            "fraction_positive": pos / len(xs),
-            "sign_test_p": float(binomtest(pos, len(xs), 0.5).pvalue),
-        }
-    abs_res = np.array([b["abs_residual"] for b in boot])
-    sig = np.array([b["boot_sigma_signed"] for b in boot])
-    summary = {
-        "battery": "E92 curve uncertainty",
-        "seed": SEED,
-        "n_boot": N_BOOT,
-        "n_perm": N_PERM,
-        "inputs": "O4a/O4b local HDF5 only; raw GWTC-3 chains absent",
+    rec = load()
+    prim, _ = primary_rows(rec)
+    manifest = json.load(open(MANIFEST)) if os.path.exists(MANIFEST) else {}
+
+    rows = []
+    for (cat, ev), v in sorted(prim.items()):
+        obs, sig, lo, hi, n = bootstrap_event(v["raw"], rng)
+        rows.append(dict(catalog=cat, event=ev, group=v["group"], axr=float(v["axr"]),
+                         signed=obs, abs_err=abs(obs), boot_sigma=sig, boot_ci16=lo, boot_ci84=hi,
+                         n_samples=int(n),
+                         tangent_err=float(abs(adiff(tangent_angles(v["m1m"], v["m2m"])[0], v["psi"])))))
+
+    el = [r for r in rows if r["axr"] >= AXR_MIN]
+    z = np.array([r["abs_err"] / r["boot_sigma"] for r in el if r["boot_sigma"] > 1e-9])
+    out = {
+        "battery": "E92 cache-backed uncertainty",
+        "seed": SEED, "n_boot": N_BOOT, "axr_min": AXR_MIN,
+        "provenance": {"cache": os.path.relpath(CACHE, ROOT),
+                       "manifest": os.path.relpath(MANIFEST, ROOT),
+                       "cache_manifest": manifest, "hdf5_accessed": False},
+        "n_events": len(rows), "n_elongated": len(el),
         "monte_carlo_resolution": {
-            "n_elong_axr_ge3": len(boot),
-            "median_abs_residual": float(np.median(abs_res)),
-            "median_boot_sigma_signed": float(np.median(sig)),
-            "median_abs_z": float(np.median(np.abs(z))),
-            "fraction_abs_z_lt_1": float(np.mean(np.abs(z) < 1.0)),
-            "fraction_abs_z_lt_2": float(np.mean(np.abs(z) < 2.0)),
-            "language_guard": "bootstrap measures posterior-sample Monte Carlo resolution, not repeated-experiment coverage",
-        },
-        "signed_residual": {
-            "n": len(boot),
-            "median_signed": float(np.median(signed)),
-            "fraction_positive": positive / len(boot),
-            "sign_test_p": float(binomtest(positive, len(boot), 0.5).pvalue),
-            "by_catalog": signed_by_cat,
-            "spearman_signed_vs_axr": float(spearmanr([b["axr"] for b in boot], [b["signed_residual"] for b in boot]).statistic),
-        },
-        "threshold_sensitivity": threshold_curve(rows),
-        "permutation_null": permutation_null(rows, rng),
-        "per_event_bootstrap": boot,
+            "median_abs_err_deg": float(np.median([r["abs_err"] for r in el])),
+            "median_bootstrap_sigma_deg": float(np.median([r["boot_sigma"] for r in el])),
+            "median_ratio_err_over_sigma": float(np.median(z)),
+            "frac_within_1_sigma": float(np.mean(np.abs(z) < 1)),
+            "frac_within_2_sigma": float(np.mean(np.abs(z) < 2)),
+            "language_guard": ("Monte Carlo resolution of the released posterior samples ONLY. These "
+                               "fractions are NOT coverage against nominal 68%/95% levels: the bootstrap "
+                               "encodes no detector-noise, calibration, waveform or population "
+                               "uncertainty. Supported claim: the ~1 deg discrepancy greatly exceeds "
+                               "finite-sample Monte Carlo error.")},
+        "signed_residual": {},
+        "threshold_sensitivity": {},
     }
-    json.dump(summary, open(RESULT_JSON, "w"), indent=2)
-    print(f"wrote {RESULT_JSON}")
+
+    for scope in ("ALL", "GWTC-3", "O4a", "O4b"):
+        S = el if scope == "ALL" else [r for r in el if r["catalog"] == scope]
+        if len(S) < 3:
+            continue
+        s = np.array([r["signed"] for r in S])
+        npos = int((s > 0).sum())
+        out["signed_residual"][scope] = {
+            "n": len(s), "median_deg": float(np.median(s)), "mean_deg": float(s.mean()),
+            "sd_deg": float(s.std(ddof=1)), "frac_positive": float(npos / len(s)),
+            "sign_test_p": float(binomtest(npos, len(s), 0.5).pvalue)}
+    out["signed_residual"]["spearman_signed_vs_axr"] = float(
+        spearmanr([r["axr"] for r in el], [r["signed"] for r in el]).statistic)
+    out["signed_residual"]["note"] = (
+        "catalog-specific values are reported because the effect is NOT uniform -- strongest in the "
+        "training catalog, weakest in the newest. Pooling all events into one sign test overstates it.")
+
+    for t in THRESHOLDS:
+        S = [r for r in rows if r["axr"] >= t]
+        if len(S) < 5:
+            continue
+        out["threshold_sensitivity"][str(t)] = {
+            "n": len(S),
+            "curve_median_deg": float(np.median([r["abs_err"] for r in S])),
+            "tangent_median_deg": float(np.median([r["tangent_err"] for r in S]))}
+    out["threshold_sensitivity"]["note"] = (
+        "axr>=3 is the locked primary score; the curve error is monotone and smooth across thresholds, "
+        "so the primary score is not threshold-tuned.")
+    out["events"] = rows
+
+    json.dump(out, open(RESULT_JSON, "w"), indent=1)
+    m = out["monte_carlo_resolution"]
+    print(f"n={out['n_events']} elongated={out['n_elongated']}")
+    print(f"median |err| {m['median_abs_err_deg']:.2f} deg | median bootstrap sigma "
+          f"{m['median_bootstrap_sigma_deg']:.3f} deg | ratio {m['median_ratio_err_over_sigma']:.2f}")
+    for k, v in out["signed_residual"].items():
+        if isinstance(v, dict):
+            print(f"  signed {k:>7}: n={v['n']:3d} median {v['median_deg']:+.3f} "
+                  f"frac+ {v['frac_positive']:.2f} p={v['sign_test_p']:.3f}")
+    print("wrote", RESULT_JSON)
 
 
 if __name__ == "__main__":

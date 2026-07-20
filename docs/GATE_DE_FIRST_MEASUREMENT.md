@@ -49,7 +49,9 @@ analysis conventions. Call them **disjoint event catalogs**, never independent e
 
 ---
 
-# Gate E — the precision law, fit directly. PASSES, with a domain of validity.
+# Gate E — the precision law, fit directly. ~~PASSES~~ **SUPERSEDED — see the regenerated
+section at the end of this file. STATUS: NOT PASSED (exploratory).** The provisional numbers
+below were hand-run and are retained only as the record; the E93 artifact supersedes them.
 
 E42 measured an SNR slope and a partial correlation; it never fit the joint exponents. The audit required
 $\log(\sigma_{\mathcal M}/\mathcal M)=b_0+b_\rho\log\rho+b_M\log\mathcal M+\epsilon$ with uncertainties and
@@ -80,9 +82,9 @@ behaviour: pure-inspiral cycle counting ($N\propto\mathcal M_c^{-5/3}$) assumes 
 between a fixed $f_{\rm low}$ and merger; for heavy systems the merger–ringdown enters band and the
 assumption fails.
 
-**Verdict: keep the precision law, stated with its domain of validity.** It is a sharper claim than E42's
-correlation: the Fisher/cycle-count scaling is confirmed to sub-tenth-sigma precision where its assumptions
-hold, and breaks down predictably where they do not.
+**~~Verdict: keep the precision law~~ — WITHDRAWN.** The mass-band edges were chosen after seeing the
+pooled rejection, so the light-band agreement is post-hoc and is not confirmation. See the regenerated
+Gate E section below.
 
 **Caveats.** (i) $f_{\rm low}$ and waveform duration are NOT controlled, as the audit asked; the mass-band
 split is consistent with the physical explanation but does not isolate it. (ii) Only 104/190 O4a+O4b events
@@ -97,9 +99,45 @@ half-width ignores posterior skew.
 | gate | verdict |
 |---|---|
 | A — non-triviality, baselines, cross-waveform transfer | **PASS** — cross-family transfer at 2.08° vs a 1.99° floor |
-| B — uncertainty, coverage, threshold | **PASS on threshold**; exposes a real ~1° systematic at ~5× sampling noise |
+| B — uncertainty, threshold | **PASS on threshold** (artifact: e92); ~1° systematic at ~6× Monte Carlo resolution; coverage language withdrawn |
 | C — frame and parameterization | **PASS** — dependence measured; detector-frame gain is axis-ratio-mediated |
 | D — provenance and pipeline | **PASS on pipeline**; E67's prereg lock is not publicly timestamped |
-| E — precision law | **PASS** — $b_M=1.661\pm0.149$ vs $5/3$ for light systems; domain of validity required |
+| E — precision law | **NOT PASSED — exploratory** (post-hoc mass split; see regenerated section) |
 
-No gate broke the result. Each narrowed how it may be stated. The manuscript may now be drafted.
+No gate broke the central result. Each narrowed how it may be stated. **Gates A-D are reproducible from
+committed artifacts (E92/E94/E95); Gate E is NOT passed.** Manuscript drafting waits on Gate E or on
+dropping the precision law.
+
+
+---
+
+# Gate E — REGENERATED from the E93 artifact. **STATUS: NOT PASSED (exploratory).**
+
+Read from `results/e93_precision_law_results.json`, produced by `src/e93_precision_law.py` from the E94
+cache (no HDF5 access). Model: log(σ_Mc/Mc) = b0 + b_ρ log ρ + b_mass log Mc_det, HC1-robust SE.
+
+| sample | n | b_ρ | b_mass | z(b_ρ+1) | z(b_mass−5/3) |
+|---|---|---|---|---|---|
+| pooled | 116 | -0.943 ± 0.112 | +1.475 ± 0.055 | +0.51 | **-3.48** |
+| mc_0_20_POSTHOC | 29 | -1.250 ± 0.132 | +1.591 ± 0.101 | -1.89 | -0.75 |
+| mc_20_40_POSTHOC | 36 | -1.049 ± 0.126 | +1.078 ± 0.653 | -0.39 | -0.90 |
+| mc_40_inf_POSTHOC | 51 | -0.942 ± 0.268 | +0.597 ± 0.172 | +0.22 | -6.21 |
+
+**b_ρ ≈ −1 is supported** in the selected sample (-0.943 ± 0.112, z = +0.51).
+
+**b_mass = 5/3 is REJECTED pooled** (z = -3.48). Agreement appears only in the light band,
+and **the band edges (20, 40 M⊙) were chosen after seeing the pooled rejection**. Failure to reject inside
+a data-selected subset is not positive evidence for the predicted exponent. The provisional hand-run
+reported the light band as 1.661 ± 0.149 (z = −0.04); the artifact gives +1.591 ± 0.101
+(z = -0.75) — weaker, and the earlier "0.04σ confirmation" phrasing is withdrawn.
+
+**SNR missingness is now accounted for**: 116 events kept, 150 dropped for lack of a usable
+`*_optimal_snr` field. Kept/dropped median Mc_det = 37.2/34.3, Mann–Whitney
+p = 0.142 — no significant evidence that availability selects on mass. That addresses one of
+the four requirements; three remain.
+
+**To pass Gate E** still requires: (i) the expected exponent from the actual Fisher integral (detector PSD,
+event-specific f_low, mass-dependent upper cutoff) rather than the heuristic cycle count; (ii) a continuous
+transition model with a physically declared transition variable instead of hand-placed bins; (iii) held-out
+or preregistered validation. Until then: **b_ρ ≈ −1 supported; the mass exponent is inconsistent with a
+single 5/3 law and shows an exploratory mass dependence.**
