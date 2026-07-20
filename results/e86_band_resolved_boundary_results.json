@@ -1,0 +1,82 @@
+{
+  "battery": "E86 band-resolved boundary, closed from both sides (definitive negative)",
+  "event": "GW241011_233834",
+  "why_this_event": "most elongated (axr 17.3), q=0.32, ~1.2 s inspiral (7x GW250114), SNR~36 - the best case E84 said was needed",
+  "band_scan": [
+    {
+      "nperseg": 2048,
+      "band": "30-50Hz",
+      "n": 26,
+      "monotonicity": 0.82,
+      "mc_det": 8.35
+    },
+    {
+      "nperseg": 1024,
+      "band": "30-55Hz",
+      "n": 38,
+      "monotonicity": 0.8,
+      "mc_det": 6.77
+    },
+    {
+      "nperseg": 1024,
+      "band": "40-70Hz",
+      "n": 51,
+      "monotonicity": -0.34,
+      "mc_det": null
+    },
+    {
+      "nperseg": 512,
+      "band": "50-90Hz",
+      "n": 27,
+      "monotonicity": -0.02,
+      "mc_det": 0.54
+    },
+    {
+      "nperseg": 256,
+      "band": "80-150Hz",
+      "n": 60,
+      "monotonicity": -0.38,
+      "mc_det": null
+    }
+  ],
+  "real_lowband": {
+    "mc_det": 8.35,
+    "n": 26,
+    "monotonicity": 0.82
+  },
+  "mc_det_target": 10.9,
+  "injection_calibration": {
+    "8.0": {
+      "recovered": 7.6,
+      "ratio": 0.95,
+      "monotonicity": 0.97
+    },
+    "10.9": {
+      "recovered": 7.89,
+      "ratio": 0.72,
+      "monotonicity": 0.89
+    },
+    "14.0": {
+      "recovered": 4.88,
+      "ratio": 0.35,
+      "monotonicity": 0.53
+    }
+  },
+  "response_slope": 0.11,
+  "verdict": "ridge/spectrogram methods cannot deliver band-resolved chirp mass for any event class - heavy events sweep faster than the window (E84), light events are too faint per-slice and line-dominated above ~55 Hz, and the long-window low-frequency rescue is degenerate (response slope ~0.1). The frequency-geometry observable requires matched-filter or banded Bayesian PE.",
+  "lines_notched": [
+    35.5,
+    41.0,
+    46.1,
+    59.88,
+    60.0,
+    60.12,
+    89.9,
+    91.0,
+    120.0,
+    177.1,
+    179.0,
+    180.0,
+    189.0
+  ]
+}
