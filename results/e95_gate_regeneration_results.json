@@ -1,0 +1,141 @@
+{
+ "battery": "E95 gate regeneration from cache",
+ "seed": 91,
+ "axr_min": 3.0,
+ "cache": "results/e94_posterior_cache.npz",
+ "n_cache_rows": 972,
+ "n_events": 266,
+ "preferred_groups": {
+  "GWTC-3": [
+   "C01:Mixed"
+  ],
+  "O4a": [
+   "C00:Mixed",
+   "C00:Mixed+XO4a"
+  ],
+  "O4b": [
+   "C00:Mixed",
+   "C00:SEOBNRv5PHM"
+  ]
+ },
+ "gate_A": {
+  "GWTC-3": {
+   "n_elong": 30,
+   "n_all": 76,
+   "own_q": 0.8297044886110285,
+   "pooled_q": 9.87370089974182,
+   "tangent": 5.321458355266074,
+   "total_mass": 25.796948235353824,
+   "perm_null": {
+    "n": 300,
+    "mean": 9.246005365248026,
+    "sd": 1.6622318590605956,
+    "min": 4.5376913758313435,
+    "p05": 6.833231272011182,
+    "p95": 12.254180801262873,
+    "own_percentile": 0.0,
+    "own_below_all": true
+   }
+  },
+  "O4a": {
+   "n_elong": 19,
+   "n_all": 86,
+   "own_q": 1.3183011179800133,
+   "pooled_q": 4.189331554026296,
+   "tangent": 6.603459291919364,
+   "total_mass": 22.97645904278417,
+   "perm_null": {
+    "n": 300,
+    "mean": 6.521174153826731,
+    "sd": 1.3182197708680257,
+    "min": 2.873357058913882,
+    "p05": 4.5277491381957775,
+    "p95": 8.84452051093402,
+    "own_percentile": 0.0,
+    "own_below_all": true
+   }
+  },
+  "O4b": {
+   "n_elong": 32,
+   "n_all": 104,
+   "own_q": 1.0022543526344236,
+   "pooled_q": 3.72749602778579,
+   "tangent": 3.899166935206395,
+   "total_mass": 17.129422303829173,
+   "perm_null": {
+    "n": 300,
+    "mean": 4.789898302935167,
+    "sd": 0.9003877240249105,
+    "min": 2.3024871147586197,
+    "p05": 3.413665130030079,
+    "p95": 6.425803457474637,
+    "own_percentile": 0.0,
+    "own_below_all": true
+   }
+  }
+ },
+ "gate_A_cross_family": {
+  "n_both": 246,
+  "n_elong": 64,
+  "A_to_A": 0.9980725393319716,
+  "B_to_B": 1.1363084744180014,
+  "A_to_B": 2.250420615720472,
+  "B_to_A": 2.92753488264934,
+  "tangent_A_to_B": 3.5014292958959174,
+  "family_axis_disagreement": 2.0344781294550245,
+  "note": "the family disagreement is a REFERENCE SCALE, not an error floor; the two families are separately inferred from the same strain, not independent experiments"
+ },
+ "gate_C": {
+  "n_elong": 81,
+  "source_frame": 1.0278973773188227,
+  "detector_frame": 0.31353231053950026,
+  "note": "difference is CONSISTENT WITH mediation by elongation; mediation not established"
+ },
+ "gate_D_families": {
+  "GWTC-3|C01:IMRPhenomXPHM": {
+   "n": 28,
+   "curve": 0.7972133884879469,
+   "tangent": 8.968760166120504
+  },
+  "GWTC-3|C01:Mixed": {
+   "n": 28,
+   "curve": 0.8297044886110285,
+   "tangent": 5.321458355266074
+  },
+  "GWTC-3|C01:SEOBNRv4PHM": {
+   "n": 19,
+   "curve": 1.070132140340604,
+   "tangent": 5.626369234294316
+  },
+  "O4a|C00:IMRPhenomXPHM-SpinTaylor": {
+   "n": 18,
+   "curve": 1.190792402692196,
+   "tangent": 6.411935111467514
+  },
+  "O4a|C00:Mixed": {
+   "n": 17,
+   "curve": 1.4218073029571485,
+   "tangent": 6.627725782923591
+  },
+  "O4a|C00:SEOBNRv5PHM": {
+   "n": 16,
+   "curve": 1.2214017007037512,
+   "tangent": 6.955100837967294
+  },
+  "O4b|C00:IMRPhenomXPHM-SpinTaylor": {
+   "n": 33,
+   "curve": 1.0337190684092263,
+   "tangent": 5.290885673345798
+  },
+  "O4b|C00:IMRPhenomXPNR": {
+   "n": 33,
+   "curve": 0.847310146204137,
+   "tangent": 5.197910100368688
+  },
+  "O4b|C00:SEOBNRv5PHM": {
+   "n": 31,
+   "curve": 0.8598947509345862,
+   "tangent": 4.2187379620671095
+  }
+ }
+}

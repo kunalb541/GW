@@ -1,0 +1,112 @@
+{
+  "battery": "E91 curve submission gates",
+  "seed": 91,
+  "inputs": {
+    "GWTC-3": "results/e65_pn_fisher_rotation_results.json (derived; raw HDF5 absent)",
+    "O4a": "results/e67_gwtc4_curved_law_results.json by default; set E91_RECOMPUTE_RAW=1 for HDF5",
+    "O4b": "results/e71_gwtc5_curved_law_results.json by default; set E91_RECOMPUTE_RAW=1 for HDF5"
+  },
+  "dropped": {
+    "cross:cross_family": "skipped; set E91_CROSS_FAMILY=1"
+  },
+  "preferred_group_counts": {
+    "GWTC-3|derived:E65-picked": 75,
+    "O4a|C00:IMRPhenomXPHM-SpinTaylor": 1,
+    "O4a|C00:Mixed:HighSpin": 1,
+    "O4a|C00:Mixed+XO4a": 26,
+    "O4a|C00:Mixed": 58,
+    "O4b|C00:IMRPhenomXPHM-SpinTaylor": 5,
+    "O4b|C00:SEOBNRv5PHM": 83,
+    "O4b|C00:IMRPhenomXPNR": 4,
+    "O4b|C00:NRSur7dq4": 7,
+    "O4b|C00:Mixed": 4,
+    "O4b|C01:Mixed": 1
+  },
+  "gate_A_baselines": {
+    "GWTC-3": {
+      "n_all": 75,
+      "n_elong": 28,
+      "median_curve_elong": 0.8062,
+      "median_tangent_elong": 4.68,
+      "median_total_elong": 25.27499999999999,
+      "raw_q_baselines": "not available from derived-only rows"
+    },
+    "O4a": {
+      "n_all": 86,
+      "n_elong": 19,
+      "median_curve_elong": 1.26,
+      "median_tangent_elong": 6.73,
+      "median_total_elong": 23.37,
+      "raw_q_baselines": "not available from derived-only rows"
+    },
+    "O4b": {
+      "n_all": 104,
+      "n_elong": 32,
+      "median_curve_elong": 1.22,
+      "median_tangent_elong": 4.635,
+      "median_total_elong": 17.36,
+      "raw_q_baselines": "not available from derived-only rows"
+    }
+  },
+  "gate_A_cross_family": {
+    "n": 0,
+    "median_axis_disagreement": null,
+    "median_curve_cross": null,
+    "median_tangent_target": null,
+    "by_direction": {},
+    "events": []
+  },
+  "gate_C_frame_coordinate": {
+    "source_m1_m2": {
+      "n_elong": 0,
+      "median_curve_elong": null,
+      "median_axr": null
+    },
+    "log_source_m1_m2": {
+      "n_elong": 0,
+      "median_curve_elong": null,
+      "median_axr": null
+    },
+    "detector_frame": "not recomputed: local O4 files lack mass_1_detector/mass_2_detector columns",
+    "axr_bands_source": [
+      {
+        "lo": 1.0,
+        "hi": 1.5,
+        "n": 0,
+        "median_curve": null
+      },
+      {
+        "lo": 1.5,
+        "hi": 2.0,
+        "n": 0,
+        "median_curve": null
+      },
+      {
+        "lo": 2.0,
+        "hi": 3.0,
+        "n": 0,
+        "median_curve": null
+      },
+      {
+        "lo": 3.0,
+        "hi": 5.0,
+        "n": 0,
+        "median_curve": null
+      },
+      {
+        "lo": 5.0,
+        "hi": Infinity,
+        "n": 0,
+        "median_curve": null
+      }
+    ]
+  },
+  "gate_D_waveform_families": {
+    "status": "skipped by default for speed; rerun with E91_FULL_WAVEFORMS=1"
+  },
+  "gate_D_prereg_public_record": {
+    "E71": "publicly separated prereg/result commits per docs/GATE_DE_FIRST_MEASUREMENT.md",
+    "E67": "prereg and result enter this repo in same bulk-port commit; private-parent attestation only"
+  },
+  "event_csv": "results/e91_curve_submission_gates_events.csv"
+}
