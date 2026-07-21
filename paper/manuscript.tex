@@ -271,19 +271,36 @@ monotonically and smoothly across thresholds from $1.5$ to $10$.
 Figure~\ref{fig:2a} shows what the numbers describe, for three events chosen by stated rules including the
 worst case in the sample.
 
-\section{Coherence as a systematics detector}
-If the geometry is measurement optics, then \emph{departures} from it are informative, and departures that
-are \emph{coherent} across events are systematics rather than physics. We test this in two ways. First, a
-physics-blind ``outlier atlas'': ranking the elongated O4b events by their curve residual and correlating
-against nine pre-declared axes (precession $\chi_p$, aligned spin $\chi_{\rm eff}$, mass ratio, redshift,
-signal-to-noise ratio, chirp mass, total mass, secondary mass, and waveform-family disagreement) with
-Benjamini--Hochberg control and a partial correlation removing the axis-ratio confound, \emph{no physical
-axis} survives; the only surviving correlate is waveform-model disagreement --- a measurement systematic,
-with a sign indicating that the curve tracks the waveform \emph{ensemble} consensus better than any single
-waveform tracks another. Second, and more sharply, the geometric exponent fit of
-Section~\ref{sec:gr} exhibits a coherent $3\sigma$ ``deviation'' that the same lens correctly identifies as
-a systematic. The methodological rule --- an anomaly coherent across independent datasets is a systematic,
-not a signal --- is thus both stated and exercised.
+\section{Coherence as a diagnostic --- and its limits}
+If the geometry is measurement optics, then \emph{departures} from it are informative. We use two such
+departures diagnostically, and we are careful about what that licenses.
+
+First, a physics-blind ``outlier atlas'': ranking the elongated O4b events by their curve residual and
+correlating against nine pre-declared axes (precession $\chi_p$, aligned spin $\chi_{\rm eff}$, mass ratio,
+redshift, signal-to-noise ratio, chirp mass, total mass, secondary mass, and waveform-family disagreement)
+with Benjamini--Hochberg control and a partial correlation removing the axis-ratio confound, \emph{no
+physical axis} survives. The only surviving correlate is waveform-model disagreement --- a measurement
+systematic --- with a sign indicating that the curve tracks the waveform \emph{ensemble} consensus better
+than any single waveform tracks another.
+
+Second, the geometric exponent fit of Section~\ref{sec:gr} shows an apparent $3\sigma$ offset that we do
+not interpret as physics.
+
+\textbf{What licenses that second conclusion is not coherence by itself.} Coherence across analyses can
+diagnose shared modelling or systematic structure, because a systematic common to every event will appear
+in every event. But so will a real physical effect: a genuine departure from the leading-order inspiral
+phasing would also be coherent across a catalog, so ``coherent, therefore systematic'' is not a valid
+inference and we do not use it as one. What actually demoted the exponent offset was specific and
+checkable: the two catalogs disagree with each other by as much as the offset from the general-relativistic
+value, so the bootstrap statistical error understates the true spread; and the effect vanishes in the clean
+limit, the most-elongated half returning a value consistent with the reference. Those are the discriminants,
+not the coherence.
+
+We treat these as cautionary diagnostics rather than as a method with a theorem behind it. The project
+history contains a case that makes the point in the other direction: a Bayesian ringdown analysis carried
+out during this work produced an apparently stable, well-behaved result that was retracted once its
+posterior was found to be prior-dominated --- stability and coherence had looked like evidence and were
+not. That episode is recorded in the project's public history; it forms no part of the results here.
 
 \section{An exploratory geometric diagnostic --- and why it is not a test of GR}
 \label{sec:gr}
@@ -312,19 +329,25 @@ consistent with the GR value. The offset is therefore a finite-width imperfectio
 geometric model, coherent across catalogs, and vanishing in the clean limit. It is a diagnostic of the
 model, not a measurement of gravity, and it belongs in an appendix rather than in the headline claims.
 
-\section{The information anatomy of a detection}
-The same Fisher structure that fixes the posterior orientation also fixes \emph{when}, in frequency, each
-parameter's information arrives. Computing the cumulative Fisher information for the chirp mass (0PN), mass
+\section{Context: the information anatomy of a detection}
+\emph{This section reports a separate, forward-model calculation. It is included as context for the
+measurement optics picture and does not support the reconstruction claim of Sections~2--5; no artifact in
+this paper links the two.} The same Fisher structure that motivates the posterior orientation also fixes
+\emph{when}, in frequency, each parameter's information arrives. Computing the cumulative Fisher information for the chirp mass (0PN), mass
 ratio (1PN) and spin (1.5PN) across all $190$ real O4a+O4b events, the ordering $\mathcal{M}_c<\eta<\chi$
 holds universally: the chirp mass is always determined earliest ($\sim35$~Hz), spin latest, and the
 frequency separation --- the anatomy's ``richness'' --- is a monotonic function of total mass (Spearman
 $-1.00$), widest for light, long-inspiral systems and compressed for heavy ones that merge immediately in
-band. This is a frequency-resolved, per-event map of what each detection measured and when. It is a forward
-prediction from the waveform model; a fully data-driven version (re-analysing loud events in frequency
+band. This is a frequency-resolved, per-event map of what each detection measured and when. It is computed
+\emph{from} the waveform model rather than measured from strain --- the monotonic ordering is therefore a
+property of the model, not an empirical finding, and the Spearman value of $-1.00$ reflects that
+determinism rather than a statistical result. A fully data-driven version (re-analysing loud events in frequency
 slices and comparing empirical to GR-predicted information accumulation) is left to future work.
 
-\section{The loudest event: GW250114}
-As an application, GW250114 --- the loudest event to date (network SNR $\sim80$), a near-equal-mass binary
+\section{Context: the loudest event, GW250114}
+\emph{Context only. This event lies outside the elongated set used for the reconstruction, and the ringdown
+results quoted below are other groups' work, reported here for orientation. Nothing in this section is
+evidence for the claims of Sections~2--5.} GW250114 --- the loudest event to date (network SNR $\sim80$), a near-equal-mass binary
 black hole with remnant $M_f^{\rm src}\approx62.7\,M_\odot$, $\chi_f\approx0.68$ --- is essentially a much
 louder counterpart of the first detection GW150914. Its remnant predicts Kerr quasi-normal-mode frequencies
 of $248.9$~Hz ($\tau=4.10$~ms) for the fundamental and $243.4$~Hz ($\tau=1.35$~ms) for the first overtone;
@@ -334,8 +357,11 @@ deviation'' from the Kerr prediction \citep{Suzuki2026}. We quote the orthonorma
 because the significance is a property of the analysis basis, and we describe the Kerr result as a null,
 which is what is reported, rather than as a confirmation of the no-hair theorem. Being
 near-equal-mass, its posterior is nearly round and it is (by construction) outside the elongated set used
-for the curved law --- an illustration that the loudest events are not always the most informative for a
-given geometric probe.
+for the reconstruction --- an illustration that the loudest events are not always the most informative for a
+given geometric probe. We add that our own attempt at an independent ringdown analysis of this event was
+\emph{retracted}: its posterior proved to be prior-dominated, the credible interval reproducing the prior
+rather than measuring the data. We therefore rely on the published analyses cited above and make no
+ringdown claim of our own.
 
 \section{Discussion}
 We have shown that the orientation of a compact-binary mass posterior can be reconstructed from two

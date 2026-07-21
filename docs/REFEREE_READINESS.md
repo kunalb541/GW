@@ -64,9 +64,13 @@ Every number below regenerates from committed code. No figure or analysis module
    correlation is negative) and is corrected in the table caption.
 6. **The self-consistency correction does not clear the out-of-sample bar** — it improves in both
    transfer directions but reaches p < 0.05 in only one.
-7. **§6 and §8–9 are pre-gate prose.** Reviewed for citation integrity only; their claim strength has
-   not had the scrutiny §1–5 received. §6 asserts a general "coherence implies systematic" rule that is
-   too strong as stated — real physics can also be coherent.
+7. **§6 and §8–9 have now had a claim-discipline pass** (commit following this snapshot). §6 no longer
+   asserts "coherence implies systematic" — it states plainly that a real physical effect would also be
+   coherent, so that inference is invalid, and names the actual discriminants that demoted the exponent
+   offset (catalog-to-catalog spread as large as the offset; the effect vanishing in the clean limit).
+   §8 and §9 are retitled *Context* and explicitly disclaim supporting the reconstruction claim. What
+   remains soft: §8's information anatomy is computed **from** the waveform model, not measured from
+   strain, so its perfect Spearman $-1.00$ is model determinism rather than an empirical result.
 8. **A retracted result is in the project history**: an earlier Bayesian ringdown analysis (E85) was
    withdrawn after its posterior was found to be prior-dominated. It forms no part of this paper.
 
