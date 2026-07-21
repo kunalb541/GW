@@ -15,7 +15,8 @@ no artifact behind it cannot be written at all.
 Formats:
   f1 f2 f3   fixed decimals            pct0     percent, no decimals
   int        integer                   sci      LaTeX $a\\times10^{b}$
-  p          p-value: <0.001 / 3 s.f., whichever is honest
+  p          p-value: "<0.001" below that, else 3 decimals (for "$p\\,\\Macro$" usage)
+  pv         p-value for "$p=\\Macro$" usage: scientific below 1e-3, else 3 decimals -- never "0.000"
 
 Run after any battery re-runs:  python3 src/build_paper_numbers.py
 """
@@ -126,19 +127,19 @@ SPEC = [
     ("SelfIterMax",    E97, "@iter_max", "f2"),
     ("SelfXfamAPure",  E97, "cross_family.AtoB.pure_curve_deg", "f2"),
     ("SelfXfamACorr",  E97, "cross_family.AtoB.self_consistency_corrected_deg", "f2"),
-    ("SelfXfamAP",     E97, "cross_family.AtoB.wilcoxon_p", "f3"),
+    ("SelfXfamAP",     E97, "cross_family.AtoB.wilcoxon_p", "pv"),
     ("SelfXfamBPure",  E97, "cross_family.BtoA.pure_curve_deg", "f2"),
     ("SelfXfamBCorr",  E97, "cross_family.BtoA.self_consistency_corrected_deg", "f2"),
-    ("SelfXfamBP",     E97, "cross_family.BtoA.wilcoxon_p", "f3"),
+    ("SelfXfamBP",     E97, "cross_family.BtoA.wilcoxon_p", "pv"),
 
     # --- finite thickness ---
     ("ThickRelative", E96, "in_sample.median_relative_thickness", "f2"),
     ("ThickAPure",    E96, "cross_family.AtoB.pure_curve", "f2"),
     ("ThickAMeas",    E96, "cross_family.AtoB.measured", "f2"),
-    ("ThickAP",       E96, "cross_family.AtoB.measured_vs_pure_wilcoxon_p", "f3"),
+    ("ThickAP",       E96, "cross_family.AtoB.measured_vs_pure_wilcoxon_p", "pv"),
     ("ThickBPure",    E96, "cross_family.BtoA.pure_curve", "f2"),
     ("ThickBMeas",    E96, "cross_family.BtoA.measured", "f2"),
-    ("ThickBP",       E96, "cross_family.BtoA.measured_vs_pure_wilcoxon_p", "f3"),
+    ("ThickBP",       E96, "cross_family.BtoA.measured_vs_pure_wilcoxon_p", "pv"),
 
     # --- frames, coordinates, elongation gate (E100) ---
     ("FrameSourceErr",  E100, "frames.source_m1_m2.median_err_deg", "f2"),
@@ -261,6 +262,9 @@ def fmt(v, how):
         return f"{100 * v:.1f}\\%"
     if how == "p":
         return "<0.001" if v < 1e-3 else f"{v:.3f}"
+    if how == "pv":
+        # A p-value must never print as 0.000; below 1e-3 give it in scientific form.
+        return fmt(v, "sci") if v < 1e-3 else f"{v:.3f}"
     if how == "sci":
         e = 0
         m = float(v)

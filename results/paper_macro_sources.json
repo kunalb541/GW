@@ -442,7 +442,7 @@
    "value": "0.002",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.AtoB.wilcoxon_p",
-   "format": "f3"
+   "format": "pv"
   },
   {
    "macro": "SelfXfamBPure",
@@ -463,7 +463,7 @@
    "value": "0.107",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.BtoA.wilcoxon_p",
-   "format": "f3"
+   "format": "pv"
   },
   {
    "macro": "ThickRelative",
@@ -488,10 +488,10 @@
   },
   {
    "macro": "ThickAP",
-   "value": "0.000",
+   "value": "3\\times10^{-4}",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.AtoB.measured_vs_pure_wilcoxon_p",
-   "format": "f3"
+   "format": "pv"
   },
   {
    "macro": "ThickBPure",
@@ -512,7 +512,7 @@
    "value": "0.008",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.BtoA.measured_vs_pure_wilcoxon_p",
-   "format": "f3"
+   "format": "pv"
   },
   {
    "macro": "FrameSourceErr",

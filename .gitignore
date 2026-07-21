@@ -11,3 +11,6 @@ paper/*.pdf
 !paper/manuscript.pdf
 !paper/gw_lab_notebook.pdf
 results/e94_posterior_cache.npz
+
+# scratch renders and working files (never part of the record)
+tmp/

@@ -97,7 +97,14 @@ def build():
     rows = collect(prim)
     picks = select(rows)
 
-    fig, axes = plt.subplots(1, 3, figsize=(9.6, 4.7))
+    # 2x2 rather than 1x3. Under \includegraphics[width=\textwidth] each panel is a fixed fraction of
+    # the text width, and with equal-aspect axes the panel BOX is set by that width -- so a 1x3 row gives
+    # each panel only a third of the page and no change of figure height can enlarge it. Two columns give
+    # each panel half the width instead. The fourth cell carries the legend.
+    fig, axes2d = plt.subplots(2, 2, figsize=(8.4, 8.0))
+    axes = [axes2d[0, 0], axes2d[0, 1], axes2d[1, 0]]
+    legend_ax = axes2d[1, 1]
+    legend_ax.axis("off")
     side = {"figure": STEM, "role": "explanatory / secondary -- NOT a main-claim panel",
             "caption_guidance": ("Examples of the posterior geometry and its reconstruction. This "
                                  "panel illustrates; it does not establish a mechanism. E96 supports "
@@ -225,16 +232,17 @@ def build():
 
         side["panels"].append(rec_panel)
 
-    axes[0].set_ylabel("$m_2$  [$M_\\odot$]", fontsize=9, color=INK)
-    fig.legend(handles=[
+    for ax in (axes[0], axes[2]):
+        ax.set_ylabel("$m_2$  [$M_\\odot$]", fontsize=9, color=INK)
+    legend_ax.legend(handles=[
         Line2D([], [], color=MEAS_C, lw=2.4, label="measured principal axis"),
         Line2D([], [], color=CURVE_C, lw=2.0, ls="--", label="constant-$\\mathcal{M}_c$ curve prediction"),
         Line2D([], [], color=TANGENT_C, lw=2.0, ls="--", label="median-point tangent prediction"),
         Line2D([], [], color=CURVE_C, lw=1.4, alpha=0.55, label="constant-$\\mathcal{M}_c$ curve"),
         Line2D([], [], marker="o", color=SAMPLE_C, ls="none", ms=6, label="posterior samples")],
-        loc="lower center", ncol=5, frameon=False, fontsize=8.3, bbox_to_anchor=(0.5, 0.0))
+        loc="center", frameon=False, fontsize=9.5, handlelength=2.6, labelspacing=1.1)
     # No suptitle: the LaTeX caption carries the description in the manuscript.
-    fig.subplots_adjust(left=0.07, right=0.98, top=0.86, bottom=0.22, wspace=0.28)
+    fig.subplots_adjust(left=0.10, right=0.98, top=0.93, bottom=0.07, wspace=0.26, hspace=0.30)
 
     os.makedirs(FIGDIR, exist_ok=True)
     outs = []
