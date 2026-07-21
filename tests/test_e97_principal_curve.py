@@ -101,3 +101,41 @@ def test_grid_sensitivity_of_the_iteration_is_disclosed():
     assert max(its) - min(its) > 0.2, "grid sensitivity vanished; re-check the disclosure"
     assert "grid-sensitive" in d["verdict"]["statement"]
     assert "in-sample" in d["verdict"]["statement"]
+
+
+# ---------------- E98 framework audit guards ----------------
+@pytest.mark.skipif(not os.path.exists(os.path.join(ROOT, "results", "e98_framework_audit_results.json")),
+                    reason="E98 not run in this checkout")
+def test_framework_audit_does_not_claim_the_hyperribbon():
+    """Our own measurement contradicts the hyperribbon picture (2-D eigenvalue ratio median ~3, not
+    many decades). The audit must record that rather than inherit the framing."""
+    d = json.load(open(os.path.join(ROOT, "results", "e98_framework_audit_results.json")))
+    s = d["sloppy_models"]
+    assert s["eigenvalue_ratio_median"] < 10, s["eigenvalue_ratio_median"]
+    assert s["frac_gt_2_decades"] < 0.2, s
+    assert "NOT supported" in s["verdict"]
+    assert "hyperribbon" in s["statement"]
+
+
+@pytest.mark.skipif(not os.path.exists(os.path.join(ROOT, "results", "e98_framework_audit_results.json")),
+                    reason="E98 not run in this checkout")
+def test_bvm_is_earned_by_the_tangent_error():
+    """A Gaussian's principal axis IS the tangent, so the tangent error measures the Gaussian limit's
+    error. The audit may claim BvM only if that comparison is actually present and favourable."""
+    d = json.load(open(os.path.join(ROOT, "results", "e98_framework_audit_results.json")))
+    b = d["bernstein_von_mises"]
+    assert b["verdict"] == "EARNED"
+    assert b["gaussian_tangent_error_deg"] > b["arc_corrected_curve_error_deg"]
+    assert b["ratio"] > 2.0, b["ratio"]
+
+
+@pytest.mark.skipif(not os.path.exists(os.path.join(ROOT, "results", "e98_framework_audit_results.json")),
+                    reason="E98 not run in this checkout")
+def test_cencov_and_backus_gilbert_stay_uncited():
+    """Cencov would contradict the measured coordinate dependence; Backus-Gilbert needs a resolution
+    operator we never compute. Neither may be quietly promoted back into the paper."""
+    d = json.load(open(os.path.join(ROOT, "results", "e98_framework_audit_results.json")))
+    assert "NOT APPLICABLE" in d["cencov_fisher_rao"]["verdict"]
+    assert "NOT EARNED" in d["backus_gilbert"]["verdict"]
+    tex = open(os.path.join(ROOT, "paper", "manuscript.tex")).read()
+    assert "Amari2016" not in tex and "BackusGilbert1968" not in tex

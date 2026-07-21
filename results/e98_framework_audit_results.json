@@ -1,0 +1,44 @@
+{
+ "battery": "E98 framework audit",
+ "seed": 98,
+ "provenance": {
+  "cache": "results/e94_posterior_cache.npz",
+  "hdf5_accessed": false
+ },
+ "sloppy_models": {
+  "n_events": 266,
+  "eigenvalue_ratio_median": 3.2975010850924793,
+  "eigenvalue_ratio_p10": 1.438564993180824,
+  "eigenvalue_ratio_p90": 34.62961667684239,
+  "eigenvalue_ratio_max": 2016.3148123872236,
+  "frac_gt_1_decade": 0.2894736842105263,
+  "frac_gt_2_decades": 0.03383458646616541,
+  "frac_gt_3_decades": 0.007518796992481203,
+  "verdict": "PARTIAL -- concept supported, 'hyperribbon' NOT supported by our measurement",
+  "statement": "The stiff/sloppy CONCEPT holds -- chirp mass is measured far better than mass ratio -- but the hyperribbon picture does not follow from what we measure. In the 2-D mass plane the eigenvalue ratio has a median of only ~3, with about 29% of events exceeding one order of magnitude and 3% exceeding two. Sloppiness in the Transtrum sense is a property of the FULL parameter space, which we do not measure; a 2-D marginal neither establishes nor entitles us to the hyperribbon language. Cite the concept, not the geometry."
+ },
+ "principal_curves": {
+  "verdict": "EARNED (E97)",
+  "statement": "Hastie-Stuetzle self-consistency is implemented, not invoked: the constant-Mc curve is not a principal curve, and the size of that violation predicts the per-event orientation residual.",
+  "median_violation": 0.03070445640470027,
+  "spearman_violation_vs_residual": 0.6751580849141825,
+  "p_value": 4.757855621758157e-12
+ },
+ "bernstein_von_mises": {
+  "n_elongated": 81,
+  "gaussian_tangent_error_deg": 5.022608687108857,
+  "arc_corrected_curve_error_deg": 1.0278973773188227,
+  "ratio": 4.886293902422318,
+  "verdict": "EARNED",
+  "statement": "A Gaussian posterior's principal axis IS the local tangent, so the tangent error is precisely the error the Gaussian / Bernstein-von Mises limit makes about posterior orientation. Measured on elongated events it is 5.02 deg, against 1.03 deg once the arc is accounted for: the Gaussian approximation is wrong by about 5x more than the curve. The asymptotic Gaussian limit is therefore quantifiably not reached at realistic signal-to-noise, and that gap is what this paper measures and corrects."
+ },
+ "cencov_fisher_rao": {
+  "verdict": "NOT APPLICABLE -- would contradict our own measurement",
+  "statement": "Cencov's theorem concerns the uniqueness of the Fisher-Rao metric under sufficient statistics. Our measured object is a Euclidean PCA angle in fixed coordinates, and Gate C measured it at 1.03, 0.31 and 0.77 deg in source-frame, detector-frame and log-mass coordinates respectively. The quantity is demonstrably not invariant, so invoking Cencov would assert the opposite of what we measured."
+ },
+ "backus_gilbert": {
+  "verdict": "NOT EARNED -- no resolution operator is computed",
+  "statement": "Backus-Gilbert resolution theory splits parameter space into resolved and unresolved directions, which is a second vocabulary for the stiff/sloppy split rather than an independent result. Earning it would require actually computing a resolution operator and its trade-off curve, which this analysis does not do. Left uncited."
+ },
+ "summary": "Of four frameworks commonly attached to results of this kind, two are earned (principal curves, via E97; the Gaussian/Bernstein-von Mises limit, via the tangent error), one is supported only as a concept and NOT as geometry (sloppy models -- our 2-D eigenvalue ratio has median ~3, not the many decades a hyperribbon requires), and one is inapplicable because it would contradict our own coordinate-dependence measurement (Cencov). Backus-Gilbert is left uncited for want of a computed resolution operator."
+}
