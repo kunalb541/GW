@@ -161,6 +161,14 @@ the curve is the distinction between linear principal-component analysis and a \
 \citep{HastieStuetzle1989}: the principal axis of samples spread along a curved arc is a chord, which is
 rotated off the tangent at the median point.
 
+We can do better than invoke that framework by name. \citet{HastieStuetzle1989} define a principal curve by
+\emph{self-consistency}: $f(t)=\mathbb{E}[X \mid t_f(X)=t]$, i.e.\ every point of the curve is the mean of
+the data projecting onto it. This is directly testable for the constant-$\mathcal{M}_c$ curve, and it
+fails: projecting each posterior sample to its nearest curve point and comparing that point to the mean of
+what lands there leaves a perpendicular offset of about 3.1\% of the posterior's own scale. The
+constant-$\mathcal{M}_c$ curve is therefore \emph{not} a principal curve of the posterior --- and the size
+of that failure is what predicts the reconstruction residual (Sec.~\ref{sec:residual}).
+
 We deliberately do not dress this in stronger language than the analysis supports. We compute no
 Fisher--Rao quantity, and the measured object --- the principal-axis angle of a sample covariance in fixed
 $(m_1,m_2)$ coordinates --- is not invariant under reparameterization; it changes under a change of mass
@@ -198,7 +206,17 @@ median $0.78^\circ$ --- but this is not uniform across catalogs: it is significa
 ($p<0.001$) and in O4a ($p=0.019$), and \emph{not} significant in the newest and largest catalog, O4b
 ($p=0.38$). We report it per catalog for that reason.
 
-One mechanism is supported. The curve model has zero thickness, whereas a real posterior has finite width
+The residual has a mathematical explanation. The per-event self-consistency violation defined above
+correlates strongly with the per-event orientation residual: Spearman $\rho=0.68$ ($p=5e-12$) at our primary
+projection grid, and $\rho$ between $0.64$ and $0.68$ across a sweep of grid resolutions, so the result
+does not rest on that tuning choice. This is a correlation between two independently measured quantities
+rather than a fit, so it cannot be inflated by added model freedom. Replacing the curve by those
+conditional means --- one Hastie--Stuetzle iteration --- reduces the residual in-sample, but we do not
+claim it as an improved reconstruction: the improvement is grid-sensitive (median $0.35$--$1.08^\circ$
+across the sweep), and in a cross-waveform-family test it improves in both directions but reaches
+$p<0.05$ in only one ($1.14^\circ\!\to\!0.66^\circ$, $p=0.024$; $1.00^\circ\!\to\!0.69^\circ$, $p=0.064$).
+
+A second mechanism is supported. The curve model has zero thickness, whereas a real posterior has finite width
 perpendicular to the curve --- a median of about a third of its total spread. Learning that width profile on
 one waveform family and using it to reconstruct another family's axis improves on the zero-thickness curve
 in both directions ($1.14^\circ\!\to\!0.96^\circ$, $p=0.005$; $1.00^\circ\!\to\!0.74^\circ$, $p=0.028$), so
@@ -342,8 +360,9 @@ once the releases are present; no analysis or figure module reads the raw files 
 the posterior being reconstructed, so it is not a prediction from source medians or external physics.
 (2) It is validated on elongated events; round posteriors have no well-defined orientation and are excluded
 by design, and \citet{Baird2013} note that constant chirp mass ceases to characterise the mass degeneracy so
-cleanly at higher masses, bounding where such a construction should be expected to work. (3) The $\sim\!1^\circ$ residual is unexplained beyond a finite-thickness contribution; the
-arc-varying form of that contribution is not established. (4) The measured angle is coordinate- and
+cleanly at higher masses, bounding where such a construction should be expected to work. (3) The $\sim\!1^\circ$ residual is explained in the principal-curve sense --- its size tracks the
+curve's failure of self-consistency --- but the corresponding one-step correction is not established
+out-of-sample, and the arc-varying form of the thickness contribution is not established either. (4) The measured angle is coordinate- and
 frame-dependent, and we make no invariance claim. (5) The exponent fit of Sec.~\ref{sec:gr} is a diagnostic
 of GR-generated posteriors and cannot bound deviations from GR. (6) The information anatomy is
 model-predicted, not strain-extracted. (7) A first-principles derivation of the curve's width and curvature

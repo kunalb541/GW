@@ -1,0 +1,916 @@
+{
+ "battery": "E97 principal-curve self-consistency",
+ "seed": 97,
+ "definition": "Hastie & Stuetzle (1989): f is a principal curve iff f(t) = E[X | t_f(X) = t]",
+ "provenance": {
+  "cache": "results/e94_posterior_cache.npz",
+  "manifest": "results/e94_posterior_cache_manifest.json",
+  "cache_manifest": {
+   "n_events": 266,
+   "n_group_rows": 972,
+   "catalogs": {
+    "GWTC-3": {
+     "files": 76,
+     "events_cached": 76,
+     "group_rows": 226,
+     "seconds": 246.5
+    },
+    "O4a": {
+     "files": 86,
+     "events_cached": 86,
+     "group_rows": 369,
+     "seconds": 20.5
+    },
+    "O4b": {
+     "files": 105,
+     "events_cached": 104,
+     "group_rows": 377,
+     "seconds": 17.3
+    }
+   },
+   "n_samp": 4000,
+   "seed": 94,
+   "skipped": {}
+  },
+  "hdf5_accessed": false
+ },
+ "primary_grid": {
+  "n_grid": 40,
+  "min_per_bin": 40
+ },
+ "grid_sweep": {
+  "grid24_min60": {
+   "n_events": 81,
+   "median_bins_per_event": 22.0,
+   "median_violation": 0.027416306244020864,
+   "spearman_violation_vs_residual": 0.6605239385727191,
+   "p_value": 1.9580823350357456e-11,
+   "median_residual_deg": 1.0278973773188227,
+   "median_residual_after_one_iteration_deg": 1.0805788595317836,
+   "frac_iteration_improved": 0.4444444444444444
+  },
+  "grid40_min40": {
+   "n_events": 81,
+   "median_bins_per_event": 36.0,
+   "median_violation": 0.03070445640470027,
+   "spearman_violation_vs_residual": 0.6751580849141825,
+   "p_value": 4.757855621758157e-12,
+   "median_residual_deg": 1.0278973773188227,
+   "median_residual_after_one_iteration_deg": 0.36170621793354485,
+   "frac_iteration_improved": 0.7654320987654321
+  },
+  "grid60_min30": {
+   "n_events": 81,
+   "median_bins_per_event": 53.0,
+   "median_violation": 0.03177082521363545,
+   "spearman_violation_vs_residual": 0.6595528455284552,
+   "p_value": 2.144879750686693e-11,
+   "median_residual_deg": 1.0278973773188227,
+   "median_residual_after_one_iteration_deg": 0.3515239929994891,
+   "frac_iteration_improved": 0.7901234567901234
+  },
+  "grid100_min20": {
+   "n_events": 81,
+   "median_bins_per_event": 84.0,
+   "median_violation": 0.03624238489352958,
+   "spearman_violation_vs_residual": 0.6380984643179765,
+   "p_value": 1.479534133353496e-10,
+   "median_residual_deg": 1.0278973773188227,
+   "median_residual_after_one_iteration_deg": 0.956360664776355,
+   "frac_iteration_improved": 0.5432098765432098
+  }
+ },
+ "cross_family": {
+  "AtoB": {
+   "n": 64,
+   "pure_curve_deg": 1.1363084744180014,
+   "self_consistency_corrected_deg": 0.6644900374061962,
+   "frac_improved": 0.59375,
+   "wilcoxon_p": 0.024215734531984393
+  },
+  "BtoA": {
+   "n": 64,
+   "pure_curve_deg": 0.9980725393319716,
+   "self_consistency_corrected_deg": 0.6939364126265559,
+   "frac_improved": 0.609375,
+   "wilcoxon_p": 0.06396283771155863
+  }
+ },
+ "verdict": {
+  "violation_predicts_residual": "SUPPORTED and grid-robust",
+  "one_iteration_improves_out_of_sample": "NOT SUPPORTED out-of-sample",
+  "statement": "The constant-Mc curve is NOT a principal curve in the Hastie-Stuetzle sense: it is not self-consistent, and the size of that violation predicts the per-event orientation residual. This is a correlation between two measured quantities, not a fit, so it cannot be inflated by added model freedom. The one-step correction is reported separately because it is in-sample and grid-sensitive (median residual after one iteration ranges 0.35-1.08 deg across the grid sweep)."
+ },
+ "events": [
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190412",
+   "axr": 9.30585360411263,
+   "n_bins": 31,
+   "residual_deg": 0.7794440920137902,
+   "residual_after_one_iteration_deg": 0.12144815424599642,
+   "violation": 0.021236110640820396,
+   "violation_signed": -3.863457146553949e-05
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190425",
+   "axr": 11.399586897634594,
+   "n_bins": 40,
+   "residual_deg": 0.7077601640483238,
+   "residual_after_one_iteration_deg": 0.5846977776895699,
+   "violation": 0.013561086602372714,
+   "violation_signed": 0.004432583244789004
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190512_180714",
+   "axr": 3.595399188350501,
+   "n_bins": 33,
+   "residual_deg": 1.3568293903164772,
+   "residual_after_one_iteration_deg": 1.02903796966703,
+   "violation": 0.042356081778940194,
+   "violation_signed": -0.02699579296426745
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190707_093326",
+   "axr": 3.250125737227561,
+   "n_bins": 37,
+   "residual_deg": 1.0751949010500255,
+   "residual_after_one_iteration_deg": 5.033910212779659,
+   "violation": 0.043823707750623955,
+   "violation_signed": -0.03799517035575324
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190708_232457",
+   "axr": 4.304468628881569,
+   "n_bins": 38,
+   "residual_deg": 0.6042445562811736,
+   "residual_after_one_iteration_deg": 0.01664514794882166,
+   "violation": 0.03663035416090987,
+   "violation_signed": -0.02423563183875698
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190719_215514",
+   "axr": 3.0071361584634424,
+   "n_bins": 40,
+   "residual_deg": 5.563958767852398,
+   "residual_after_one_iteration_deg": 1.2995105617912373,
+   "violation": 0.08361964753423295,
+   "violation_signed": -0.06724658638555649
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190720_000836",
+   "axr": 5.230067820940967,
+   "n_bins": 32,
+   "residual_deg": 1.1705154118861287,
+   "residual_after_one_iteration_deg": 0.5829876987443185,
+   "violation": 0.035611814035295716,
+   "violation_signed": 0.026830885714074184
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190725_174728",
+   "axr": 6.867306442877763,
+   "n_bins": 37,
+   "residual_deg": 0.6365841162064214,
+   "residual_after_one_iteration_deg": 0.22132243203267876,
+   "violation": 0.009008341739082442,
+   "violation_signed": -0.0026535998754982203
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190728_064510",
+   "axr": 6.019460286365122,
+   "n_bins": 35,
+   "residual_deg": 0.8473735294330424,
+   "residual_after_one_iteration_deg": 2.4718506379176404,
+   "violation": 0.016841371022321014,
+   "violation_signed": -0.01601232581551885
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190814",
+   "axr": 36.040942093684826,
+   "n_bins": 25,
+   "residual_deg": 0.3402000931849045,
+   "residual_after_one_iteration_deg": 0.07714841648015636,
+   "violation": 0.006623786486581884,
+   "violation_signed": -0.0012762266031196995
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190828_065509",
+   "axr": 4.071530422084919,
+   "n_bins": 27,
+   "residual_deg": 1.4331482721890438,
+   "residual_after_one_iteration_deg": 1.4525638872737545,
+   "violation": 0.02893843157735961,
+   "violation_signed": -0.017261604992360655
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190917_114630",
+   "axr": 11.642823001175737,
+   "n_bins": 24,
+   "residual_deg": 0.3601866306754573,
+   "residual_after_one_iteration_deg": 0.9009552414576092,
+   "violation": 0.008153308216916849,
+   "violation_signed": -0.000971451351487106
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190924_021846",
+   "axr": 6.963534484132363,
+   "n_bins": 34,
+   "residual_deg": 0.5660748341975932,
+   "residual_after_one_iteration_deg": 0.8457005311851447,
+   "violation": 0.01718692028481187,
+   "violation_signed": -0.0031872786986190966
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190925_232845",
+   "axr": 3.4433351672036254,
+   "n_bins": 33,
+   "residual_deg": 2.051451184420472,
+   "residual_after_one_iteration_deg": 0.7150121104546372,
+   "violation": 0.0317103060369297,
+   "violation_signed": -0.005814930354591227
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW190930_133541",
+   "axr": 6.844984940341948,
+   "n_bins": 39,
+   "residual_deg": 0.7711112405098106,
+   "residual_after_one_iteration_deg": 0.16631832875054897,
+   "violation": 0.013460001518339973,
+   "violation_signed": -0.00303408895998381
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191103_012549",
+   "axr": 4.421795937663337,
+   "n_bins": 35,
+   "residual_deg": 0.8780377601958094,
+   "residual_after_one_iteration_deg": 0.7213181585826192,
+   "violation": 0.022768572605129656,
+   "violation_signed": -0.01416803070668033
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191105_143521",
+   "axr": 3.8377780487659825,
+   "n_bins": 34,
+   "residual_deg": 0.8120354477890146,
+   "residual_after_one_iteration_deg": 0.5071899293975548,
+   "violation": 0.02944756364390395,
+   "violation_signed": -0.026957201021304434
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191113_071753",
+   "axr": 7.996261904625961,
+   "n_bins": 20,
+   "residual_deg": 1.3260870614551266,
+   "residual_after_one_iteration_deg": 1.303296545056071,
+   "violation": 0.01867939954706283,
+   "violation_signed": 0.0009482428573536703
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191126_115259",
+   "axr": 3.4161000684459117,
+   "n_bins": 37,
+   "residual_deg": 2.4202783020049026,
+   "residual_after_one_iteration_deg": 0.13614784615288045,
+   "violation": 0.042311679981780474,
+   "violation_signed": -0.03586237948908855
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191129_134029",
+   "axr": 5.712119314975735,
+   "n_bins": 38,
+   "residual_deg": 0.2937003732159269,
+   "residual_after_one_iteration_deg": 0.13865675702157887,
+   "violation": 0.026708749247710148,
+   "violation_signed": -0.02291413343027615
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191204_171526",
+   "axr": 5.3914803932409034,
+   "n_bins": 37,
+   "residual_deg": 0.2908436529344556,
+   "residual_after_one_iteration_deg": 0.2338330621127227,
+   "violation": 0.0237009835871413,
+   "violation_signed": -0.019133016467111814
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191216_213338",
+   "axr": 6.893409678388965,
+   "n_bins": 32,
+   "residual_deg": 0.4838835246683004,
+   "residual_after_one_iteration_deg": 1.486384777262515,
+   "violation": 0.01040774718288848,
+   "violation_signed": -0.003132896311244806
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW191219_163120",
+   "axr": 44.90339421900335,
+   "n_bins": 28,
+   "residual_deg": 0.7216359361649722,
+   "residual_after_one_iteration_deg": 0.06920465074423987,
+   "violation": 0.012093417916560061,
+   "violation_signed": 0.002461726638424144
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200115_042309",
+   "axr": 12.944711143749748,
+   "n_bins": 24,
+   "residual_deg": 0.23229576279041453,
+   "residual_after_one_iteration_deg": 0.16518004735542036,
+   "violation": 0.005018042757021793,
+   "violation_signed": 0.0035602248907482927
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200129_065458",
+   "axr": 3.0692759056403416,
+   "n_bins": 18,
+   "residual_deg": 12.613029400978604,
+   "residual_after_one_iteration_deg": 0.9965440139930593,
+   "violation": 0.15313613759926037,
+   "violation_signed": -0.05699568402126294
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200202_154313",
+   "axr": 6.234085950134351,
+   "n_bins": 34,
+   "residual_deg": 0.33656454528485824,
+   "residual_after_one_iteration_deg": 1.0090115586321247,
+   "violation": 0.012730092151560738,
+   "violation_signed": -0.009681497953692489
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200210_092254",
+   "axr": 20.16946800130695,
+   "n_bins": 29,
+   "residual_deg": 1.1018517900211577,
+   "residual_after_one_iteration_deg": 0.06339353815519644,
+   "violation": 0.020006742586173402,
+   "violation_signed": -0.0004321374366057497
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200308_173609",
+   "axr": 4.287503954657,
+   "n_bins": 7,
+   "residual_deg": 16.884157032005106,
+   "residual_after_one_iteration_deg": 0.8839274057685316,
+   "violation": 0.2729090649053751,
+   "violation_signed": 0.14101954480899198
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200316_215756",
+   "axr": 6.75314928099743,
+   "n_bins": 40,
+   "residual_deg": 1.6108314637947956,
+   "residual_after_one_iteration_deg": 0.05360341262996826,
+   "violation": 0.02980963631147334,
+   "violation_signed": -0.0011566647867156316
+  },
+  {
+   "catalog": "GWTC-3",
+   "event": "GW200322_091133",
+   "axr": 8.417265053163455,
+   "n_bins": 40,
+   "residual_deg": 5.734825632580879,
+   "residual_after_one_iteration_deg": 0.6522360319414986,
+   "violation": 0.07312813931807674,
+   "violation_signed": 0.029577195312162703
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230518_125908",
+   "axr": 20.864002559287034,
+   "n_bins": 26,
+   "residual_deg": 0.324763686969078,
+   "residual_after_one_iteration_deg": 0.2400902262015734,
+   "violation": 0.0074280455675081675,
+   "violation_signed": -0.0002813948233926931
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230529_181500",
+   "axr": 11.983943038824796,
+   "n_bins": 32,
+   "residual_deg": 0.2557979979267486,
+   "residual_after_one_iteration_deg": 0.7535695690636146,
+   "violation": 0.007731369048199409,
+   "violation_signed": -0.0007739656761755162
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230605_065343",
+   "axr": 3.9572538395856007,
+   "n_bins": 38,
+   "residual_deg": 2.919843037837154,
+   "residual_after_one_iteration_deg": 0.238903359521629,
+   "violation": 0.04796520571711101,
+   "violation_signed": 0.007203390785556406
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230627_015337",
+   "axr": 8.316073133809947,
+   "n_bins": 38,
+   "residual_deg": 0.23900110257349638,
+   "residual_after_one_iteration_deg": 0.05599543313695676,
+   "violation": 0.022306619595168952,
+   "violation_signed": -0.021403179633792332
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230630_234532",
+   "axr": 3.727120980581491,
+   "n_bins": 38,
+   "residual_deg": 1.3183011179800133,
+   "residual_after_one_iteration_deg": 0.07768616982195908,
+   "violation": 0.031816401939857464,
+   "violation_signed": -0.01655431860576425
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230702_185453",
+   "axr": 3.3514693241840128,
+   "n_bins": 34,
+   "residual_deg": 1.8306605049592974,
+   "residual_after_one_iteration_deg": 0.8285195811819221,
+   "violation": 0.05024476584152771,
+   "violation_signed": -0.03767619194214038
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230729_082317",
+   "axr": 4.298407908616183,
+   "n_bins": 38,
+   "residual_deg": 1.2877282539574537,
+   "residual_after_one_iteration_deg": 0.1778515362387907,
+   "violation": 0.03089802879190775,
+   "violation_signed": -0.017886244108540013
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230731_215307",
+   "axr": 3.2208455388897788,
+   "n_bins": 35,
+   "residual_deg": 0.12757073056539525,
+   "residual_after_one_iteration_deg": 0.14793585527880282,
+   "violation": 0.05261257046873384,
+   "violation_signed": -0.05245166725289691
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW230904_051013",
+   "axr": 3.7820480993299643,
+   "n_bins": 36,
+   "residual_deg": 1.4736827142039317,
+   "residual_after_one_iteration_deg": 0.36170621793354485,
+   "violation": 0.02669301691315808,
+   "violation_signed": 0.01035336144702163
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231018_233037",
+   "axr": 3.623638398469559,
+   "n_bins": 37,
+   "residual_deg": 1.5783606661849205,
+   "residual_after_one_iteration_deg": 0.10768766342104641,
+   "violation": 0.04035890419538396,
+   "violation_signed": -0.030274269369490656
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231020_142947",
+   "axr": 5.855259305406325,
+   "n_bins": 40,
+   "residual_deg": 0.19083627727027874,
+   "residual_after_one_iteration_deg": 0.3776388288266901,
+   "violation": 0.026456464117753146,
+   "violation_signed": -0.025151791549216908
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231104_133418",
+   "axr": 3.3287208025197317,
+   "n_bins": 37,
+   "residual_deg": 1.4218073029571485,
+   "residual_after_one_iteration_deg": 0.1075668784831123,
+   "violation": 0.04773515184762758,
+   "violation_signed": -0.04615586225455531
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231113_200417",
+   "axr": 4.020142452778339,
+   "n_bins": 37,
+   "residual_deg": 2.3843964549748193,
+   "residual_after_one_iteration_deg": 0.1930576585287156,
+   "violation": 0.034015537583020304,
+   "violation_signed": -0.001159648391987693
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231114_043211",
+   "axr": 5.728225322932666,
+   "n_bins": 25,
+   "residual_deg": 1.4696448027193014,
+   "residual_after_one_iteration_deg": 0.22490573241759648,
+   "violation": 0.03221566355718271,
+   "violation_signed": 0.007673782441694646
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231118_005626",
+   "axr": 3.3413094381045254,
+   "n_bins": 35,
+   "residual_deg": 6.817781233089505,
+   "residual_after_one_iteration_deg": 0.7762168642361473,
+   "violation": 0.07747239509091397,
+   "violation_signed": -0.032999892891451624
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231118_090602",
+   "axr": 7.670454268301587,
+   "n_bins": 40,
+   "residual_deg": 0.5759362275880733,
+   "residual_after_one_iteration_deg": 0.3732532807697737,
+   "violation": 0.01674741750631043,
+   "violation_signed": -0.009594827973134002
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231223_075055",
+   "axr": 5.578062094915996,
+   "n_bins": 39,
+   "residual_deg": 1.0278973773188227,
+   "residual_after_one_iteration_deg": 0.38040977203590387,
+   "violation": 0.019101232927628574,
+   "violation_signed": 0.004892700846475225
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231223_202619",
+   "axr": 3.258177198714802,
+   "n_bins": 33,
+   "residual_deg": 3.467037268164461,
+   "residual_after_one_iteration_deg": 0.36766006552753083,
+   "violation": 0.044915352098260024,
+   "violation_signed": -0.021669518384770905
+  },
+  {
+   "catalog": "O4a",
+   "event": "GW231224_024321",
+   "axr": 3.2035780394333204,
+   "n_bins": 36,
+   "residual_deg": 0.2994752462156498,
+   "residual_after_one_iteration_deg": 0.3826755884189197,
+   "violation": 0.052193710479138115,
+   "violation_signed": -0.048195505912793556
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240413_022019",
+   "axr": 6.298209127486287,
+   "n_bins": 38,
+   "residual_deg": 0.35691265021768004,
+   "residual_after_one_iteration_deg": 0.5621822552939193,
+   "violation": 0.029712152956122298,
+   "violation_signed": -0.02911873773168614
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240428_225440",
+   "axr": 4.551921389466815,
+   "n_bins": 37,
+   "residual_deg": 1.261014624504952,
+   "residual_after_one_iteration_deg": 0.3873749536720936,
+   "violation": 0.035722049188179526,
+   "violation_signed": -0.023258543704524095
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240507_041632",
+   "axr": 4.628855128545548,
+   "n_bins": 25,
+   "residual_deg": 3.915883981792433,
+   "residual_after_one_iteration_deg": 1.5647700156667383,
+   "violation": 0.07575110205506448,
+   "violation_signed": -0.05765396923113827
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240512_024139",
+   "axr": 3.8261049115674406,
+   "n_bins": 37,
+   "residual_deg": 1.3554988179022303,
+   "residual_after_one_iteration_deg": 0.16028457352857117,
+   "violation": 0.03526976441986561,
+   "violation_signed": -0.029132369704554725
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240520_213616",
+   "axr": 3.008343075221824,
+   "n_bins": 37,
+   "residual_deg": 2.4890250110805994,
+   "residual_after_one_iteration_deg": 0.11049833763379979,
+   "violation": 0.0392825102096881,
+   "violation_signed": -0.019251115063986912
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240527_230910",
+   "axr": 7.189247310913493,
+   "n_bins": 39,
+   "residual_deg": 0.5958447069864405,
+   "residual_after_one_iteration_deg": 0.6228820968400441,
+   "violation": 0.01682881811174096,
+   "violation_signed": -0.012244320960331975
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240530_012417",
+   "axr": 4.605014042666922,
+   "n_bins": 37,
+   "residual_deg": 0.15984348803144144,
+   "residual_after_one_iteration_deg": 0.2355075606042476,
+   "violation": 0.01710957676775687,
+   "violation_signed": 0.0006134322009720902
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240601_231004",
+   "axr": 3.1950743057066733,
+   "n_bins": 33,
+   "residual_deg": 0.1276944009494514,
+   "residual_after_one_iteration_deg": 3.1528051305993756,
+   "violation": 0.03070445640470027,
+   "violation_signed": -0.02501645989803045
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240622_004008",
+   "axr": 4.247806999373249,
+   "n_bins": 39,
+   "residual_deg": 0.5402719167857981,
+   "residual_after_one_iteration_deg": 0.08045247759713448,
+   "violation": 0.024405664922279476,
+   "violation_signed": -0.018440616861281577
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240627_131622",
+   "axr": 3.9502978832205096,
+   "n_bins": 39,
+   "residual_deg": 0.24330587035450435,
+   "residual_after_one_iteration_deg": 0.17737715077981875,
+   "violation": 0.02093024675315426,
+   "violation_signed": -0.014878831182978112
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240629_145256",
+   "axr": 3.4288808578184877,
+   "n_bins": 39,
+   "residual_deg": 1.2846933012097281,
+   "residual_after_one_iteration_deg": 0.053066890548137735,
+   "violation": 0.04075453998470605,
+   "violation_signed": -0.03551192933191544
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240825_055146",
+   "axr": 3.8795794170609734,
+   "n_bins": 38,
+   "residual_deg": 1.144613954334261,
+   "residual_after_one_iteration_deg": 0.27364522769497057,
+   "violation": 0.037663360150414694,
+   "violation_signed": -0.02656778843295038
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240830_211120",
+   "axr": 3.5434886730160295,
+   "n_bins": 38,
+   "residual_deg": 2.01474752902314,
+   "residual_after_one_iteration_deg": 0.16347274007367218,
+   "violation": 0.03200363741532869,
+   "violation_signed": -0.010082992403760226
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240910_103535",
+   "axr": 6.1022160912880485,
+   "n_bins": 38,
+   "residual_deg": 0.0731012302822478,
+   "residual_after_one_iteration_deg": 0.2577510413278503,
+   "violation": 0.031193768570106813,
+   "violation_signed": -0.030753547368241395
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240915_001357",
+   "axr": 5.106959388046097,
+   "n_bins": 36,
+   "residual_deg": 0.014124770258746366,
+   "residual_after_one_iteration_deg": 0.5837474295664151,
+   "violation": 0.026979687299182372,
+   "violation_signed": -0.024372449800273914
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240915_105151",
+   "axr": 5.519021854045549,
+   "n_bins": 37,
+   "residual_deg": 0.7690095361768385,
+   "residual_after_one_iteration_deg": 0.40184187201177224,
+   "violation": 0.019159388907089965,
+   "violation_signed": -0.0034139364610564506
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240920_073424",
+   "axr": 3.612679854413321,
+   "n_bins": 36,
+   "residual_deg": 1.1812778193755094,
+   "residual_after_one_iteration_deg": 0.10478545676423323,
+   "violation": 0.03542383537835621,
+   "violation_signed": -0.015952139459251488
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240921_201835",
+   "axr": 5.511235096379332,
+   "n_bins": 20,
+   "residual_deg": 2.330490744288369,
+   "residual_after_one_iteration_deg": 0.41167754909503174,
+   "violation": 0.06334929923157404,
+   "violation_signed": 0.046046811279021424
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240922_142106",
+   "axr": 3.8314740751356853,
+   "n_bins": 37,
+   "residual_deg": 1.3958689456935929,
+   "residual_after_one_iteration_deg": 0.1597739793841697,
+   "violation": 0.043518158216628695,
+   "violation_signed": -0.03939905190854803
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240925_005809",
+   "axr": 5.913981046650167,
+   "n_bins": 34,
+   "residual_deg": 2.120190230720965,
+   "residual_after_one_iteration_deg": 0.3688521877673736,
+   "violation": 0.06191647086194016,
+   "violation_signed": -0.05500426416510443
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW240930_035959",
+   "axr": 4.319114011200239,
+   "n_bins": 28,
+   "residual_deg": 2.696408759951595,
+   "residual_after_one_iteration_deg": 0.11454491556665403,
+   "violation": 0.04796262816265906,
+   "violation_signed": 0.01953555811882119
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241009_084816",
+   "axr": 3.0959329220470715,
+   "n_bins": 38,
+   "residual_deg": 0.28311982510732037,
+   "residual_after_one_iteration_deg": 0.23634900256035962,
+   "violation": 0.03537666125555207,
+   "violation_signed": -0.017739786501028417
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241011_233834",
+   "axr": 29.27502963996147,
+   "n_bins": 34,
+   "residual_deg": 0.09096599721704024,
+   "residual_after_one_iteration_deg": 0.08647479749930653,
+   "violation": 0.00293659322969751,
+   "violation_signed": -0.0005056109421679721
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241102_124058",
+   "axr": 8.321497081883994,
+   "n_bins": 36,
+   "residual_deg": 0.31803597574864284,
+   "residual_after_one_iteration_deg": 0.3145887261685516,
+   "violation": 0.019769997057409287,
+   "violation_signed": -0.018644212790552755
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241109_115924",
+   "axr": 4.787369132881563,
+   "n_bins": 36,
+   "residual_deg": 0.5819150442709713,
+   "residual_after_one_iteration_deg": 0.7232803976906155,
+   "violation": 0.023686781324263436,
+   "violation_signed": -0.017917805810675674
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241110_124123",
+   "axr": 6.613586538938271,
+   "n_bins": 33,
+   "residual_deg": 1.2086333748572429,
+   "residual_after_one_iteration_deg": 0.6757011028994384,
+   "violation": 0.022534223955194305,
+   "violation_signed": -0.00018913880972739952
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241114_235258",
+   "axr": 3.55827856405732,
+   "n_bins": 35,
+   "residual_deg": 0.8063237036609507,
+   "residual_after_one_iteration_deg": 0.678029803560662,
+   "violation": 0.02568651788170009,
+   "violation_signed": -0.018120068575197
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241130_110422",
+   "axr": 3.8473469511366982,
+   "n_bins": 38,
+   "residual_deg": 1.4867428862416148,
+   "residual_after_one_iteration_deg": 0.1253456563405848,
+   "violation": 0.03342262343581032,
+   "violation_signed": -0.02389667587008205
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241225_042553",
+   "axr": 4.788079133434738,
+   "n_bins": 39,
+   "residual_deg": 2.361289146550206,
+   "residual_after_one_iteration_deg": 0.03970010595983808,
+   "violation": 0.037268908352147016,
+   "violation_signed": -0.023121868107302487
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW241231_054133",
+   "axr": 5.685597127330755,
+   "n_bins": 40,
+   "residual_deg": 0.7670271349646782,
+   "residual_after_one_iteration_deg": 0.3615350514035356,
+   "violation": 0.033439056925693364,
+   "violation_signed": -0.03315850756281273
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW250118_055802",
+   "axr": 3.867762501063177,
+   "n_bins": 33,
+   "residual_deg": 0.8598947509345862,
+   "residual_after_one_iteration_deg": 4.1955088086224634,
+   "violation": 0.02781350223046965,
+   "violation_signed": 0.015666236549418535
+  },
+  {
+   "catalog": "O4b",
+   "event": "GW250119_190238",
+   "axr": 3.213360424253957,
+   "n_bins": 31,
+   "residual_deg": 2.3021341396648722,
+   "residual_after_one_iteration_deg": 0.7436256199257514,
+   "violation": 0.09794515518513078,
+   "violation_signed": 0.09794515518513078
+  }
+ ]
+}
