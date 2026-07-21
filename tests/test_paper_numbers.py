@@ -236,10 +236,16 @@ def test_docs_state_the_real_test_and_page_counts():
         for ln, line in enumerate(read(doc).split("\n"), 1):
             if _historical(line):
                 continue
+            # Two orders occur in the docs and BOTH must be checked. "165 tests" was covered from the
+            # start; "Tests: 164, all passing" was not, and a stale 164 sat in the adversarial-review
+            # handoff through a full review round because of it -- found by reading, not by this guard.
             # The lookbehind must exclude digits as well as letters: with letters alone, "E71 tests"
             # still matches at the final "1" and reads as "1 tests".
-            for claimed in re.findall(r"(?<![A-Za-z\d])(\d+)\s*(?:/\s*\d+\s*)?(?:contract |data-free )*tests?\b",
-                                      line):
+            claims = re.findall(r"(?<![A-Za-z\d])(\d+)\s*(?:/\s*\d+\s*)?(?:contract |data-free )*tests?\b",
+                                line)
+            # colon is mandatory, or "locked out-of-sample test 1" reads as a claim of 1 test
+            claims += re.findall(r"[Tt]ests?:\**\s*(\d+)", line)
+            for claimed in claims:
                 assert int(claimed) == n_tests, (
                     f"{rel}:{ln} claims {claimed} tests; {n_tests} are collected")
             # page counts only bind when the line is talking about the manuscript -- the 4 pp lab
