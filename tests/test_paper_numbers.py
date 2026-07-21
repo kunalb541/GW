@@ -202,7 +202,15 @@ def test_docs_do_not_contradict_the_cache_manifest():
 
 
 def _historical(line):
-    """Lab notes are records: bannered lines and explicit supersession prose are exempt by design."""
+    """Lines exempt from the count/size checks.
+
+    Two kinds. Lab notes are records, so bannered and explicitly-superseded prose is exempt by keyword.
+    Separately, documentation that *quotes* a stale or wrong count in order to describe a past failure
+    must opt out explicitly with a `<!-- not-a-count -->` marker -- an explicit marker rather than a
+    keyword guess, so it cannot silently exempt a line that really is drifting.
+    """
+    if "<!-- not-a-count -->" in line:
+        return True
     return any(k in line for k in ("BANNER", "SUPERSEDED", "superseded", "RETIRED", "retired",
                                    "previously", "earlier draft", "was right", "provisional"))
 
