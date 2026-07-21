@@ -55,9 +55,8 @@ later, disjoint event catalogs?
 
 We answer yes. The organizing thesis is that the uncertainty geometry of GW inference is \emph{measurement
 optics}: it is a property of what the instrument and signal can and cannot resolve, largely independent of
-source astrophysics. This viewpoint is not new mathematically --- it is the content of Fisher--Rao
-information geometry \citep{Amari2016}, the ``sloppy model'' framework \citep{Transtrum2015}, principal
-curves \citep{HastieStuetzle1989}. Our contribution is to make it quantitative and validated
+source astrophysics. This viewpoint is not new mathematically --- it is the content of the
+``sloppy model'' framework \citep{Transtrum2015} and of principal curves \citep{HastieStuetzle1989}. Our contribution is to make it quantitative and validated
 out-of-sample for GW posteriors, and to use it as a systematics diagnostic. We do \emph{not} present it as
 a test of general relativity; Sec.~\ref{sec:gr} explains why the geometry of GR-generated posteriors cannot
 serve that purpose.
@@ -166,9 +165,19 @@ We deliberately do not dress this in stronger language than the analysis support
 Fisher--Rao quantity, and the measured object --- the principal-axis angle of a sample covariance in fixed
 $(m_1,m_2)$ coordinates --- is not invariant under reparameterization; it changes under a change of mass
 coordinates, and we state the convention rather than implying invariance. Sec.~\ref{sec:frames} reports the
-frame and coordinate dependence explicitly. To our knowledge no published work reconstructs the per-event
-$(m_1,m_2)$ posterior orientation from the chirp-mass curve over the event's own $q$ marginal, or validates
-such a reconstruction out-of-sample across catalogs; that application is the contribution here.
+frame and coordinate dependence explicitly. The closest published neighbours stop short of this measurement in
+identifiable ways. \citet{Hannam2013} state that ``the component masses consistent with the signal lie
+roughly along a line of constant chirp mass'' and label chirp mass on their confidence regions, but make no
+quantitative statement about posterior orientation. \citet{Ohme2013} apply principal component analysis to
+the post-Newtonian phase coefficients rather than to $(m_1,m_2)$ posterior samples, predict no per-event
+orientation, and validate against no catalog. The \texttt{simple-pe} metric of \citet{Fairhurst2023}
+assumes the match ``varies quadratically with the difference in parameters'' about a peak, yielding an
+error ellipse --- the same local, linear class of approximation as our tangent term, though computed in
+$(\mathcal{M},\eta)$ rather than $(m_1,m_2)$ coordinates --- and those authors themselves note they
+``observe curved contours rather than perfect ellipses''. To our knowledge no published work reconstructs
+the per-event $(m_1,m_2)$ posterior orientation from the chirp-mass curve over the event's own $q$
+marginal, or validates such a reconstruction out-of-sample across catalogs; that application is the
+contribution here.
 
 \section{The residual is a real systematic}
 \label{sec:residual}
@@ -286,8 +295,11 @@ As an application, GW250114 --- the loudest event to date (network SNR $\sim80$)
 black hole with remnant $M_f^{\rm src}\approx62.7\,M_\odot$, $\chi_f\approx0.68$ --- is essentially a much
 louder counterpart of the first detection GW150914. Its remnant predicts Kerr quasi-normal-mode frequencies
 of $248.9$~Hz ($\tau=4.10$~ms) for the fundamental and $243.4$~Hz ($\tau=1.35$~ms) for the first overtone;
-published ringdown spectroscopy detects the overtone at $99.9\%$ confidence and finds no deviation from the
-Kerr prediction \citep{Suzuki2026}, confirming the no-hair theorem at record signal-to-noise. Being
+a published ringdown analysis using an orthonormal-mode basis reports the first overtone at $99.9\%$
+significance --- up from $82.5\%$ in nonorthogonal analyses of the same event --- and finds ``no significant
+deviation'' from the Kerr prediction \citep{Suzuki2026}. We quote the orthonormal figure with that context
+because the significance is a property of the analysis basis, and we describe the Kerr result as a null,
+which is what is reported, rather than as a confirmation of the no-hair theorem. Being
 near-equal-mass, its posterior is nearly round and it is (by construction) outside the elongated set used
 for the curved law --- an illustration that the loudest events are not always the most informative for a
 given geometric probe.
@@ -329,7 +341,8 @@ once the releases are present; no analysis or figure module reads the raw files 
 \paragraph{Honest limitations.} (1) This is a posterior-compression result: the $q$ marginal is taken from
 the posterior being reconstructed, so it is not a prediction from source medians or external physics.
 (2) It is validated on elongated events; round posteriors have no well-defined orientation and are excluded
-by design. (3) The $\sim\!1^\circ$ residual is unexplained beyond a finite-thickness contribution; the
+by design, and \citet{Baird2013} note that constant chirp mass ceases to characterise the mass degeneracy so
+cleanly at higher masses, bounding where such a construction should be expected to work. (3) The $\sim\!1^\circ$ residual is unexplained beyond a finite-thickness contribution; the
 arc-varying form of that contribution is not established. (4) The measured angle is coordinate- and
 frame-dependent, and we make no invariance claim. (5) The exponent fit of Sec.~\ref{sec:gr} is a diagnostic
 of GR-generated posteriors and cannot bound deviations from GR. (6) The information anatomy is
@@ -354,14 +367,10 @@ I.~W.~Harry, \emph{Astrophys.\ J.\ Lett.} \textbf{766}, L14 (2013).
 \emph{Phys.\ Rev.\ D} \textbf{88}, 042002 (2013).
 \bibitem[Fairhurst et al.(2023)]{Fairhurst2023} S.~Fairhurst, C.~Hoy, R.~Green, C.~Mills, and
 S.~A.~Usman, \emph{Phys.\ Rev.\ D} \textbf{108}, 082006 (2023).
-\bibitem[Amari(2016)]{Amari2016} S.~Amari, \emph{Information Geometry and Its Applications}
-(Springer, 2016).
 \bibitem[Transtrum et al.(2015)]{Transtrum2015} M.~K.~Transtrum et al.,
 \emph{J.\ Chem.\ Phys.} \textbf{143}, 010901 (2015).
 \bibitem[Hastie \& Stuetzle(1989)]{HastieStuetzle1989} T.~Hastie and W.~Stuetzle,
 \emph{J.\ Amer.\ Statist.\ Assoc.} \textbf{84}, 502 (1989).
-\bibitem[Backus \& Gilbert(1968)]{BackusGilbert1968} G.~Backus and F.~Gilbert,
-\emph{Geophys.\ J.\ R.\ Astron.\ Soc.} \textbf{16}, 169 (1968).
 \bibitem[Suzuki et al.(2026)]{Suzuki2026} M.~Suzuki, K.~Kubota, S.~Morisaki, H.~Motohashi, and
 D.~Watarai, arXiv:2605.03576 (2026).
 \end{thebibliography}
