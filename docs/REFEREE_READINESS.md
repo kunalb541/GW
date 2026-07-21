@@ -6,7 +6,7 @@ bibliography entries. This file is the honest summary a referee should read firs
 ## The thesis, in three sentences
 
 The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from two
-one-dimensional summaries of that same posterior — its median chirp mass and its mass-ratio marginal —
+one-dimensional marginal of that same posterior — its mass-ratio marginal —
 using the constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a
 median 1.0°–1.3° on elongated events across two later, disjoint
 event catalogs. This is not the trivial statement that a curve beats a line: substituting any other

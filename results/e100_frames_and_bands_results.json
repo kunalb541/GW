@@ -1,0 +1,156 @@
+{
+ "battery": "E100 frames, coordinates and the elongation gate",
+ "seed": 100,
+ "chirp_vs_total_win": {
+  "GWTC-3": {
+   "n": 76,
+   "win_fraction": 0.7631578947368421
+  },
+  "O4a": {
+   "n": 86,
+   "win_fraction": 0.8255813953488372
+  },
+  "O4b": {
+   "n": 104,
+   "win_fraction": 0.8942307692307693
+  }
+ },
+ "arc_length_vs_tangent_error": {
+  "GWTC-3": {
+   "n": 30,
+   "spearman_arc_vs_tangent_err": -0.5141268075639599,
+   "p": 0.0036565576319354687
+  },
+  "O4a": {
+   "n": 19,
+   "spearman_arc_vs_tangent_err": -0.6105263157894737,
+   "p": 0.005497326431735106
+  },
+  "O4b": {
+   "n": 32,
+   "spearman_arc_vs_tangent_err": -0.4208211143695014,
+   "p": 0.016467833003214603
+  }
+ },
+ "provenance": {
+  "cache": "results/e94_posterior_cache.npz",
+  "hdf5_accessed": false,
+  "supersedes": "docs/GATE_C_FIRST_MEASUREMENT.md, which carried these numbers as prose only and had drifted (79 events / 1.04 / 0.32 there)"
+ },
+ "n_events": 266,
+ "axr_min": 3.0,
+ "frames": {
+  "source_m1_m2": {
+   "n_elong": 81,
+   "median_err_deg": 1.0278973773188227,
+   "median_axr": 4.605014042666922,
+   "role": "LOCKED PRIMARY -- all other rows are post-hoc"
+  },
+  "detector_m1_m2": {
+   "n_elong": 81,
+   "median_err_deg": 0.31353231053950026,
+   "median_axr": 9.784957909528305,
+   "role": "post-hoc"
+  },
+  "log_source_m1_m2": {
+   "n_elong": 81,
+   "median_err_deg": 0.7782897406349605,
+   "median_axr": 3.5103326021727494,
+   "role": "post-hoc"
+  },
+  "detector_vs_source_paired": {
+   "n_paired": 81,
+   "median_source_deg": 1.0278973773188227,
+   "median_detector_deg": 0.31353231053950026,
+   "wilcoxon_p": 7.679426181520459e-08,
+   "median_axr_source": 4.605014042666922,
+   "median_axr_detector": 9.784957909528305
+  }
+ },
+ "matched_axis_ratio": {
+  "3-5": {
+   "n_source": 44,
+   "n_detector": 4,
+   "median_source_deg": 1.376349168005035,
+   "median_detector_deg": 5.534513551941259,
+   "detector_better": false
+  },
+  "5-10": {
+   "n_source": 28,
+   "n_detector": 41,
+   "median_source_deg": 0.7018056255855498,
+   "median_detector_deg": 0.4197515028720318,
+   "detector_better": true
+  },
+  "10+": {
+   "n_source": 9,
+   "n_detector": 35,
+   "median_source_deg": 0.3402000931849045,
+   "median_detector_deg": 0.21513736230483005,
+   "detector_better": true
+  }
+ },
+ "axr_bands": {
+  "1-1.5": {
+   "n": 96,
+   "median_err_deg": 16.28811698202753
+  },
+  "1.5-2": {
+   "n": 53,
+   "median_err_deg": 7.5230151324693395
+  },
+  "2-3": {
+   "n": 36,
+   "median_err_deg": 5.67290150691214
+  },
+  "3-5": {
+   "n": 44,
+   "median_err_deg": 1.376349168005035
+  },
+  "5+": {
+   "n": 37,
+   "median_err_deg": 0.5958447069864405
+  }
+ },
+ "threshold_sweep": {
+  "1.5": {
+   "n": 170,
+   "median_err_deg": 2.3163124419766206
+  },
+  "2": {
+   "n": 117,
+   "median_err_deg": 1.3870062014592293
+  },
+  "2.5": {
+   "n": 88,
+   "median_err_deg": 1.0885233455355916
+  },
+  "3": {
+   "n": 81,
+   "median_err_deg": 1.0278973773188227
+  },
+  "4": {
+   "n": 50,
+   "median_err_deg": 0.714698050106648
+  },
+  "5": {
+   "n": 37,
+   "median_err_deg": 0.5958447069864405
+  },
+  "6": {
+   "n": 26,
+   "median_err_deg": 0.5710055308928332
+  },
+  "8": {
+   "n": 13,
+   "median_err_deg": 0.3402000931849045
+  },
+  "10": {
+   "n": 9,
+   "median_err_deg": 0.3402000931849045
+  }
+ },
+ "threshold_monotone": true,
+ "random_baseline_deg": 45.0,
+ "interpretation": "The angle is coordinate-dependent by construction and the three frames disagree; we report that rather than claiming invariance. The detector frame scores better AND is markedly more elongated, and elongation is what makes orientation well defined, so the matched-axis-ratio rows are the discriminant -- the detector frame is not uniformly better within matched bands. Nothing distinguishes the locked threshold of 3: the error falls smoothly and monotonically across the sweep, and degrades toward (but never reaches) the mod-180 random baseline of 45 deg as posteriors become round."
+}

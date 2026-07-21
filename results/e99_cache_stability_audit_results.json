@@ -1,0 +1,170 @@
+{
+ "battery": "E99 cache stability audit",
+ "seed": 99,
+ "issue": "E94 draws indices with replacement, so the cache is a BOOTSTRAP RESAMPLE of the released samples, not a subsample. This audit quantifies the consequence.",
+ "full_sample_reference": {
+  "GWTC-3": {
+   "n": 28,
+   "median": 0.8016783105049257
+  },
+  "O4a": {
+   "n": 19,
+   "median": 1.2563499018091875
+  },
+  "O4b": {
+   "n": 32,
+   "median": 1.1877748444076275
+  }
+ },
+ "by_seed": {
+  "94": {
+   "GWTC-3": {
+    "n": 29,
+    "median": 0.7353624382366206
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.3271482006061035
+   },
+   "O4b": {
+    "n": 32,
+    "median": 1.2359528264864394
+   }
+  },
+  "1": {
+   "GWTC-3": {
+    "n": 28,
+    "median": 0.8361075465282255
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.1987568294837843
+   },
+   "O4b": {
+    "n": 32,
+    "median": 1.1052372879300947
+   }
+  },
+  "2": {
+   "GWTC-3": {
+    "n": 28,
+    "median": 0.7818296085494723
+   },
+   "O4a": {
+    "n": 19,
+    "median": 0.9392321371582284
+   },
+   "O4b": {
+    "n": 31,
+    "median": 1.2274825764046682
+   }
+  },
+  "3": {
+   "GWTC-3": {
+    "n": 29,
+    "median": 0.8033358251057336
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.2178529947552477
+   },
+   "O4b": {
+    "n": 32,
+    "median": 0.9681388846419168
+   }
+  },
+  "4": {
+   "GWTC-3": {
+    "n": 28,
+    "median": 0.7463322716644853
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.4792122380490866
+   },
+   "O4b": {
+    "n": 32,
+    "median": 1.1172924554391273
+   }
+  }
+ },
+ "by_draw_size": {
+  "2000": {
+   "GWTC-3": {
+    "n": 29,
+    "median": 0.897225039637533
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.076496038341645
+   },
+   "O4b": {
+    "n": 31,
+    "median": 0.9799335244517522
+   }
+  },
+  "4000": {
+   "GWTC-3": {
+    "n": 29,
+    "median": 0.7353624382366206
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.3271482006061035
+   },
+   "O4b": {
+    "n": 32,
+    "median": 1.2359528264864394
+   }
+  },
+  "8000": {
+   "GWTC-3": {
+    "n": 28,
+    "median": 0.7620750411316521
+   },
+   "O4a": {
+    "n": 19,
+    "median": 1.37818267872521
+   },
+   "O4b": {
+    "n": 32,
+    "median": 1.1370391324139177
+   }
+  }
+ },
+ "summary": {
+  "GWTC-3": {
+   "full_sample": 0.8016783105049257,
+   "n_elong_full": 28,
+   "cache_seed_mean": 0.7805935380169075,
+   "cache_seed_sd": 0.04129234612126269,
+   "cache_seed_min": 0.7353624382366206,
+   "cache_seed_max": 0.8361075465282255,
+   "abs_bias_vs_full": -0.02108477248801821
+  },
+  "O4a": {
+   "full_sample": 1.2563499018091875,
+   "n_elong_full": 19,
+   "cache_seed_mean": 1.23244048001049,
+   "cache_seed_sd": 0.198232419310593,
+   "cache_seed_min": 0.9392321371582284,
+   "cache_seed_max": 1.4792122380490866,
+   "abs_bias_vs_full": -0.023909421798697483
+  },
+  "O4b": {
+   "full_sample": 1.1877748444076275,
+   "n_elong_full": 32,
+   "cache_seed_mean": 1.1308208061804492,
+   "cache_seed_sd": 0.10920070946634748,
+   "cache_seed_min": 0.9681388846419168,
+   "cache_seed_max": 1.2359528264864394,
+   "abs_bias_vs_full": -0.05695403822717826
+  }
+ },
+ "verdict": {
+  "max_abs_bias_deg": 0.05695403822717826,
+  "max_seed_spread_deg": 0.5399801008908582,
+  "fit_for_purpose": false,
+  "statement": "The cache is a bootstrap resample. Its headline score differs from the full-sample value by up to 0.06 deg and moves by up to 0.54 deg across seeds. Any number quoted from the cache must be labelled as such, and the LOCKED out-of-sample scores must continue to be quoted from the full-sample E67/E71 artifacts, not from the cache."
+ }
+}

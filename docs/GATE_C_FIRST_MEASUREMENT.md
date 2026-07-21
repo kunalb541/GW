@@ -1,5 +1,13 @@
 # Gate C — first measurement (2026-07-21). Frame and parameterization audit.
 
+> **SUPERSEDED IN PART — 2026-07-21.** This note records what was measured when it was written and is
+> kept unedited as a record. The numbers it carries as prose have since been regenerated from
+> committed artifacts (`results/e100_frames_and_bands_results.json`), and three values here are wrong: the round-posterior band is **16.3 deg**, not 14.5; the paired
+> p-value is **8e-8**, not 4e-9; and the event count is **81**, not 79. The paper quotes the
+> artifacts, never this file. See [EXTERNAL_READER_PACKET.md](EXTERNAL_READER_PACKET.md) for the
+> table of corrections.
+
+
 Gate C of the [revised PAPER_PLAN](PAPER_PLAN.md): repeat the primary result in detector-frame masses,
 report $(\log m_1,\log m_2)$ and $(\mathcal M_c,q)$ behaviour, state the angle convention, and characterize
 the near-round-covariance limit. 265 events, all with both source- and detector-frame masses.

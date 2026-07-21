@@ -1,5 +1,13 @@
 # Gate A — first measurement (2026-07-21). VERDICT: PASSES, with one mechanism claim demoted.
 
+> **SUPERSEDED IN PART — 2026-07-21.** This note records what was measured when it was written and is
+> kept unedited as a record. The numbers it carries as prose have since been regenerated from
+> committed artifacts (`results/e95_gate_regeneration_results.json`), and the cross-family transfer moved from 2.08/2.78 to **2.25/2.93** once a proper 300-draw
+> permutation null and both transfer directions were stored. The paper quotes the
+> artifacts, never this file. See [EXTERNAL_READER_PACKET.md](EXTERNAL_READER_PACKET.md) for the
+> table of corrections.
+
+
 The [revised PAPER_PLAN](PAPER_PLAN.md) sets Gate A as a submission gate: show the curved reconstruction is
 non-trivial against declared baselines, quantify how much comes from the event's own $q$ marginal, and run
 a cross-waveform transfer test. All three are now measured, using the committed E71 machinery

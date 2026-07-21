@@ -19,7 +19,7 @@ the current manuscript. See [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_REA
 ### Retained as the paper's claim
 
 1. **The curved chirp-mass law** (E40 → E65 → E67 → E71). Two one-dimensional summaries of a
-   compact-binary mass posterior — its median chirp mass and its mass-ratio marginal — **reconstruct**
+   compact-binary mass posterior — its mass-ratio marginal alone — **reconstructs**
    the orientation of the full two-dimensional posterior to ~1° on elongated events, with **zero
    coefficients calibrated on the validation catalogs**. Out-of-sample: 1.26° on O4a, 1.22° on O4b.
    *This is a posterior-reconstruction law, not a prediction from source medians, and the residual ~1°
@@ -48,7 +48,7 @@ the current manuscript. See [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_REA
       E72 physics-blind null (no source class breaks the law); E78/E79 geometric GR-exponent test
       (0.628±0.009±0.016, GR-consistent at 1.5σ; a naive 3σ false alarm caught by the coherence lens);
       E73 information anatomy; E74 GW250114 no-hair. Math foundations + novelty in `docs/LITERATURE.md`.
-- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (11 pp; every headline number regenerates from a committed artifact).
+- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (12 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
 - [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
 - [ ] Manuscript: figures, full author list, journal formatting, referee-verification of remaining citations.
 

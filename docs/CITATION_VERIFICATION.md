@@ -108,3 +108,25 @@ rewrite. Both removed from the bibliography.
   support the hyperribbon geometry, and the manuscript says so.
 - §6 (coherence) and §8–9 (information anatomy, GW250114) were reviewed for citation integrity only. Their
   prose predates the gate work and has not been re-audited for claim strength.
+
+
+## Data and software citations (added 2026-07-21)
+
+The manuscript previously had **no acknowledgments section and no data citation at all**, which is a
+licence-compliance defect, not a stylistic one: GWOSC data are CC-BY and carry attribution obligations.
+Now added, with verification status:
+
+| citation | claim | status |
+|---|---|---|
+| GWOSC service, ApJS **267**, 29 (2023), arXiv:2302.03676 | the data source | identity verified; standard reference for the open-data service |
+| GWTC-2.1, PRD **109**, 022001 (2024), arXiv:2108.01045 | training-catalog posteriors | identity verified |
+| GWTC-3, PRX **13**, 041039 (2023), arXiv:2111.03606 | training-catalog posteriors | identity verified |
+| GWTC-4.0 / O4a | out-of-sample catalog 1 | **cited by Zenodo record only — catalog paper UNVERIFIED**, see DATA_AVAILABILITY.md |
+| GWTC-5.0 / O4b | out-of-sample catalog 2 | **cited by Zenodo record only — catalog paper UNVERIFIED**, see DATA_AVAILABILITY.md |
+| NumPy, Nature **585**, 357 (2020) | software | identity verified |
+| SciPy, Nat. Methods **17**, 261 (2020) | software | identity verified |
+| Matplotlib, CiSE **9**, 90 (2007) | software | identity verified |
+
+A test (`tests/test_paper_numbers.py::test_every_bibitem_is_cited_and_every_citation_defined`) now fails
+if any bibliography entry is uncited or any citation undefined, so an ornamental reference cannot
+re-enter the way Amari 2016 and Backus & Gilbert 1968 did.
