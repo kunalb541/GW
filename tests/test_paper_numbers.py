@@ -65,8 +65,11 @@ def test_manuscript_uses_only_defined_macros():
     defined |= set(re.findall(r"\\newcommand\{\\([A-Za-z]+)\}",
                               read(os.path.join(ROOT, "paper/fig_captions.tex"))))
     used = set(re.findall(r"\\([A-Z][A-Za-z]{4,})\b", strip_comments(read(MANUSCRIPT))))
+    # Commands provided by LaTeX or by a loaded package are not "our" generated macros. Keep this
+    # list explicit rather than pattern-matching, so a genuinely undefined macro still fails.
     builtin = {"LaTeX", "Huge", "Large", "Delta", "Sigma", "Omega", "Gamma", "Lambda",
-               "Theta", "Phi", "Psi", "Upsilon", "Xi", "Pi", "Rightarrow", "Leftarrow"}
+               "Theta", "Phi", "Psi", "Upsilon", "Xi", "Pi", "Rightarrow", "Leftarrow",
+               "FloatBarrier"}   # placeins
     unknown = {m for m in used - defined if m not in builtin}
     assert not unknown, f"manuscript references undefined macros: {sorted(unknown)}"
 
