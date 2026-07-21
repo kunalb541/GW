@@ -1,7 +1,7 @@
 # REFEREE READINESS — frozen snapshot
 
 Analysis state: commit `c167e27` (the commit that produced the current artifacts; everything since is
-documentation). 165 contract tests passing · manuscript 12 pp, zero LaTeX errors, zero uncited
+documentation). 165 contract tests passing · manuscript 13 pp, zero LaTeX errors, zero uncited
 bibliography entries. This file is the honest summary a referee should read first, and every number in it
 is generated from a committed artifact by `src/build_doc_numbers.py` — none is typed by hand.
 

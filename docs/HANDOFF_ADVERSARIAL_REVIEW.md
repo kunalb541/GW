@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Analysis state:** `c167e27` (the commit that produced the current artifacts;
 later commits are documentation only)
-**Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 12 pp · **Tests:** 164, all passing ·
+**Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 164, all passing ·
 **Generated macros:** 120 from 16 artifacts
 
 This document exists to be attacked. The previous external review returned **Major Revision / Not Yet

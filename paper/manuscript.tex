@@ -452,6 +452,31 @@ statistical result. It is included as context for the measurement-optics picture
 claims in Sections~\ref{sec:results}--\ref{sec:robust}. A data-driven version, re-analysing loud events in
 frequency slices and comparing empirical with predicted information accumulation, is left to future work.
 
+\section{The loudest event: GW250114}
+\label{app:loudest}
+This appendix records where the loudest event to date sits with respect to the construction of
+Section~\ref{sec:method}. It supports none of the claims of Sections~\ref{sec:results}--\ref{sec:robust},
+and the ringdown results quoted are other groups' work.
+
+GW250114 is a near-equal-mass binary black hole detected at network signal-to-noise $\sim\LoudSNR$, with
+remnant mass $M_f^{\rm src}\approx\LoudMf\,M_\odot$ and spin $\chi_f\approx\LoudChif$ --- essentially a
+much louder counterpart of GW150914. Its remnant implies Kerr quasi-normal-mode frequencies of
+$\LoudFtwoTwoZero$~Hz ($\tau=\LoudTauTwoTwoZero$~ms) for the fundamental and $\LoudFtwoTwoOne$~Hz
+($\tau=\LoudTauTwoTwoOne$~ms) for the first overtone. A published ringdown analysis using an
+orthonormal-mode basis reports the first overtone at $99.9\%$ significance --- up from $82.5\%$ in
+nonorthogonal analyses of the same event --- and finds ``no significant deviation'' from the Kerr
+prediction \citep{Suzuki2026}. We quote the orthonormal figure with that context because the significance
+is a property of the analysis basis, and we describe the Kerr result as the null it is reported to be
+rather than as a confirmation of the no-hair theorem.
+
+The event is relevant here for a negative reason. Being near-equal-mass, its posterior is nearly round and
+it therefore falls outside the elongated sample used throughout this paper: the loudest event in a catalog
+is not necessarily the most informative for a given geometric probe, since the quantity reconstructed here
+requires a well-defined principal axis rather than high signal-to-noise. We make no ringdown claim of our
+own for this event. An independent ringdown analysis attempted during this work was withdrawn when its
+posterior was found to be prior-dominated, the credible interval reproducing the prior rather than
+measuring the data, and we therefore rely on the published analyses cited above.
+
 \section{Reproducibility}
 \label{app:repro}
 All analyses read a single cached extract of the released posterior samples, so that every downstream
@@ -530,6 +555,8 @@ S.~A.~Usman, \emph{Phys.\ Rev.\ D} \textbf{108}, 082006 (2023).
 \emph{J.\ Chem.\ Phys.} \textbf{143}, 010901 (2015).
 \bibitem[Hastie \& Stuetzle(1989)]{HastieStuetzle1989} T.~Hastie and W.~Stuetzle,
 \emph{J.\ Amer.\ Statist.\ Assoc.} \textbf{84}, 502 (1989).
+\bibitem[Suzuki et al.(2026)]{Suzuki2026} M.~Suzuki, K.~Kubota, S.~Morisaki, H.~Motohashi, and
+D.~Watarai, arXiv:2605.03576 (2026).
 \bibitem[LVK(2025)]{GWTC4} The LIGO Scientific, Virgo and KAGRA Collaborations,
 \emph{GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part
 of the Fourth LIGO--Virgo--KAGRA Observing Run}, arXiv:2508.18082 (2025).

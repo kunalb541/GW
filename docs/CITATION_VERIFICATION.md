@@ -40,6 +40,12 @@ orthonormal basis yields, and the same paper reports 82.5% without it. Quoting t
 that context misrepresents the strength of the evidence. (ii) "No significant deviation" is a null result;
 "confirming the no-hair theorem" is a positive claim the paper does not make. **Both corrected.**
 
+**Placement (2026-07-21).** The GW250114 material now sits in Appendix~C rather than the body: it
+supports none of the paper's claims and the ringdown results are other groups' work. The narrowing above
+still applies to how it is quoted there --- the 99.9% figure is given with its orthonormal-basis context
+and the 82.5% nonorthogonal value beside it, and the Kerr result is described as the null it is reported
+to be.
+
 **Related, and deliberately not cited:** Dey et al. (arXiv:2605.18595) also analyse GW250114 and report
 that their Full-sky analysis samples extrinsic parameters *"jointly with remnant mass, spin, mode
 amplitudes, and phases"* and that *"mode amplitude ratios remain consistent across approaches."* Verified
