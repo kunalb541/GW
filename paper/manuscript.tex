@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{natbib}
+\usepackage{placeins}   % \FloatBarrier: keep figures with the section that discusses them
 \setcitestyle{numbers,square}
 
 \title{\textbf{Reconstructing compact-binary mass-posterior orientation\\
@@ -318,7 +319,7 @@ the chosen threshold of $3$: the error falls monotonically and smoothly across t
 $10$. Figure~\ref{fig:2a} illustrates the geometry for three events selected by stated rules, including the
 worst case in the sample.
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{../figures/fig2a_posterior_geometry_examples.pdf}
 \caption{\figtwoacaption}
@@ -338,6 +339,8 @@ $q=\AtlasWfQ$), a measurement systematic, with a sign indicating that the curve 
 
 This is a null result on $\AtlasN$ events and has correspondingly limited power. It bounds the size of any
 physical dependence; it does not exclude one.
+
+\FloatBarrier
 
 \section{Discussion}
 \label{sec:discussion}
