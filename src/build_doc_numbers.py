@@ -24,6 +24,41 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# The cache is gitignored, so on a fresh clone there is no file to measure. Recorded here as the single
+# source of truth and cross-checked against the real file whenever it happens to be present.
+CACHE_MB = 572
+
+
+def cache_mb():
+    fp = os.path.join(ROOT, "results/e94_posterior_cache.npz")
+    if os.path.exists(fp):
+        actual = round(os.path.getsize(fp) / 1e6)
+        assert abs(actual - CACHE_MB) <= 5, (
+            f"CACHE_MB={CACHE_MB} but the cache is {actual} MB; update the constant")
+    return CACHE_MB
+
+
+def pdf_pages():
+    """Page count of the built manuscript, or 0 if it cannot be determined.
+
+    The PDF uses compressed object streams, so scanning for /Count finds nothing; pdfinfo is the
+    reliable route and the raw scan is only a fallback for machines without poppler.
+    """
+    fp = os.path.join(ROOT, "paper/manuscript.pdf")
+    if not os.path.exists(fp):
+        return 0
+    try:
+        import subprocess
+        out = subprocess.run(["pdfinfo", fp], capture_output=True, text=True, timeout=30).stdout
+        m = re.search(r"Pages:\s+(\d+)", out)
+        if m:
+            return int(m.group(1))
+    except Exception:
+        pass
+    with open(fp, "rb") as fh:
+        counts = re.findall(rb"/Count\s+(\d+)", fh.read())
+    return max((int(c) for c in counts), default=0)
+
 
 def art(name):
     with open(os.path.join(ROOT, name)) as fh:
@@ -107,10 +142,6 @@ def blocks():
         f"($p = {e92['signed_residual']['O4a']['sign_test_p']:.3f}$). The paper reports it per catalog for "
         "this reason; if you think the signed effect is a training-set artifact, that is a live position."
     )
-    resid_ratio = (
-        f"a real systematic, about {mc['median_ratio_err_over_sigma']:.0f} times the Monte Carlo "
-        f"resolution of the released samples"
-    )
     e100 = art("results/e100_frames_and_bands_results.json")["arc_length_vs_tangent_error"]
     arc = ", ".join(f"{v['spearman_arc_vs_tangent_err']:+.2f}" for v in e100.values())
 
@@ -128,8 +159,52 @@ def blocks():
         f"   an earlier draft reported it weakly positive and claimed residuals *grow* with elongation. Both\n"
         f"   were wrong; the manuscript does not rest on either.")
 
-    return {"key-numbers": "\n".join(key), "strongest-claims": "\n".join(strongest),
-            "weakest-o4b": weakest_o4b, "signed-o4b": signed_o4b, "residual-ratio": resid_ratio,
+    ratio = f"{mc['median_ratio_err_over_sigma']:.0f}"
+    span = lambda fn: f"{min(fn(c) for c in CATS):.1f}"+"–"+f"{max(fn(c) for c in CATS):.1f}"
+    own_span = span(lambda c: A[c]["own_q"])
+    tan_span = span(lambda c: A[c]["tangent"])
+    degrade = [A[c]["pooled_q"] / A[c]["own_q"] for c in CATS]
+    npm = A["O4a"]["perm_null"]["n"]
+
+    thesis_rr = (
+        "The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single\n"
+        "one-dimensional marginal of that same posterior — its mass-ratio marginal — using the\n"
+        f"constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median\n"
+        f"{own_span}° on elongated events across two later, disjoint event catalogs. This is not the trivial\n"
+        "statement that a curve beats a line: substituting any other event's mass-ratio marginal degrades it\n"
+        f"{min(degrade):.0f}–{max(degrade):.0f}× and the achieved error lies below the minimum of {npm} "
+        "permutations, while the\n"
+        "reconstruction transfers between separately inferred waveform-family posteriors of the same event.\n"
+        f"The residual ~1° is a real systematic, about {ratio}× the Monte Carlo resolution of the released\n"
+        f"samples, whose size is predicted by the curve's failure of Hastie–Stuetzle self-consistency\n"
+        f"(ρ = {g['spearman_violation_vs_residual']:+.2f}, p = {g['p_value']:.0e}).")
+
+    thesis_packet = (
+        "The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single\n"
+        "one-dimensional marginal of that same posterior — its mass-ratio marginal — via the shape of the\n"
+        "constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median\n"
+        f"${own_span}^\\circ$ on elongated events (axis ratio $\\ge 3$) in two later, disjoint event catalogs.\n"
+        "The median-point tangent approximation, which underlies rapid parameter-estimation tools, gets\n"
+        f"${tan_span}^\\circ$ on the same events. This is not merely \"a curve beats a line\": substituting any\n"
+        f"other event's mass-ratio marginal degrades the result ${min(degrade):.0f}$–${max(degrade):.0f}"
+        "\\times$ and the achieved error falls below the\n"
+        f"**minimum** of {npm} catalog-stratified permutations, while the reconstruction transfers between\n"
+        "separately inferred waveform-family posteriors of the same event. The residual $\\sim1^\\circ$ is a\n"
+        f"genuine systematic, about ${ratio}\\times$ the Monte Carlo resolution of the released samples, and its\n"
+        "per-event size is predicted by the curve's failure of Hastie–Stuetzle self-consistency\n"
+        f"($\\rho = {g['spearman_violation_vs_residual']:+.2f}$, "
+        f"$p = {g['p_value']:.0e}$).")
+
+    cache_cmd = (
+        "```bash\n"
+        "# one-time cache: the ONLY routine HDF5 pass in the project (~104 s measured; I/O-bound)\n"
+        "python3 src/e94_build_posterior_cache.py          # writes results/e94_posterior_cache.npz\n"
+        f"                                                  # (~{cache_mb()} MB, no subsampling, gitignored)\n"
+        "```")
+
+    return {"thesis-rr": thesis_rr, "thesis-packet": thesis_packet, "cache-cmd": cache_cmd,
+            "key-numbers": "\n".join(key), "strongest-claims": "\n".join(strongest),
+            "weakest-o4b": weakest_o4b, "signed-o4b": signed_o4b,
             "signed-rr": signed_rr, "weakest-rr": weakest_rr, "arc-rr": arc_rr}
 
 

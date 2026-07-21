@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Analysis state:** `c167e27` (the commit that produced the current artifacts;
 later commits are documentation only)
-**Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 160, all passing ·
+**Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 164, all passing ·
 **Generated macros:** 120 from 16 artifacts
 
 This document exists to be attacked. The previous external review returned **Major Revision / Not Yet
@@ -253,7 +253,7 @@ python3 src/build_manuscript_figures.py      # captions from sidecars
 python3 src/build_paper_numbers.py           # every number -> paper/numbers.tex
 
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
-python3 -m pytest tests/ -q                  # 160 tests, data-free
+python3 -m pytest tests/ -q                  # 164 tests, data-free
 ```
 
 `results/paper_macro_sources.json` is the machine-readable macro → value → artifact → json-path map for

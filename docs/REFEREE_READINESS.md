@@ -1,20 +1,24 @@
 # REFEREE READINESS — frozen snapshot
 
-Analysis state frozen at commit `a29cc84` (this document adds no analysis) · 136 contract tests passing · manuscript 10 pp, zero LaTeX warnings, zero uncited
-bibliography entries. This file is the honest summary a referee should read first.
+Analysis state: commit `c167e27` (the commit that produced the current artifacts; everything since is
+documentation). 164 contract tests passing · manuscript 13 pp, zero LaTeX errors, zero uncited
+bibliography entries. This file is the honest summary a referee should read first, and every number in it
+is generated from a committed artifact by `src/build_doc_numbers.py` — none is typed by hand.
 
 ## The thesis, in three sentences
 
-The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from two
-one-dimensional marginal of that same posterior — its mass-ratio marginal —
-using the constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a
-median 1.0°–1.3° on elongated events across two later, disjoint
-event catalogs. This is not the trivial statement that a curve beats a line: substituting any other
-event's mass-ratio marginal degrades it several-fold and the achieved error lies below the minimum of
-300 permutations, while the reconstruction transfers between separately inferred waveform-family
-posteriors of the same event. The residual ~1° is a real systematic, about 6×
-the Monte Carlo resolution of the released samples, whose size is predicted by the curve's failure of
-Hastie–Stuetzle self-consistency.
+<!-- BEGIN GENERATED: thesis-rr -->
+The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single
+one-dimensional marginal of that same posterior — its mass-ratio marginal — using the
+constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median
+0.9–1.3° on elongated events across two later, disjoint event catalogs. This is not the trivial
+statement that a curve beats a line: substituting any other event's mass-ratio marginal degrades it
+3–11× and the achieved error lies below the minimum of 300 permutations, while the
+reconstruction transfers between separately inferred waveform-family posteriors of the same event.
+The residual ~1° is a real systematic, about 17× the Monte Carlo resolution of the released
+samples, whose size is predicted by the curve's failure of Hastie–Stuetzle self-consistency
+(ρ = +0.68, p = 7e-12).
+<!-- END GENERATED: thesis-rr -->
 
 ## What is artifact-backed
 
@@ -103,8 +107,8 @@ cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 python3 -m pytest tests/ -q
 ```
 
-`results/e94_posterior_cache.npz` (572 MB — it stores every posterior sample, no subsampling) is
-gitignored and regenerable; its manifest is committed.
+`results/e94_posterior_cache.npz` (see the cache note above) is gitignored and regenerable; its
+manifest is committed.
 
 ## Provenance discipline
 

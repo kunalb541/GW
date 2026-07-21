@@ -51,7 +51,7 @@ verification. Do not cite them as such.
 - [x] All underlying batteries locked-preregistered, run, independently re-derived (in cosmo2).
 - [x] **Full port complete**: all 18 GW experiments (E38, E40–E47, E55, E57–E60, E65–E68) plus the
       GW-adjacent set (E63 NS-EOS via GW170817; E16/E52/E69 H0-anchor context; qinfo) live here
-      self-contained — preregs/, src/, results/ (numbers of record), reports/, 17 tests, fetch scripts.
+      self-contained — preregs/, src/, results/ (numbers of record), reports/, contract tests, fetch scripts.
       All files byte-identical copies; originals remain in cosmo2.
 - [x] GW lab notebook: [`paper/gw_lab_notebook.pdf`](paper/gw_lab_notebook.pdf) (26 entries; new this cycle: E71, E72, E73, E74, E78, E79).
 - [x] **New results (this cycle):** E71 curved law reconfirmed out-of-sample on GWTC-5/O4b (1.22°, 3rd
@@ -110,7 +110,7 @@ catalogs*, not independent experiments.
   `src/e96`, `src/e97`, `src/e98` and `src/e100` read it and perform **no HDF5 access of their own**.
   Without it they will not run. It performs **no subsampling** — every usable sample is stored (~572 MB,
   gitignored), so a cache-backed number is a full-sample number.
-- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (160 tests).
+- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (164 tests).
 
 ## Layout (cosmo2 conventions)
 
@@ -131,7 +131,7 @@ GW/
 
 Start with [`docs/WORKFLOW.md`](docs/WORKFLOW.md) (the locked-prereg battery cycle + the
 GW-specific rules learned the hard way), [`docs/TESTING.md`](docs/TESTING.md) (run: `python3 -m
-pytest tests/ -q`; 160 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
+pytest tests/ -q`; 164 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
 state, data routes, next steps), and [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md)
 (every source pinned with record numbers). Next free experiment number: **E101**.
 

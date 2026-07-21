@@ -193,3 +193,36 @@ def test_docs_do_not_contradict_the_cache_manifest():
     assert "~100 MB" not in readme, "README still quotes the pre-rebuild cache size"
     assert m["n_samp"] is None
     assert f"{m['rows_stored_exactly']}/{m['n_group_rows']}" in readme or "no subsampling" in readme
+
+
+def test_docs_state_the_real_test_and_page_counts():
+    """Header metadata drifts silently and is the first thing a referee reads.
+
+    Not generated: generating a test count from inside a test invites recursion, and the page count
+    depends on a built PDF. Asserted instead, which is enough -- the numbers are checked, and a stale one
+    fails the suite rather than reaching a reader.
+    """
+    import src.build_doc_numbers as bdn
+
+    collected = subprocess.run([sys.executable, "-m", "pytest", os.path.join(ROOT, "tests"),
+                                "--collect-only", "-q"], capture_output=True, text=True).stdout
+    n_tests = int(re.search(r"(\d+) tests? collected", collected).group(1))
+    pages = bdn.pdf_pages()
+    if not pages:
+        pytest.skip("page count undeterminable here (no built PDF / no pdfinfo)")
+
+    for doc in ("docs/REFEREE_READINESS.md", "docs/EXTERNAL_READER_PACKET.md",
+                "docs/HANDOFF_ADVERSARIAL_REVIEW.md", "README.md"):
+        text = read(os.path.join(ROOT, doc))
+        for claimed in re.findall(r"(\d+)\s+(?:contract\s+)?tests\b", text):
+            assert int(claimed) == n_tests, f"{doc} claims {claimed} tests; {n_tests} are collected"
+        for claimed in re.findall(r"(?:manuscript\s+)?(\d+)\s*pp\b", text):
+            assert int(claimed) == pages, f"{doc} claims {claimed} pp; the PDF has {pages}"
+
+
+def test_cache_size_constant_matches_reality():
+    """The doc-facing cache size lives in one place and is checked against the file when present."""
+    import src.build_doc_numbers as bdn
+
+    assert bdn.cache_mb() == bdn.CACHE_MB          # asserts internally if the file disagrees
+    assert "572" in read(os.path.join(ROOT, "docs/EXTERNAL_READER_PACKET.md"))

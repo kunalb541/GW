@@ -2,7 +2,7 @@
 
 **Repo** <https://github.com/kunalb541/GW> · **state handed off at commit `c167e27`** (this packet is
 committed immediately after; it changes no analysis) · **PDF** [`paper/manuscript.pdf`](../paper/manuscript.pdf),
-13 pp · 160 contract tests, all passing.
+13 pp · 164 contract tests, all passing.
 
 Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4447-6325).
 
@@ -10,20 +10,20 @@ Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4
 
 ## The thesis, in one paragraph
 
+<!-- BEGIN GENERATED: thesis-packet -->
 The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single
-one-dimensional marginal of that same posterior — its mass-ratio marginal —
-via the shape of the constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median
-$1.0$–$1.3^\circ$ on elongated events (axis ratio $\ge 3$) in two later, disjoint event catalogs. The
-median-point tangent approximation, which underlies rapid parameter-estimation tools, gets $3.9$–$6.6^\circ$
-on the same events. This is not merely "a curve beats a line": substituting any other event's mass-ratio
-marginal degrades the result $2.5$–$12\times$ and the achieved error falls below the **minimum** of 300
-catalog-stratified permutations, while the reconstruction transfers between separately inferred
-waveform-family posteriors of the same event. The residual $\sim1^\circ$ is a genuine systematic — about
-<!-- BEGIN GENERATED: residual-ratio -->
-a real systematic, about 17 times the Monte Carlo resolution of the released samples
-<!-- END GENERATED: residual-ratio -->
-— and its per-event size is predicted by the
-curve's failure of Hastie–Stuetzle self-consistency ($\rho = +0.68$, $p = 5\times10^{-12}$).
+one-dimensional marginal of that same posterior — its mass-ratio marginal — via the shape of the
+constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median
+$0.9–1.3^\circ$ on elongated events (axis ratio $\ge 3$) in two later, disjoint event catalogs.
+The median-point tangent approximation, which underlies rapid parameter-estimation tools, gets
+$4.2–6.7^\circ$ on the same events. This is not merely "a curve beats a line": substituting any
+other event's mass-ratio marginal degrades the result $3$–$11\times$ and the achieved error falls below the
+**minimum** of 300 catalog-stratified permutations, while the reconstruction transfers between
+separately inferred waveform-family posteriors of the same event. The residual $\sim1^\circ$ is a
+genuine systematic, about $17\times$ the Monte Carlo resolution of the released samples, and its
+per-event size is predicted by the curve's failure of Hastie–Stuetzle self-consistency
+($\rho = +0.68$, $p = 7e-12$).
+<!-- END GENERATED: thesis-packet -->
 
 ## What to read first
 
@@ -90,34 +90,16 @@ data/chains/gwtc4/           GWTC-4.0 / O4a     ~11 GB
 data/chains/gwtc5/           GWTC-5.0 / O4b     ~41 GB
 ```
 
+<!-- BEGIN GENERATED: cache-cmd -->
 ```bash
-# one-time cache: the ONLY HDF5 pass in the project (~5 min; GWTC-3 dominates at ~4 min)
-python3 src/e94_build_posterior_cache.py          # writes results/e94_posterior_cache.npz (~96 MB, gitignored)
-
-# analyses (seconds each, cache-backed, no HDF5)
-python3 src/e95_gate_regeneration.py              # Gates A / C / D
-python3 src/e92_curve_uncertainty.py              # Gate B
-python3 src/e93_precision_law.py                  # Gate E -- writes NOT PASSED
-python3 src/e96_curve_thickness_mechanism.py
-python3 src/e97_principal_curve_selfconsistency.py
-python3 src/e98_framework_audit.py
-python3 src/e100_frames_and_bands.py              # frames, coordinates, elongation bands
-python3 src/e99_cache_stability_audit.py          # SLOW (~45 min): the one post-E94 HDF5 pass
-
-# figures + artifact-derived captions
-python3 src/fig1b_tangent_vs_curve_residual.py
-python3 src/fig1c_nontriviality_q_baselines.py
-python3 src/fig2a_posterior_geometry_examples.py
-python3 src/build_manuscript_figures.py
-python3 src/build_paper_numbers.py                # every result number in the paper -> paper/numbers.tex
-
-cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
-
-python3 -m pytest tests/ -q                       # 160 tests, data-free, run anywhere
+# one-time cache: the ONLY routine HDF5 pass in the project (~104 s measured; I/O-bound)
+python3 src/e94_build_posterior_cache.py          # writes results/e94_posterior_cache.npz
+                                                  # (~572 MB, no subsampling, gitignored)
 ```
+<!-- END GENERATED: cache-cmd -->
 
 **Time/resource budget:** ~58 GB download (hours, network-bound); ~5 min cache build; everything
-downstream is seconds. The 160 tests need no data and run in ~1 min.
+downstream is seconds. The 164 tests need no data and run in ~1 min.
 
 ## Checklist for an external reader
 

@@ -1,5 +1,13 @@
 # Gates D and E — first measurement (2026-07-21)
 
+> **BANNER 2026-07-21 — numbers superseded, verdicts unchanged.** Kept unedited as a record. Its values
+> come from the retired posterior cache (4000 samples per row drawn *with replacement*); the cache now
+> stores every sample exactly. The residual/resolution ratio quoted here as ~6× is **17.2×** against the
+> current artifact, and Gate B's other values moved with it. The gate VERDICTS (B passes on threshold,
+> E is NOT PASSED) are unaffected. Measurements of record are the committed `results/*.json`; the
+> reader-facing summaries in [REFEREE_READINESS.md](REFEREE_READINESS.md) are generated from them.
+
+
 Closes the remaining submission gates in the [revised PAPER_PLAN](PAPER_PLAN.md). Gate D: preregistration
 provenance and per-pipeline reporting. Gate E: the precision law must be fit directly or removed.
 
