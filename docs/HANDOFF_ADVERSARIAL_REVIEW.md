@@ -1,8 +1,9 @@
 # HANDOFF — for adversarial review (round 3)
 
-**Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Head:** `c167e27`
+**Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Analysis state:** `c167e27` (the commit that produced the current artifacts;
+later commits are documentation only)
 **Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 160, all passing ·
-**Generated macros:** 120 from 15 artifacts
+**Generated macros:** 120 from 16 artifacts
 
 This document exists to be attacked. The previous external review returned **Major Revision / Not Yet
 Referee-Ready** with ten findings. All ten are closed. Closing them surfaced six further errors that the
@@ -171,9 +172,10 @@ is already determined by the q marginal for any plausible curve family?** The pe
 - **O4a's preregistration is not publicly timestamped** — prereg and results entered the public repo in
   the same commit. Only O4b's lock is verifiable from the public record. The two out-of-sample scores are
   **not** equal evidence.
-- **The signed residual is not significant in O4b** (`p = 0.377`), the newest and largest catalog.
+- **The signed residual is not significant in O4b** (`p = 0.110`), the newest and largest catalog.
 - **O4b is the weakest panel** of Figure 2: pooled-q and tangent nearly coincide there.
-- **The self-consistency correction does not clear the out-of-sample bar** (`p = 0.024 / 0.064`).
+- **The self-consistency correction does not clear the out-of-sample bar** (`p = 0.002 / 0.107` —
+  significant in one direction only; the directions swapped in strength after the cache rebuild).
 - **Arc-varying thickness is not established**; a constant taper does as well in one direction.
 - **§8's Spearman `−1.00`** is determinism of the forward model, not an empirical result.
 - **Waveform choice is the dominant per-event systematic.** Concretely, on the worst-case event the error

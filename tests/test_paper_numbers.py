@@ -160,3 +160,36 @@ def test_cache_reproduces_the_independent_full_sample_pass():
         full = e99["summary"][cat]["full_sample"]
         assert abs(e95[cat]["own_q"] - full) < 0.01, (
             f"{cat}: cache {e95[cat]['own_q']:.3f} vs independent full-sample pass {full:.3f}")
+
+
+def test_generated_doc_blocks_are_current():
+    """The public docs must agree with the artifacts too.
+
+    Three review rounds each found stale numbers in REFEREE_READINESS.md and EXTERNAL_READER_PACKET.md
+    (0.83/1.32/1.00 after the cache rebuild, "six times" after the resolution improved to 17x, a p=0.377
+    that had become 0.110). Proofreading caught them every time, which is precisely why it is not a
+    system. The headline tables now live in sentinel-delimited generated blocks.
+    """
+    import src.build_doc_numbers as bdn
+
+    before = {p: read(os.path.join(ROOT, p))
+              for p in ("docs/REFEREE_READINESS.md", "docs/EXTERNAL_READER_PACKET.md")}
+    subprocess.run([sys.executable, os.path.join(ROOT, "src/build_doc_numbers.py")],
+                   check=True, capture_output=True)
+    for p, old in before.items():
+        assert read(os.path.join(ROOT, p)) == old, (
+            f"{p} has stale generated blocks: run src/build_doc_numbers.py")
+
+    # every declared block must actually be anchored somewhere, or it silently stops being maintained
+    joined = "".join(before.values())
+    for name in bdn.blocks():
+        assert f"<!-- BEGIN GENERATED: {name} -->" in joined, f"block {name!r} has no anchor in any doc"
+
+
+def test_docs_do_not_contradict_the_cache_manifest():
+    """A number a reader sees for the cache must match what the cache actually is."""
+    m = json.load(open(os.path.join(ROOT, "results/e94_posterior_cache_manifest.json")))
+    readme = read(os.path.join(ROOT, "README.md"))
+    assert "~100 MB" not in readme, "README still quotes the pre-rebuild cache size"
+    assert m["n_samp"] is None
+    assert f"{m['rows_stored_exactly']}/{m['n_group_rows']}" in readme or "no subsampling" in readme

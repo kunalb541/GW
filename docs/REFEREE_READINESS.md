@@ -20,15 +20,20 @@ Hastie–Stuetzle self-consistency.
 
 Every number below regenerates from committed code. No figure or analysis module reads raw PE files.
 
+<!-- BEGIN GENERATED: key-numbers -->
 | claim | value | artifact |
 |---|---|---|
-| out-of-sample reconstruction (elongated) | 0.83° / 1.32° / 1.00° | `e95_gate_regeneration_results.json` |
-| median-point tangent, same events | 5.32° / 6.60° / 3.90° | same |
-| permutation null (300 draws), own-q below **minimum** | min 4.54° / 2.87° / 2.30° | same |
-| cross-waveform transfer A→B, B→A | 2.25°, 2.93° (reference scale 2.03°) | same |
-| residual vs Monte Carlo resolution | 1.03° vs 0.187° (6.29×) | `e92_curve_uncertainty_results.json` |
-| self-consistency violation predicts residual | ρ = +0.675, p = 4.8e-12 | `e97_principal_curve_selfconsistency_results.json` |
-| Gaussian (BvM) orientation error | 5.02° vs 1.03° (4.9×) | `e98_framework_audit_results.json` |
+| out-of-sample reconstruction (elongated) | 0.88° / 1.26° / 1.19° | `e95_gate_regeneration_results.json` |
+| median-point tangent, same events | 4.83° / 6.67° / 4.20° | same |
+| pooled-$q$ baseline, same events | 9.94° / 4.03° / 3.77° | same |
+| permutation null (300 draws), own-$q$ below **minimum** | min 4.55° / 3.19° / 2.23° | same |
+| cross-waveform transfer A→B, B→A | 2.08°, 2.78° (reference scale 1.99°) | same |
+| residual vs Monte Carlo resolution | 1.07° vs 0.072° (17.2×) | `e92_curve_uncertainty_results.json` |
+| signed residual, per catalog | GWTC-3 $p<0.001$, O4a $p=0.019$, O4b $p=0.110$ | same |
+| self-consistency violation predicts residual | ρ = +0.677, p = 7.4e-12 | `e97_principal_curve_selfconsistency_results.json` |
+| Gaussian (BvM) orientation error | 4.92° vs 1.07° (4.6×) | `e98_framework_audit_results.json` |
+| posterior cache | no subsampling; 972/972 rows in full, 23.1 M samples | `e94_posterior_cache_manifest.json` |
+<!-- END GENERATED: key-numbers -->
 
 ## What is explicitly NOT claimed
 
@@ -55,24 +60,20 @@ Every number below regenerates from committed code. No figure or analysis module
    two out-of-sample scores are **not equivalent evidence**.
 2. **O4a and O4b are disjoint *event* catalogs, not independent experiments** — shared detectors,
    calibration, waveform families, priors and analysis conventions.
+<!-- BEGIN GENERATED: signed-rr -->
 3. **The signed residual is not catalog-universal**: significant in GWTC-3 (p < 0.001) and O4a
-   (p = 0.019), **not significant in O4b (p = 0.377)** — the newest and largest catalog.
-4. **O4b is the weakest panel of Figure 2**: its pooled-q (3.73°) and tangent
-   (3.90°) are nearly indistinguishable, and its null minimum is closest to own-q.
-5. **The arc-length mechanism is weak**, ρ = +0.26 / +0.02 / +0.12 across catalogs; the manuscript does
-   not rest on it, and an earlier draft's claim that residuals *grow* with elongation was wrong (the
-   correlation is negative) and is corrected in the table caption.
-6. **The self-consistency correction does not clear the out-of-sample bar** — it improves in both
-   transfer directions but reaches p < 0.05 in only one.
-7. **§6 and §8–9 have now had a claim-discipline pass** (commit following this snapshot). §6 no longer
-   asserts "coherence implies systematic" — it states plainly that a real physical effect would also be
-   coherent, so that inference is invalid, and names the actual discriminants that demoted the exponent
-   offset (catalog-to-catalog spread as large as the offset; the effect vanishing in the clean limit).
-   §8 and §9 are retitled *Context* and explicitly disclaim supporting the reconstruction claim. What
-   remains soft: §8's information anatomy is computed **from** the waveform model, not measured from
-   strain, so its perfect Spearman $-1.00$ is model determinism rather than an empirical result.
-8. **A retracted result is in the project history**: an earlier Bayesian ringdown analysis (E85) was
-   withdrawn after its posterior was found to be prior-dominated. It forms no part of this paper.
+   (p = 0.019), **not significant in O4b (p = 0.110)** — the newest and largest catalog.
+<!-- END GENERATED: signed-rr -->
+<!-- BEGIN GENERATED: weakest-rr -->
+4. **O4b is the weakest panel of Figure 2**: its pooled-q (3.77°) and
+   tangent (4.20°) are closest together, and its null minimum
+   (2.23°) is nearest own-q (1.19°).
+<!-- END GENERATED: weakest-rr -->
+<!-- BEGIN GENERATED: arc-rr -->
+5. **Arc length correlates negatively with the tangent error** (ρ = -0.51, -0.57, -0.49 across catalogs), where
+   an earlier draft reported it weakly positive and claimed residuals *grow* with elongation. Both
+   were wrong; the manuscript does not rest on either.
+<!-- END GENERATED: arc-rr -->
 
 ## Exact reproduction
 
@@ -102,7 +103,8 @@ cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 python3 -m pytest tests/ -q
 ```
 
-`results/e94_posterior_cache.npz` (~100 MB) is gitignored and regenerable; its manifest is committed.
+`results/e94_posterior_cache.npz` (572 MB — it stores every posterior sample, no subsampling) is
+gitignored and regenerable; its manifest is committed.
 
 ## Provenance discipline
 

@@ -190,5 +190,5 @@
   },
   "statement": "The RETIRED 4000-sample bootstrap cache FAILED this audit and was replaced. The CURRENT cache stores every sample exactly, so it carries no resampling noise by construction, and it reproduces the independent full-sample HDF5 pass exactly for O4a and O4b. The measurements in by_seed/by_draw_size/summary below all describe the RETIRED scheme and are kept as the evidence that motivated the fix; full_sample_reference is cache-independent and remains the check the current cache was verified against."
  },
- "scope_note": "This audit measured the RETIRED cache scheme (4000 samples per row drawn WITH replacement). Its verdict.fit_for_purpose=false is what prompted the fix, and is NOT a statement about the current cache."
+ "scope_note": "This audit measured the RETIRED cache scheme (4000 samples per row drawn WITH replacement). Its verdict.retired_cache.fit_for_purpose=false is what prompted the fix. The TOP-LEVEL verdict.fit_for_purpose describes the CURRENT cache and is true."
 }

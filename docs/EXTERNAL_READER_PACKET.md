@@ -19,7 +19,10 @@ on the same events. This is not merely "a curve beats a line": substituting any 
 marginal degrades the result $2.5$–$12\times$ and the achieved error falls below the **minimum** of 300
 catalog-stratified permutations, while the reconstruction transfers between separately inferred
 waveform-family posteriors of the same event. The residual $\sim1^\circ$ is a genuine systematic — about
-six times the Monte Carlo resolution of the released samples — and its per-event size is predicted by the
+<!-- BEGIN GENERATED: residual-ratio -->
+a real systematic, about 17 times the Monte Carlo resolution of the released samples
+<!-- END GENERATED: residual-ratio -->
+— and its per-event size is predicted by the
 curve's failure of Hastie–Stuetzle self-consistency ($\rho = +0.68$, $p = 5\times10^{-12}$).
 
 ## What to read first
@@ -36,28 +39,31 @@ curve's failure of Hastie–Stuetzle self-consistency ($\rho = +0.68$, $p = 5\ti
 
 ## Strongest claims (attack these last)
 
+<!-- BEGIN GENERATED: strongest-claims -->
 | claim | number | why it holds up |
 |---|---|---|
-| out-of-sample reconstruction | $1.26^\circ$ (O4a), $1.22^\circ$ (O4b) | locked before data on O4b; two disjoint event catalogs |
+| out-of-sample reconstruction | $1.26^\circ$ (O4a), $1.19^\circ$ (O4b) | locked before data on O4b; two disjoint catalogs |
 | non-triviality vs permutations | below the **minimum** of 300 draws in all three catalogs | $p < 1/300$ each; not a single shuffle |
 | cross-waveform transfer | $2.08^\circ$ / $2.78^\circ$ vs a $1.99^\circ$ reference scale | answers the same-posterior circularity objection |
-| residual is real, not sampling noise | $1.07^\circ$ vs $0.07^\circ$ resolution ($17\times$) | joint bootstrap on full samples; correlated MC errors cancel |
-| residual has a mechanism | $\rho = +0.68$, $p = 5\times10^{-12}$, robust across a grid sweep | a correlation between measured quantities, not a fit |
+| residual is real, not sampling noise | $1.07^\circ$ vs $0.07^\circ$ resolution ($17\times$) | joint bootstrap on the full samples; correlated MC errors cancel |
+| residual has a mechanism | $\rho = +0.68$, $p = 7e-12$, robust across a grid sweep | a correlation between measured quantities, not a fit |
+<!-- END GENERATED: strongest-claims -->
 
 ## Weakest claims (attack these first)
 
 1. **O4a's preregistration is not publicly timestamped.** Its prereg and results entered the public repo
    in the *same commit*; only O4b's lock (17 h gap, explicit commit message) is verifiable from the public
    record. Treat the two out-of-sample scores as *unequal* evidence.
-2. **The signed residual is not significant in O4b** ($p = 0.377$) — the newest and largest catalog —
-   though it is in GWTC-3 ($p < 0.001$) and O4a ($p = 0.019$). The paper reports it per catalog for this
-   reason. If you think the signed effect is a training-set artifact, that is a live position.
+<!-- BEGIN GENERATED: signed-o4b -->
+2. **The signed residual is not significant in O4b** ($p = 0.110$) — the newest and largest catalog — though it is in GWTC-3 ($p < 0.001$) and O4a ($p = 0.019$). The paper reports it per catalog for this reason; if you think the signed effect is a training-set artifact, that is a live position.
+<!-- END GENERATED: signed-o4b -->
 3. **Gate E (the precision law) is NOT PASSED.** The pooled fit rejects the $5/3$ mass exponent
    ($z = -3.5$); agreement appears only in a light-mass band whose edges were chosen *after* seeing that
    rejection. `src/e93_precision_law.py` hard-codes `gate_E_status = "NOT PASSED - exploratory"` and a
    test fails if that changes.
-4. **O4b is the weakest panel of Figure 2**: pooled-$q$ ($3.73^\circ$) and tangent ($3.90^\circ$) are
-   nearly indistinguishable there, and its null minimum ($2.30^\circ$) sits closest to own-$q$.
+<!-- BEGIN GENERATED: weakest-o4b -->
+4. **O4b is the weakest panel of Figure 2**: pooled-$q$ ($3.77^\circ$) and tangent ($4.20^\circ$) are closest together there, and its null minimum ($2.23^\circ$) sits nearest own-$q$ ($1.19^\circ$).
+<!-- END GENERATED: weakest-o4b -->
 5. **Arc length correlates NEGATIVELY with the tangent error** ($\rho = -0.51 / -0.57 / -0.49$),
    where an earlier draft reported it weakly positive. It may simply be re-measuring elongation. An earlier draft claimed the
    tangent residual *grows* with elongation; the measured correlation is **negative** ($-0.42$ to $-0.69$)

@@ -66,8 +66,10 @@ verification. Do not cite them as such.
       — what changed, and a ranked list of where the paper is most likely to break. Start there.
 - [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (13 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
 - [x] Figures: three artifact-backed panels in the manuscript, captions generated from their sidecars.
-- [ ] Manuscript: journal formatting; claim-discipline pass on §6 and §8–9 (never audited for claim
-      strength, only for citations); upgrade the two GWTC catalog preprints to journal refs when published.
+- [x] Claim-discipline pass on §6 and §8–9 (2026-07-21, prose only) — **one pass, by the author who wrote
+      the prose**. §1–5 have been through six audits; these have had one. Still the least-examined sections
+      and they need external review, not another self-review.
+- [ ] Manuscript: journal formatting; upgrade the two GWTC catalog preprints to journal refs when published.
 
 ## Claim status (read before citing any number)
 
@@ -78,7 +80,7 @@ several claims; the current status lives in
 | item | status |
 |---|---|
 | curved-law reconstruction (Gates A/C/D) | reproducible via `src/e94` + `src/e95` |
-| uncertainty & threshold (Gate B) | reproducible via `src/e92`; the ~1° residual is a real systematic at ~6× Monte Carlo resolution, **not** sampling noise |
+| uncertainty & threshold (Gate B) | reproducible via `src/e92`; the ~1° residual is a real systematic at ~17× Monte Carlo resolution, **not** sampling noise |
 | precision law (Gate E) | **NOT PASSED — exploratory**; the mass-band split is post-hoc (`src/e93`) |
 | thickness mechanism | finite thickness supported out-of-sample; **arc-variation NOT established** (`src/e96`) |
 | E85 Bayesian ringdown | **RETRACTED** — superseded by E87; its posterior was prior-dominated |
@@ -95,11 +97,14 @@ catalogs*, not independent experiments.
 - `data/` is gitignored (~68 GB of LVK PE releases). Fetch it separately — every source is pinned with
   record numbers and DOIs in [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md), with helpers in
   `scripts/`.
-- `results/e94_posterior_cache.npz` (~100 MB) is also **not** tracked. It is regenerable:
+- `results/e94_posterior_cache.npz` (**572 MB** — it stores every posterior sample, see below) is
+  also **not** tracked. It is regenerable:
   ```
   python3 src/e94_build_posterior_cache.py
   ```
-  This takes **about 2 minutes locally** (one HDF5 pass, ~104 s measured) and **requires the downloaded
+  This takes **~104 s** on the author's machine (one HDF5 pass, measured 2026-07-21; it was ~284 s
+  before the O4a/O4b files were on local SSD, so expect this to be I/O-bound and machine-dependent) and
+  **requires the downloaded
   PE files** to be present under `data/`.
 - The cache is the single provenance source for the gate batteries: `src/e92`, `src/e93`, `src/e95`,
   `src/e96`, `src/e97`, `src/e98` and `src/e100` read it and perform **no HDF5 access of their own**.

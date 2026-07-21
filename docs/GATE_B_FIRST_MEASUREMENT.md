@@ -1,5 +1,15 @@
 # Gate B — REGENERATED from the E92 artifact (2026-07-21)
 
+> **BANNER 2026-07-21 — superseded numbers, and the same reversal as Gates A and C.** This note is kept
+> unedited as a record. Its values came from a posterior cache that bootstrapped 4000 samples per row
+> *with replacement*; the cache now stores every sample exactly. Regenerated:
+> median |Δψ| **1.07°**, bootstrap σ **0.072°**, ratio **17.2×** (not 6.29×), and O4b signed
+> **p = 0.110** — which is what this note calls "the provisional run" value before concluding the
+> artifact's 0.377 superseded it. The provisional run was right. The measurements of record are
+> `results/e92_curve_uncertainty_results.json`; the reader-facing summaries in
+> [REFEREE_READINESS.md](REFEREE_READINESS.md) are generated from it and cannot drift again.
+
+
 **Status: reproducible.** All numbers below are read from `results/e92_curve_uncertainty_results.json`,
 produced by `src/e92_curve_uncertainty.py` from the E94 posterior cache (no HDF5 access, seed 92,
 200 bootstrap resamples/event, 266 events, 81 elongated).
