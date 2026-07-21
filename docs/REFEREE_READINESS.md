@@ -1,7 +1,7 @@
 # REFEREE READINESS — frozen snapshot
 
 Analysis state: commit `c167e27` (the commit that produced the current artifacts; everything since is
-documentation). 164 contract tests passing · manuscript 13 pp, zero LaTeX errors, zero uncited
+documentation). 165 contract tests passing · manuscript 13 pp, zero LaTeX errors, zero uncited
 bibliography entries. This file is the honest summary a referee should read first, and every number in it
 is generated from a committed artifact by `src/build_doc_numbers.py` — none is typed by hand.
 
@@ -11,7 +11,8 @@ is generated from a committed artifact by `src/build_doc_numbers.py` — none is
 The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single
 one-dimensional marginal of that same posterior — its mass-ratio marginal — using the
 constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median
-0.9–1.3° on elongated events across two later, disjoint event catalogs. This is not the trivial
+1.19–1.26° on elongated events across the two later, disjoint event catalogs
+(O4a 1.26°, O4b 1.19°). This is not the trivial
 statement that a curve beats a line: substituting any other event's mass-ratio marginal degrades it
 3–11× and the achieved error lies below the minimum of 300 permutations, while the
 reconstruction transfers between separately inferred waveform-family posteriors of the same event.

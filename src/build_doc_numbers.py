@@ -160,9 +160,12 @@ def blocks():
         f"   were wrong; the manuscript does not rest on either.")
 
     ratio = f"{mc['median_ratio_err_over_sigma']:.0f}"
-    span = lambda fn: f"{min(fn(c) for c in CATS):.1f}"+"–"+f"{max(fn(c) for c in CATS):.1f}"
-    own_span = span(lambda c: A[c]["own_q"])
-    tan_span = span(lambda c: A[c]["tangent"])
+    # The thesis sentence claims "two later, disjoint event catalogs", which is O4a and O4b. GWTC-3 is
+    # the TRAINING catalog, so including it in that range mixes in a number the sentence does not claim.
+    OUT = ("O4a", "O4b")
+    span = lambda fn, cats: f"{min(fn(c) for c in cats):.2f}"+"–"+f"{max(fn(c) for c in cats):.2f}"
+    own_span = span(lambda c: A[c]["own_q"], OUT)
+    tan_span = span(lambda c: A[c]["tangent"], OUT)
     degrade = [A[c]["pooled_q"] / A[c]["own_q"] for c in CATS]
     npm = A["O4a"]["perm_null"]["n"]
 
@@ -170,7 +173,8 @@ def blocks():
         "The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single\n"
         "one-dimensional marginal of that same posterior — its mass-ratio marginal — using the\n"
         f"constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median\n"
-        f"{own_span}° on elongated events across two later, disjoint event catalogs. This is not the trivial\n"
+        f"{own_span}° on elongated events across the two later, disjoint event catalogs\n"
+        f"(O4a {A['O4a']['own_q']:.2f}°, O4b {A['O4b']['own_q']:.2f}°). This is not the trivial\n"
         "statement that a curve beats a line: substituting any other event's mass-ratio marginal degrades it\n"
         f"{min(degrade):.0f}–{max(degrade):.0f}× and the achieved error lies below the minimum of {npm} "
         "permutations, while the\n"
@@ -183,7 +187,8 @@ def blocks():
         "The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single\n"
         "one-dimensional marginal of that same posterior — its mass-ratio marginal — via the shape of the\n"
         "constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median\n"
-        f"${own_span}^\\circ$ on elongated events (axis ratio $\\ge 3$) in two later, disjoint event catalogs.\n"
+        f"${own_span}^\\circ$ on elongated events (axis ratio $\\ge 3$) in the two later, disjoint event\n"
+        f"catalogs (O4a ${A['O4a']['own_q']:.2f}^\\circ$, O4b ${A['O4b']['own_q']:.2f}^\\circ$).\n"
         "The median-point tangent approximation, which underlies rapid parameter-estimation tools, gets\n"
         f"${tan_span}^\\circ$ on the same events. This is not merely \"a curve beats a line\": substituting any\n"
         f"other event's mass-ratio marginal degrades the result ${min(degrade):.0f}$–${max(degrade):.0f}"

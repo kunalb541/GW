@@ -2,7 +2,7 @@
 
 **Repo** <https://github.com/kunalb541/GW> · **state handed off at commit `c167e27`** (this packet is
 committed immediately after; it changes no analysis) · **PDF** [`paper/manuscript.pdf`](../paper/manuscript.pdf),
-13 pp · 164 contract tests, all passing.
+13 pp · 165 contract tests, all passing.
 
 Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4447-6325).
 
@@ -14,9 +14,10 @@ Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4
 The orientation of a compact-binary $(m_1,m_2)$ posterior can be **reconstructed** from a single
 one-dimensional marginal of that same posterior — its mass-ratio marginal — via the shape of the
 constant-chirp-mass curve, with no coefficient calibrated on the validation catalogs, to a median
-$0.9–1.3^\circ$ on elongated events (axis ratio $\ge 3$) in two later, disjoint event catalogs.
+$1.19–1.26^\circ$ on elongated events (axis ratio $\ge 3$) in the two later, disjoint event
+catalogs (O4a $1.26^\circ$, O4b $1.19^\circ$).
 The median-point tangent approximation, which underlies rapid parameter-estimation tools, gets
-$4.2–6.7^\circ$ on the same events. This is not merely "a curve beats a line": substituting any
+$4.20–6.67^\circ$ on the same events. This is not merely "a curve beats a line": substituting any
 other event's mass-ratio marginal degrades the result $3$–$11\times$ and the achieved error falls below the
 **minimum** of 300 catalog-stratified permutations, while the reconstruction transfers between
 separately inferred waveform-family posteriors of the same event. The residual $\sim1^\circ$ is a
@@ -99,7 +100,7 @@ python3 src/e94_build_posterior_cache.py          # writes results/e94_posterior
 <!-- END GENERATED: cache-cmd -->
 
 **Time/resource budget:** ~58 GB download (hours, network-bound); ~5 min cache build; everything
-downstream is seconds. The 164 tests need no data and run in ~1 min.
+downstream is seconds. The 165 tests need no data and run in ~1 min.
 
 ## Checklist for an external reader
 

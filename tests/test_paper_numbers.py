@@ -195,12 +195,28 @@ def test_docs_do_not_contradict_the_cache_manifest():
     assert f"{m['rows_stored_exactly']}/{m['n_group_rows']}" in readme or "no subsampling" in readme
 
 
+def _historical(line):
+    """Lab notes are records: bannered lines and explicit supersession prose are exempt by design."""
+    return any(k in line for k in ("BANNER", "SUPERSEDED", "superseded", "RETIRED", "retired",
+                                   "previously", "earlier draft", "was right", "provisional"))
+
+
+def _public_docs():
+    """Every markdown file a reader can reach. Globbed, not listed.
+
+    The previous version of this guard checked four files by name, and docs/TESTING.md ("17 tests") and
+    docs/PAPER_PLAN.md ("100 MB / ~284 s") drifted straight through the gap. A hand-maintained scan list
+    is the same class of bug as a hand-maintained number.
+    """
+    import glob
+    return sorted(glob.glob(os.path.join(ROOT, "docs/*.md"))) + [os.path.join(ROOT, "README.md")]
+
+
 def test_docs_state_the_real_test_and_page_counts():
     """Header metadata drifts silently and is the first thing a referee reads.
 
     Not generated: generating a test count from inside a test invites recursion, and the page count
-    depends on a built PDF. Asserted instead, which is enough -- the numbers are checked, and a stale one
-    fails the suite rather than reaching a reader.
+    depends on a built PDF. Asserted instead -- a stale one fails the suite rather than reaching a reader.
     """
     import src.build_doc_numbers as bdn
 
@@ -208,16 +224,44 @@ def test_docs_state_the_real_test_and_page_counts():
                                 "--collect-only", "-q"], capture_output=True, text=True).stdout
     n_tests = int(re.search(r"(\d+) tests? collected", collected).group(1))
     pages = bdn.pdf_pages()
-    if not pages:
-        pytest.skip("page count undeterminable here (no built PDF / no pdfinfo)")
 
-    for doc in ("docs/REFEREE_READINESS.md", "docs/EXTERNAL_READER_PACKET.md",
-                "docs/HANDOFF_ADVERSARIAL_REVIEW.md", "README.md"):
-        text = read(os.path.join(ROOT, doc))
-        for claimed in re.findall(r"(\d+)\s+(?:contract\s+)?tests\b", text):
-            assert int(claimed) == n_tests, f"{doc} claims {claimed} tests; {n_tests} are collected"
-        for claimed in re.findall(r"(?:manuscript\s+)?(\d+)\s*pp\b", text):
-            assert int(claimed) == pages, f"{doc} claims {claimed} pp; the PDF has {pages}"
+    for doc in _public_docs():
+        rel = os.path.relpath(doc, ROOT)
+        for ln, line in enumerate(read(doc).split("\n"), 1):
+            if _historical(line):
+                continue
+            # The lookbehind must exclude digits as well as letters: with letters alone, "E71 tests"
+            # still matches at the final "1" and reads as "1 tests".
+            for claimed in re.findall(r"(?<![A-Za-z\d])(\d+)\s*(?:/\s*\d+\s*)?(?:contract |data-free )*tests?\b",
+                                      line):
+                assert int(claimed) == n_tests, (
+                    f"{rel}:{ln} claims {claimed} tests; {n_tests} are collected")
+            # page counts only bind when the line is talking about the manuscript -- the 4 pp lab
+            # notebook is a different document
+            if pages and "manuscript" in line.lower():
+                for claimed in re.findall(r"(?<![A-Za-z\d])(\d+)\s*pp\b", line):
+                    assert int(claimed) == pages, f"{rel}:{ln} claims {claimed} pp; the PDF has {pages}"
+
+
+def test_docs_describe_the_real_cache():
+    """Cache size and runtime, wherever a doc mentions the cache by name.
+
+    Scoped to lines naming e94, so the many legitimate dataset sizes in DATA_AVAILABILITY.md and
+    HANDOFF.md are not swept up.
+    """
+    import src.build_doc_numbers as bdn
+
+    for doc in _public_docs():
+        rel = os.path.relpath(doc, ROOT)
+        for ln, line in enumerate(read(doc).split("\n"), 1):
+            if _historical(line) or "e94" not in line:
+                continue
+            for claimed in re.findall(r"(?<![\d.])(\d+)\s*MB", line):
+                assert abs(int(claimed) - bdn.CACHE_MB) <= 5, (
+                    f"{rel}:{ln} says the cache is {claimed} MB; it is {bdn.CACHE_MB} MB")
+            for claimed in re.findall(r"~?\s*(\d+)\s*s\b", line):
+                assert int(claimed) < 200, (
+                    f"{rel}:{ln} quotes a {claimed} s cache build; the measured value is ~104 s")
 
 
 def test_cache_size_constant_matches_reality():

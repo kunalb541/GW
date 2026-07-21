@@ -253,7 +253,7 @@ python3 src/build_manuscript_figures.py      # captions from sidecars
 python3 src/build_paper_numbers.py           # every number -> paper/numbers.tex
 
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
-python3 -m pytest tests/ -q                  # 164 tests, data-free
+python3 -m pytest tests/ -q                  # 165 tests, data-free
 ```
 
 `results/paper_macro_sources.json` is the machine-readable macro → value → artifact → json-path map for

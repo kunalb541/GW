@@ -33,7 +33,7 @@ cosmo2 subdirectory names exactly.
 
 ## What is done / verified
 
-- 17/17 contract tests pass in-repo with no cosmo2 on the path.
+- All 165 contract tests pass in-repo with no cosmo2 on the path (17 at the time of the port).
 - All 24 src files compile; all intra-repo imports resolve (e65→e38 helper, e67→e65, e63→qinfo).
 - Every results-JSON prereg pointer and report prereg reference resolves in-repo.
 - Notebook: every entry extracted brace-balanced and verified verbatim against cosmo2's tex.

@@ -110,7 +110,7 @@ catalogs*, not independent experiments.
   `src/e96`, `src/e97`, `src/e98` and `src/e100` read it and perform **no HDF5 access of their own**.
   Without it they will not run. It performs **no subsampling** — every usable sample is stored (~572 MB,
   gitignored), so a cache-backed number is a full-sample number.
-- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (164 tests).
+- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (165 tests).
 
 ## Layout (cosmo2 conventions)
 
@@ -131,7 +131,7 @@ GW/
 
 Start with [`docs/WORKFLOW.md`](docs/WORKFLOW.md) (the locked-prereg battery cycle + the
 GW-specific rules learned the hard way), [`docs/TESTING.md`](docs/TESTING.md) (run: `python3 -m
-pytest tests/ -q`; 164 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
+pytest tests/ -q`; 165 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
 state, data routes, next steps), and [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md)
 (every source pinned with record numbers). Next free experiment number: **E101**.
 

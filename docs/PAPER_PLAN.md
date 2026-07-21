@@ -169,8 +169,8 @@ dismiss than a broad claim assembled from several unrelated analyses.
 | D | `results/e95_gate_regeneration_results.json` | **reproducible** (per-family sweep); E67 prereg lock not publicly timestamped |
 | E | `results/e93_precision_law_results.json` (`src/e93`) | **NOT PASSED — exploratory**; post-hoc mass split unresolved |
 
-`results/e94_posterior_cache.npz` (100 MB) is gitignored and regenerable via `python3 src/e94_build_posterior_cache.py`
-(~284 s, one HDF5 pass). Its manifest IS committed. No other module touches HDF5.
+`results/e94_posterior_cache.npz` (572 MB) is gitignored and regenerable via `python3 src/e94_build_posterior_cache.py`
+(~104 s, one HDF5 pass; it stores every posterior sample, no subsampling). Its manifest IS committed. No other module touches HDF5.
 
 | thickness mechanism | `results/e96_curve_thickness_mechanism_results.json` (`src/e96`) | **finite thickness supported out-of-sample; arc-variation NOT established** |
 
