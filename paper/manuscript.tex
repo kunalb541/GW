@@ -497,7 +497,19 @@ National Science and Technology Council (NSTC) in Taiwan.
 
 This is independent work carried out entirely on public data. The author is not a member of the
 LIGO--Virgo--KAGRA Collaboration; the Collaboration has not reviewed this
-analysis and bears no responsibility for its conclusions. The author thanks the Collaboration for releasing the
+analysis and bears no responsibility for its conclusions.
+
+\paragraph{Use of AI assistants.} This work was carried out with substantial assistance from large
+language models, disclosed here in full. Anthropic's Claude (Claude Opus 4.8, via Claude Code) was used
+to implement the analysis code, build the artifact-generation and figure pipelines, and draft and
+restructure this manuscript. OpenAI's Codex was used as an independent adversarial reviewer of both the
+analysis and the text, in repeated rounds. That review loop is responsible for several corrections
+reported here, including the identification of the posterior-cache defect described in
+Appendix~\ref{app:repro}, which had propagated into every cache-derived number in an earlier draft. The
+author defined the research questions, specified and registered every preregistered decision before the
+corresponding data were examined, verified the reported results against the committed artifacts, and is
+solely responsible for the content of this paper. The models are tools, not authors; no text or number
+appears here without the author's review. The author thanks the Collaboration for releasing the
 parameter-estimation samples on which the analysis wholly depends, and the open-source scientific Python
 community for NumPy \citep{numpy}, SciPy \citep{scipy}, Matplotlib \citep{matplotlib} and h5py.
 
