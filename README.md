@@ -62,6 +62,9 @@ verification. Do not cite them as such.
       replacement*, which never used the full sample at any cap and left up to 0.54° of scatter in every
       downstream number. It now stores all 23.1 M samples, 972/972 rows in full, and reproduces an
       independent HDF5 pass exactly for O4a and O4b.
+- [ ] **Expansion plan**: [`docs/PLAN_EXPANSION.md`](docs/PLAN_EXPANSION.md) — 16 of 45 batteries
+      feed the paper. Phase 1 promotes measured-but-invisible sweeps into tables/figures (no new
+      compute); Phases 2–3 are companion papers. Awaiting go/no-go.
 - [x] **Adversarial-review handoff**: [`docs/HANDOFF_ADVERSARIAL_REVIEW.md`](docs/HANDOFF_ADVERSARIAL_REVIEW.md)
       — what changed, and a ranked list of where the paper is most likely to break. Start there.
 - [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (13 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
