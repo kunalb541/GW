@@ -9,7 +9,7 @@
  },
  "axr_min": 3.0,
  "high_axr_threshold": 8.0,
- "n_elongated_considered": 81,
+ "n_elongated_considered": 80,
  "panels": [
   {
    "panel": "clean success (high elongation)",
@@ -17,22 +17,22 @@
    "event": "GW241011_233834",
    "catalog": "O4b",
    "waveform_group": "C00:SEOBNRv5PHM",
-   "axr": 29.27502963996147,
-   "curve_err_deg": 0.09096599721704024,
-   "tangent_err_deg": 0.79128843053374,
-   "n_samples_plotted": 4000,
+   "axr": 29.343802710967605,
+   "curve_err_deg": 0.07561112228387401,
+   "tangent_err_deg": 0.9128554610127821,
+   "n_samples_plotted": 17708,
    "thickness_adjusted_drawn": false
   },
   {
    "panel": "typical",
-   "selection_rule": "curve error closest to the median over elongated events (1.028 deg)",
-   "event": "GW231223_075055",
-   "catalog": "O4a",
-   "waveform_group": "C00:Mixed",
-   "axr": 5.578062094915996,
-   "curve_err_deg": 1.0278973773188227,
-   "tangent_err_deg": 6.603459291919364,
-   "n_samples_plotted": 4000,
+   "selection_rule": "curve error closest to the median over elongated events (1.066 deg)",
+   "event": "GW190728_064510",
+   "catalog": "GWTC-3",
+   "waveform_group": "C01:Mixed",
+   "axr": 6.0069814827025585,
+   "curve_err_deg": 1.0377203279294065,
+   "tangent_err_deg": 13.97438030053118,
+   "n_samples_plotted": 11756,
    "thickness_adjusted_drawn": false
   },
   {
@@ -41,39 +41,39 @@
    "event": "GW200308_173609",
    "catalog": "GWTC-3",
    "waveform_group": "C01:Mixed",
-   "axr": 4.287503954657,
-   "curve_err_deg": 16.884157032005106,
-   "tangent_err_deg": 23.851074765693625,
+   "axr": 4.450071944505245,
+   "curve_err_deg": 16.32416423390447,
+   "tangent_err_deg": 23.608105885193964,
    "n_samples_plotted": 1073,
    "thickness_adjusted_drawn": false,
    "tail_sensitivity": {
     "percentile_trims": {
      "0-100": {
       "n": 1073,
-      "axr": 4.287503954657,
-      "curve_err_deg": 16.884157032005106
+      "axr": 4.450071944505245,
+      "curve_err_deg": 16.32416423390447
      },
      "1-99": {
-      "n": 1032,
-      "axr": 3.875060455379281,
-      "curve_err_deg": 16.40658680811319
+      "n": 1030,
+      "axr": 4.044901182772573,
+      "curve_err_deg": 16.233624698791573
      },
      "5-95": {
-      "n": 873,
-      "axr": 3.3042048641966164,
-      "curve_err_deg": 18.55632759921002
+      "n": 874,
+      "axr": 3.355944667034767,
+      "curve_err_deg": 16.73582147640812
      },
      "10-90": {
-      "n": 688,
-      "axr": 2.802530369458783,
-      "curve_err_deg": 17.797821988899614
+      "n": 693,
+      "axr": 2.80619622616166,
+      "curve_err_deg": 17.492967955712885
      }
     },
     "curve_err_range_deg": [
-     16.40658680811319,
-     18.55632759921002
+     16.233624698791573,
+     17.492967955712885
     ],
-    "verdict": "NOT a tail artifact: trimming to the central 90% of samples leaves the error within 16.4-18.6 deg, so the worst case is a genuine failure of the curve model, not an outlier dragging the sample covariance."
+    "verdict": "NOT a tail artifact: trimming to the central 90% of samples leaves the error within 16.2-17.5 deg, so the worst case is a genuine failure of the curve model, not an outlier dragging the sample covariance."
    },
    "inset": {
     "shows": "central core (2-88 percentile), same three directions",
@@ -82,7 +82,7 @@
   }
  ],
  "recorded_but_not_plotted": {
-  "tangent_beats_curve_fraction_all_elongated": 0.16,
+  "tangent_beats_curve_fraction_all_elongated": 0.15,
   "tangent_beats_curve_fraction_axr_ge_8": 0.308,
   "note": "at extreme elongation the tangent's disadvantage shrinks and it sometimes wins (Gate B2). The two highest-axr events in the catalog are such cases. They are not plotted here, but the fractions are recorded so the figure is not read as implying the curve always wins."
  },

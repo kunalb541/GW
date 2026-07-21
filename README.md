@@ -16,14 +16,24 @@ submission-gate audit the manuscript was narrowed to the component-mass reconstr
 and spectral-siren results below remain in the repository as separate batteries but are **not** part of
 the current manuscript. See [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_READER_PACKET.md).
 
-### Retained as the paper's claim
+### The paper's claim — this and nothing else
 
-1. **The curved chirp-mass law** (E40 → E65 → E67 → E71). Two one-dimensional summaries of a
-   compact-binary mass posterior — its mass-ratio marginal alone — **reconstructs**
-   the orientation of the full two-dimensional posterior to ~1° on elongated events, with **zero
-   coefficients calibrated on the validation catalogs**. Out-of-sample: 1.26° on O4a, 1.22° on O4b.
-   *This is a posterior-reconstruction law, not a prediction from source medians, and the residual ~1°
+1. **The curved chirp-mass law** (E40 → E65 → E67 → E71). A **single** one-dimensional marginal of a
+   compact-binary mass posterior — its mass-ratio marginal — **reconstructs** the orientation of the
+   full two-dimensional posterior to ~1° on elongated events, with **zero coefficients calibrated on
+   the validation catalogs**. Out-of-sample: 1.26° on O4a, 1.22° on O4b.
+   *This is a posterior-compression law, not a prediction from source medians, and the residual ~1°
    is a genuine systematic — see the claim-status note below before citing it.*
+   *The predicted orientation is **exactly invariant to chirp mass** (rescaling it is a dilation, which
+   preserves covariance eigenvectors), so the reconstruction takes one input, not two. The chirp mass
+   positions the curve in the plane but contributes nothing to its orientation.*
+
+### In the repository, NOT in the paper
+
+The submission-gate audit narrowed the manuscript to item 1 alone. The three results below are complete,
+locked and reproducible batteries, but they are **not** claims of the paper and are not covered by its
+verification. Do not cite them as such.
+
 2. **Coherence as a systematics detector** (E45–E47, E55, E57–E60). Across the GR-test battery,
    apparent anomalies that are *coherent across events* are method artifacts, not physics —
    the lens that kept three naive-combination false alarms out of the record; GR passes every test.
@@ -88,7 +98,7 @@ catalogs*, not independent experiments.
   PE files** to be present under `data/`.
 - The cache is the single provenance source for the gate batteries: `src/e92`, `src/e93`, `src/e95` and
   `src/e96` read it and perform **no HDF5 access of their own**. Without it they will not run.
-- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (108 tests).
+- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (158 tests).
 
 ## Layout (cosmo2 conventions)
 

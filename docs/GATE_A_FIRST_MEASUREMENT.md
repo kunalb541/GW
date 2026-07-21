@@ -1,11 +1,11 @@
 # Gate A — first measurement (2026-07-21). VERDICT: PASSES, with one mechanism claim demoted.
 
-> **SUPERSEDED IN PART — 2026-07-21.** This note records what was measured when it was written and is
-> kept unedited as a record. The numbers it carries as prose have since been regenerated from
-> committed artifacts (`results/e95_gate_regeneration_results.json`), and the cross-family transfer moved from 2.08/2.78 to **2.25/2.93** once a proper 300-draw
-> permutation null and both transfer directions were stored. The paper quotes the
-> artifacts, never this file. See [EXTERNAL_READER_PACKET.md](EXTERNAL_READER_PACKET.md) for the
-> table of corrections.
+> **BANNER REVISED 2026-07-21 — the numbers here were right.** An earlier banner said this note's
+> cross-family values (2.08 / 2.78) had been superseded by 2.25 / 2.93. That was wrong. Those replacement
+> values came from a posterior cache that bootstrapped 4000 samples per row *with replacement*; the cache
+> has since been rebuilt to hold every sample exactly, and the regenerated values are **2.08 / 2.78
+> against a 1.99 reference** — this note's original numbers. The note stands. See
+> [EXTERNAL_READER_PACKET.md](EXTERNAL_READER_PACKET.md) for how the error was introduced and caught.
 
 
 The [revised PAPER_PLAN](PAPER_PLAN.md) sets Gate A as a submission gate: show the curved reconstruction is

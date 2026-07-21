@@ -15,9 +15,13 @@ from [NOVELTY.md](NOVELTY.md): nothing enters the manuscript on trust.
 | 5 | Baird et al. 2013 (PRD 87, 024035) | constant-$\mathcal{M}_c$ stops describing the degeneracy at high mass | abstract + NOVELTY.md | verified for the caveat | now cited as a limitation |
 | 6 | Cutler & Flanagan 1994; Poisson & Will 1995 | $\mathcal{M}_c$ is the best-measured mass combination | textbook, identity verified | verified | kept |
 | 7 | Transtrum et al. 2015 | stiff/sloppy direction structure | identity verified | verified | kept |
-| 8 | Hastie & Stuetzle 1989 | principal curve vs linear PCA (chord vs tangent) | identity verified | verified | kept |
+| 8 | Hastie & Stuetzle 1989 | **their self-consistency DEFINITION, used as a testable property (E97)** | **full text** | **verified; claim upgraded** | now load-bearing — see §7 |
 | 9 | Amari 2016 (Fisher–Rao) | "the content of Fisher–Rao information geometry" | — | **REMOVED** | ornamental; we compute no Fisher–Rao quantity |
 | 10 | Backus & Gilbert 1968 | resolved/unresolved directions | — | **REMOVED** | ornamental; was already uncited in the body |
+| 11 | Bernstein–von Mises | *(was: the tangent error is the error of the asymptotic Gaussian limit)* | — | **CLAIM WITHDRAWN, no citation needed** | §3 now claims only the elementary fact — see §8 |
+
+**Reading order note.** Rows 8 and 11 changed status *after* this table was first written, in response to
+an external review. The table above is current; §7 and §8 give the detail. Nothing below contradicts it.
 
 ---
 
@@ -87,12 +91,14 @@ is actually computed. It is not. **Amari 2016** was cited only to assert that th
 of Fisher–Rao information geometry", and **Backus & Gilbert 1968** was already uncited in the body after the
 rewrite. Both removed from the bibliography.
 
-## Outstanding
+## Outstanding and resolved items
 
 - Cutler & Flanagan 1994 and Poisson & Will 1995 are used only for the textbook statement that
   $\mathcal{M}_c$ is the best-measured mass combination. Identity verified; not re-read at full text, since
   no specific numerical or figure content is claimed from them.
-- **Hastie & Stuetzle 1989 — STATUS CHANGED (external review).** This entry previously said "no specific
+## 7. Hastie & Stuetzle 1989 — status changed, now load-bearing
+
+- **STATUS CHANGED (external review).** This entry previously said "no specific
   claim is drawn from their contents". That is no longer true: since E97 the manuscript uses their
   **definition** of a principal curve by self-consistency, $f(t)=\mathbb{E}[X\mid t_f(X)=t]$, as a
   testable property, and reports a measurement against it. The definition was checked against the paper

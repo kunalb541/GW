@@ -1,6 +1,6 @@
 # HANDOFF — for adversarial review (round 3)
 
-**Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Head:** `3f0c9a3`
+**Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Head:** see `git log -1` (this file is not a place to hard-code a hash)
 **Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 158, all passing ·
 **Generated macros:** 120 from 15 artifacts
 
@@ -47,31 +47,35 @@ Bernstein–von Mises was invoked by content with nothing cited. Rather than add
 the argument does not need, §3 now claims only the elementary fact it does need — the principal axis of a
 Gaussian is its covariance eigenvector — and **explicitly disclaims** the asymptotic statement.
 
-### The six errors the fixes found
+### The corrections — and the three that turned out to be wrong
 
 Wiring the body prose to the artifacts (only captions were generated before; the body carried ~130
-hand-typed literals) surfaced these:
+hand-typed literals) surfaced six apparent errors. **Three of them were not errors.** They were artifacts
+of the cache described in the next section, and the regenerated values return to the originals:
 
-| was | is | provenance of the error |
-|---|---|---|
-| abstract cross-waveform `2.1°` vs `2.0°` | `2.25°/2.93°` vs `2.03°` | body was corrected, abstract was not |
-| round-posterior band `14.5°` | **`16.3°`** | transcribed from a markdown note that had drifted |
-| paired frame `p = 4×10⁻⁹` | **`8×10⁻⁸`** | same note |
-| arc-length `ρ = +0.26, +0.02, +0.12` | **`−0.51, −0.61, −0.42`** | **sign was wrong**; matched no artifact, and did not match its own source note either |
-| training win fraction `81%` | `76%`, labelled cache-derived | no artifact ever existed; `0.81` appears to be a transcribed *degree* value |
-| GWTC-4.0 cited as `arXiv:2508.18080` | **`2508.18082`** | `18080` is a different companion paper |
+| item | original prose | "correction" | now, exact cache | verdict |
+|---|---|---|---|---|
+| cross-waveform transfer | 2.08 / 2.78 vs 1.99 | 2.25 / 2.93 vs 2.03 | **2.08 / 2.78 vs 1.99** | original was right |
+| round-posterior band | 14.5° | 16.3° | **14.6°** | original was right |
+| paired frame p | 4e-9 | 8e-8 | **6e-9** | original was right |
+| arc-length rho | +0.26, +0.02, +0.12 | −0.51, −0.61, −0.42 | **−0.51, −0.57, −0.49** | **stands — the sign was wrong** |
+| training win fraction | 81% | 76% | **78%** | both off; no locked artifact exists, cell labelled cache-derived |
+| GWTC-4.0 arXiv id | 2508.18080 | 2508.18082 | **2508.18082** | stands (unrelated to the cache) |
 
-**The sixth is structural and is the most important thing in this document.** A unit test written on a
-wrong assumption failed and revealed that `ψ_curve` is **exactly invariant to chirp mass** — rescaling
-`Mc` is a dilation, which preserves covariance eigenvectors (verified to 10 decimals; locked by
-`test_curve_angle_is_exactly_independent_of_chirp_mass`). The paper had described the reconstruction as
-taking **two** inputs (median chirp mass + q marginal). **It takes one**: the q marginal. `Mc` still
-positions the curve for the thickness/self-consistency/figure work, but contributes nothing to the
-predicted orientation. No number changed; the thesis sentence, the definition, the cross-family
-description and the discussion did.
+**Attack this.** Every test passed while the paper carried three wrong "corrections", because the tests
+check that the paper matches the artifacts — not that the artifacts are right. The generated-numbers
+system faithfully propagated a broken cache. It is a guard against drift, not against being wrong, and
+this document should not be read as claiming otherwise.
 
-*Attack this one hardest.* If the input count was wrong for this long, ask what else about the
-construction is misdescribed.
+A seventh finding is structural and unaffected by the cache: `ψ_curve` is **exactly invariant to chirp
+mass** — rescaling `Mc` is a dilation, which preserves covariance eigenvectors (verified to 10 decimals;
+locked by `test_curve_angle_is_exactly_independent_of_chirp_mass`). The paper had described the
+reconstruction as taking **two** inputs. **It takes one**: the q marginal. `Mc` still positions the curve
+for the thickness/self-consistency/figure work, but contributes nothing to the predicted orientation.
+
+*Attack this one hardest too.* If the input count was wrong for this long, ask what else about the
+construction is misdescribed — and note that "chirp-mass law" is now partly branding, since the chirp
+mass does not enter the orientation at all.
 
 ### Data attribution (was entirely absent)
 
@@ -95,32 +99,44 @@ There was **no acknowledgments section, no data citation, and no licence stateme
 
 ## Where to attack — ranked by where I think it will break
 
-### 1. The cache failed its own fitness criterion — and everything downstream rides on it
+### 1. ~~The cache failed its own fitness criterion~~ — FIXED, but verify the fix
 
-`results/e99_cache_stability_audit_results.json` → `verdict.fit_for_purpose: **false**`.
+**This was the blocker in the previous round and it has been repaired at the root.** The cache used to
+draw 4000 samples per row **with replacement**. Two things were wrong with that. It discarded ~76% of the
+information (the median posterior has ~16.7k usable samples), and because the draw was
+`min(n_samp, len(idx))` indices sampled with replacement, it bootstrapped **even when the cap exceeded the
+sample count** — so it never used the full sample at any setting, and its noise did not decay as the cap
+grew. That is why O4a read 1.08 / 1.33 / 1.38 at caps of 2000 / 4000 / 8000: not a converging sequence.
 
-| catalog | full sample | cache mean (5 seeds) | seed range | bias |
-|---|---|---|---|---|
-| GWTC-3 | 0.80 | 0.78 ± 0.04 | [0.74, 0.84] | −0.02 |
-| O4a | **1.26** | 1.23 ± 0.20 | [0.94, 1.48] | −0.02 |
-| O4b | 1.19 | 1.13 ± 0.11 | [0.97, 1.24] | −0.06 |
+The cache now performs **no subsampling at all**: 23.1 M samples, **972 of 972 rows stored in full**,
+572 MB. A cache-backed number is now a full-sample number and carries no resampling noise of its own.
+Every downstream battery and all three figures were re-run.
 
-The cache is **unbiased** (max 0.06°) but a single seed scatters by up to **0.54°**, against my own
-threshold of 0.5°. Every downstream battery — E92, E95, E96, E97, E98, E100 and all three figures — runs
-on **one draw** of that extract. Effects discussed at the ~1° level sit inside that noise.
+**Verification** — the rebuilt cache reproduces an independent pass that re-reads the HDF5 files directly:
 
-The paper discloses this and quotes locked full-sample numbers for anything headline. **I still think
-this is the strongest available attack.** Reasonable positions a referee could take:
+| catalog | independent full-sample pass | cache | locked |
+|---|---|---|---|
+| O4a | 1.26 | **1.26** | 1.26 |
+| O4b | 1.19 | **1.19** | 1.22 |
+| GWTC-3 | 0.80 | 0.88 | — |
 
-- the cross-family improvements (`1.14→0.96`, `p=0.005`) are within resampling noise and not established;
-- the E97 correlation `ρ=0.68` should be reported with a seed-to-seed error bar it does not have;
-- the whole downstream layer should be re-run at larger `N_SAMP` or averaged over seeds before submission.
+O4a and O4b agree exactly, and O4a matches the locked preregistered score. The F1 "internal
+contradiction" flagged in the last review has therefore **disappeared** rather than been explained away.
+GWTC-3 differs by 0.08° on one extra event, from a preferred-waveform-group convention rather than
+sampling — **that residual difference is worth checking; I have asserted the cause rather than proved it.**
 
-The fix is cheap (rebuild the cache, re-run downstream). **It has not been done.** If you think it must
-be, say so plainly and it will be.
+Things that moved as a result, all of which deserve scrutiny:
 
-Note also the non-monotonicity in `by_draw_size`: O4a reads 1.08 / 1.33 / 1.38 at n = 2000 / 4000 / 8000.
-That is not obviously converging, and I do not have a good explanation for it. Push on this.
+- the Monte Carlo resolution fell from 0.19° to **0.07°**, so the residual is now **17×** the resolution
+  rather than 6×. The "residual is real" claim got stronger — confirm it did so for the right reason
+  (more samples ⇒ finer resolution) and not through a bug in the bootstrap;
+- E97 cross-family A→B went to p = 0.002 and B→A to p = 0.107. The "improves in both directions but
+  significant in only one" framing survives, but the directions swapped in strength;
+- the elongated-event count went 81 → 80;
+- `results/e99_cache_stability_audit_results.json` **describes the retired scheme.** Its
+  `fit_for_purpose: false` verdict is a record of the old cache, not the current one. It is kept as
+  provenance and its `full_sample_reference` block is the independent check used above. Do not read its
+  verdict as current — and tell me if leaving it in the repo unrelabelled is too confusing.
 
 ### 2. §6 and §8–9 have never been claim-audited
 

@@ -6,22 +6,25 @@
    "files": 76,
    "events_cached": 76,
    "group_rows": 226,
-   "seconds": 246.5
+   "seconds": 90.1
   },
   "O4a": {
    "files": 86,
    "events_cached": 86,
    "group_rows": 369,
-   "seconds": 20.5
+   "seconds": 7.4
   },
   "O4b": {
    "files": 105,
    "events_cached": 104,
    "group_rows": 377,
-   "seconds": 17.3
+   "seconds": 6.8
   }
  },
- "n_samp": 4000,
+ "n_samp": null,
  "seed": 94,
- "skipped": {}
+ "skipped": {},
+ "subsampling": "NONE -- every usable sample cached; cache-backed numbers are full-sample numbers",
+ "rows_stored_exactly": 972,
+ "samples_stored": 23145241
 }

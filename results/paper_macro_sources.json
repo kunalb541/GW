@@ -33,7 +33,7 @@
   },
   {
    "macro": "TrainWinFrac",
-   "value": "76\\%",
+   "value": "78\\%",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "chirp_vs_total_win.GWTC-3.win_fraction",
    "format": "pct0"
@@ -138,63 +138,63 @@
   },
   {
    "macro": "CacheTrCurve",
-   "value": "0.83",
+   "value": "0.88",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.GWTC-3.own_q",
    "format": "f2"
   },
   {
    "macro": "CacheOaCurve",
-   "value": "1.32",
+   "value": "1.26",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4a.own_q",
    "format": "f2"
   },
   {
    "macro": "CacheObCurve",
-   "value": "1.00",
+   "value": "1.19",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4b.own_q",
    "format": "f2"
   },
   {
    "macro": "CacheTrTangent",
-   "value": "5.32",
+   "value": "4.83",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.GWTC-3.tangent",
    "format": "f2"
   },
   {
    "macro": "CacheOaTangent",
-   "value": "6.60",
+   "value": "6.67",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4a.tangent",
    "format": "f2"
   },
   {
    "macro": "CacheObTangent",
-   "value": "3.90",
+   "value": "4.20",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4b.tangent",
    "format": "f2"
   },
   {
    "macro": "CacheTrPooled",
-   "value": "9.87",
+   "value": "9.94",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.GWTC-3.pooled_q",
    "format": "f2"
   },
   {
    "macro": "CacheOaPooled",
-   "value": "4.19",
+   "value": "4.03",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4a.pooled_q",
    "format": "f2"
   },
   {
    "macro": "CacheObPooled",
-   "value": "3.73",
+   "value": "3.77",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4b.pooled_q",
    "format": "f2"
@@ -208,14 +208,14 @@
   },
   {
    "macro": "PermOaMin",
-   "value": "2.87",
+   "value": "3.19",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.O4a.perm_null.min",
    "format": "f2"
   },
   {
    "macro": "PermOaMax",
-   "value": "10.36",
+   "value": "10.35",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "@permmax:O4a",
    "format": "f2"
@@ -229,7 +229,7 @@
   },
   {
    "macro": "DegradeMax",
-   "value": "11.9",
+   "value": "11.3",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "@degrade_max",
    "format": "f1"
@@ -243,70 +243,70 @@
   },
   {
    "macro": "XfamAtoB",
-   "value": "2.25",
+   "value": "2.08",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A_cross_family.A_to_B",
    "format": "f2"
   },
   {
    "macro": "XfamBtoA",
-   "value": "2.93",
+   "value": "2.78",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A_cross_family.B_to_A",
    "format": "f2"
   },
   {
    "macro": "XfamDisagree",
-   "value": "2.03",
+   "value": "1.99",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A_cross_family.family_axis_disagreement",
    "format": "f2"
   },
   {
    "macro": "XfamTanAtoB",
-   "value": "3.50",
+   "value": "3.57",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A_cross_family.tangent_A_to_B",
    "format": "f2"
   },
   {
    "macro": "XfamTanBtoA",
-   "value": "6.20",
+   "value": "6.25",
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A_cross_family.tangent_B_to_A",
    "format": "f2"
   },
   {
    "macro": "ResidNElong",
-   "value": "81",
+   "value": "80",
    "artifact": "results/e92_curve_uncertainty_results.json",
    "path": "n_elongated",
    "format": "int"
   },
   {
    "macro": "ResidMedian",
-   "value": "1.03",
+   "value": "1.07",
    "artifact": "results/e92_curve_uncertainty_results.json",
    "path": "monte_carlo_resolution.median_abs_err_deg",
    "format": "f2"
   },
   {
    "macro": "ResidSigma",
-   "value": "0.19",
+   "value": "0.07",
    "artifact": "results/e92_curve_uncertainty_results.json",
    "path": "monte_carlo_resolution.median_bootstrap_sigma_deg",
    "format": "f2"
   },
   {
    "macro": "ResidRatio",
-   "value": "6.3",
+   "value": "17.2",
    "artifact": "results/e92_curve_uncertainty_results.json",
    "path": "monte_carlo_resolution.median_ratio_err_over_sigma",
    "format": "f1"
   },
   {
    "macro": "SignedMedian",
-   "value": "0.78",
+   "value": "0.75",
    "artifact": "results/e92_curve_uncertainty_results.json",
    "path": "@signedmag",
    "format": "f2"
@@ -327,7 +327,7 @@
   },
   {
    "macro": "SignedPOb",
-   "value": "0.377",
+   "value": "0.110",
    "artifact": "results/e92_curve_uncertainty_results.json",
    "path": "signed_residual.O4b.sign_test_p",
    "format": "p"
@@ -341,7 +341,7 @@
   },
   {
    "macro": "EigFracDecade",
-   "value": "29\\%",
+   "value": "28\\%",
    "artifact": "results/e98_framework_audit_results.json",
    "path": "sloppy_models.frac_gt_1_decade",
    "format": "pct0"
@@ -355,28 +355,28 @@
   },
   {
    "macro": "GaussTangentErr",
-   "value": "5.02",
+   "value": "4.92",
    "artifact": "results/e98_framework_audit_results.json",
    "path": "bernstein_von_mises.gaussian_tangent_error_deg",
    "format": "f2"
   },
   {
    "macro": "GaussCurveErr",
-   "value": "1.03",
+   "value": "1.07",
    "artifact": "results/e98_framework_audit_results.json",
    "path": "bernstein_von_mises.arc_corrected_curve_error_deg",
    "format": "f2"
   },
   {
    "macro": "GaussRatio",
-   "value": "4.9",
+   "value": "4.6",
    "artifact": "results/e98_framework_audit_results.json",
    "path": "bernstein_von_mises.ratio",
    "format": "f1"
   },
   {
    "macro": "SelfViolation",
-   "value": "3.1\\%",
+   "value": "2.6\\%",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "grid_sweep.grid40_min40.median_violation",
    "format": "pct1"
@@ -390,161 +390,161 @@
   },
   {
    "macro": "SelfP",
-   "value": "5\\times10^{-12}",
+   "value": "7\\times10^{-12}",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "grid_sweep.grid40_min40.p_value",
    "format": "sci"
   },
   {
    "macro": "SelfRhoMin",
-   "value": "0.64",
+   "value": "0.68",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "@rho_min",
    "format": "f2"
   },
   {
    "macro": "SelfRhoMax",
-   "value": "0.68",
+   "value": "0.69",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "@rho_max",
    "format": "f2"
   },
   {
    "macro": "SelfIterMin",
-   "value": "0.35",
+   "value": "0.59",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "@iter_min",
    "format": "f2"
   },
   {
    "macro": "SelfIterMax",
-   "value": "1.08",
+   "value": "1.09",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "@iter_max",
    "format": "f2"
   },
   {
    "macro": "SelfXfamAPure",
-   "value": "1.14",
+   "value": "1.20",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.AtoB.pure_curve_deg",
    "format": "f2"
   },
   {
    "macro": "SelfXfamACorr",
-   "value": "0.66",
+   "value": "0.64",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.AtoB.self_consistency_corrected_deg",
    "format": "f2"
   },
   {
    "macro": "SelfXfamAP",
-   "value": "0.024",
+   "value": "0.002",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.AtoB.wilcoxon_p",
    "format": "f3"
   },
   {
    "macro": "SelfXfamBPure",
-   "value": "1.00",
+   "value": "0.92",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.BtoA.pure_curve_deg",
    "format": "f2"
   },
   {
    "macro": "SelfXfamBCorr",
-   "value": "0.69",
+   "value": "0.57",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.BtoA.self_consistency_corrected_deg",
    "format": "f2"
   },
   {
    "macro": "SelfXfamBP",
-   "value": "0.064",
+   "value": "0.107",
    "artifact": "results/e97_principal_curve_selfconsistency_results.json",
    "path": "cross_family.BtoA.wilcoxon_p",
    "format": "f3"
   },
   {
    "macro": "ThickRelative",
-   "value": "0.33",
+   "value": "0.34",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "in_sample.median_relative_thickness",
    "format": "f2"
   },
   {
    "macro": "ThickAPure",
-   "value": "1.14",
+   "value": "1.20",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.AtoB.pure_curve",
    "format": "f2"
   },
   {
    "macro": "ThickAMeas",
-   "value": "0.96",
+   "value": "0.91",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.AtoB.measured",
    "format": "f2"
   },
   {
    "macro": "ThickAP",
-   "value": "0.005",
+   "value": "0.000",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.AtoB.measured_vs_pure_wilcoxon_p",
    "format": "f3"
   },
   {
    "macro": "ThickBPure",
-   "value": "1.00",
+   "value": "0.92",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.BtoA.pure_curve",
    "format": "f2"
   },
   {
    "macro": "ThickBMeas",
-   "value": "0.74",
+   "value": "0.72",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.BtoA.measured",
    "format": "f2"
   },
   {
    "macro": "ThickBP",
-   "value": "0.028",
+   "value": "0.008",
    "artifact": "results/e96_curve_thickness_mechanism_results.json",
    "path": "cross_family.BtoA.measured_vs_pure_wilcoxon_p",
    "format": "f3"
   },
   {
    "macro": "FrameSourceErr",
-   "value": "1.03",
+   "value": "1.07",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "frames.source_m1_m2.median_err_deg",
    "format": "f2"
   },
   {
    "macro": "FrameDetErr",
-   "value": "0.31",
+   "value": "0.32",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "frames.detector_m1_m2.median_err_deg",
    "format": "f2"
   },
   {
    "macro": "FrameLogErr",
-   "value": "0.78",
+   "value": "0.77",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "frames.log_source_m1_m2.median_err_deg",
    "format": "f2"
   },
   {
    "macro": "FrameNPaired",
-   "value": "81",
+   "value": "80",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "frames.detector_vs_source_paired.n_paired",
    "format": "int"
   },
   {
    "macro": "FramePairedP",
-   "value": "8\\times10^{-8}",
+   "value": "6\\times10^{-9}",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "frames.detector_vs_source_paired.wilcoxon_p",
    "format": "sci"
@@ -565,35 +565,35 @@
   },
   {
    "macro": "MatchedLowSource",
-   "value": "1.38",
+   "value": "1.37",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "matched_axis_ratio.3-5.median_source_deg",
    "format": "f2"
   },
   {
    "macro": "MatchedLowDet",
-   "value": "5.53",
+   "value": "5.51",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "matched_axis_ratio.3-5.median_detector_deg",
    "format": "f2"
   },
   {
    "macro": "BandRound",
-   "value": "16.3",
+   "value": "14.6",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "axr_bands.1-1.5.median_err_deg",
    "format": "f1"
   },
   {
    "macro": "BandTwo",
-   "value": "7.5",
+   "value": "7.3",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "axr_bands.1.5-2.median_err_deg",
    "format": "f1"
   },
   {
    "macro": "BandThree",
-   "value": "5.7",
+   "value": "5.8",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "axr_bands.2-3.median_err_deg",
    "format": "f1"
@@ -620,25 +620,25 @@
    "format": "int"
   },
   {
-   "macro": "CacheBias",
-   "value": "0.06",
-   "artifact": "results/e99_cache_stability_audit_results.json",
-   "path": "@maxbias",
-   "format": "f2"
-  },
-  {
-   "macro": "CacheSpread",
-   "value": "0.54",
-   "artifact": "results/e99_cache_stability_audit_results.json",
-   "path": "verdict.max_seed_spread_deg",
-   "format": "f2"
-  },
-  {
-   "macro": "CacheNSeeds",
-   "value": "5",
-   "artifact": "results/e99_cache_stability_audit_results.json",
-   "path": "@nseeds",
+   "macro": "CacheRows",
+   "value": "972",
+   "artifact": "results/results/e94_posterior_cache_manifest.json_results.json",
+   "path": "n_group_rows",
    "format": "int"
+  },
+  {
+   "macro": "CacheRowsExact",
+   "value": "972",
+   "artifact": "results/results/e94_posterior_cache_manifest.json_results.json",
+   "path": "rows_stored_exactly",
+   "format": "int"
+  },
+  {
+   "macro": "CacheSamples",
+   "value": "23.1",
+   "artifact": "results/results/e94_posterior_cache_manifest.json_results.json",
+   "path": "@millions",
+   "format": "f1"
   },
   {
    "macro": "FullOaCurve",
@@ -670,14 +670,14 @@
   },
   {
    "macro": "ArcOa",
-   "value": "-0.61",
+   "value": "-0.57",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "arc_length_vs_tangent_error.O4a.spearman_arc_vs_tangent_err",
    "format": "f2"
   },
   {
    "macro": "ArcOb",
-   "value": "-0.42",
+   "value": "-0.49",
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "arc_length_vs_tangent_error.O4b.spearman_arc_vs_tangent_err",
    "format": "f2"

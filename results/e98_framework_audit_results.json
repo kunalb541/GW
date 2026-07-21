@@ -7,11 +7,11 @@
  },
  "sloppy_models": {
   "n_events": 266,
-  "eigenvalue_ratio_median": 3.2975010850924793,
-  "eigenvalue_ratio_p10": 1.438564993180824,
-  "eigenvalue_ratio_p90": 34.62961667684239,
-  "eigenvalue_ratio_max": 2016.3148123872236,
-  "frac_gt_1_decade": 0.2894736842105263,
+  "eigenvalue_ratio_median": 3.260712956538427,
+  "eigenvalue_ratio_p10": 1.4439866035002806,
+  "eigenvalue_ratio_p90": 35.26266110157512,
+  "eigenvalue_ratio_max": 1932.944626555587,
+  "frac_gt_1_decade": 0.2819548872180451,
   "frac_gt_2_decades": 0.03383458646616541,
   "frac_gt_3_decades": 0.007518796992481203,
   "verdict": "PARTIAL -- concept supported, 'hyperribbon' NOT supported by our measurement",
@@ -20,15 +20,15 @@
  "principal_curves": {
   "verdict": "EARNED (E97)",
   "statement": "Hastie-Stuetzle self-consistency is implemented, not invoked: the constant-Mc curve is not a principal curve, and the size of that violation predicts the per-event orientation residual.",
-  "median_violation": 0.03070445640470027,
-  "spearman_violation_vs_residual": 0.6751580849141825,
-  "p_value": 4.757855621758157e-12
+  "median_violation": 0.026437078278764025,
+  "spearman_violation_vs_residual": 0.6770691333982474,
+  "p_value": 7.35034728636049e-12
  },
  "bernstein_von_mises": {
-  "n_elongated": 81,
-  "gaussian_tangent_error_deg": 5.022608687108857,
-  "arc_corrected_curve_error_deg": 1.0278973773188227,
-  "ratio": 4.886293902422318,
+  "n_elongated": 80,
+  "gaussian_tangent_error_deg": 4.920292871136823,
+  "arc_corrected_curve_error_deg": 1.0659513352967878,
+  "ratio": 4.615870076063922,
   "verdict": "EARNED",
   "statement": "A Gaussian posterior's principal axis IS the local tangent, so the tangent error is precisely the error the Gaussian / Bernstein-von Mises limit makes about posterior orientation. Measured on elongated events it is 5.02 deg, against 1.03 deg once the arc is accounted for: the Gaussian approximation is wrong by about 5x more than the curve. The asymptotic Gaussian limit is therefore quantifiably not reached at realistic signal-to-noise, and that gap is what this paper measures and corrects."
  },

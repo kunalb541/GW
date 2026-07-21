@@ -118,13 +118,12 @@ $N$ events (elongated) & $\TrainN$ & $\LockedOaN\ (\LockedOaNElong)$ & $\LockedO
 \hline
 \end{tabular}
 \caption{\textbf{Locked scores, computed on the full released posterior samples.} These are the
-preregistered out-of-sample numbers and are quoted throughout the abstract and text. They are
-\emph{not} identical to the values in Figures~\ref{fig:1b}--\ref{fig:1c}, which are recomputed from a
-fixed resampled extract of the same posteriors ($\CacheOaCurve^\circ$ and $\CacheObCurve^\circ$ for O4a
-and O4b) so that every downstream analysis shares one deterministic input; see Sec.~\ref{sec:repro}. That
-difference is measured resampling noise, not disagreement: the extract is unbiased to $\CacheBias^\circ$
-but scatters by up to $\CacheSpread^\circ$ across seeds. We report both rather than silently reconciling
-them. The curve
+preregistered out-of-sample numbers, quoted throughout the abstract and text. The figures recompute them
+independently from the cached extract (Sec.~\ref{sec:repro}) and agree: $\CacheOaCurve^\circ$ for O4a,
+against the locked $\LockedOaCurveElong^\circ$, and $\CacheObCurve^\circ$ for O4b against
+$\LockedObCurveElong^\circ$, the latter differing only in which waveform group is taken as preferred.
+An earlier draft of this table carried a visible gap here, which was an artifact of a resampled cache
+since replaced by an exact one. The curve
 lands within $\sim1.2^\circ$ of the measured orientation on elongated events in two later, disjoint event
 catalogs. Note the sign of the last row: the tangent's error \emph{decreases} as elongation grows,
 i.e.\ orientation becomes better defined for more elongated posteriors. An earlier draft of this work
@@ -311,20 +310,27 @@ worst case in the sample.
 
 \subsection{Reproducibility and the cached extract}
 \label{sec:repro}
-Every figure and every derived number in Sections~\ref{sec:nontrivial}--\ref{sec:frames} is computed from
-a single cached extract of the released posteriors, so that all downstream analyses share one
-deterministic input and can be regenerated in seconds without re-reading the parameter-estimation files.
-The extract draws a fixed number of samples per event \emph{with replacement}; it is therefore a bootstrap
-resample of the released samples rather than a subsample of them, and quantities computed from it carry a
-corresponding resampling noise. We measured that noise rather than assuming it small: rebuilding the
-extract under $\CacheNSeeds$ independent seeds and comparing against a pass over the \emph{full} released
-samples, the cache is essentially unbiased --- the largest bias in any catalog is $\CacheBias^\circ$ ---
-but a single seed moves the headline score by as much as $\CacheSpread^\circ$ between draws. A cached
-number is therefore reliable in the mean and noisy in any one realisation, which is why the locked
-out-of-sample scores in Table~\ref{tab:curve} are quoted from the original full-sample analyses and never
-from the cache. That full-sample pass also reproduces them: it returns $\FullOaCurve^\circ$ for O4a and
-$\FullObCurve^\circ$ for O4b, against the locked $\LockedOaCurveElong^\circ$ and
-$\LockedObCurveElong^\circ$. Where a cached number and a full-sample number both exist we give both.
+Every figure and every derived number in Sections~\ref{sec:nontrivial}--\ref{sec:frames} is computed
+from a single cached extract of the released posteriors, so that all downstream analyses share one
+deterministic input and can be regenerated without re-reading the parameter-estimation files. The extract
+performs \emph{no subsampling}: it stores every posterior sample that passes the finiteness and
+mass-ratio cuts, $\CacheSamples$ million samples across all $\CacheRows$ waveform-group rows, with
+$\CacheRowsExact$ of those $\CacheRows$ rows held in full. A cache-backed number is therefore a
+full-sample number, and carries no resampling noise of its own.
+
+This was not true of an earlier version of this analysis, and the correction matters enough to state.
+That version drew a fixed $4000$ samples per row \emph{with replacement}. Because the draw was capped at
+the available sample count, it bootstrapped even when the cap exceeded that count, so it never used the
+full sample at any setting and its noise did not fall as the cap grew: an audit over five seeds found the
+headline score unbiased but scattering by up to $0.54^\circ$, with one catalog reading $1.08$, $1.33$ and
+$1.38^\circ$ at caps of $2000$, $4000$ and $8000$ --- not a converging sequence. Every downstream number
+in an earlier draft inherited that scatter. All of them have been recomputed here.
+
+The result is a consistency check worth reporting. An independent pass that re-reads the released
+parameter-estimation files directly, bypassing the cache entirely, returns $\FullOaCurve^\circ$ for O4a
+and $\FullObCurve^\circ$ for O4b; the cache returns $\CacheOaCurve^\circ$ and $\CacheObCurve^\circ$.
+For the training catalog the two differ by $0.08^\circ$ because they resolve one event's preferred
+waveform group differently, which is a selection convention rather than a sampling effect.
 
 \section{Coherence as a diagnostic --- and its limits}
 If the geometry is measurement optics, then \emph{departures} from it are informative. We use two such

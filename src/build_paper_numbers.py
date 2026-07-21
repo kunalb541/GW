@@ -42,6 +42,7 @@ E97 = "e97_principal_curve_selfconsistency"
 E98 = "e98_framework_audit"
 E100 = "e100_frames_and_bands"
 E99 = "e99_cache_stability_audit"
+E94M = "results/e94_posterior_cache_manifest.json"
 
 
 E65 = "e65_pn_fisher_rotation"
@@ -156,9 +157,10 @@ SPEC = [
     ("BandFive",    E100, "axr_bands.5+.median_err_deg", "f1"),
     ("RandomBaseline", E100, "random_baseline_deg", "int"),
     # cache stability (E99): is the bootstrap-resampled cache representative of the full posteriors?
-    ("CacheBias",      E99, "@maxbias", "f2"),
-    ("CacheSpread",    E99, "verdict.max_seed_spread_deg", "f2"),
-    ("CacheNSeeds",    E99, "@nseeds", "int"),
+    # The cache no longer subsamples at all, so there is no bias or seed spread left to quote.
+    ("CacheRows",      E94M, "n_group_rows", "int"),
+    ("CacheRowsExact", E94M, "rows_stored_exactly", "int"),
+    ("CacheSamples",   E94M, "@millions", "f1"),
     ("FullOaCurve",    E99, "summary.O4a.full_sample", "f2"),
     ("FullObCurve",    E99, "summary.O4b.full_sample", "f2"),
     ("FullTrCurve",    E99, "summary.GWTC-3.full_sample", "f2"),
@@ -235,6 +237,8 @@ def derived(tag, d):
     if tag in ("iter_min", "iter_max"):
         r = [v["median_residual_after_one_iteration_deg"] for v in d["grid_sweep"].values()]
         return min(r) if tag == "iter_min" else max(r)
+    if tag == "millions":
+        return d["samples_stored"] / 1e6
     if tag == "maxbias":
         return max(abs(v["abs_bias_vs_full"]) for v in d["summary"].values())
     if tag == "nseeds":
@@ -274,7 +278,8 @@ def main():
     cache, lines, prov = {}, [], []
     for macro, art, path, how in SPEC:
         if art not in cache:
-            with open(os.path.join(ROOT, f"results/{art}_results.json")) as fh:
+            fp = art if art.endswith(".json") else f"results/{art}_results.json"
+            with open(os.path.join(ROOT, fp)) as fh:
                 cache[art] = json.load(fh)
         d = cache[art]
         v = derived(path[1:], d) if path.startswith("@") else dig(d, path)

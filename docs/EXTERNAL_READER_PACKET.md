@@ -1,8 +1,8 @@
 # EXTERNAL READER PACKET
 
-**Repo** <https://github.com/kunalb541/GW> · **state handed off at commit `73229a0`** (this packet is
+**Repo** <https://github.com/kunalb541/GW> · **state handed off at the commit shown by `git log -1`** (this packet is
 committed immediately after; it changes no analysis) · **PDF** [`paper/manuscript.pdf`](../paper/manuscript.pdf),
-12 pp · 157 contract tests, all passing.
+13 pp · 158 contract tests, all passing.
 
 Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4447-6325).
 
@@ -40,8 +40,8 @@ curve's failure of Hastie–Stuetzle self-consistency ($\rho = +0.68$, $p = 5\ti
 |---|---|---|
 | out-of-sample reconstruction | $1.26^\circ$ (O4a), $1.22^\circ$ (O4b) | locked before data on O4b; two disjoint event catalogs |
 | non-triviality vs permutations | below the **minimum** of 300 draws in all three catalogs | $p < 1/300$ each; not a single shuffle |
-| cross-waveform transfer | $2.25^\circ$ / $2.93^\circ$ vs a $2.03^\circ$ reference scale | answers the same-posterior circularity objection |
-| residual is real, not sampling noise | $1.03^\circ$ vs $0.19^\circ$ resolution ($6.3\times$) | joint bootstrap; correlated MC errors cancel |
+| cross-waveform transfer | $2.08^\circ$ / $2.78^\circ$ vs a $1.99^\circ$ reference scale | answers the same-posterior circularity objection |
+| residual is real, not sampling noise | $1.07^\circ$ vs $0.07^\circ$ resolution ($17\times$) | joint bootstrap on full samples; correlated MC errors cancel |
 | residual has a mechanism | $\rho = +0.68$, $p = 5\times10^{-12}$, robust across a grid sweep | a correlation between measured quantities, not a fit |
 
 ## Weakest claims (attack these first)
@@ -58,7 +58,8 @@ curve's failure of Hastie–Stuetzle self-consistency ($\rho = +0.68$, $p = 5\ti
    test fails if that changes.
 4. **O4b is the weakest panel of Figure 2**: pooled-$q$ ($3.73^\circ$) and tangent ($3.90^\circ$) are
    nearly indistinguishable there, and its null minimum ($2.30^\circ$) sits closest to own-$q$.
-5. **The arc-length mechanism is weak**: $\rho = +0.26 / +0.02 / +0.12$. An earlier draft claimed the
+5. **Arc length correlates NEGATIVELY with the tangent error** ($\rho = -0.51 / -0.57 / -0.49$),
+   where an earlier draft reported it weakly positive. It may simply be re-measuring elongation. An earlier draft claimed the
    tangent residual *grows* with elongation; the measured correlation is **negative** ($-0.42$ to $-0.69$)
    and the table caption now records that erratum.
 6. **The self-consistency correction does not clear the out-of-sample bar** — it improves in both transfer
@@ -106,11 +107,11 @@ python3 src/build_paper_numbers.py                # every result number in the p
 
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 
-python3 -m pytest tests/ -q                       # 157 tests, data-free, run anywhere
+python3 -m pytest tests/ -q                       # 158 tests, data-free, run anywhere
 ```
 
 **Time/resource budget:** ~58 GB download (hours, network-bound); ~5 min cache build; everything
-downstream is seconds. The 157 tests need no data and run in ~1 min.
+downstream is seconds. The 158 tests need no data and run in ~1 min.
 
 ## Checklist for an external reader
 
@@ -144,30 +145,39 @@ downstream is seconds. The 157 tests need no data and run in ~1 min.
 
 1. Is the cross-waveform transfer a *sufficient* answer to the circularity objection, given that the two
    waveform families analyse the same strain with shared priors and calibration?
-2. Is calling $1.99^\circ$ a "reference scale" rather than an error floor the right framing — could a
+2. Is calling the $1.99^\circ$ family disagreement a "reference scale" rather than an error floor the right framing — could a
    reconstruction legitimately denoise below the families' mutual disagreement?
 3. Does the reconstruction have practical value for low-latency PE, or is a $\sim1^\circ$ orientation
    correction below the noise of anything downstream?
 4. Is the principal-curve self-consistency result the *explanation* of the residual, or a restatement of
    it in other coordinates?
 
-## Corrections found by generating the numbers
+## Corrections, and a correction to the corrections
 
-Wiring the body prose to the artifacts (previously only captions were generated) surfaced five errors
-that had survived multiple read-throughs, four numerical and one structural:
+Wiring the body prose to the artifacts surfaced six apparent errors. **Three of them were not errors.**
+They were artifacts of a posterior cache that drew 4000 samples per row *with replacement* — and because
+the draw was capped at the available sample count, it bootstrapped even when the cap exceeded that count,
+so it never used the full sample at any setting, and its noise did not fall as the cap grew. The cache now
+stores every sample exactly (23.1 M samples; 972 of 972 rows in full), and the regenerated values return
+to the originals:
 
-| was | is | how it got there |
-|---|---|---|
-| abstract cross-waveform $2.1^\circ$ vs $2.0^\circ$ | $2.25^\circ$ / $2.93^\circ$ vs $2.03^\circ$ | body was corrected, abstract was not |
-| round-posterior band $14.5^\circ$ | $16.3^\circ$ | transcribed from a markdown note that had drifted |
-| paired frame $p=4\times10^{-9}$ | $8\times10^{-8}$ | same note |
-| arc-length $\rho=+0.26,+0.02,+0.12$ | $-0.51,-0.61,-0.42$ | **sign was wrong**; matched no artifact |
-| training win fraction $81\%$ | $76\%$, labelled cache-derived | no artifact existed; $0.81$ looks like a transcribed *degree* value |
+| item | original prose | "correction" | now, exact cache | verdict |
+|---|---|---|---|---|
+| cross-waveform transfer | 2.08 / 2.78 vs 1.99 | 2.25 / 2.93 vs 2.03 | **2.08 / 2.78 vs 1.99** | original was right |
+| round-posterior band | 14.5° | 16.3° | **14.6°** | original was right |
+| paired frame p | 4e-9 | 8e-8 | **6e-9** | original was right |
+| arc-length rho | +0.26, +0.02, +0.12 | −0.51, −0.61, −0.42 | **−0.51, −0.57, −0.49** | **correction stands — the sign was wrong** |
+| training win fraction | 81% | 76% | **78%** | both off; no locked artifact exists, so the cell is labelled cache-derived |
+| GWTC-4.0 arXiv id | 2508.18080 | 2508.18082 | **2508.18082** | correction stands (unrelated to the cache) |
 
-A sixth, structural, came out of a unit test written on a wrong assumption: $\psi_{\rm curve}$ is
-**exactly invariant to chirp mass** (rescaling $\mathcal{M}_c$ is a dilation, which preserves covariance
-eigenvectors). The paper had described the reconstruction as taking two inputs; it takes one, the $q$
-marginal. No number changed — the framing did.
+**The lesson is not subtle.** A generated-numbers pipeline is only as good as the artifacts beneath it.
+Ours faithfully propagated a broken cache and, in doing so, "corrected" three numbers that had been right
+— while every test passed, because the tests check that the paper matches the artifacts, not that the
+artifacts are correct. What caught it was auditing the cache itself, not the paper.
+
+A seventh finding is structural and is unaffected by any of this: psi_curve is **exactly invariant to
+chirp mass** (rescaling Mc is a dilation, which preserves covariance eigenvectors). The reconstruction
+takes **one** input, the q marginal, not two. No number changed; the thesis sentence did.
 
 ## Provenance note
 

@@ -1,11 +1,13 @@
 # Gate C — first measurement (2026-07-21). Frame and parameterization audit.
 
-> **SUPERSEDED IN PART — 2026-07-21.** This note records what was measured when it was written and is
-> kept unedited as a record. The numbers it carries as prose have since been regenerated from
-> committed artifacts (`results/e100_frames_and_bands_results.json`), and three values here are wrong: the round-posterior band is **16.3 deg**, not 14.5; the paired
-> p-value is **8e-8**, not 4e-9; and the event count is **81**, not 79. The paper quotes the
-> artifacts, never this file. See [EXTERNAL_READER_PACKET.md](EXTERNAL_READER_PACKET.md) for the
-> table of corrections.
+> **BANNER REVISED 2026-07-21 — this note's numbers were substantially right.** An earlier banner claimed
+> three values here were wrong (band 16.3 deg not 14.5; paired p 8e-8 not 4e-9; 81 events not 79). Those
+> replacements came from a posterior cache that bootstrapped 4000 samples per row *with replacement*. The
+> cache now stores every sample exactly, and the regenerated values are **14.6 deg** and **6e-9** — this
+> note's originals, to rounding. Only the event count genuinely differs (80, from a different
+> preferred-group convention, not 79). The measurements of record are the committed artifacts
+> (`results/e100_frames_and_bands_results.json`), not this file, but this file was not the source of the
+> error. See [EXTERNAL_READER_PACKET.md](EXTERNAL_READER_PACKET.md).
 
 
 Gate C of the [revised PAPER_PLAN](PAPER_PLAN.md): repeat the primary result in detector-frame masses,

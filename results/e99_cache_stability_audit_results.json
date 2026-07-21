@@ -166,5 +166,11 @@
   "max_seed_spread_deg": 0.5399801008908582,
   "fit_for_purpose": false,
   "statement": "The cache is a bootstrap resample. Its headline score differs from the full-sample value by up to 0.06 deg and moves by up to 0.54 deg across seeds. Any number quoted from the cache must be labelled as such, and the LOCKED out-of-sample scores must continue to be quoted from the full-sample E67/E71 artifacts, not from the cache."
+ },
+ "SUPERSEDED": {
+  "date": "2026-07-21",
+  "status": "This audit measured the RETIRED cache scheme (4000 samples per row drawn WITH replacement). Its verdict.fit_for_purpose=false is what prompted the fix, and is NOT a statement about the current cache.",
+  "what_changed": "src/e94_build_posterior_cache.py now performs no subsampling: every usable sample is stored (23.1M samples, 972/972 rows in full), so cache-backed numbers are full-sample numbers and carry no resampling noise.",
+  "still_valid": "full_sample_reference: computed by reading the HDF5 files directly, independent of the cache. It is the check the rebuilt cache was verified against -- O4a and O4b agree exactly."
  }
 }

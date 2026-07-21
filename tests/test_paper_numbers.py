@@ -51,7 +51,7 @@ def test_every_macro_traces_to_a_committed_artifact():
     from src.build_paper_numbers import SPEC, dig, derived
 
     for macro, art, path, _how in SPEC:
-        fp = os.path.join(ROOT, f"results/{art}_results.json")
+        fp = os.path.join(ROOT, art if art.endswith(".json") else f"results/{art}_results.json")
         assert os.path.exists(fp), f"{macro}: artifact {art} missing"
         with open(fp) as fh:
             d = json.load(fh)
@@ -82,6 +82,10 @@ def test_no_generated_value_is_also_hardcoded():
     """
     body = strip_comments(read(MANUSCRIPT))
     body = body.replace("\\input{numbers}", "")
+    # Layout lengths are not results: \includegraphics[width=0.92\textwidth] must not collide with a
+    # macro that happens to equal 0.92. Strip optional-argument blocks of graphics/length commands.
+    body = re.sub(r"\\includegraphics\[[^\]]*\]", "", body)
+    body = re.sub(r"width\s*=\s*[\d.]+\\\w+", "", body)
     offenders = []
     for macro, val in macros().items():
         v = val.replace("\\%", "").strip()
@@ -125,3 +129,34 @@ def test_every_bibitem_is_cited_and_every_citation_defined():
         cited |= {k.strip() for k in grp.split(",")}
     assert not cited - keys, f"cited but no bibitem: {sorted(cited - keys)}"
     assert not keys - cited, f"bibitem never cited (ornamental): {sorted(keys - cited)}"
+
+
+def test_cache_stores_every_sample_and_never_bootstraps():
+    """The cache must not resample.
+
+    It used to draw N samples per row WITH replacement, capped at the available count -- so it
+    bootstrapped even when the cap exceeded the sample count, never used the full sample at any setting,
+    and its noise did not decay as the cap grew. Downstream numbers inherited that scatter, and three
+    values in the paper were "corrected" to wrong ones as a result. Lock both halves of the fix.
+    """
+    import src.e94_build_posterior_cache as e94
+
+    assert e94.N_SAMP is None, "cache must default to no subsampling"
+    src = read(os.path.join(ROOT, "src/e94_build_posterior_cache.py"))
+    assert "rng.integers(0, len(idx)" not in src, "with-replacement draw has returned"
+    assert "replace=False" in src, "any optional cap must sample WITHOUT replacement"
+
+    manifest = json.load(open(os.path.join(ROOT, "results/e94_posterior_cache_manifest.json")))
+    assert manifest["n_samp"] is None
+    assert manifest["rows_stored_exactly"] == manifest["n_group_rows"], (
+        "every cached row must hold its full posterior")
+
+
+def test_cache_reproduces_the_independent_full_sample_pass():
+    """E99 read the HDF5 files directly, bypassing the cache. The rebuilt cache must agree with it."""
+    e99 = json.load(open(os.path.join(ROOT, "results/e99_cache_stability_audit_results.json")))
+    e95 = json.load(open(os.path.join(ROOT, "results/e95_gate_regeneration_results.json")))["gate_A"]
+    for cat in ("O4a", "O4b"):
+        full = e99["summary"][cat]["full_sample"]
+        assert abs(e95[cat]["own_q"] - full) < 0.01, (
+            f"{cat}: cache {e95[cat]['own_q']:.3f} vs independent full-sample pass {full:.3f}")

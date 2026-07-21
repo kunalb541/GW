@@ -13,24 +13,27 @@
      "files": 76,
      "events_cached": 76,
      "group_rows": 226,
-     "seconds": 246.5
+     "seconds": 90.1
     },
     "O4a": {
      "files": 86,
      "events_cached": 86,
      "group_rows": 369,
-     "seconds": 20.5
+     "seconds": 7.4
     },
     "O4b": {
      "files": 105,
      "events_cached": 104,
      "group_rows": 377,
-     "seconds": 17.3
+     "seconds": 6.8
     }
    },
-   "n_samp": 4000,
+   "n_samp": null,
    "seed": 94,
-   "skipped": {}
+   "skipped": {},
+   "subsampling": "NONE -- every usable sample cached; cache-backed numbers are full-sample numbers",
+   "rows_stored_exactly": 972,
+   "samples_stored": 23145241
   },
   "hdf5_accessed": false
  },
@@ -40,877 +43,857 @@
  },
  "grid_sweep": {
   "grid24_min60": {
-   "n_events": 81,
-   "median_bins_per_event": 22.0,
-   "median_violation": 0.027416306244020864,
-   "spearman_violation_vs_residual": 0.6605239385727191,
-   "p_value": 1.9580823350357456e-11,
-   "median_residual_deg": 1.0278973773188227,
-   "median_residual_after_one_iteration_deg": 1.0805788595317836,
-   "frac_iteration_improved": 0.4444444444444444
+   "n_events": 79,
+   "median_bins_per_event": 24.0,
+   "median_violation": 0.02501450122565126,
+   "spearman_violation_vs_residual": 0.6802823758519961,
+   "p_value": 5.359913978551876e-12,
+   "median_residual_deg": 1.0377203279294065,
+   "median_residual_after_one_iteration_deg": 1.0934653455830414,
+   "frac_iteration_improved": 0.5063291139240507
   },
   "grid40_min40": {
-   "n_events": 81,
-   "median_bins_per_event": 36.0,
-   "median_violation": 0.03070445640470027,
-   "spearman_violation_vs_residual": 0.6751580849141825,
-   "p_value": 4.757855621758157e-12,
-   "median_residual_deg": 1.0278973773188227,
-   "median_residual_after_one_iteration_deg": 0.36170621793354485,
-   "frac_iteration_improved": 0.7654320987654321
+   "n_events": 79,
+   "median_bins_per_event": 40.0,
+   "median_violation": 0.026437078278764025,
+   "spearman_violation_vs_residual": 0.6770691333982474,
+   "p_value": 7.35034728636049e-12,
+   "median_residual_deg": 1.0377203279294065,
+   "median_residual_after_one_iteration_deg": 0.818260668648378,
+   "frac_iteration_improved": 0.5443037974683544
   },
   "grid60_min30": {
-   "n_events": 81,
-   "median_bins_per_event": 53.0,
-   "median_violation": 0.03177082521363545,
-   "spearman_violation_vs_residual": 0.6595528455284552,
-   "p_value": 2.144879750686693e-11,
-   "median_residual_deg": 1.0278973773188227,
-   "median_residual_after_one_iteration_deg": 0.3515239929994891,
-   "frac_iteration_improved": 0.7901234567901234
+   "n_events": 79,
+   "median_bins_per_event": 60.0,
+   "median_violation": 0.025977790825133473,
+   "spearman_violation_vs_residual": 0.6771421616358326,
+   "p_value": 7.298101689566417e-12,
+   "median_residual_deg": 1.0377203279294065,
+   "median_residual_after_one_iteration_deg": 0.5883617198321076,
+   "frac_iteration_improved": 0.6708860759493671
   },
   "grid100_min20": {
-   "n_events": 81,
-   "median_bins_per_event": 84.0,
-   "median_violation": 0.03624238489352958,
-   "spearman_violation_vs_residual": 0.6380984643179765,
-   "p_value": 1.479534133353496e-10,
-   "median_residual_deg": 1.0278973773188227,
-   "median_residual_after_one_iteration_deg": 0.956360664776355,
-   "frac_iteration_improved": 0.5432098765432098
+   "n_events": 79,
+   "median_bins_per_event": 100.0,
+   "median_violation": 0.026512885152157828,
+   "spearman_violation_vs_residual": 0.6858325219084712,
+   "p_value": 3.077089871016952e-12,
+   "median_residual_deg": 1.0377203279294065,
+   "median_residual_after_one_iteration_deg": 0.6278972811934977,
+   "frac_iteration_improved": 0.6835443037974683
   }
  },
  "cross_family": {
   "AtoB": {
    "n": 64,
-   "pure_curve_deg": 1.1363084744180014,
-   "self_consistency_corrected_deg": 0.6644900374061962,
-   "frac_improved": 0.59375,
-   "wilcoxon_p": 0.024215734531984393
+   "pure_curve_deg": 1.201812530879721,
+   "self_consistency_corrected_deg": 0.643333012075928,
+   "frac_improved": 0.65625,
+   "wilcoxon_p": 0.001830879225204067
   },
   "BtoA": {
    "n": 64,
-   "pure_curve_deg": 0.9980725393319716,
-   "self_consistency_corrected_deg": 0.6939364126265559,
-   "frac_improved": 0.609375,
-   "wilcoxon_p": 0.06396283771155863
+   "pure_curve_deg": 0.9194465530996894,
+   "self_consistency_corrected_deg": 0.5727040040643487,
+   "frac_improved": 0.578125,
+   "wilcoxon_p": 0.10702971240697048
   }
  },
  "verdict": {
   "violation_predicts_residual": "SUPPORTED and grid-robust",
   "one_iteration_improves_out_of_sample": "NOT SUPPORTED out-of-sample",
-  "statement": "The constant-Mc curve is NOT a principal curve in the Hastie-Stuetzle sense: it is not self-consistent, and the size of that violation predicts the per-event orientation residual. This is a correlation between two measured quantities, not a fit, so it cannot be inflated by added model freedom. The one-step correction is reported separately because it is in-sample and grid-sensitive (median residual after one iteration ranges 0.35-1.08 deg across the grid sweep)."
+  "statement": "The constant-Mc curve is NOT a principal curve in the Hastie-Stuetzle sense: it is not self-consistent, and the size of that violation predicts the per-event orientation residual. This is a correlation between two measured quantities, not a fit, so it cannot be inflated by added model freedom. The one-step correction is reported separately because it is in-sample and grid-sensitive (median residual after one iteration ranges 0.59-1.09 deg across the grid sweep)."
  },
  "events": [
   {
    "catalog": "GWTC-3",
    "event": "GW190412",
-   "axr": 9.30585360411263,
-   "n_bins": 31,
-   "residual_deg": 0.7794440920137902,
-   "residual_after_one_iteration_deg": 0.12144815424599642,
-   "violation": 0.021236110640820396,
-   "violation_signed": -3.863457146553949e-05
+   "axr": 9.535323055584811,
+   "n_bins": 33,
+   "residual_deg": 0.8781682573778369,
+   "residual_after_one_iteration_deg": 0.2462497684362006,
+   "violation": 0.02088122611931863,
+   "violation_signed": 0.004370114526933492
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190425",
-   "axr": 11.399586897634594,
+   "axr": 11.53852763980315,
    "n_bins": 40,
-   "residual_deg": 0.7077601640483238,
-   "residual_after_one_iteration_deg": 0.5846977776895699,
-   "violation": 0.013561086602372714,
-   "violation_signed": 0.004432583244789004
+   "residual_deg": 0.6710782451794444,
+   "residual_after_one_iteration_deg": 0.49206265815845995,
+   "violation": 0.01276734401567113,
+   "violation_signed": 0.005349993565584475
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190512_180714",
-   "axr": 3.595399188350501,
-   "n_bins": 33,
-   "residual_deg": 1.3568293903164772,
-   "residual_after_one_iteration_deg": 1.02903796966703,
-   "violation": 0.042356081778940194,
-   "violation_signed": -0.02699579296426745
+   "axr": 3.63475024908264,
+   "n_bins": 40,
+   "residual_deg": 1.2048770361016352,
+   "residual_after_one_iteration_deg": 0.1857679936918828,
+   "violation": 0.03330148544597871,
+   "violation_signed": -0.02184879810423468
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190707_093326",
-   "axr": 3.250125737227561,
-   "n_bins": 37,
-   "residual_deg": 1.0751949010500255,
-   "residual_after_one_iteration_deg": 5.033910212779659,
-   "violation": 0.043823707750623955,
-   "violation_signed": -0.03799517035575324
+   "axr": 3.247158655324338,
+   "n_bins": 40,
+   "residual_deg": 0.9961560559449936,
+   "residual_after_one_iteration_deg": 1.967697432516843,
+   "violation": 0.04492545879460796,
+   "violation_signed": -0.042775583480375766
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190708_232457",
-   "axr": 4.304468628881569,
-   "n_bins": 38,
-   "residual_deg": 0.6042445562811736,
-   "residual_after_one_iteration_deg": 0.01664514794882166,
-   "violation": 0.03663035416090987,
-   "violation_signed": -0.02423563183875698
-  },
-  {
-   "catalog": "GWTC-3",
-   "event": "GW190719_215514",
-   "axr": 3.0071361584634424,
+   "axr": 4.250074977723277,
    "n_bins": 40,
-   "residual_deg": 5.563958767852398,
-   "residual_after_one_iteration_deg": 1.2995105617912373,
-   "violation": 0.08361964753423295,
-   "violation_signed": -0.06724658638555649
+   "residual_deg": 0.5128778651778418,
+   "residual_after_one_iteration_deg": 0.5507267442630734,
+   "violation": 0.0346779065111367,
+   "violation_signed": -0.027657005976214583
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190720_000836",
-   "axr": 5.230067820940967,
-   "n_bins": 32,
-   "residual_deg": 1.1705154118861287,
-   "residual_after_one_iteration_deg": 0.5829876987443185,
-   "violation": 0.035611814035295716,
-   "violation_signed": 0.026830885714074184
+   "axr": 5.25139917494301,
+   "n_bins": 40,
+   "residual_deg": 1.0304650038031014,
+   "residual_after_one_iteration_deg": 0.33311212515121724,
+   "violation": 0.028898215982176637,
+   "violation_signed": 0.02356933704216182
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190725_174728",
-   "axr": 6.867306442877763,
-   "n_bins": 37,
-   "residual_deg": 0.6365841162064214,
-   "residual_after_one_iteration_deg": 0.22132243203267876,
-   "violation": 0.009008341739082442,
-   "violation_signed": -0.0026535998754982203
+   "axr": 6.81906550624828,
+   "n_bins": 40,
+   "residual_deg": 0.6895422987673498,
+   "residual_after_one_iteration_deg": 0.42580792557760105,
+   "violation": 0.004959236079180399,
+   "violation_signed": -0.0023072282764914106
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190728_064510",
-   "axr": 6.019460286365122,
-   "n_bins": 35,
-   "residual_deg": 0.8473735294330424,
-   "residual_after_one_iteration_deg": 2.4718506379176404,
-   "violation": 0.016841371022321014,
-   "violation_signed": -0.01601232581551885
+   "axr": 6.0069814827025585,
+   "n_bins": 37,
+   "residual_deg": 1.0377203279294065,
+   "residual_after_one_iteration_deg": 1.7175725184321493,
+   "violation": 0.01747273809689613,
+   "violation_signed": -0.017022335135456614
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190814",
-   "axr": 36.040942093684826,
-   "n_bins": 25,
-   "residual_deg": 0.3402000931849045,
-   "residual_after_one_iteration_deg": 0.07714841648015636,
-   "violation": 0.006623786486581884,
-   "violation_signed": -0.0012762266031196995
+   "axr": 36.730156711077434,
+   "n_bins": 40,
+   "residual_deg": 0.3485313320625494,
+   "residual_after_one_iteration_deg": 0.034375041487038516,
+   "violation": 0.009724672931875985,
+   "violation_signed": 0.00376531361990065
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190828_065509",
-   "axr": 4.071530422084919,
-   "n_bins": 27,
-   "residual_deg": 1.4331482721890438,
-   "residual_after_one_iteration_deg": 1.4525638872737545,
-   "violation": 0.02893843157735961,
-   "violation_signed": -0.017261604992360655
+   "axr": 4.008723915978267,
+   "n_bins": 40,
+   "residual_deg": 1.140188838281631,
+   "residual_after_one_iteration_deg": 1.279590320528854,
+   "violation": 0.023464979752281002,
+   "violation_signed": -0.018976837876350697
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190917_114630",
-   "axr": 11.642823001175737,
-   "n_bins": 24,
-   "residual_deg": 0.3601866306754573,
-   "residual_after_one_iteration_deg": 0.9009552414576092,
-   "violation": 0.008153308216916849,
-   "violation_signed": -0.000971451351487106
+   "axr": 11.634818881420868,
+   "n_bins": 37,
+   "residual_deg": 0.29758860430058576,
+   "residual_after_one_iteration_deg": 0.42278100992746204,
+   "violation": 0.006596147467458971,
+   "violation_signed": -0.0008663796292861691
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190924_021846",
-   "axr": 6.963534484132363,
-   "n_bins": 34,
-   "residual_deg": 0.5660748341975932,
-   "residual_after_one_iteration_deg": 0.8457005311851447,
-   "violation": 0.01718692028481187,
-   "violation_signed": -0.0031872786986190966
+   "axr": 6.978113923413571,
+   "n_bins": 40,
+   "residual_deg": 0.5219995417891141,
+   "residual_after_one_iteration_deg": 0.7574166819610753,
+   "violation": 0.01226267982089641,
+   "violation_signed": -0.003178430317278395
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190925_232845",
-   "axr": 3.4433351672036254,
-   "n_bins": 33,
-   "residual_deg": 2.051451184420472,
-   "residual_after_one_iteration_deg": 0.7150121104546372,
-   "violation": 0.0317103060369297,
-   "violation_signed": -0.005814930354591227
+   "axr": 3.424204585135956,
+   "n_bins": 40,
+   "residual_deg": 1.9496045088268659,
+   "residual_after_one_iteration_deg": 1.0899083343603593,
+   "violation": 0.020708534581446413,
+   "violation_signed": -0.008758437583072815
   },
   {
    "catalog": "GWTC-3",
    "event": "GW190930_133541",
-   "axr": 6.844984940341948,
-   "n_bins": 39,
-   "residual_deg": 0.7711112405098106,
-   "residual_after_one_iteration_deg": 0.16631832875054897,
-   "violation": 0.013460001518339973,
-   "violation_signed": -0.00303408895998381
+   "axr": 6.809898782870291,
+   "n_bins": 40,
+   "residual_deg": 0.7251884251244576,
+   "residual_after_one_iteration_deg": 0.06243488145133824,
+   "violation": 0.011594307065678548,
+   "violation_signed": -0.0037272483973786455
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191103_012549",
-   "axr": 4.421795937663337,
-   "n_bins": 35,
-   "residual_deg": 0.8780377601958094,
-   "residual_after_one_iteration_deg": 0.7213181585826192,
-   "violation": 0.022768572605129656,
-   "violation_signed": -0.01416803070668033
+   "axr": 4.582666331404841,
+   "n_bins": 40,
+   "residual_deg": 1.094182342664169,
+   "residual_after_one_iteration_deg": 0.8800880505500857,
+   "violation": 0.018480446282482355,
+   "violation_signed": -0.015460502020030353
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191105_143521",
-   "axr": 3.8377780487659825,
-   "n_bins": 34,
-   "residual_deg": 0.8120354477890146,
-   "residual_after_one_iteration_deg": 0.5071899293975548,
-   "violation": 0.02944756364390395,
-   "violation_signed": -0.026957201021304434
+   "axr": 3.7784141640656794,
+   "n_bins": 40,
+   "residual_deg": 0.7147208923065307,
+   "residual_after_one_iteration_deg": 1.2792536677133342,
+   "violation": 0.028470312424996782,
+   "violation_signed": -0.027951825107080656
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191113_071753",
-   "axr": 7.996261904625961,
-   "n_bins": 20,
-   "residual_deg": 1.3260870614551266,
-   "residual_after_one_iteration_deg": 1.303296545056071,
-   "violation": 0.01867939954706283,
-   "violation_signed": 0.0009482428573536703
+   "axr": 7.995185493689204,
+   "n_bins": 40,
+   "residual_deg": 1.2024950952151698,
+   "residual_after_one_iteration_deg": 1.8412528915015969,
+   "violation": 0.01809500067745369,
+   "violation_signed": 0.009196407913838186
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191126_115259",
-   "axr": 3.4161000684459117,
-   "n_bins": 37,
-   "residual_deg": 2.4202783020049026,
-   "residual_after_one_iteration_deg": 0.13614784615288045,
-   "violation": 0.042311679981780474,
-   "violation_signed": -0.03586237948908855
+   "axr": 3.5142489514102406,
+   "n_bins": 40,
+   "residual_deg": 2.141748836406009,
+   "residual_after_one_iteration_deg": 0.41517085535537035,
+   "violation": 0.03574991405069619,
+   "violation_signed": -0.034055252339559944
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191129_134029",
-   "axr": 5.712119314975735,
-   "n_bins": 38,
-   "residual_deg": 0.2937003732159269,
-   "residual_after_one_iteration_deg": 0.13865675702157887,
-   "violation": 0.026708749247710148,
-   "violation_signed": -0.02291413343027615
+   "axr": 5.767002148042432,
+   "n_bins": 40,
+   "residual_deg": 0.37973083434098953,
+   "residual_after_one_iteration_deg": 1.0073130403283415,
+   "violation": 0.020532580354292125,
+   "violation_signed": -0.020532580354292125
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191204_171526",
-   "axr": 5.3914803932409034,
-   "n_bins": 37,
-   "residual_deg": 0.2908436529344556,
-   "residual_after_one_iteration_deg": 0.2338330621127227,
-   "violation": 0.0237009835871413,
-   "violation_signed": -0.019133016467111814
+   "axr": 5.457205768385802,
+   "n_bins": 40,
+   "residual_deg": 0.2999435577113445,
+   "residual_after_one_iteration_deg": 1.2188557515849823,
+   "violation": 0.019958120911158065,
+   "violation_signed": -0.01917132411329568
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191216_213338",
-   "axr": 6.893409678388965,
-   "n_bins": 32,
-   "residual_deg": 0.4838835246683004,
-   "residual_after_one_iteration_deg": 1.486384777262515,
-   "violation": 0.01040774718288848,
-   "violation_signed": -0.003132896311244806
+   "axr": 6.743034652701128,
+   "n_bins": 36,
+   "residual_deg": 0.37123763681347555,
+   "residual_after_one_iteration_deg": 1.1417937019133717,
+   "violation": 0.007216588658984109,
+   "violation_signed": -0.0031409364046504637
   },
   {
    "catalog": "GWTC-3",
    "event": "GW191219_163120",
-   "axr": 44.90339421900335,
-   "n_bins": 28,
-   "residual_deg": 0.7216359361649722,
-   "residual_after_one_iteration_deg": 0.06920465074423987,
-   "violation": 0.012093417916560061,
-   "violation_signed": 0.002461726638424144
+   "axr": 43.96526613766357,
+   "n_bins": 40,
+   "residual_deg": 0.7107378226266405,
+   "residual_after_one_iteration_deg": 0.06564286813815556,
+   "violation": 0.01659124369807266,
+   "violation_signed": 0.009665546950780115
   },
   {
    "catalog": "GWTC-3",
    "event": "GW200115_042309",
-   "axr": 12.944711143749748,
-   "n_bins": 24,
-   "residual_deg": 0.23229576279041453,
-   "residual_after_one_iteration_deg": 0.16518004735542036,
-   "violation": 0.005018042757021793,
-   "violation_signed": 0.0035602248907482927
+   "axr": 13.122488967367401,
+   "n_bins": 40,
+   "residual_deg": 0.21529181161886868,
+   "residual_after_one_iteration_deg": 1.4881597163622757,
+   "violation": 0.006567774552593271,
+   "violation_signed": 0.005365376818888585
   },
   {
    "catalog": "GWTC-3",
    "event": "GW200129_065458",
-   "axr": 3.0692759056403416,
-   "n_bins": 18,
-   "residual_deg": 12.613029400978604,
-   "residual_after_one_iteration_deg": 0.9965440139930593,
-   "violation": 0.15313613759926037,
-   "violation_signed": -0.05699568402126294
+   "axr": 3.064387948893478,
+   "n_bins": 16,
+   "residual_deg": 12.694555854046257,
+   "residual_after_one_iteration_deg": 1.1345199585346393,
+   "violation": 0.1107658018725948,
+   "violation_signed": -0.1107658018725948
   },
   {
    "catalog": "GWTC-3",
    "event": "GW200202_154313",
-   "axr": 6.234085950134351,
-   "n_bins": 34,
-   "residual_deg": 0.33656454528485824,
-   "residual_after_one_iteration_deg": 1.0090115586321247,
-   "violation": 0.012730092151560738,
-   "violation_signed": -0.009681497953692489
+   "axr": 6.201115235007908,
+   "n_bins": 40,
+   "residual_deg": 0.33355657138471884,
+   "residual_after_one_iteration_deg": 1.398521966632444,
+   "violation": 0.009564031023220631,
+   "violation_signed": -0.009394211116342628
   },
   {
    "catalog": "GWTC-3",
    "event": "GW200210_092254",
-   "axr": 20.16946800130695,
-   "n_bins": 29,
-   "residual_deg": 1.1018517900211577,
-   "residual_after_one_iteration_deg": 0.06339353815519644,
-   "violation": 0.020006742586173402,
-   "violation_signed": -0.0004321374366057497
-  },
-  {
-   "catalog": "GWTC-3",
-   "event": "GW200308_173609",
-   "axr": 4.287503954657,
-   "n_bins": 7,
-   "residual_deg": 16.884157032005106,
-   "residual_after_one_iteration_deg": 0.8839274057685316,
-   "violation": 0.2729090649053751,
-   "violation_signed": 0.14101954480899198
+   "axr": 20.78335455735036,
+   "n_bins": 40,
+   "residual_deg": 1.1899912278193483,
+   "residual_after_one_iteration_deg": 0.33701879040603444,
+   "violation": 0.026648401657217193,
+   "violation_signed": 0.011860440551556075
   },
   {
    "catalog": "GWTC-3",
    "event": "GW200316_215756",
-   "axr": 6.75314928099743,
+   "axr": 6.828221269126653,
    "n_bins": 40,
-   "residual_deg": 1.6108314637947956,
-   "residual_after_one_iteration_deg": 0.05360341262996826,
-   "violation": 0.02980963631147334,
-   "violation_signed": -0.0011566647867156316
+   "residual_deg": 1.57506453108536,
+   "residual_after_one_iteration_deg": 0.06840906339795083,
+   "violation": 0.027611243218758106,
+   "violation_signed": -0.0044396035404941515
   },
   {
    "catalog": "GWTC-3",
    "event": "GW200322_091133",
-   "axr": 8.417265053163455,
+   "axr": 8.791193867354501,
    "n_bins": 40,
-   "residual_deg": 5.734825632580879,
-   "residual_after_one_iteration_deg": 0.6522360319414986,
-   "violation": 0.07312813931807674,
-   "violation_signed": 0.029577195312162703
+   "residual_deg": 5.695805191085128,
+   "residual_after_one_iteration_deg": 0.7041345434006985,
+   "violation": 0.06769164607639452,
+   "violation_signed": 0.03036514120639024
   },
   {
    "catalog": "O4a",
    "event": "GW230518_125908",
-   "axr": 20.864002559287034,
-   "n_bins": 26,
-   "residual_deg": 0.324763686969078,
-   "residual_after_one_iteration_deg": 0.2400902262015734,
-   "violation": 0.0074280455675081675,
-   "violation_signed": -0.0002813948233926931
+   "axr": 16.830653929602164,
+   "n_bins": 34,
+   "residual_deg": 0.6065854533912045,
+   "residual_after_one_iteration_deg": 0.021178805881987728,
+   "violation": 0.012953204174108373,
+   "violation_signed": 0.003353377176154869
   },
   {
    "catalog": "O4a",
    "event": "GW230529_181500",
-   "axr": 11.983943038824796,
-   "n_bins": 32,
-   "residual_deg": 0.2557979979267486,
-   "residual_after_one_iteration_deg": 0.7535695690636146,
-   "violation": 0.007731369048199409,
-   "violation_signed": -0.0007739656761755162
+   "axr": 10.366854783946819,
+   "n_bins": 40,
+   "residual_deg": 0.29260952517856254,
+   "residual_after_one_iteration_deg": 1.1185538056940914,
+   "violation": 0.008350705147846917,
+   "violation_signed": 0.00509724555001052
   },
   {
    "catalog": "O4a",
    "event": "GW230605_065343",
-   "axr": 3.9572538395856007,
-   "n_bins": 38,
-   "residual_deg": 2.919843037837154,
-   "residual_after_one_iteration_deg": 0.238903359521629,
-   "violation": 0.04796520571711101,
-   "violation_signed": 0.007203390785556406
+   "axr": 4.012931895666518,
+   "n_bins": 40,
+   "residual_deg": 3.1165986196266715,
+   "residual_after_one_iteration_deg": 0.30551976739855036,
+   "violation": 0.04972581414330015,
+   "violation_signed": 0.004326431945456006
   },
   {
    "catalog": "O4a",
    "event": "GW230627_015337",
-   "axr": 8.316073133809947,
-   "n_bins": 38,
-   "residual_deg": 0.23900110257349638,
-   "residual_after_one_iteration_deg": 0.05599543313695676,
-   "violation": 0.022306619595168952,
-   "violation_signed": -0.021403179633792332
+   "axr": 8.317777340175319,
+   "n_bins": 40,
+   "residual_deg": 0.24990114953237708,
+   "residual_after_one_iteration_deg": 0.46105453528249996,
+   "violation": 0.021645085414911412,
+   "violation_signed": -0.0215181830852833
   },
   {
    "catalog": "O4a",
    "event": "GW230630_234532",
-   "axr": 3.727120980581491,
-   "n_bins": 38,
-   "residual_deg": 1.3183011179800133,
-   "residual_after_one_iteration_deg": 0.07768616982195908,
-   "violation": 0.031816401939857464,
-   "violation_signed": -0.01655431860576425
+   "axr": 3.677784234444584,
+   "n_bins": 40,
+   "residual_deg": 1.1711606780899046,
+   "residual_after_one_iteration_deg": 1.085006348561535,
+   "violation": 0.021262081059419388,
+   "violation_signed": -0.0194618112098231
   },
   {
    "catalog": "O4a",
    "event": "GW230702_185453",
-   "axr": 3.3514693241840128,
-   "n_bins": 34,
-   "residual_deg": 1.8306605049592974,
-   "residual_after_one_iteration_deg": 0.8285195811819221,
-   "violation": 0.05024476584152771,
-   "violation_signed": -0.03767619194214038
+   "axr": 3.4234775830365267,
+   "n_bins": 40,
+   "residual_deg": 1.5868637991070784,
+   "residual_after_one_iteration_deg": 0.2974940136945179,
+   "violation": 0.038248114903609895,
+   "violation_signed": -0.024574702605361765
   },
   {
    "catalog": "O4a",
    "event": "GW230729_082317",
-   "axr": 4.298407908616183,
-   "n_bins": 38,
-   "residual_deg": 1.2877282539574537,
-   "residual_after_one_iteration_deg": 0.1778515362387907,
-   "violation": 0.03089802879190775,
-   "violation_signed": -0.017886244108540013
+   "axr": 4.394130735615992,
+   "n_bins": 40,
+   "residual_deg": 1.256349912899907,
+   "residual_after_one_iteration_deg": 0.8118497331269054,
+   "violation": 0.019589530716972493,
+   "violation_signed": -0.018481047176511767
   },
   {
    "catalog": "O4a",
    "event": "GW230731_215307",
-   "axr": 3.2208455388897788,
-   "n_bins": 35,
-   "residual_deg": 0.12757073056539525,
-   "residual_after_one_iteration_deg": 0.14793585527880282,
-   "violation": 0.05261257046873384,
-   "violation_signed": -0.05245166725289691
+   "axr": 3.3690620274359206,
+   "n_bins": 40,
+   "residual_deg": 0.2168513898688218,
+   "residual_after_one_iteration_deg": 1.3516655958396768,
+   "violation": 0.04376603772692956,
+   "violation_signed": -0.042624612610006024
   },
   {
    "catalog": "O4a",
    "event": "GW230904_051013",
-   "axr": 3.7820480993299643,
-   "n_bins": 36,
-   "residual_deg": 1.4736827142039317,
-   "residual_after_one_iteration_deg": 0.36170621793354485,
-   "violation": 0.02669301691315808,
-   "violation_signed": 0.01035336144702163
+   "axr": 3.9093941105611334,
+   "n_bins": 40,
+   "residual_deg": 1.2734541200746605,
+   "residual_after_one_iteration_deg": 1.3148639364590622,
+   "violation": 0.021136012435052,
+   "violation_signed": 0.007867823175260597
   },
   {
    "catalog": "O4a",
    "event": "GW231018_233037",
-   "axr": 3.623638398469559,
-   "n_bins": 37,
-   "residual_deg": 1.5783606661849205,
-   "residual_after_one_iteration_deg": 0.10768766342104641,
-   "violation": 0.04035890419538396,
-   "violation_signed": -0.030274269369490656
+   "axr": 3.5298319528400914,
+   "n_bins": 40,
+   "residual_deg": 2.317713752004323,
+   "residual_after_one_iteration_deg": 0.5300130036944495,
+   "violation": 0.03289815201237176,
+   "violation_signed": -0.02995557843878064
   },
   {
    "catalog": "O4a",
    "event": "GW231020_142947",
-   "axr": 5.855259305406325,
+   "axr": 5.751729815519136,
    "n_bins": 40,
-   "residual_deg": 0.19083627727027874,
-   "residual_after_one_iteration_deg": 0.3776388288266901,
-   "violation": 0.026456464117753146,
-   "violation_signed": -0.025151791549216908
+   "residual_deg": 0.20298924776648164,
+   "residual_after_one_iteration_deg": 0.4916115837339987,
+   "violation": 0.02402957747873089,
+   "violation_signed": -0.0235513857145207
   },
   {
    "catalog": "O4a",
    "event": "GW231104_133418",
-   "axr": 3.3287208025197317,
-   "n_bins": 37,
-   "residual_deg": 1.4218073029571485,
-   "residual_after_one_iteration_deg": 0.1075668784831123,
-   "violation": 0.04773515184762758,
-   "violation_signed": -0.04615586225455531
+   "axr": 3.3593351003102674,
+   "n_bins": 40,
+   "residual_deg": 1.381856155226643,
+   "residual_after_one_iteration_deg": 1.034859673880959,
+   "violation": 0.04712724693679539,
+   "violation_signed": -0.04712724693679539
   },
   {
    "catalog": "O4a",
    "event": "GW231113_200417",
-   "axr": 4.020142452778339,
-   "n_bins": 37,
-   "residual_deg": 2.3843964549748193,
-   "residual_after_one_iteration_deg": 0.1930576585287156,
-   "violation": 0.034015537583020304,
-   "violation_signed": -0.001159648391987693
+   "axr": 4.073895242255616,
+   "n_bins": 40,
+   "residual_deg": 2.1748059837221945,
+   "residual_after_one_iteration_deg": 0.7416825839765977,
+   "violation": 0.031892097199513,
+   "violation_signed": -0.006065098268290776
   },
   {
    "catalog": "O4a",
    "event": "GW231114_043211",
-   "axr": 5.728225322932666,
-   "n_bins": 25,
-   "residual_deg": 1.4696448027193014,
-   "residual_after_one_iteration_deg": 0.22490573241759648,
-   "violation": 0.03221566355718271,
-   "violation_signed": 0.007673782441694646
+   "axr": 5.86868772977561,
+   "n_bins": 40,
+   "residual_deg": 1.3991263239715295,
+   "residual_after_one_iteration_deg": 1.1560785926494077,
+   "violation": 0.06271693429653605,
+   "violation_signed": 0.04934371895405141
   },
   {
    "catalog": "O4a",
    "event": "GW231118_005626",
-   "axr": 3.3413094381045254,
-   "n_bins": 35,
-   "residual_deg": 6.817781233089505,
-   "residual_after_one_iteration_deg": 0.7762168642361473,
-   "violation": 0.07747239509091397,
-   "violation_signed": -0.032999892891451624
+   "axr": 3.3253650993502797,
+   "n_bins": 40,
+   "residual_deg": 6.724951188788054,
+   "residual_after_one_iteration_deg": 2.1093259207825668,
+   "violation": 0.06485287931742063,
+   "violation_signed": -0.02830563354694727
   },
   {
    "catalog": "O4a",
    "event": "GW231118_090602",
-   "axr": 7.670454268301587,
+   "axr": 7.56131510198953,
    "n_bins": 40,
-   "residual_deg": 0.5759362275880733,
-   "residual_after_one_iteration_deg": 0.3732532807697737,
-   "violation": 0.01674741750631043,
-   "violation_signed": -0.009594827973134002
+   "residual_deg": 0.5415329865266756,
+   "residual_after_one_iteration_deg": 0.2603303489628388,
+   "violation": 0.014773835158362803,
+   "violation_signed": -0.01031816194608654
   },
   {
    "catalog": "O4a",
    "event": "GW231223_075055",
-   "axr": 5.578062094915996,
-   "n_bins": 39,
-   "residual_deg": 1.0278973773188227,
-   "residual_after_one_iteration_deg": 0.38040977203590387,
-   "violation": 0.019101232927628574,
-   "violation_signed": 0.004892700846475225
+   "axr": 5.606623589584487,
+   "n_bins": 40,
+   "residual_deg": 1.215881901686629,
+   "residual_after_one_iteration_deg": 0.775874732865276,
+   "violation": 0.01878448115132736,
+   "violation_signed": 0.00248531143075293
   },
   {
    "catalog": "O4a",
    "event": "GW231223_202619",
-   "axr": 3.258177198714802,
-   "n_bins": 33,
-   "residual_deg": 3.467037268164461,
-   "residual_after_one_iteration_deg": 0.36766006552753083,
-   "violation": 0.044915352098260024,
-   "violation_signed": -0.021669518384770905
+   "axr": 3.260506000659365,
+   "n_bins": 40,
+   "residual_deg": 3.2832612926213187,
+   "residual_after_one_iteration_deg": 0.7473209007196999,
+   "violation": 0.04929429467995782,
+   "violation_signed": -0.034082723518472136
   },
   {
    "catalog": "O4a",
    "event": "GW231224_024321",
-   "axr": 3.2035780394333204,
-   "n_bins": 36,
-   "residual_deg": 0.2994752462156498,
-   "residual_after_one_iteration_deg": 0.3826755884189197,
-   "violation": 0.052193710479138115,
-   "violation_signed": -0.048195505912793556
+   "axr": 3.144110945204298,
+   "n_bins": 40,
+   "residual_deg": 0.39372530672153516,
+   "residual_after_one_iteration_deg": 1.292701213135473,
+   "violation": 0.0532367328504062,
+   "violation_signed": -0.0532367328504062
   },
   {
    "catalog": "O4b",
    "event": "GW240413_022019",
-   "axr": 6.298209127486287,
-   "n_bins": 38,
-   "residual_deg": 0.35691265021768004,
-   "residual_after_one_iteration_deg": 0.5621822552939193,
-   "violation": 0.029712152956122298,
-   "violation_signed": -0.02911873773168614
+   "axr": 6.369841448308633,
+   "n_bins": 40,
+   "residual_deg": 0.5596926197520418,
+   "residual_after_one_iteration_deg": 1.2937396067347322,
+   "violation": 0.026437078278764025,
+   "violation_signed": -0.02533163769541843
   },
   {
    "catalog": "O4b",
    "event": "GW240428_225440",
-   "axr": 4.551921389466815,
-   "n_bins": 37,
-   "residual_deg": 1.261014624504952,
-   "residual_after_one_iteration_deg": 0.3873749536720936,
-   "violation": 0.035722049188179526,
-   "violation_signed": -0.023258543704524095
+   "axr": 4.581977464451395,
+   "n_bins": 40,
+   "residual_deg": 1.2379980485883948,
+   "residual_after_one_iteration_deg": 1.3448605718013482,
+   "violation": 0.030306109276576492,
+   "violation_signed": -0.020844306037827262
   },
   {
    "catalog": "O4b",
    "event": "GW240507_041632",
-   "axr": 4.628855128545548,
-   "n_bins": 25,
-   "residual_deg": 3.915883981792433,
-   "residual_after_one_iteration_deg": 1.5647700156667383,
-   "violation": 0.07575110205506448,
-   "violation_signed": -0.05765396923113827
+   "axr": 4.676669623633093,
+   "n_bins": 40,
+   "residual_deg": 3.6185320123232145,
+   "residual_after_one_iteration_deg": 2.641729688360499,
+   "violation": 0.12400705055058878,
+   "violation_signed": -0.11389355609308194
   },
   {
    "catalog": "O4b",
    "event": "GW240512_024139",
-   "axr": 3.8261049115674406,
-   "n_bins": 37,
-   "residual_deg": 1.3554988179022303,
-   "residual_after_one_iteration_deg": 0.16028457352857117,
-   "violation": 0.03526976441986561,
-   "violation_signed": -0.029132369704554725
+   "axr": 3.8695569655685857,
+   "n_bins": 40,
+   "residual_deg": 1.3678153234848764,
+   "residual_after_one_iteration_deg": 1.2215173042959009,
+   "violation": 0.03653660755876103,
+   "violation_signed": -0.03470428511738094
   },
   {
    "catalog": "O4b",
    "event": "GW240520_213616",
-   "axr": 3.008343075221824,
-   "n_bins": 37,
-   "residual_deg": 2.4890250110805994,
-   "residual_after_one_iteration_deg": 0.11049833763379979,
-   "violation": 0.0392825102096881,
-   "violation_signed": -0.019251115063986912
+   "axr": 3.0846764663810573,
+   "n_bins": 40,
+   "residual_deg": 2.3642136284987316,
+   "residual_after_one_iteration_deg": 0.638708250789108,
+   "violation": 0.031956916994217946,
+   "violation_signed": -0.02327267679673739
   },
   {
    "catalog": "O4b",
    "event": "GW240527_230910",
-   "axr": 7.189247310913493,
-   "n_bins": 39,
-   "residual_deg": 0.5958447069864405,
-   "residual_after_one_iteration_deg": 0.6228820968400441,
-   "violation": 0.01682881811174096,
-   "violation_signed": -0.012244320960331975
+   "axr": 7.01663666875991,
+   "n_bins": 40,
+   "residual_deg": 0.6266420833796644,
+   "residual_after_one_iteration_deg": 0.9199287894692816,
+   "violation": 0.016830928337027568,
+   "violation_signed": -0.014301735299211263
   },
   {
    "catalog": "O4b",
    "event": "GW240530_012417",
-   "axr": 4.605014042666922,
-   "n_bins": 37,
-   "residual_deg": 0.15984348803144144,
-   "residual_after_one_iteration_deg": 0.2355075606042476,
-   "violation": 0.01710957676775687,
-   "violation_signed": 0.0006134322009720902
+   "axr": 4.436898148642945,
+   "n_bins": 40,
+   "residual_deg": 0.17363222215971064,
+   "residual_after_one_iteration_deg": 1.2251840098772107,
+   "violation": 0.011847901778188237,
+   "violation_signed": 0.002446675576950519
   },
   {
    "catalog": "O4b",
    "event": "GW240601_231004",
-   "axr": 3.1950743057066733,
-   "n_bins": 33,
-   "residual_deg": 0.1276944009494514,
-   "residual_after_one_iteration_deg": 3.1528051305993756,
-   "violation": 0.03070445640470027,
-   "violation_signed": -0.02501645989803045
+   "axr": 3.146319439178306,
+   "n_bins": 40,
+   "residual_deg": 0.059254457700376406,
+   "residual_after_one_iteration_deg": 1.7113820575525267,
+   "violation": 0.02213631886417322,
+   "violation_signed": -0.02124626797164298
   },
   {
    "catalog": "O4b",
    "event": "GW240622_004008",
-   "axr": 4.247806999373249,
-   "n_bins": 39,
-   "residual_deg": 0.5402719167857981,
-   "residual_after_one_iteration_deg": 0.08045247759713448,
-   "violation": 0.024405664922279476,
-   "violation_signed": -0.018440616861281577
+   "axr": 4.282403898263288,
+   "n_bins": 40,
+   "residual_deg": 0.6024826416180247,
+   "residual_after_one_iteration_deg": 0.7344115623149321,
+   "violation": 0.019274016022882375,
+   "violation_signed": -0.019046049033260317
   },
   {
    "catalog": "O4b",
    "event": "GW240627_131622",
-   "axr": 3.9502978832205096,
-   "n_bins": 39,
-   "residual_deg": 0.24330587035450435,
-   "residual_after_one_iteration_deg": 0.17737715077981875,
-   "violation": 0.02093024675315426,
-   "violation_signed": -0.014878831182978112
+   "axr": 3.9804468640126704,
+   "n_bins": 40,
+   "residual_deg": 0.6018403814216242,
+   "residual_after_one_iteration_deg": 0.6405146623809514,
+   "violation": 0.01940147704295216,
+   "violation_signed": -0.018949404736946507
   },
   {
    "catalog": "O4b",
    "event": "GW240629_145256",
-   "axr": 3.4288808578184877,
-   "n_bins": 39,
-   "residual_deg": 1.2846933012097281,
-   "residual_after_one_iteration_deg": 0.053066890548137735,
-   "violation": 0.04075453998470605,
-   "violation_signed": -0.03551192933191544
+   "axr": 3.444782746314098,
+   "n_bins": 40,
+   "residual_deg": 1.6070569346282468,
+   "residual_after_one_iteration_deg": 0.7566288205601097,
+   "violation": 0.04205874790962015,
+   "violation_signed": -0.041192067541393165
   },
   {
    "catalog": "O4b",
    "event": "GW240825_055146",
-   "axr": 3.8795794170609734,
-   "n_bins": 38,
-   "residual_deg": 1.144613954334261,
-   "residual_after_one_iteration_deg": 0.27364522769497057,
-   "violation": 0.037663360150414694,
-   "violation_signed": -0.02656778843295038
+   "axr": 3.846369488501976,
+   "n_bins": 40,
+   "residual_deg": 1.3736526896554722,
+   "residual_after_one_iteration_deg": 0.5991292937582671,
+   "violation": 0.02836842066997292,
+   "violation_signed": -0.026262443558329428
   },
   {
    "catalog": "O4b",
    "event": "GW240830_211120",
-   "axr": 3.5434886730160295,
-   "n_bins": 38,
-   "residual_deg": 2.01474752902314,
-   "residual_after_one_iteration_deg": 0.16347274007367218,
-   "violation": 0.03200363741532869,
-   "violation_signed": -0.010082992403760226
+   "axr": 3.5281351731091575,
+   "n_bins": 40,
+   "residual_deg": 2.670602161719472,
+   "residual_after_one_iteration_deg": 0.3800512136453449,
+   "violation": 0.03585852738344897,
+   "violation_signed": -0.016906750488443933
   },
   {
    "catalog": "O4b",
    "event": "GW240910_103535",
-   "axr": 6.1022160912880485,
-   "n_bins": 38,
-   "residual_deg": 0.0731012302822478,
-   "residual_after_one_iteration_deg": 0.2577510413278503,
-   "violation": 0.031193768570106813,
-   "violation_signed": -0.030753547368241395
+   "axr": 6.035111853494047,
+   "n_bins": 40,
+   "residual_deg": 0.021295274186797997,
+   "residual_after_one_iteration_deg": 0.7212681148097602,
+   "violation": 0.028563535763682982,
+   "violation_signed": -0.028563535763682982
   },
   {
    "catalog": "O4b",
    "event": "GW240915_001357",
-   "axr": 5.106959388046097,
-   "n_bins": 36,
-   "residual_deg": 0.014124770258746366,
-   "residual_after_one_iteration_deg": 0.5837474295664151,
-   "violation": 0.026979687299182372,
-   "violation_signed": -0.024372449800273914
+   "axr": 5.011013806648295,
+   "n_bins": 40,
+   "residual_deg": 0.013798278508886597,
+   "residual_after_one_iteration_deg": 1.536753818796484,
+   "violation": 0.026821011479323177,
+   "violation_signed": -0.026209241464805126
   },
   {
    "catalog": "O4b",
    "event": "GW240915_105151",
-   "axr": 5.519021854045549,
-   "n_bins": 37,
-   "residual_deg": 0.7690095361768385,
-   "residual_after_one_iteration_deg": 0.40184187201177224,
-   "violation": 0.019159388907089965,
-   "violation_signed": -0.0034139364610564506
+   "axr": 5.507073085713072,
+   "n_bins": 40,
+   "residual_deg": 0.8696860592528992,
+   "residual_after_one_iteration_deg": 1.4650271590672617,
+   "violation": 0.019128858592407923,
+   "violation_signed": -0.0033434331182614274
   },
   {
    "catalog": "O4b",
    "event": "GW240920_073424",
-   "axr": 3.612679854413321,
-   "n_bins": 36,
-   "residual_deg": 1.1812778193755094,
-   "residual_after_one_iteration_deg": 0.10478545676423323,
-   "violation": 0.03542383537835621,
-   "violation_signed": -0.015952139459251488
+   "axr": 3.580759913697068,
+   "n_bins": 40,
+   "residual_deg": 1.1375515776368843,
+   "residual_after_one_iteration_deg": 0.3890629445648983,
+   "violation": 0.027363030873373606,
+   "violation_signed": -0.01263578898595307
   },
   {
    "catalog": "O4b",
    "event": "GW240921_201835",
-   "axr": 5.511235096379332,
-   "n_bins": 20,
-   "residual_deg": 2.330490744288369,
-   "residual_after_one_iteration_deg": 0.41167754909503174,
-   "violation": 0.06334929923157404,
-   "violation_signed": 0.046046811279021424
+   "axr": 5.630440385214587,
+   "n_bins": 40,
+   "residual_deg": 2.3715949893808386,
+   "residual_after_one_iteration_deg": 3.276590078199945,
+   "violation": 0.07127229500109596,
+   "violation_signed": 0.06391064837390863
   },
   {
    "catalog": "O4b",
    "event": "GW240922_142106",
-   "axr": 3.8314740751356853,
-   "n_bins": 37,
-   "residual_deg": 1.3958689456935929,
-   "residual_after_one_iteration_deg": 0.1597739793841697,
-   "violation": 0.043518158216628695,
-   "violation_signed": -0.03939905190854803
+   "axr": 3.7879650099899185,
+   "n_bins": 40,
+   "residual_deg": 1.3864056318832638,
+   "residual_after_one_iteration_deg": 0.9740016161088363,
+   "violation": 0.04185435633528921,
+   "violation_signed": -0.04180186833384353
   },
   {
    "catalog": "O4b",
    "event": "GW240925_005809",
-   "axr": 5.913981046650167,
-   "n_bins": 34,
-   "residual_deg": 2.120190230720965,
-   "residual_after_one_iteration_deg": 0.3688521877673736,
-   "violation": 0.06191647086194016,
-   "violation_signed": -0.05500426416510443
+   "axr": 6.501564543647212,
+   "n_bins": 40,
+   "residual_deg": 1.6039404043590935,
+   "residual_after_one_iteration_deg": 1.0615580478029472,
+   "violation": 0.05058865830874803,
+   "violation_signed": -0.04099978023605519
   },
   {
    "catalog": "O4b",
    "event": "GW240930_035959",
-   "axr": 4.319114011200239,
-   "n_bins": 28,
-   "residual_deg": 2.696408759951595,
-   "residual_after_one_iteration_deg": 0.11454491556665403,
-   "violation": 0.04796262816265906,
-   "violation_signed": 0.01953555811882119
+   "axr": 4.304732394497918,
+   "n_bins": 40,
+   "residual_deg": 2.894978799889543,
+   "residual_after_one_iteration_deg": 0.818260668648378,
+   "violation": 0.0769507508928747,
+   "violation_signed": 0.05372899182223701
   },
   {
    "catalog": "O4b",
    "event": "GW241009_084816",
-   "axr": 3.0959329220470715,
-   "n_bins": 38,
-   "residual_deg": 0.28311982510732037,
-   "residual_after_one_iteration_deg": 0.23634900256035962,
-   "violation": 0.03537666125555207,
-   "violation_signed": -0.017739786501028417
+   "axr": 3.044584818902337,
+   "n_bins": 40,
+   "residual_deg": 0.7722499171197228,
+   "residual_after_one_iteration_deg": 1.0700059880342963,
+   "violation": 0.024685093798982094,
+   "violation_signed": -0.02050722031933344
   },
   {
    "catalog": "O4b",
    "event": "GW241011_233834",
-   "axr": 29.27502963996147,
-   "n_bins": 34,
-   "residual_deg": 0.09096599721704024,
-   "residual_after_one_iteration_deg": 0.08647479749930653,
-   "violation": 0.00293659322969751,
-   "violation_signed": -0.0005056109421679721
+   "axr": 29.343802710967605,
+   "n_bins": 40,
+   "residual_deg": 0.07561112228387401,
+   "residual_after_one_iteration_deg": 0.43302620589420826,
+   "violation": 0.002063178647990674,
+   "violation_signed": -0.0007468684826483032
   },
   {
    "catalog": "O4b",
    "event": "GW241102_124058",
-   "axr": 8.321497081883994,
-   "n_bins": 36,
-   "residual_deg": 0.31803597574864284,
-   "residual_after_one_iteration_deg": 0.3145887261685516,
-   "violation": 0.019769997057409287,
-   "violation_signed": -0.018644212790552755
+   "axr": 8.247920566358433,
+   "n_bins": 40,
+   "residual_deg": 0.5658519012116869,
+   "residual_after_one_iteration_deg": 1.3773520503334282,
+   "violation": 0.016789939822212312,
+   "violation_signed": -0.015677164660820336
   },
   {
    "catalog": "O4b",
    "event": "GW241109_115924",
-   "axr": 4.787369132881563,
-   "n_bins": 36,
-   "residual_deg": 0.5819150442709713,
-   "residual_after_one_iteration_deg": 0.7232803976906155,
-   "violation": 0.023686781324263436,
-   "violation_signed": -0.017917805810675674
+   "axr": 4.835091365959454,
+   "n_bins": 40,
+   "residual_deg": 0.9057499151354307,
+   "residual_after_one_iteration_deg": 1.5159054624275257,
+   "violation": 0.023811132011687854,
+   "violation_signed": -0.023809116701016413
   },
   {
    "catalog": "O4b",
    "event": "GW241110_124123",
-   "axr": 6.613586538938271,
-   "n_bins": 33,
-   "residual_deg": 1.2086333748572429,
-   "residual_after_one_iteration_deg": 0.6757011028994384,
-   "violation": 0.022534223955194305,
-   "violation_signed": -0.00018913880972739952
+   "axr": 6.519969362489334,
+   "n_bins": 40,
+   "residual_deg": 1.3164918255402824,
+   "residual_after_one_iteration_deg": 0.790442205979673,
+   "violation": 0.026700755519865674,
+   "violation_signed": 0.007561270615454732
   },
   {
    "catalog": "O4b",
    "event": "GW241114_235258",
-   "axr": 3.55827856405732,
-   "n_bins": 35,
-   "residual_deg": 0.8063237036609507,
-   "residual_after_one_iteration_deg": 0.678029803560662,
-   "violation": 0.02568651788170009,
-   "violation_signed": -0.018120068575197
+   "axr": 3.6679637352522994,
+   "n_bins": 40,
+   "residual_deg": 0.5927028345759027,
+   "residual_after_one_iteration_deg": 1.5522858918902784,
+   "violation": 0.017315297855967113,
+   "violation_signed": -0.016927541251365037
   },
   {
    "catalog": "O4b",
    "event": "GW241130_110422",
-   "axr": 3.8473469511366982,
-   "n_bins": 38,
-   "residual_deg": 1.4867428862416148,
-   "residual_after_one_iteration_deg": 0.1253456563405848,
-   "violation": 0.03342262343581032,
-   "violation_signed": -0.02389667587008205
+   "axr": 3.7898159110969143,
+   "n_bins": 40,
+   "residual_deg": 1.6386408440564821,
+   "residual_after_one_iteration_deg": 0.6987142906091321,
+   "violation": 0.02722529073118794,
+   "violation_signed": -0.02612026420895371
   },
   {
    "catalog": "O4b",
    "event": "GW241225_042553",
-   "axr": 4.788079133434738,
-   "n_bins": 39,
-   "residual_deg": 2.361289146550206,
-   "residual_after_one_iteration_deg": 0.03970010595983808,
-   "violation": 0.037268908352147016,
-   "violation_signed": -0.023121868107302487
+   "axr": 4.890907763607683,
+   "n_bins": 40,
+   "residual_deg": 2.2790430502174672,
+   "residual_after_one_iteration_deg": 0.5325731587088285,
+   "violation": 0.037877606389258245,
+   "violation_signed": -0.02435422177998534
   },
   {
    "catalog": "O4b",
    "event": "GW241231_054133",
-   "axr": 5.685597127330755,
+   "axr": 5.577859164231567,
    "n_bins": 40,
-   "residual_deg": 0.7670271349646782,
-   "residual_after_one_iteration_deg": 0.3615350514035356,
-   "violation": 0.033439056925693364,
-   "violation_signed": -0.03315850756281273
+   "residual_deg": 0.8653853390144093,
+   "residual_after_one_iteration_deg": 0.40820207297059596,
+   "violation": 0.032514102545118564,
+   "violation_signed": -0.032514102545118564
   },
   {
    "catalog": "O4b",
    "event": "GW250118_055802",
-   "axr": 3.867762501063177,
-   "n_bins": 33,
-   "residual_deg": 0.8598947509345862,
-   "residual_after_one_iteration_deg": 4.1955088086224634,
-   "violation": 0.02781350223046965,
-   "violation_signed": 0.015666236549418535
+   "axr": 3.79054256930562,
+   "n_bins": 40,
+   "residual_deg": 1.303752266281947,
+   "residual_after_one_iteration_deg": 1.3624751532720438,
+   "violation": 0.023222027343041473,
+   "violation_signed": 0.01475670793856806
   },
   {
    "catalog": "O4b",
    "event": "GW250119_190238",
-   "axr": 3.213360424253957,
-   "n_bins": 31,
-   "residual_deg": 2.3021341396648722,
-   "residual_after_one_iteration_deg": 0.7436256199257514,
-   "violation": 0.09794515518513078,
-   "violation_signed": 0.09794515518513078
+   "axr": 3.2766849127835993,
+   "n_bins": 40,
+   "residual_deg": 2.32575966618208,
+   "residual_after_one_iteration_deg": 1.4328824584382573,
+   "violation": 0.1237381560654212,
+   "violation_signed": 0.1237381560654212
   }
  ]
 }
