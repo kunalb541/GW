@@ -64,7 +64,7 @@ verification. Do not cite them as such.
       independent HDF5 pass exactly for O4a and O4b.
 - [x] **Adversarial-review handoff**: [`docs/HANDOFF_ADVERSARIAL_REVIEW.md`](docs/HANDOFF_ADVERSARIAL_REVIEW.md)
       — what changed, and a ranked list of where the paper is most likely to break. Start there.
-- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (13 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
+- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (12 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
 - [x] Figures: three artifact-backed panels in the manuscript, captions generated from their sidecars.
 - [x] Claim-discipline pass on §6 and §8–9 (2026-07-21, prose only) — **one pass, by the author who wrote
       the prose**. §1–5 have been through six audits; these have had one. Still the least-examined sections
