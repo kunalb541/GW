@@ -48,6 +48,8 @@ the current manuscript. See [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_REA
       E72 physics-blind null (no source class breaks the law); E78/E79 geometric GR-exponent test
       (0.628±0.009±0.016, GR-consistent at 1.5σ; a naive 3σ false alarm caught by the coherence lens);
       E73 information anatomy; E74 GW250114 no-hair. Math foundations + novelty in `docs/LITERATURE.md`.
+- [x] **Adversarial-review handoff**: [`docs/HANDOFF_ADVERSARIAL_REVIEW.md`](docs/HANDOFF_ADVERSARIAL_REVIEW.md)
+      — what changed, and a ranked list of where the paper is most likely to break. Start there.
 - [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (12 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
 - [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
 - [ ] Manuscript: figures, full author list, journal formatting, referee-verification of remaining citations.
