@@ -54,15 +54,20 @@ verification. Do not cite them as such.
       self-contained — preregs/, src/, results/ (numbers of record), reports/, 17 tests, fetch scripts.
       All files byte-identical copies; originals remain in cosmo2.
 - [x] GW lab notebook: [`paper/gw_lab_notebook.pdf`](paper/gw_lab_notebook.pdf) (26 entries; new this cycle: E71, E72, E73, E74, E78, E79).
-- [x] **New results (this cycle):** E71 curved law reconfirmed out-of-sample on GWTC-5/O4b (1.22°, 3rd catalog);
-      E72 physics-blind null (no source class breaks the law); E78/E79 geometric GR-exponent test
-      (0.628±0.009±0.016, GR-consistent at 1.5σ; a naive 3σ false alarm caught by the coherence lens);
-      E73 information anatomy; E74 GW250114 no-hair. Math foundations + novelty in `docs/LITERATURE.md`.
+- [x] **New results (this cycle):** E71 curved law reconfirmed out-of-sample on GWTC-5/O4b (1.22°, 3rd
+      catalog); E72 physics-blind null; E78/E79 geometric GR-exponent diagnostic (0.628±0.009±0.016,
+      GR-consistent at 1.5σ; a naive 3σ false alarm, demoted). E92–E100: reproducible gate regeneration,
+      thickness and self-consistency mechanisms, framework audit, frames/bands.
+- [x] **Posterior cache rebuilt exactly (E94).** It previously drew 4000 samples per row *with
+      replacement*, which never used the full sample at any cap and left up to 0.54° of scatter in every
+      downstream number. It now stores all 23.1 M samples, 972/972 rows in full, and reproduces an
+      independent HDF5 pass exactly for O4a and O4b.
 - [x] **Adversarial-review handoff**: [`docs/HANDOFF_ADVERSARIAL_REVIEW.md`](docs/HANDOFF_ADVERSARIAL_REVIEW.md)
       — what changed, and a ranked list of where the paper is most likely to break. Start there.
-- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (12 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
-- [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
-- [ ] Manuscript: figures, full author list, journal formatting, referee-verification of remaining citations.
+- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (13 pp; **every** number in the paper — abstract, text, table, captions — is a macro generated from a committed artifact by `src/build_paper_numbers.py`; none is typed by hand).
+- [x] Figures: three artifact-backed panels in the manuscript, captions generated from their sidecars.
+- [ ] Manuscript: journal formatting; claim-discipline pass on §6 and §8–9 (never audited for claim
+      strength, only for citations); upgrade the two GWTC catalog preprints to journal refs when published.
 
 ## Claim status (read before citing any number)
 
@@ -94,11 +99,13 @@ catalogs*, not independent experiments.
   ```
   python3 src/e94_build_posterior_cache.py
   ```
-  This takes **about 5 minutes locally** (one HDF5 pass, ~284 s measured) and **requires the downloaded
+  This takes **about 2 minutes locally** (one HDF5 pass, ~104 s measured) and **requires the downloaded
   PE files** to be present under `data/`.
-- The cache is the single provenance source for the gate batteries: `src/e92`, `src/e93`, `src/e95` and
-  `src/e96` read it and perform **no HDF5 access of their own**. Without it they will not run.
-- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (158 tests).
+- The cache is the single provenance source for the gate batteries: `src/e92`, `src/e93`, `src/e95`,
+  `src/e96`, `src/e97`, `src/e98` and `src/e100` read it and perform **no HDF5 access of their own**.
+  Without it they will not run. It performs **no subsampling** — every usable sample is stored (~572 MB,
+  gitignored), so a cache-backed number is a full-sample number.
+- Contract tests are data-free and run anywhere: `python3 -m pytest tests/ -q` (160 tests).
 
 ## Layout (cosmo2 conventions)
 
@@ -119,9 +126,9 @@ GW/
 
 Start with [`docs/WORKFLOW.md`](docs/WORKFLOW.md) (the locked-prereg battery cycle + the
 GW-specific rules learned the hard way), [`docs/TESTING.md`](docs/TESTING.md) (run: `python3 -m
-pytest tests/ -q`; 136 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
+pytest tests/ -q`; 160 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
 state, data routes, next steps), and [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md)
-(every source pinned with record numbers). Next free experiment number: **E100**.
+(every source pinned with record numbers). Next free experiment number: **E101**.
 
 ## License
 

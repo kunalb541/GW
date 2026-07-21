@@ -1,8 +1,8 @@
 # EXTERNAL READER PACKET
 
-**Repo** <https://github.com/kunalb541/GW> · **state handed off at the commit shown by `git log -1`** (this packet is
+**Repo** <https://github.com/kunalb541/GW> · **state handed off at commit `c167e27`** (this packet is
 committed immediately after; it changes no analysis) · **PDF** [`paper/manuscript.pdf`](../paper/manuscript.pdf),
-13 pp · 158 contract tests, all passing.
+13 pp · 160 contract tests, all passing.
 
 Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4447-6325).
 
@@ -107,11 +107,11 @@ python3 src/build_paper_numbers.py                # every result number in the p
 
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 
-python3 -m pytest tests/ -q                       # 158 tests, data-free, run anywhere
+python3 -m pytest tests/ -q                       # 160 tests, data-free, run anywhere
 ```
 
 **Time/resource budget:** ~58 GB download (hours, network-bound); ~5 min cache build; everything
-downstream is seconds. The 158 tests need no data and run in ~1 min.
+downstream is seconds. The 160 tests need no data and run in ~1 min.
 
 ## Checklist for an external reader
 
@@ -133,7 +133,7 @@ downstream is seconds. The 158 tests need no data and run in ~1 min.
       and confirm they share a commit — i.e. the lock is *not* publicly timestamped, unlike E71's.
 - [ ] **Hunt for remaining overclaims.** Search the PDF for `predict`, `independent`,
       `test of general relativity`, `coverage`, `invariant`. Each surviving instance should be either a
-      denial or narrowly scoped — as of `73229a0` every `coverage` and `invariant` hit is a denial, and
+      denial or narrowly scoped — as of `c167e27` every `coverage` and `invariant` hit is a denial, and
       the three `test of general relativity` hits are the title-free disclaimers in §1 and §7. Report any
       that are not. (Use word boundaries: a naive search for `proves` matches *improves*, which is how
       this checklist item was first written and is a false positive, not a finding.)

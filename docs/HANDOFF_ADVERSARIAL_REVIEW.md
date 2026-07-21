@@ -1,7 +1,7 @@
 # HANDOFF — for adversarial review (round 3)
 
-**Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Head:** see `git log -1` (this file is not a place to hard-code a hash)
-**Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 158, all passing ·
+**Date:** 2026-07-21 · **Repo:** <https://github.com/kunalb541/GW> · **Branch:** `main` · **Head:** `c167e27`
+**Paper:** [`paper/manuscript.pdf`](../paper/manuscript.pdf), 13 pp · **Tests:** 160, all passing ·
 **Generated macros:** 120 from 15 artifacts
 
 This document exists to be attacked. The previous external review returned **Major Revision / Not Yet
@@ -138,13 +138,22 @@ Things that moved as a result, all of which deserve scrutiny:
   provenance and its `full_sample_reference` block is the independent check used above. Do not read its
   verdict as current — and tell me if leaving it in the repo unrelabelled is too confusing.
 
-### 2. §6 and §8–9 have never been claim-audited
+### 2. §6 and §8–9 — now claim-audited once, which is not the same as clean
 
-`CITATION_VERIFICATION.md` states it outright: the coherence section and the two Context sections predate
-all the gate work and were reviewed for **citation integrity only, never for claim strength**. §1–5 have
-been through five audits; these three have been through none. They are labelled exploratory/Context, but
-that labelling has not been tested against the prose. **This is unexamined territory — start here if §1–5
-proves hard.**
+These sections predate all the gate work and had been reviewed for **citation integrity only**. A
+claim-discipline pass has now been done (prose only, no new compute), which changed three things:
+
+- §6's outlier-atlas null now states its own power limitation — a null on $n=32$ events bounds a large
+  physical dependence rather than excluding one. It previously read as a clean "no physical axis survives".
+- §6's `3σ` was a hand-typed literal in a paper where every other number is generated; it is now a macro,
+  and the surviving correlate carries its ρ and FDR q.
+- §8 claimed to map "what each detection measured". It is a forward-model computation, so it now says what
+  the model *implies* each detection measured.
+
+**One pass by the same author who wrote the prose is weak evidence.** §1–5 have been through six audits;
+these have had one, by me, today. Treat them as the least-examined part of the paper and read them
+adversarially — particularly §6's claim that coherence can diagnose systematics at all, which is argued
+rather than demonstrated, and §8's status as Context that nonetheless occupies a full section.
 
 ### 3. The circularity objection may not be fully answered
 
@@ -192,8 +201,13 @@ lines, not a re-fit. **Check that I have not accidentally made a failure look li
 2. **Attack the Mc-invariance claim.** If `ψ_curve` really is independent of chirp mass, is the
    "curved *chirp-mass* law" framing still honest? Is the permutation null testing the right thing now
    that we know only q enters? (I believe yes — it permutes q — but argue it.)
-3. **Attack the cache.** Recompute any headline number under a different seed and see how much it moves.
-   `E99_SEEDS` is the entry point; `src/e94_build_posterior_cache.py` has `N_SAMP = 4000`, `SEED = 94`.
+3. **Attack the cache.** It no longer subsamples — `N_SAMP = None` in
+   `src/e94_build_posterior_cache.py`, and the manifest reports 972 of 972 rows stored in full — so there
+   is no seed to vary and no resampling noise left to find. The attack is therefore on the *claim of
+   exactness*, not on stability: pick an event, read its posterior straight from the HDF5 file, and check
+   the cached arrays are identical rather than merely close. `tests/test_paper_numbers.py` asserts the
+   no-bootstrap property and agreement with the independent full-sample pass; try to find a row where
+   that agreement is coincidental.
 4. **Attack the guard.** `tests/test_paper_numbers.py::test_no_generated_value_is_also_hardcoded` skips
    values shorter than 4 characters, so a hand-typed `1.5` or `3.3` could still slip in. Is that hole
    exploitable in practice? Find a number in the PDF that is *not* macro-backed.
@@ -237,7 +251,7 @@ python3 src/build_manuscript_figures.py      # captions from sidecars
 python3 src/build_paper_numbers.py           # every number -> paper/numbers.tex
 
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
-python3 -m pytest tests/ -q                  # 158 tests, data-free
+python3 -m pytest tests/ -q                  # 160 tests, data-free
 ```
 
 `results/paper_macro_sources.json` is the machine-readable macro → value → artifact → json-path map for

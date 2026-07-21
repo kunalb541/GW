@@ -12,7 +12,8 @@ So: pay the cost ONCE. This extracts every quantity the gates need, for EVERY wa
 file (not only the preferred group), in both source and detector frames, and writes a single .npz.
 Downstream gates then run from the cache with no HDF5 access at all.
 
-Cached per (catalog, event, group): subsampled aligned arrays m1/m2/q (source and detector frame),
+Cached per (catalog, event, group): COMPLETE aligned arrays m1/m2/q (source and detector frame) --
+no subsampling, see N_SAMP below --
 median chirp masses, and network optimal SNR where available. Samples are ALIGNED sample-by-sample so
 that bootstraps can resample the measured axis and the curve inputs jointly (the committed
 `load_event` does not align q with the finite-mass mask -- that mismatch is a real trap).

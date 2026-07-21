@@ -112,8 +112,20 @@ rewrite. Both removed from the bibliography.
   argument actually needs. **Open.**
 - Transtrum et al. 2015 supports the stiff/sloppy concept only; E98 measured that our own data does not
   support the hyperribbon geometry, and the manuscript says so.
-- §6 (coherence) and §8–9 (information anatomy, GW250114) were reviewed for citation integrity only. Their
-  prose predates the gate work and has not been re-audited for claim strength.
+- §6 (coherence) and §8–9 (information anatomy, GW250114) were originally reviewed for **citation
+  integrity only**. A **claim-discipline pass** has since been done (2026-07-21, prose only, no new
+  compute), and three things changed:
+  1. §6's outlier-atlas null now states its own weakness — it is a null on $n=32$ events, so it bounds a
+     large physical dependence rather than excluding one. It previously read as a clean "no physical axis
+     survives" with no power statement.
+  2. §6's `3σ` was a hand-typed literal in a paper where every other result number is generated; it is now
+     the `\ExpNaiveSigma` macro, and the surviving atlas correlate carries its ρ and FDR q.
+  3. §8 said the anatomy is "a map of what each detection measured". It is a forward-model computation, so
+     it now says what the model *implies* each detection measured. The disclaimer that followed was already
+     correct; the sentence it followed was not.
+
+  §9 (GW250114) needed no change: it is labelled Context, its ringdown numbers are attributed to other
+  groups, and our own retracted analysis is disclosed in it.
 
 
 ## Data and software citations (added 2026-07-21)

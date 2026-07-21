@@ -17,6 +17,7 @@
   }
  },
  "by_seed": {
+  "_describes": "RETIRED 4000-sample bootstrap cache -- historical",
   "94": {
    "GWTC-3": {
     "n": 29,
@@ -89,6 +90,7 @@
   }
  },
  "by_draw_size": {
+  "_describes": "RETIRED 4000-sample bootstrap cache -- historical",
   "2000": {
    "GWTC-3": {
     "n": 29,
@@ -133,6 +135,7 @@
   }
  },
  "summary": {
+  "_describes": "RETIRED 4000-sample bootstrap cache -- historical",
   "GWTC-3": {
    "full_sample": 0.8016783105049257,
    "n_elong_full": 28,
@@ -162,15 +165,30 @@
   }
  },
  "verdict": {
-  "max_abs_bias_deg": 0.05695403822717826,
-  "max_seed_spread_deg": 0.5399801008908582,
-  "fit_for_purpose": false,
-  "statement": "The cache is a bootstrap resample. Its headline score differs from the full-sample value by up to 0.06 deg and moves by up to 0.54 deg across seeds. Any number quoted from the cache must be labelled as such, and the LOCKED out-of-sample scores must continue to be quoted from the full-sample E67/E71 artifacts, not from the cache."
+  "applies_to": "the CURRENT cache (src/e94_build_posterior_cache.py, N_SAMP=None)",
+  "fit_for_purpose": true,
+  "current_cache": {
+   "subsampling": "NONE -- every usable sample stored",
+   "rows_stored_exactly": "972 of 972",
+   "samples_stored": 23145241,
+   "resampling_noise_deg": 0.0,
+   "seed_dependence": "none -- the default path does not use the generator",
+   "agreement_with_independent_hdf5_pass_deg": {
+    "O4a": 0.0,
+    "O4b": 0.0,
+    "GWTC-3": 0.08
+   },
+   "gwtc3_note": "the 0.08 deg gap is one extra event from a preferred-waveform-group convention, not a sampling effect"
+  },
+  "retired_cache": {
+   "applies_to": "the RETIRED scheme (4000 samples per row drawn WITH replacement). Historical only.",
+   "fit_for_purpose": false,
+   "max_abs_bias_deg": 0.05695403822717826,
+   "max_seed_spread_deg": 0.5399801008908582,
+   "statement": "The cache is a bootstrap resample. Its headline score differs from the full-sample value by up to 0.06 deg and moves by up to 0.54 deg across seeds. Any number quoted from the cache must be labelled as such, and the LOCKED out-of-sample scores must continue to be quoted from the full-sample E67/E71 artifacts, not from the cache.",
+   "defect": "the draw was min(n_samp, len(idx)) indices WITH replacement, so it bootstrapped even when the cap exceeded the sample count; it never used the full sample at any setting and its noise did not decay as the cap grew (O4a read 1.08/1.33/1.38 at caps 2000/4000/8000)"
+  },
+  "statement": "The RETIRED 4000-sample bootstrap cache FAILED this audit and was replaced. The CURRENT cache stores every sample exactly, so it carries no resampling noise by construction, and it reproduces the independent full-sample HDF5 pass exactly for O4a and O4b. The measurements in by_seed/by_draw_size/summary below all describe the RETIRED scheme and are kept as the evidence that motivated the fix; full_sample_reference is cache-independent and remains the check the current cache was verified against."
  },
- "SUPERSEDED": {
-  "date": "2026-07-21",
-  "status": "This audit measured the RETIRED cache scheme (4000 samples per row drawn WITH replacement). Its verdict.fit_for_purpose=false is what prompted the fix, and is NOT a statement about the current cache.",
-  "what_changed": "src/e94_build_posterior_cache.py now performs no subsampling: every usable sample is stored (23.1M samples, 972/972 rows in full), so cache-backed numbers are full-sample numbers and carry no resampling noise.",
-  "still_valid": "full_sample_reference: computed by reading the HDF5 files directly, independent of the cache. It is the check the rebuilt cache was verified against -- O4a and O4b agree exactly."
- }
+ "scope_note": "This audit measured the RETIRED cache scheme (4000 samples per row drawn WITH replacement). Its verdict.fit_for_purpose=false is what prompted the fix, and is NOT a statement about the current cache."
 }

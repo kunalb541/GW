@@ -336,16 +336,19 @@ waveform group differently, which is a selection convention rather than a sampli
 If the geometry is measurement optics, then \emph{departures} from it are informative. We use two such
 departures diagnostically, and we are careful about what that licenses.
 
-First, a physics-blind ``outlier atlas'': ranking the elongated O4b events by their curve residual and
-correlating against nine pre-declared axes (precession $\chi_p$, aligned spin $\chi_{\rm eff}$, mass ratio,
+First, a physics-blind ``outlier atlas'': ranking the $\AtlasN$ elongated O4b events by their curve
+residual and correlating against nine pre-declared axes (precession $\chi_p$, aligned spin $\chi_{\rm eff}$, mass ratio,
 redshift, signal-to-noise ratio, chirp mass, total mass, secondary mass, and waveform-family disagreement)
 with Benjamini--Hochberg control and a partial correlation removing the axis-ratio confound, \emph{no
 physical axis} survives. The only surviving correlate is waveform-model disagreement --- a measurement
-systematic --- with a sign indicating that the curve tracks the waveform \emph{ensemble} consensus better
-than any single waveform tracks another.
+systematic ($\rho=\AtlasWfRho$, $q=\AtlasWfQ$) --- with a sign indicating that the curve tracks the
+waveform \emph{ensemble} consensus better than any single waveform tracks another. This is a null result
+on $\AtlasN$ events, and we state its weakness plainly: at that size the analysis has little power
+against modest correlations, so it is evidence that no \emph{large} physical dependence is present, not
+that none exists. It bounds the effect; it does not exclude it.
 
-Second, the geometric exponent fit of Section~\ref{sec:gr} shows an apparent $3\sigma$ offset that we do
-not interpret as physics.
+Second, the geometric exponent fit of Section~\ref{sec:gr} shows an apparent $\ExpNaiveSigma\sigma$
+offset that we do not interpret as physics.
 
 \textbf{What licenses that second conclusion is not coherence by itself.} Coherence across analyses can
 diagnose shared modelling or systematic structure, because a systematic common to every event will appear
@@ -400,8 +403,9 @@ ratio (1PN) and spin (1.5PN) across all $\AnatomyN$ real O4a+O4b events, the ord
 holds universally: the chirp mass is always determined earliest ($\sim35$~Hz), spin latest, and the
 frequency separation --- the anatomy's ``richness'' --- is a monotonic function of total mass (Spearman
 $\AnatomySpearman$), widest for light, long-inspiral systems and compressed for heavy ones that merge immediately in
-band. This is a frequency-resolved, per-event map of what each detection measured and when. It is computed
-\emph{from} the waveform model rather than measured from strain --- the monotonic ordering is therefore a
+band. This is a frequency-resolved, per-event map of what the waveform model \emph{implies} each detection
+measured, and when --- not a measurement of what it did. It is computed \emph{from} the model rather than
+from strain --- the monotonic ordering is therefore a
 property of the model, not an empirical finding, and the Spearman value of $\AnatomySpearman$ reflects that
 determinism rather than a statistical result. A fully data-driven version (re-analysing loud events in frequency
 slices and comparing empirical to GR-predicted information accumulation) is left to future work.
