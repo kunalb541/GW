@@ -1,0 +1,60 @@
+{
+ "figure": "fig2a_posterior_geometry_examples",
+ "role": "explanatory / secondary -- NOT a main-claim panel",
+ "caption_guidance": "Examples of the posterior geometry and its reconstruction. This panel illustrates; it does not establish a mechanism. E96 supports finite thickness out of sample but does NOT establish arc variation, so no thickness-adjusted axis is drawn.",
+ "provenance": {
+  "cache": "results/e94_posterior_cache.npz",
+  "manifest": "results/e94_posterior_cache_manifest.json",
+  "hdf5_accessed": false
+ },
+ "axr_min": 3.0,
+ "high_axr_threshold": 8.0,
+ "n_elongated_considered": 81,
+ "panels": [
+  {
+   "panel": "clean success (high elongation)",
+   "selection_rule": "min curve error among elongated events with axr >= 8.0",
+   "event": "GW241011_233834",
+   "catalog": "O4b",
+   "waveform_group": "C00:SEOBNRv5PHM",
+   "axr": 29.27502963996147,
+   "curve_err_deg": 0.09096599721704024,
+   "tangent_err_deg": 0.79128843053374,
+   "n_samples_plotted": 4000,
+   "thickness_adjusted_drawn": false
+  },
+  {
+   "panel": "typical",
+   "selection_rule": "curve error closest to the median over elongated events (1.028 deg)",
+   "event": "GW231223_075055",
+   "catalog": "O4a",
+   "waveform_group": "C00:Mixed",
+   "axr": 5.578062094915996,
+   "curve_err_deg": 1.0278973773188227,
+   "tangent_err_deg": 6.603459291919364,
+   "n_samples_plotted": 4000,
+   "thickness_adjusted_drawn": false
+  },
+  {
+   "panel": "worst case",
+   "selection_rule": "max curve error over elongated events",
+   "event": "GW200308_173609",
+   "catalog": "GWTC-3",
+   "waveform_group": "C01:Mixed",
+   "axr": 4.287503954657,
+   "curve_err_deg": 16.884157032005106,
+   "tangent_err_deg": 23.851074765693625,
+   "n_samples_plotted": 1073,
+   "thickness_adjusted_drawn": false
+  }
+ ],
+ "recorded_but_not_plotted": {
+  "tangent_beats_curve_fraction_all_elongated": 0.16,
+  "tangent_beats_curve_fraction_axr_ge_8": 0.308,
+  "note": "at extreme elongation the tangent's disadvantage shrinks and it sometimes wins (Gate B2). The two highest-axr events in the catalog are such cases. They are not plotted here, but the fractions are recorded so the figure is not read as implying the curve always wins."
+ },
+ "outputs": [
+  "figures/fig2a_posterior_geometry_examples.png",
+  "figures/fig2a_posterior_geometry_examples.pdf"
+ ]
+}
