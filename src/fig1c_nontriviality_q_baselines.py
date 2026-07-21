@@ -127,9 +127,8 @@ def build():
     fig.legend(handles=leg_handles, loc="lower center", ncol=3, frameon=False, fontsize=8.5,
                bbox_to_anchor=(0.5, 0.005))
 
-    fig.suptitle("Substituting any other event's $q$ marginal destroys the reconstruction",
-                 fontsize=10.5, color=INK, y=0.97)
-    fig.subplots_adjust(left=0.19, right=0.97, top=0.87, bottom=0.30)
+    # No suptitle: the LaTeX caption carries the description in the manuscript.
+    fig.subplots_adjust(left=0.19, right=0.97, top=0.95, bottom=0.30)
 
     os.makedirs(FIGDIR, exist_ok=True)
     outs = []

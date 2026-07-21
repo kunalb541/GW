@@ -133,9 +133,9 @@ def build():
         Line2D([], [], marker="o", color=CURVE_C, ls="none", ms=6.5, mec="white", mew=0.6,
                label="constant-$\\mathcal{M}_c$ curve reconstruction")],
         loc="lower center", ncol=2, frameon=False, fontsize=9, bbox_to_anchor=(0.5, -0.02))
-    fig.suptitle("Elongated events (axis ratio $\\geq$ 3): the curve removes most of the tangent's "
-                 "orientation error", fontsize=10.5, color=INK, y=0.99)
-    fig.tight_layout(rect=[0, 0.06, 1, 0.95])
+    # No suptitle: in the manuscript the LaTeX caption carries the description, and an internal
+    # title would duplicate it (and here would duplicate an interpretation as well).
+    fig.tight_layout(rect=[0, 0.06, 1, 0.99])
 
     os.makedirs(FIGDIR, exist_ok=True)
     outs = []

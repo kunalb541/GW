@@ -178,9 +178,8 @@ def build():
         Line2D([], [], color=CURVE_C, lw=1.4, alpha=0.55, label="constant-$\\mathcal{M}_c$ curve"),
         Line2D([], [], marker="o", color=SAMPLE_C, ls="none", ms=6, label="posterior samples")],
         loc="lower center", ncol=5, frameon=False, fontsize=8.3, bbox_to_anchor=(0.5, 0.0))
-    fig.suptitle("Examples of the posterior geometry and its reconstruction  "
-                 "(illustrative; equal aspect)", fontsize=10.5, color=INK, y=0.99)
-    fig.subplots_adjust(left=0.07, right=0.98, top=0.79, bottom=0.22, wspace=0.28)
+    # No suptitle: the LaTeX caption carries the description in the manuscript.
+    fig.subplots_adjust(left=0.07, right=0.98, top=0.86, bottom=0.22, wspace=0.28)
 
     os.makedirs(FIGDIR, exist_ok=True)
     outs = []
