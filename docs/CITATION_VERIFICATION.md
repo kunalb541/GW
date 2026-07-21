@@ -92,7 +92,19 @@ rewrite. Both removed from the bibliography.
 - Cutler & Flanagan 1994 and Poisson & Will 1995 are used only for the textbook statement that
   $\mathcal{M}_c$ is the best-measured mass combination. Identity verified; not re-read at full text, since
   no specific numerical or figure content is claimed from them.
-- Transtrum et al. 2015 and Hastie & Stuetzle 1989 support conceptual framing (sloppy directions; principal
-  curve vs linear PCA). Identity verified; no specific claim is drawn from their contents.
+- **Hastie & Stuetzle 1989 — STATUS CHANGED (external review).** This entry previously said "no specific
+  claim is drawn from their contents". That is no longer true: since E97 the manuscript uses their
+  **definition** of a principal curve by self-consistency, $f(t)=\mathbb{E}[X\mid t_f(X)=t]$, as a
+  testable property, and reports a measurement against it. The definition was checked against the paper
+  (Hastie & Stuetzle, *JASA* **84**, 502, 1989; self-consistency is their defining property, not a
+  derived one). The citation now carries a specific, load-bearing claim and must be verified as such.
+- **Bernstein–von Mises — USED WITHOUT A CITATION (external review).** Section 3 argues that a Gaussian
+  posterior's principal axis *is* the local tangent, so the tangent error measures the error of the
+  asymptotic Gaussian limit. That invokes the Bernstein–von Mises theorem by content while citing nothing.
+  Either a standard reference must be added or the sentence must be rephrased to claim only the
+  elementary geometric fact (a Gaussian's principal axis is its covariance eigenvector), which is what the
+  argument actually needs. **Open.**
+- Transtrum et al. 2015 supports the stiff/sloppy concept only; E98 measured that our own data does not
+  support the hyperribbon geometry, and the manuscript says so.
 - §6 (coherence) and §8–9 (information anatomy, GW250114) were reviewed for citation integrity only. Their
   prose predates the gate work and has not been re-audited for claim strength.

@@ -9,7 +9,14 @@ manuscript. The organizing thesis: the *uncertainty geometry* of GW measurements
 predictable from first principles, usable as a systematics detector, and transferable as a
 diagnostic of cross-experiment consistency.
 
-## The four results forming the paper's spine
+## What the paper now claims
+
+**Note.** This section previously listed four results as the paper's spine. Following an internal
+submission-gate audit the manuscript was narrowed to the component-mass reconstruction alone; the PTA
+and spectral-siren results below remain in the repository as separate batteries but are **not** part of
+the current manuscript. See [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_READER_PACKET.md).
+
+### Retained as the paper's claim
 
 1. **The curved chirp-mass law** (E40 → E65 → E67 → E71). Two one-dimensional summaries of a
    compact-binary mass posterior — its median chirp mass and its mass-ratio marginal — **reconstruct**
@@ -41,7 +48,7 @@ diagnostic of cross-experiment consistency.
       E72 physics-blind null (no source class breaks the law); E78/E79 geometric GR-exponent test
       (0.628±0.009±0.016, GR-consistent at 1.5σ; a naive 3σ false alarm caught by the coherence lens);
       E73 information anatomy; E74 GW250114 no-hair. Math foundations + novelty in `docs/LITERATURE.md`.
-- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (5 pp; all numbers verified against results of record).
+- [x] **Manuscript draft**: [`paper/manuscript.pdf`](paper/manuscript.pdf) (11 pp; every headline number regenerates from a committed artifact).
 - [ ] Figures (curved-law gallery, coherence battery, PTA (A,γ) plane, siren lever budget).
 - [ ] Manuscript: figures, full author list, journal formatting, referee-verification of remaining citations.
 
@@ -100,9 +107,9 @@ GW/
 
 Start with [`docs/WORKFLOW.md`](docs/WORKFLOW.md) (the locked-prereg battery cycle + the
 GW-specific rules learned the hard way), [`docs/TESTING.md`](docs/TESTING.md) (run: `python3 -m
-pytest tests/ -q`; 108 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
+pytest tests/ -q`; 136 data-free contract tests), [`docs/HANDOFF.md`](docs/HANDOFF.md) (current
 state, data routes, next steps), and [`docs/DATA_AVAILABILITY.md`](docs/DATA_AVAILABILITY.md)
-(every source pinned with record numbers). Next free experiment number: **E97**.
+(every source pinned with record numbers). Next free experiment number: **E100**.
 
 ## License
 

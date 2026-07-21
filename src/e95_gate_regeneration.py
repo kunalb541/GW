@@ -95,7 +95,9 @@ def gate_A(prim, rng):
                           "min": float(null.min()), "p05": float(np.percentile(null, 5)),
                           "p95": float(np.percentile(null, 95)),
                           "own_percentile": float(100 * np.mean(null < own)),
-                          "own_below_all": bool(own < null.min())}}
+                          "own_below_all": bool(own < null.min()),
+                          # raw draws stored so "below all N" is auditable, not just asserted
+                          "draws": [float(x) for x in null]}}
     return res
 
 
@@ -112,7 +114,8 @@ def gate_A_cross_family(rec, byev):
         rows.append(dict(cat=c, aa=aa, ab=ab, pa=pa, pb=pb,
                          mca=float(np.median(da["mcs"])), qa=da["q"].astype(float),
                          mcb=float(np.median(db["mcs"])), qb=db["q"].astype(float),
-                         m1a=float(np.median(da["m1s"])), m2a=float(np.median(da["m2s"]))))
+                         m1a=float(np.median(da["m1s"])), m2a=float(np.median(da["m2s"])),
+                         m1b=float(np.median(db["m1s"])), m2b=float(np.median(db["m2s"]))))
     el = [r for r in rows if r["aa"] >= AXR_MIN and r["ab"] >= AXR_MIN]
     m = lambda v: float(np.median(v))
     return {"n_both": len(rows), "n_elong": len(el),
@@ -121,6 +124,7 @@ def gate_A_cross_family(rec, byev):
             "A_to_B": m([abs(adiff(curve_psi(r["mca"], r["qa"]), r["pb"])) for r in el]),
             "B_to_A": m([abs(adiff(curve_psi(r["mcb"], r["qb"]), r["pa"])) for r in el]),
             "tangent_A_to_B": m([abs(adiff(tangent_angles(r["m1a"], r["m2a"])[0], r["pb"])) for r in el]),
+            "tangent_B_to_A": m([abs(adiff(tangent_angles(r["m1b"], r["m2b"])[0], r["pa"])) for r in el]),
             "family_axis_disagreement": m([abs(adiff(r["pa"], r["pb"])) for r in el]),
             "note": ("the family disagreement is a REFERENCE SCALE, not an error floor; the two "
                      "families are separately inferred from the same strain, not independent experiments")}

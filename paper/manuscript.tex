@@ -104,7 +104,13 @@ Spearman$(|\Delta\psi_{\rm tangent}|,\mathrm{axr})$ & $-0.42$ & $-0.40$ & $-0.69
 $N$ events (elongated) & --- & $86\ (19)$ & $104\ (32)$ \\
 \hline
 \end{tabular}
-\caption{The curved chirp-mass reconstruction, locked before data and scored out-of-sample. The curve
+\caption{\textbf{Locked scores, computed on the full released posterior samples.} These are the
+preregistered out-of-sample numbers and are quoted throughout the abstract and text. They are
+\emph{not} identical to the values in Figures~\ref{fig:1b}--\ref{fig:1c}, which are recomputed from a
+fixed resampled extract of the same posteriors (1.32$^\circ$ and 1.00$^\circ$ for O4a and O4b) so that
+every downstream analysis shares one deterministic input; see Sec.~\ref{sec:repro}. The two differ by
+up to $0.2^\circ$, which is resampling noise, not disagreement, and we report both rather than
+silently reconciling them. The curve
 lands within $\sim1.2^\circ$ of the measured orientation on elongated events in two later, disjoint event
 catalogs. Note the sign of the last row: the tangent's error \emph{decreases} as elongation grows
 (Spearman $\approx-0.4$ to $-0.7$), i.e.\ orientation becomes better defined for more elongated
@@ -145,12 +151,15 @@ re-drawing it moved the O4a figure from $3.04^\circ$ to $8.62^\circ$.
 
 A sharper check addresses the circularity concern directly. Using waveform family A's median chirp mass and
 $q$ marginal to reconstruct family B's \emph{separately inferred} principal axis --- never touching B's own
-geometry --- gives $2.08^\circ$ (A$\to$B) and $2.78^\circ$ (B$\to$A) over $64$ events elongated in both,
-against a $1.99^\circ$ reference scale set by how far the two families' measured axes sit from each other.
-The reconstruction therefore transfers between independent inferences of the same event and is not an
-artifact of reusing one posterior's Monte Carlo noise. We call $1.99^\circ$ a reference scale, not an error
-floor: a reconstruction could in principle denoise a posterior functional and beat the raw A--B
-disagreement.
+geometry --- gives $2.25^\circ$ (A$\to$B) and $2.93^\circ$ (B$\to$A) over $64$ events elongated in both,
+against a $2.03^\circ$ reference scale set by how far the two families' measured axes sit from each other,
+and against tangent baselines of $3.50^\circ$ and $6.20^\circ$ in the same two directions. The
+reconstruction therefore transfers between separately inferred posteriors of the same event and is not an
+artifact of reusing one posterior's Monte Carlo noise. These are \emph{not} independent inferences,
+however: the two waveform families analyse the same strain with shared calibration and priors, so the test
+excludes reuse of one posterior's sampling noise, not correlated modelling error common to both. We call
+$2.03^\circ$ a reference scale, not an error floor: a reconstruction could in principle denoise a
+posterior functional and beat the raw A--B disagreement.
 
 \section{Why the geometry is structured}
 The structure is expected. The inspiral phase is dominated at leading (0PN) order by $\mathcal{M}_c$, so
@@ -163,10 +172,12 @@ eigenvalue ratio has a median of 3.3, with 29\% of events exceeding one order of
 3\% exceeding two. Sloppiness in that sense is a property of the full parameter space, which a
 two-dimensional marginal cannot establish.
 
-There is a sharper way to say what the tangent term is. A Gaussian posterior's principal axis \emph{is}
-the local tangent, so the tangent error measures exactly the error made by the asymptotic Gaussian
-(Bernstein--von Mises) limit in which the posterior tends to a normal distribution with the inverse
-Fisher covariance. On elongated events that error is $5.02^\circ$, against $1.03^\circ$ once the arc is
+There is a sharper way to say what the tangent term is. The principal axis of a Gaussian is the leading
+eigenvector of its covariance, which for a likelihood expanded quadratically about its peak is the local
+tangent to the degeneracy; the tangent error therefore measures exactly the error incurred by treating
+the posterior as Gaussian. (We claim only this elementary geometric fact. The asymptotic statement that
+posteriors approach a Gaussian with inverse-Fisher covariance is standard but is not what the argument
+needs, and we do not lean on it.) On elongated events that error is $5.02^\circ$, against $1.03^\circ$ once the arc is
 accounted for: the Gaussian limit is wrong about orientation by roughly a factor of 5 at realistic
 signal-to-noise. That gap --- not the asymptotic statement --- is what this paper measures and corrects. The distinction between the tangent and
 the curve is the distinction between linear principal-component analysis and a \emph{principal curve}
@@ -221,11 +232,15 @@ median $0.78^\circ$ --- but this is not uniform across catalogs: it is significa
 ($p<0.001$) and in O4a ($p=0.019$), and \emph{not} significant in the newest and largest catalog, O4b
 ($p=0.38$). We report it per catalog for that reason.
 
-The residual has a mathematical explanation. The per-event self-consistency violation defined above
+The residual is strongly tracked by a measurable geometric quantity. The per-event
+self-consistency violation defined above
 correlates strongly with the per-event orientation residual: Spearman $\rho=0.68$ ($p=5e-12$) at our primary
 projection grid, and $\rho$ between $0.64$ and $0.68$ across a sweep of grid resolutions, so the result
 does not rest on that tuning choice. This is a correlation between two independently measured quantities
-rather than a fit, so it cannot be inflated by added model freedom. Replacing the curve by those
+rather than a fit, so it cannot be inflated by added model freedom. We say \emph{tracks} rather than
+\emph{explains}: both quantities derive from the same posterior and the same curve, so the correlation
+localises the residual within the geometry without establishing a causal mechanism, and the corresponding
+correction does not pass out-of-sample. Replacing the curve by those
 conditional means --- one Hastie--Stuetzle iteration --- reduces the residual in-sample, but we do not
 claim it as an improved reconstruction: the improvement is grid-sensitive (median $0.35$--$1.08^\circ$
 across the sweep), and in a cross-waveform-family test it improves in both directions but reaches
@@ -270,6 +285,17 @@ monotonically and smoothly across thresholds from $1.5$ to $10$.
 
 Figure~\ref{fig:2a} shows what the numbers describe, for three events chosen by stated rules including the
 worst case in the sample.
+
+\subsection{Reproducibility and the cached extract}
+\label{sec:repro}
+Every figure and every derived number in Sections~\ref{sec:nontrivial}--\ref{sec:frames} is computed from
+a single cached extract of the released posteriors, so that all downstream analyses share one
+deterministic input and can be regenerated in seconds without re-reading the parameter-estimation files.
+The extract draws a fixed number of samples per event \emph{with replacement}; it is therefore a bootstrap
+resample of the released samples rather than a subsample of them, and quantities computed from it carry a
+corresponding resampling noise. The locked out-of-sample scores in Table~\ref{tab:curve} are quoted from
+the original full-sample analyses and are not affected. Where a cached number and a full-sample number
+both exist we give both.
 
 \section{Coherence as a diagnostic --- and its limits}
 If the geometry is measurement optics, then \emph{departures} from it are informative. We use two such
@@ -410,8 +436,12 @@ model-predicted, not strain-extracted. (7) A first-principles derivation of the 
 from the Fisher information remains open. (8) Waveform-model choice contributes a per-event orientation
 scatter of a few degrees, the dominant per-event systematic.
 
-\paragraph{Data availability.} All data are public: GWTC-4.0 PE (Zenodo 16053484) and GWTC-5.0 PE (Zenodo
-20276106, 20348006). Analysis code, locked pre-registrations, per-event results, and a reproducibility
+\paragraph{Data availability.} All data are public. The analysis uses three releases: GWTC-2.1/3 PE
+(GWOSC/Zenodo), GWTC-4.0/O4a PE (Zenodo 16053484) and GWTC-5.0/O4b PE (Zenodo 20276106, 20348006);
+record numbers for all three are in the accompanying data-availability documentation. The authors'
+working copy reaches the GWTC-2.1/3 files through a symbolic link to a separate local repository; a fresh
+checkout must place those files directly, or GWTC-3 will be absent from every table without raising an
+error. Analysis code, locked pre-registrations, per-event results, and a reproducibility
 notebook accompany this work.
 
 \begin{thebibliography}{99}
