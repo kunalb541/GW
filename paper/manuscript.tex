@@ -73,8 +73,12 @@ enough to be used as a diagnostic.
 The ingredients are individually familiar. That inference problems possess a few stiff and many sloppy
 directions is the content of the sloppy-model framework \citep{Transtrum2015}; that the principal axis of
 data spread along a curved arc differs from the local tangent is the distinction between linear principal
-component analysis and a \emph{principal curve} \citep{HastieStuetzle1989}. The published work closest to
-ours stops short in identifiable ways. \citet{Hannam2013} state that ``the component masses consistent with
+component analysis and a \emph{principal curve} \citep{HastieStuetzle1989}. A complementary strategy is
+to remove such degeneracies by reparameterisation rather than describe them: \citet{Makinen2026} detect
+degenerate parameter combinations from the Fisher information and search for symbolic coordinate
+transformations that flatten it, which reduces the simulation cost of neural posterior estimation. We do
+the opposite, characterising the degeneracy in the standard mass coordinates in which posteriors are
+released and used. The published work closest to ours stops short in identifiable ways. \citet{Hannam2013} state that ``the component masses consistent with
 the signal lie roughly along a line of constant chirp mass'' and label chirp mass on their confidence
 regions, but make no quantitative statement about orientation. \citet{Ohme2013} apply principal component
 analysis to post-Newtonian phase coefficients rather than to $(m_1,m_2)$ posterior samples, predict no
@@ -150,9 +154,17 @@ computational pipeline and the provenance of every number reported here.
 \subsection{Out-of-sample performance}
 \label{sec:oos}
 On elongated events the median mismatch $|\psi_{\rm curve}-\psi_{\rm meas}|$ is
-$\LockedOaCurveElong^\circ$ on O4a and $\LockedObCurveElong^\circ$ on O4b. Table~\ref{tab:curve} collects
-the locked scores together with the tangent baseline and the replication statistics; Figure~\ref{fig:1b}
-shows the per-event comparison behind those medians, drawing each elongated event as a line joining its
+$\LockedOaCurveElong^\circ$ on O4a and $\LockedObCurveElong^\circ$ on O4b. These are the locked values
+and are used in every headline statement. The figures recompute them independently from the cached
+extract of Appendix~\ref{app:repro}: the recomputation agrees on O4a ($\CacheOaCurve^\circ$), and on O4b
+gives $\CacheObCurve^\circ$ against the locked $\LockedObCurveElong^\circ$, the two differing only in
+which waveform group is taken as preferred for a small number of events. We report both rather than
+reconcile them.
+
+Table~\ref{tab:curve} collects the locked scores together with the tangent baseline and the replication
+statistics. Every cell is a locked, full-sample value except the derivation-catalog win fraction, for
+which no locked value exists; that one is computed from the cached extract and is marked in the caption.
+Figure~\ref{fig:1b} shows the per-event comparison behind those medians, drawing each elongated event as a line joining its
 tangent error to its curve error so that the full distribution is visible rather than a summary.
 
 \begin{table}[htbp]
@@ -172,10 +184,7 @@ $N$ events, elongated & --- & $\LockedOaNElong$ & $\LockedObNElong$ \\
 \end{tabular}
 \caption{Locked out-of-sample scores, computed on the full released posterior samples. The reconstruction
 lands within $\sim\!1.2^\circ$ of the measured orientation on elongated events in two later, disjoint
-catalogs. The figures recompute these values independently from the cached extract
-(Appendix~\ref{app:repro}) and agree: $\CacheOaCurve^\circ$ on O4a against the locked
-$\LockedOaCurveElong^\circ$, and $\CacheObCurve^\circ$ on O4b against $\LockedObCurveElong^\circ$, the
-latter differing only in which waveform group is taken as preferred. The tangent error \emph{decreases}
+catalogs. The tangent error \emph{decreases}
 with elongation (final row), i.e.\ orientation becomes better defined for more elongated posteriors;
 normalised arc length behaves the same way, correlating negatively with the tangent error in all three
 catalogs ($\rho=\ArcTr,\ArcOa,\ArcOb$). \textsuperscript{$\dagger$}No locked win fraction exists for the
@@ -237,7 +246,9 @@ the raw disagreement between families.
 The $\sim\!1^\circ$ residual is not sampling noise. Bootstrapping the released samples --- drawing one
 index set and recomputing \emph{both} the measured axis and the prediction inputs from it, so that their
 correlated Monte Carlo errors cancel --- gives a median resolution of $\ResidSigma^\circ$ on the
-difference, against a median discrepancy of $\ResidMedian^\circ$: a ratio of $\ResidRatio$. The
+difference, against a median discrepancy of $\ResidMedian^\circ$. Because the bootstrap is computed per
+event, the appropriate summary is the median of the per-event ratios, $\ResidRatio$; this is not the
+ratio of the two medians just quoted, which is a different statistic. The
 constant-$\mathcal{M}_c$ curve is an accurate but imperfect description of posterior orientation, and the
 gap is a property of the model rather than of the sample count.
 
@@ -537,12 +548,19 @@ This is independent work carried out entirely on public data. The author is not 
 LIGO--Virgo--KAGRA Collaboration; the Collaboration has not reviewed this
 analysis and bears no responsibility for its conclusions.
 
-\paragraph{Use of AI assistants.} Large language models were used in this work: Anthropic's Claude
-(Opus 4.8) to implement the analysis code and figure pipelines and to draft the manuscript, and
-OpenAI's Codex for independent adversarial review of the analysis and text. The author defined the research
-questions, registered every preregistered decision before the corresponding data were examined, verified
-all reported results against the committed artifacts, and is solely responsible for the content. The
-models are tools, not authors.
+\paragraph{Use of AI assistants.} Large language models were used in this work and are disclosed here
+in the form journal policy now requires. \emph{Tools:} Anthropic's Claude (Opus 4.8, via Claude Code) and
+OpenAI's Codex. \emph{How they assisted:} Claude implemented the analysis code and the figure and
+number-generation pipelines and drafted the manuscript; Codex performed independent adversarial review of
+both the analysis and the text over repeated rounds. \emph{How they were directed:} by the author, through
+task-level instructions specifying the measurement to be made, the preregistered decision rules to be
+respected, and the artifacts against which each claim was to be checked; neither model had discretion over
+what was claimed or which results were reported. \emph{How output was verified:} every number in this
+paper is regenerated from a committed machine-readable artifact rather than transcribed
+(Appendix~\ref{app:repro}), a contract test suite fails if manuscript and artifacts disagree, and the
+author reviewed each result before inclusion. The author defined the research questions, registered every
+preregistered decision before the corresponding data were examined, and is
+solely responsible for the content of this paper. The models are tools, not authors.
 
 The author thanks the Collaboration for releasing the
 parameter-estimation samples on which the analysis wholly depends, and the open-source scientific Python
@@ -561,6 +579,8 @@ I.~W.~Harry, \emph{Astrophys.\ J.\ Lett.} \textbf{766}, L14 (2013).
 \emph{Phys.\ Rev.\ D} \textbf{88}, 042002 (2013).
 \bibitem[Fairhurst et al.(2023)]{Fairhurst2023} S.~Fairhurst, C.~Hoy, R.~Green, C.~Mills, and
 S.~A.~Usman, \emph{Phys.\ Rev.\ D} \textbf{108}, 082006 (2023).
+\bibitem[Makinen et al.(2026)]{Makinen2026} T.~L.~Makinen, D.~J.~Bartlett, N.~Jeffrey, and
+B.~D.~Wandelt, \emph{The Degeneracy Distillery}, arXiv:2606.23838 (2026).
 \bibitem[Transtrum et al.(2015)]{Transtrum2015} M.~K.~Transtrum et al.,
 \emph{J.\ Chem.\ Phys.} \textbf{143}, 010901 (2015).
 \bibitem[Hastie \& Stuetzle(1989)]{HastieStuetzle1989} T.~Hastie and W.~Stuetzle,

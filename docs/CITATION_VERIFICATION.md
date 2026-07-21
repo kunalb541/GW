@@ -134,6 +134,24 @@ rewrite. Both removed from the bibliography.
   groups, and our own retracted analysis is disclosed in it.
 
 
+## Makinen et al. 2026 — added 2026-07-21, and a caution about how it reached us
+
+`arXiv:2606.23838`, *The Degeneracy Distillery* (Makinen, Bartlett, Jeffrey, Wandelt). **Verified at the
+arXiv abstract page**: title, author list, submission date and abstract content all confirmed.
+
+It was suggested by an external LLM review as work that "attacks the same $\mathcal{M}_c$/$q$ problem
+... so the posterior comes out round instead of stretched into the usual chirp-mass banana." **That
+characterisation is wrong.** The paper is a general method: it detects degenerate parameter combinations
+from the Fisher information and searches for symbolic coordinate transformations that flatten it, with
+neural posterior estimation as a downstream beneficiary. It is not about gravitational-wave parameter
+estimation and does not concern the chirp-mass/mass-ratio degeneracy specifically.
+
+The citation was still worth adding — reparameterising a degeneracy away is a genuine complement to
+characterising it in place — but it is cited for what it does, not for what the review said it does.
+Recorded here because the failure mode is instructive: the reference existed and the identifier was
+correct, so a citation check that stops at "does this paper exist?" would have passed it through with a
+false description attached.
+
 ## Data and software citations (added 2026-07-21)
 
 The manuscript previously had **no acknowledgments section and no data citation at all**, which is a

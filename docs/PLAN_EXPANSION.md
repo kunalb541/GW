@@ -5,7 +5,7 @@
 
 ## Why this document exists
 
-The manuscript is 13 pp and reports one result. The repository holds **45 batteries with committed
+The manuscript is 14 pp and reports one result. The repository holds **45 batteries with committed
 results, 27 preregistrations and 36 reports**; **16 batteries** feed the paper. The author's reaction on
 reading the PDF was that the paper looks thin relative to the work, and that reaction is correct for two
 independent reasons — one of which is a defect and one of which is a scoping decision that was never
@@ -26,7 +26,7 @@ then left unpublished. 19 batteries sit in that category.
 ## Phase 1 — deepen the current paper (no new compute)
 
 Every number below is already measured and committed. This phase adds no analysis; it promotes measured
-material from prose into tables and figures. Expected effect: 13 pp → ~18–20 pp, and the sweeps become
+material from prose into tables and figures. Expected effect: 14 pp → ~18–20 pp, and the sweeps become
 inspectable rather than asserted.
 
 **Hard rule: every new number must come through `src/build_paper_numbers.py`.** For a table of many rows,
@@ -103,6 +103,27 @@ Lower priority, and each is a separate paper rather than a section:
    preregistered, it is post-hoc and must be labelled so, as Gate E already is.
 4. **Do not let Phase 1 restore the audit prose.** The readability review was right that the paper read
    defensively. The fix is to show the sweeps as tables, not to re-narrate every caveat in the text.
+
+## Phase 0 — two things that outrank everything above
+
+Raised by an external review of the built PDF, and both are cheap relative to their weight.
+
+**0a. "Why does this matter" is asserted, not demonstrated.** The paper shows the arc beats the tangent
+by a factor of $\GaussRatio$, then says the correction is essentially free for applications that use
+posterior orientation. Nothing shows that an orientation error of this size changes a downstream
+conclusion. Two routes: find one concrete consumer (a population/hierarchical pipeline or a low-latency
+tool that uses a Gaussian approximation to the single-event posterior) and show the correction moves
+something; or promote Sec 5.3, which is arguably the most novel result in the paper and is currently
+undersold — across nine pre-declared physical axes the only surviving correlate of the residual is
+waveform-model disagreement, which is a usable systematics diagnostic. The second is cheaper and uses
+work already done. **This is the first thing a referee will ask and the paper currently has no answer.**
+
+**0b. The O4a preregistration is not independently timestamped.** Limitation (iv) says so honestly, which
+means half the out-of-sample claim rests on the author's word. A dated third-party deposit (Zenodo, OSF)
+of the O4a prereg *as it stood*, with the existing private history as supporting evidence, would convert
+this from an admission into a verifiable fact. This is the single item most likely to decide whether a
+skeptical referee treats the central claim as established or asserted. It requires no analysis, only a
+deposit — but it must be honest about the deposit date being later than the original lock.
 
 ## Open question for the author
 
