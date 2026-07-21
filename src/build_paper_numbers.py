@@ -23,6 +23,10 @@ import json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "paper/numbers.tex")
+# Machine-readable macro -> value -> source map, alongside the .tex comments. Borrowed from the
+# sibling cosmo repo's paper/make_macros.py, which emits outputs/data/macro_sources.json: a greppable,
+# diffable provenance record is far more useful to a referee than comments inside a .tex file.
+MAP = os.path.join(ROOT, "results/paper_macro_sources.json")
 
 E67 = "e67_gwtc4_curved_law"
 E71 = "e71_gwtc5_curved_law"
@@ -283,7 +287,16 @@ def main():
                  "% committed artifact. A number that cannot be sourced this way must not appear in the paper.\n"
                  "% Provenance for each macro (artifact :: json path):\n")
         fh.write("\n".join(prov) + "\n\n" + "\n".join(lines) + "\n")
+    rows = [{"macro": m, "value": fmt(derived(pa[1:], cache[a]) if pa.startswith("@") else dig(cache[a], pa), h),
+              "artifact": f"results/{a}_results.json", "path": pa, "format": h}
+             for m, a, pa, h in SPEC]
+    with open(MAP, "w") as fh:
+        json.dump({"generator": "src/build_paper_numbers.py",
+                   "note": ("Provenance for every number in paper/manuscript.tex. Each macro is the only "
+                            "way its value may appear in the paper; see tests/test_paper_numbers.py."),
+                   "n_macros": len(rows), "macros": rows}, fh, indent=1)
     print(f"wrote {os.path.relpath(OUT, ROOT)}: {len(lines)} macros from {len(cache)} artifacts")
+    print(f"wrote {os.path.relpath(MAP, ROOT)}")
 
 
 if __name__ == "__main__":

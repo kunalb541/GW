@@ -109,8 +109,10 @@ def test_known_wrong_numbers_do_not_return(wrong, why):
 def test_data_citation_and_acknowledgment_present():
     """LVK/GWOSC data carries attribution obligations; a missing acknowledgment is a real defect."""
     m = read(MANUSCRIPT)
-    for token in ["Gravitational Wave Open Science Center", "\\citep{GWOSC}",
+    for token in ["Gravitational Wave Open Science Center (gwosc.org)", "GWOSCthree",
                   "\\citep{GWTC3}", "\\citep{GWTC21}", "Acknowledgments",
+                  "GWOSCfourA", "GWOSCfourB",   # O4a/O4b data papers -- we USE O4 data
+                  "not a member of the", "bears no responsibility",
                   "Creative Commons", "numpy", "scipy", "matplotlib"]:
         assert token in m, f"data-citation/acknowledgment element missing: {token}"
 

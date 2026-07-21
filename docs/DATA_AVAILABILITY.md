@@ -12,7 +12,17 @@ embargoed products and generates no new observational data. Three releases enter
 | GWTC-4.0 / O4a PE | Zenodo **16053484** | the Zenodo record (see caveat below) | locked out-of-sample test 1 |
 | GWTC-5.0 / O4b PE | Zenodo **20276106**, **20348006** | the Zenodo records (see caveat below) | locked out-of-sample test 2 |
 
-Plus the GWOSC service itself: Abbott et al., ApJS **267**, 29 (2023), arXiv:2302.03676.
+Plus the GWOSC **data papers**, which is the citation GWOSC itself asks for (verified at
+<https://gwosc.org/acknowledgement/>, 2026-07-21). One per observing run, and this analysis spans three:
+
+| run | data used here | cite |
+|---|---|---|
+| O3 | GWTC-2.1 / GWTC-3 | ApJS **267**, 29 (2023), arXiv:2302.03676 |
+| O4a | GWTC-4.0 | ApJ **1004**, 2329 (2026) — *Open Data ... First Part of the Fourth Observing Run* |
+| O4b | GWTC-5.0 | arXiv:2605.27090 — *Open Data ... Second Part of the Fourth Observing Run* |
+
+> **This was a real gap.** The manuscript initially cited only the O3 data paper while using O4a and O4b
+> data. Both O4 papers are now cited, and a test fails if either citation disappears.
 
 > ⚠️ **Open citation item.** The GWTC-4.0 and GWTC-5.0 *catalog papers* are cited in the manuscript only
 > through their Zenodo data records, because their journal/arXiv coordinates have **not** been verified at
@@ -33,9 +43,29 @@ carries two obligations, both of which the manuscript now discharges in its Ackn
 The manuscript also states explicitly that the LVK has not reviewed this analysis and bears no
 responsibility for it, which matters because this is independent, non-collaboration work.
 
-> ⚠️ **Before submission:** replace the acknowledgment paragraph with the *exact current wording* that
-> GWOSC asks users to include (gwosc.org). The text in the manuscript is written to satisfy the same
-> obligations but is the author's own phrasing, not a verified copy of the mandated boilerplate.
+### Authorship: the LVK are acknowledged, not added as authors
+
+**Checked, because it is a reasonable thing to worry about.** Using GWOSC open data does **not** confer
+or require collaboration authorship. The GWOSC acknowledgement page states attribution and citation
+requirements and imposes no authorship condition; the data are CC-BY, which is satisfied by attribution.
+Independent reanalysis of public LVK data published without LVK authors is routine and well established
+(the IAS group's independent catalogs are the standard example). The same pattern is used in the sibling
+`camels` repo in this workspace: the CAMELS collaboration is acknowledged and its data portal cited, and
+the paper is single-author.
+
+What the manuscript does instead, and what actually matters for an independent author, is state
+explicitly that the author is *not* a collaboration member, that the collaboration has not reviewed the
+analysis, and that it bears no responsibility for the conclusions. A test enforces the presence of that
+disclaimer.
+
+### Acknowledgment wording — now verbatim
+
+The manuscript's acknowledgment now opens with GWOSC's **mandated sentence verbatim** ("This research has
+made use of data or software obtained from the Gravitational Wave Open Science Center (gwosc.org), a
+service of the LIGO Scientific Collaboration, the Virgo Collaboration, and KAGRA"), followed by the
+funding-agency sentences for NSF/LIGO, EGO--CNRS--INFN--Nikhef/Virgo and MEXT--JSPS--NRF--MSIT--AS--NSTC/
+KAGRA. Verified against <https://gwosc.org/acknowledgement/> on 2026-07-21. Re-check at submission time,
+since the boilerplate is updated as new runs are released.
 
 ---
 

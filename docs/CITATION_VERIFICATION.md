@@ -118,7 +118,9 @@ Now added, with verification status:
 
 | citation | claim | status |
 |---|---|---|
-| GWOSC service, ApJS **267**, 29 (2023), arXiv:2302.03676 | the data source | identity verified; standard reference for the open-data service |
+| GWOSC O3 data paper, ApJS **267**, 29 (2023) | source of the GWTC-2.1/3 data | **verified at gwosc.org/acknowledgement** |
+| GWOSC O4a data paper, ApJ **1004**, 2329 (2026) | source of the O4a data | **verified at gwosc.org/acknowledgement**; was MISSING — we used O4a data while citing only O3 |
+| GWOSC O4b data paper, arXiv:2605.27090 | source of the O4b data | **verified at gwosc.org/acknowledgement**; was MISSING |
 | GWTC-2.1, PRD **109**, 022001 (2024), arXiv:2108.01045 | training-catalog posteriors | identity verified |
 | GWTC-3, PRX **13**, 041039 (2023), arXiv:2111.03606 | training-catalog posteriors | identity verified |
 | GWTC-4.0 / O4a | out-of-sample catalog 1 | **cited by Zenodo record only — catalog paper UNVERIFIED**, see DATA_AVAILABILITY.md |

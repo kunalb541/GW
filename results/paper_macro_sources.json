@@ -1,0 +1,847 @@
+{
+ "generator": "src/build_paper_numbers.py",
+ "note": "Provenance for every number in paper/manuscript.tex. Each macro is the only way its value may appear in the paper; see tests/test_paper_numbers.py.",
+ "n_macros": 120,
+ "macros": [
+  {
+   "macro": "TrainTangentAll",
+   "value": "7.49",
+   "artifact": "results/e65_pn_fisher_rotation_results.json",
+   "path": "posthoc_curved_law.median_err_tangent_all",
+   "format": "f2"
+  },
+  {
+   "macro": "TrainCurveElong",
+   "value": "0.81",
+   "artifact": "results/e65_pn_fisher_rotation_results.json",
+   "path": "posthoc_curved_law.median_err_curve_elong",
+   "format": "f2"
+  },
+  {
+   "macro": "TrainN",
+   "value": "75",
+   "artifact": "results/e65_pn_fisher_rotation_results.json",
+   "path": "posthoc_curved_law.n",
+   "format": "int"
+  },
+  {
+   "macro": "TrainSpearmanAxr",
+   "value": "-0.42",
+   "artifact": "results/e65_pn_fisher_rotation_results.json",
+   "path": "posthoc_curved_law.spearman_absres_axr",
+   "format": "f2"
+  },
+  {
+   "macro": "TrainWinFrac",
+   "value": "76\\%",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "chirp_vs_total_win.GWTC-3.win_fraction",
+   "format": "pct0"
+  },
+  {
+   "macro": "LockedOaCurveElong",
+   "value": "1.26",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "D1.median_err_curve_elong",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedObCurveElong",
+   "value": "1.22",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "D1.median_err_curve_elong",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedOaCurveAll",
+   "value": "7.53",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "D2.median_err_curve_all",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedObCurveAll",
+   "value": "5.41",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "D2.median_err_curve_all",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedOaTangentAll",
+   "value": "9.36",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "D2.median_err_tangent_all",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedObTangentAll",
+   "value": "8.23",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "D2.median_err_tangent_all",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedOaN",
+   "value": "86",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "n_scored",
+   "format": "int"
+  },
+  {
+   "macro": "LockedObN",
+   "value": "104",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "n_scored",
+   "format": "int"
+  },
+  {
+   "macro": "LockedOaNElong",
+   "value": "19",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "D1.n_elong",
+   "format": "int"
+  },
+  {
+   "macro": "LockedObNElong",
+   "value": "32",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "D1.n_elong",
+   "format": "int"
+  },
+  {
+   "macro": "LockedOaWinFrac",
+   "value": "86\\%",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "@winfrac",
+   "format": "pct0"
+  },
+  {
+   "macro": "LockedObWinFrac",
+   "value": "88\\%",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "@winfrac",
+   "format": "pct0"
+  },
+  {
+   "macro": "LockedOaSpearmanAxr",
+   "value": "-0.40",
+   "artifact": "results/e67_gwtc4_curved_law_results.json",
+   "path": "D3.spearman_err_axr",
+   "format": "f2"
+  },
+  {
+   "macro": "LockedObSpearmanAxr",
+   "value": "-0.69",
+   "artifact": "results/e71_gwtc5_curved_law_results.json",
+   "path": "D3.spearman_err_axr",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheTrCurve",
+   "value": "0.83",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.GWTC-3.own_q",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheOaCurve",
+   "value": "1.32",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4a.own_q",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheObCurve",
+   "value": "1.00",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4b.own_q",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheTrTangent",
+   "value": "5.32",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.GWTC-3.tangent",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheOaTangent",
+   "value": "6.60",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4a.tangent",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheObTangent",
+   "value": "3.90",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4b.tangent",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheTrPooled",
+   "value": "9.87",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.GWTC-3.pooled_q",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheOaPooled",
+   "value": "4.19",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4a.pooled_q",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheObPooled",
+   "value": "3.73",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4b.pooled_q",
+   "format": "f2"
+  },
+  {
+   "macro": "PermN",
+   "value": "300",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4a.perm_null.n",
+   "format": "int"
+  },
+  {
+   "macro": "PermOaMin",
+   "value": "2.87",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.O4a.perm_null.min",
+   "format": "f2"
+  },
+  {
+   "macro": "PermOaMax",
+   "value": "10.36",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "@permmax:O4a",
+   "format": "f2"
+  },
+  {
+   "macro": "DegradeMin",
+   "value": "3.2",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "@degrade_min",
+   "format": "f1"
+  },
+  {
+   "macro": "DegradeMax",
+   "value": "11.9",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "@degrade_max",
+   "format": "f1"
+  },
+  {
+   "macro": "XfamN",
+   "value": "64",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A_cross_family.n_elong",
+   "format": "int"
+  },
+  {
+   "macro": "XfamAtoB",
+   "value": "2.25",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A_cross_family.A_to_B",
+   "format": "f2"
+  },
+  {
+   "macro": "XfamBtoA",
+   "value": "2.93",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A_cross_family.B_to_A",
+   "format": "f2"
+  },
+  {
+   "macro": "XfamDisagree",
+   "value": "2.03",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A_cross_family.family_axis_disagreement",
+   "format": "f2"
+  },
+  {
+   "macro": "XfamTanAtoB",
+   "value": "3.50",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A_cross_family.tangent_A_to_B",
+   "format": "f2"
+  },
+  {
+   "macro": "XfamTanBtoA",
+   "value": "6.20",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A_cross_family.tangent_B_to_A",
+   "format": "f2"
+  },
+  {
+   "macro": "ResidNElong",
+   "value": "81",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "n_elongated",
+   "format": "int"
+  },
+  {
+   "macro": "ResidMedian",
+   "value": "1.03",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "monte_carlo_resolution.median_abs_err_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "ResidSigma",
+   "value": "0.19",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "monte_carlo_resolution.median_bootstrap_sigma_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "ResidRatio",
+   "value": "6.3",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "monte_carlo_resolution.median_ratio_err_over_sigma",
+   "format": "f1"
+  },
+  {
+   "macro": "SignedMedian",
+   "value": "0.78",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "@signedmag",
+   "format": "f2"
+  },
+  {
+   "macro": "SignedPTrain",
+   "value": "<0.001",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "signed_residual.GWTC-3.sign_test_p",
+   "format": "p"
+  },
+  {
+   "macro": "SignedPOa",
+   "value": "0.019",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "signed_residual.O4a.sign_test_p",
+   "format": "p"
+  },
+  {
+   "macro": "SignedPOb",
+   "value": "0.377",
+   "artifact": "results/e92_curve_uncertainty_results.json",
+   "path": "signed_residual.O4b.sign_test_p",
+   "format": "p"
+  },
+  {
+   "macro": "EigRatioMedian",
+   "value": "3.3",
+   "artifact": "results/e98_framework_audit_results.json",
+   "path": "sloppy_models.eigenvalue_ratio_median",
+   "format": "f1"
+  },
+  {
+   "macro": "EigFracDecade",
+   "value": "29\\%",
+   "artifact": "results/e98_framework_audit_results.json",
+   "path": "sloppy_models.frac_gt_1_decade",
+   "format": "pct0"
+  },
+  {
+   "macro": "EigFracTwoDec",
+   "value": "3\\%",
+   "artifact": "results/e98_framework_audit_results.json",
+   "path": "sloppy_models.frac_gt_2_decades",
+   "format": "pct0"
+  },
+  {
+   "macro": "GaussTangentErr",
+   "value": "5.02",
+   "artifact": "results/e98_framework_audit_results.json",
+   "path": "bernstein_von_mises.gaussian_tangent_error_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "GaussCurveErr",
+   "value": "1.03",
+   "artifact": "results/e98_framework_audit_results.json",
+   "path": "bernstein_von_mises.arc_corrected_curve_error_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "GaussRatio",
+   "value": "4.9",
+   "artifact": "results/e98_framework_audit_results.json",
+   "path": "bernstein_von_mises.ratio",
+   "format": "f1"
+  },
+  {
+   "macro": "SelfViolation",
+   "value": "3.1\\%",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "grid_sweep.grid40_min40.median_violation",
+   "format": "pct1"
+  },
+  {
+   "macro": "SelfRho",
+   "value": "0.68",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "grid_sweep.grid40_min40.spearman_violation_vs_residual",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfP",
+   "value": "5\\times10^{-12}",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "grid_sweep.grid40_min40.p_value",
+   "format": "sci"
+  },
+  {
+   "macro": "SelfRhoMin",
+   "value": "0.64",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "@rho_min",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfRhoMax",
+   "value": "0.68",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "@rho_max",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfIterMin",
+   "value": "0.35",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "@iter_min",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfIterMax",
+   "value": "1.08",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "@iter_max",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfXfamAPure",
+   "value": "1.14",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "cross_family.AtoB.pure_curve_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfXfamACorr",
+   "value": "0.66",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "cross_family.AtoB.self_consistency_corrected_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfXfamAP",
+   "value": "0.024",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "cross_family.AtoB.wilcoxon_p",
+   "format": "f3"
+  },
+  {
+   "macro": "SelfXfamBPure",
+   "value": "1.00",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "cross_family.BtoA.pure_curve_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfXfamBCorr",
+   "value": "0.69",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "cross_family.BtoA.self_consistency_corrected_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "SelfXfamBP",
+   "value": "0.064",
+   "artifact": "results/e97_principal_curve_selfconsistency_results.json",
+   "path": "cross_family.BtoA.wilcoxon_p",
+   "format": "f3"
+  },
+  {
+   "macro": "ThickRelative",
+   "value": "0.33",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "in_sample.median_relative_thickness",
+   "format": "f2"
+  },
+  {
+   "macro": "ThickAPure",
+   "value": "1.14",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "cross_family.AtoB.pure_curve",
+   "format": "f2"
+  },
+  {
+   "macro": "ThickAMeas",
+   "value": "0.96",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "cross_family.AtoB.measured",
+   "format": "f2"
+  },
+  {
+   "macro": "ThickAP",
+   "value": "0.005",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "cross_family.AtoB.measured_vs_pure_wilcoxon_p",
+   "format": "f3"
+  },
+  {
+   "macro": "ThickBPure",
+   "value": "1.00",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "cross_family.BtoA.pure_curve",
+   "format": "f2"
+  },
+  {
+   "macro": "ThickBMeas",
+   "value": "0.74",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "cross_family.BtoA.measured",
+   "format": "f2"
+  },
+  {
+   "macro": "ThickBP",
+   "value": "0.028",
+   "artifact": "results/e96_curve_thickness_mechanism_results.json",
+   "path": "cross_family.BtoA.measured_vs_pure_wilcoxon_p",
+   "format": "f3"
+  },
+  {
+   "macro": "FrameSourceErr",
+   "value": "1.03",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.source_m1_m2.median_err_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "FrameDetErr",
+   "value": "0.31",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.detector_m1_m2.median_err_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "FrameLogErr",
+   "value": "0.78",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.log_source_m1_m2.median_err_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "FrameNPaired",
+   "value": "81",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.detector_vs_source_paired.n_paired",
+   "format": "int"
+  },
+  {
+   "macro": "FramePairedP",
+   "value": "8\\times10^{-8}",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.detector_vs_source_paired.wilcoxon_p",
+   "format": "sci"
+  },
+  {
+   "macro": "FrameAxrSource",
+   "value": "4.6",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.detector_vs_source_paired.median_axr_source",
+   "format": "f1"
+  },
+  {
+   "macro": "FrameAxrDet",
+   "value": "9.8",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "frames.detector_vs_source_paired.median_axr_detector",
+   "format": "f1"
+  },
+  {
+   "macro": "MatchedLowSource",
+   "value": "1.38",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "matched_axis_ratio.3-5.median_source_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "MatchedLowDet",
+   "value": "5.53",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "matched_axis_ratio.3-5.median_detector_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "BandRound",
+   "value": "16.3",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "axr_bands.1-1.5.median_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "BandTwo",
+   "value": "7.5",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "axr_bands.1.5-2.median_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "BandThree",
+   "value": "5.7",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "axr_bands.2-3.median_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "BandFour",
+   "value": "1.4",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "axr_bands.3-5.median_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "BandFive",
+   "value": "0.6",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "axr_bands.5+.median_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "RandomBaseline",
+   "value": "45",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "random_baseline_deg",
+   "format": "int"
+  },
+  {
+   "macro": "CacheBias",
+   "value": "0.06",
+   "artifact": "results/e99_cache_stability_audit_results.json",
+   "path": "@maxbias",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheSpread",
+   "value": "0.54",
+   "artifact": "results/e99_cache_stability_audit_results.json",
+   "path": "verdict.max_seed_spread_deg",
+   "format": "f2"
+  },
+  {
+   "macro": "CacheNSeeds",
+   "value": "5",
+   "artifact": "results/e99_cache_stability_audit_results.json",
+   "path": "@nseeds",
+   "format": "int"
+  },
+  {
+   "macro": "FullOaCurve",
+   "value": "1.26",
+   "artifact": "results/e99_cache_stability_audit_results.json",
+   "path": "summary.O4a.full_sample",
+   "format": "f2"
+  },
+  {
+   "macro": "FullObCurve",
+   "value": "1.19",
+   "artifact": "results/e99_cache_stability_audit_results.json",
+   "path": "summary.O4b.full_sample",
+   "format": "f2"
+  },
+  {
+   "macro": "FullTrCurve",
+   "value": "0.80",
+   "artifact": "results/e99_cache_stability_audit_results.json",
+   "path": "summary.GWTC-3.full_sample",
+   "format": "f2"
+  },
+  {
+   "macro": "ArcTr",
+   "value": "-0.51",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "arc_length_vs_tangent_error.GWTC-3.spearman_arc_vs_tangent_err",
+   "format": "f2"
+  },
+  {
+   "macro": "ArcOa",
+   "value": "-0.61",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "arc_length_vs_tangent_error.O4a.spearman_arc_vs_tangent_err",
+   "format": "f2"
+  },
+  {
+   "macro": "ArcOb",
+   "value": "-0.42",
+   "artifact": "results/e100_frames_and_bands_results.json",
+   "path": "arc_length_vs_tangent_error.O4b.spearman_arc_vs_tangent_err",
+   "format": "f2"
+  },
+  {
+   "macro": "ExpOb",
+   "value": "0.616",
+   "artifact": "results/e78_geometric_gr_exponent_results.json",
+   "path": "p_hat",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpObErr",
+   "value": "0.011",
+   "artifact": "results/e78_geometric_gr_exponent_results.json",
+   "path": "stat_err_bootstrap",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpComb",
+   "value": "0.628",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "combined_exponent",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpCombErr",
+   "value": "0.009",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "combined_err",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpSpread",
+   "value": "0.031",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "systematic_followup.catalog_spread",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpOffset",
+   "value": "0.028",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "@expoffset",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpSyst",
+   "value": "0.016",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "systematic_followup.syst_floor",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpSigma",
+   "value": "1.5",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "systematic_followup.honest_sigma_from_GR",
+   "format": "f1"
+  },
+  {
+   "macro": "ExpSpearman",
+   "value": "-0.41",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "systematic_followup.spearman_pstar_axr",
+   "format": "f2"
+  },
+  {
+   "macro": "ExpCleanHalf",
+   "value": "0.606",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "systematic_followup.p_hat_most_elongated_half",
+   "format": "f3"
+  },
+  {
+   "macro": "ExpNaiveSigma",
+   "value": "3.1",
+   "artifact": "results/e79_exponent_cross_catalog_results.json",
+   "path": "@naivesigma",
+   "format": "f1"
+  },
+  {
+   "macro": "AnatomyN",
+   "value": "190",
+   "artifact": "results/e73_information_anatomy_results.json",
+   "path": "n_events",
+   "format": "int"
+  },
+  {
+   "macro": "AnatomySpearman",
+   "value": "-1.00",
+   "artifact": "results/e73_information_anatomy_results.json",
+   "path": "spearman_richness_vs_Mtot",
+   "format": "f2"
+  },
+  {
+   "macro": "LoudMf",
+   "value": "62.8",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "characterization.Mf_source.0",
+   "format": "f1"
+  },
+  {
+   "macro": "LoudChif",
+   "value": "0.68",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "characterization.final_spin_af.0",
+   "format": "f2"
+  },
+  {
+   "macro": "LoudSNR",
+   "value": "77",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "characterization.network_snr.0",
+   "format": "int"
+  },
+  {
+   "macro": "LoudFtwoTwoZero",
+   "value": "248.9",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "kerr_qnm_prediction.f_220_Hz.0",
+   "format": "f1"
+  },
+  {
+   "macro": "LoudTauTwoTwoZero",
+   "value": "4.10",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "kerr_qnm_prediction.tau_220_ms.0",
+   "format": "f2"
+  },
+  {
+   "macro": "LoudFtwoTwoOne",
+   "value": "243.4",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "kerr_qnm_prediction.f_221_Hz.0",
+   "format": "f1"
+  },
+  {
+   "macro": "LoudTauTwoTwoOne",
+   "value": "1.35",
+   "artifact": "results/e74_gw250114_deepdive_results.json",
+   "path": "kerr_qnm_prediction.tau_221_ms.0",
+   "format": "f2"
+  },
+  {
+   "macro": "AtlasN",
+   "value": "32",
+   "artifact": "results/e72_gw_geometry_outlier_atlas_results.json",
+   "path": "n",
+   "format": "int"
+  },
+  {
+   "macro": "AtlasWfRho",
+   "value": "-0.64",
+   "artifact": "results/e72_gw_geometry_outlier_atlas_results.json",
+   "path": "D1_correlations.waveform_disagreement.rho",
+   "format": "f2"
+  },
+  {
+   "macro": "AtlasWfQ",
+   "value": "7\\times10^{-4}",
+   "artifact": "results/e72_gw_geometry_outlier_atlas_results.json",
+   "path": "D1_correlations.waveform_disagreement.q_bh",
+   "format": "sci"
+  }
+ ]
+}
