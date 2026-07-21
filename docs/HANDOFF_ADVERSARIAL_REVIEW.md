@@ -16,6 +16,26 @@ hard enough.
 
 ---
 
+## What the automated checks do and do not prove
+
+Read this before trusting a green suite. The 165 tests and the three generator scripts are **regression
+tests for known failure modes**, not evidence of global consistency, and this project has now produced
+four separate demonstrations of the difference:
+
+- The generated-numbers pipeline propagated a broken posterior cache faithfully into every derived
+  number, and "corrected" three values that had been right. Every test passed throughout, because the
+  tests check that the paper matches the artifacts, not that the artifacts are correct.
+- The stale-doc guard checked four documents **by name**, so `TESTING.md` and `PAPER_PLAN.md` drifted
+  through the gap.
+- Its test-count lookbehind excluded letters but not digits, so `E71 tests this on O4b` was read as a
+  claim of "1 test".
+- It matched `165 tests` but not `Tests: 164`, so a stale count sat in this file's own header through a
+  full review round with the suite green.
+
+Each guard was correct about the case that motivated it and blind to a neighbour. Treat a passing suite
+as "the previously-found mistakes have not returned" and nothing more. Where you want assurance, check
+the artifact, not the test.
+
 ## The one-command check that makes most proofreading unnecessary
 
 ```bash
