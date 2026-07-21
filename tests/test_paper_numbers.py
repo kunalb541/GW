@@ -119,7 +119,7 @@ def test_data_citation_and_acknowledgment_present():
                   "not a member of the", "bears no responsibility",
                   "Creative Commons", "numpy", "scipy", "matplotlib",
                   # AI-use disclosure: required by most journals now, and easy to drop in a rewrite
-                  "Use of AI assistants", "Claude Opus 4.8", "OpenAI's Codex",
+                  "Use of AI assistants", "Opus 4.8", "OpenAI's Codex",
                   "solely responsible for the content", "not authors"]:
         assert token in m, f"data-citation/acknowledgment element missing: {token}"
 

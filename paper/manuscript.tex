@@ -6,7 +6,7 @@
 \usepackage{natbib}
 \setcitestyle{numbers,square}
 
-\title{\textbf{Reconstructing the orientation of compact-binary mass posteriors\\
+\title{\textbf{Reconstructing compact-binary mass-posterior orientation\\
 from the mass-ratio marginal}}
 \author{Kunal Bhatia\\
 \small Independent researcher, Meerut, India \\
@@ -20,28 +20,23 @@ from the mass-ratio marginal}}
 \maketitle
 
 \begin{abstract}
-The two-dimensional component-mass posterior of a compact-binary gravitational-wave event is elongated
-along a contour of near-constant chirp mass, a feature usually treated as a nuisance degeneracy. We show
-that its \emph{orientation} is quantitatively reconstructible from a single one-dimensional marginal of
-the same posterior. Mapping the event's mass-ratio marginal through the constant-chirp-mass curve predicts
-the principal-axis position angle to a median $\LockedOaCurveElong^\circ$ on GWTC-4.0/O4a and
+The component-mass posterior of a compact-binary gravitational-wave event is elongated along a contour of
+near-constant chirp mass, a shape usually treated as a nuisance degeneracy. We show that its
+\emph{orientation} is quantitatively reconstructible from a single one-dimensional marginal of the same
+posterior. Evaluating the constant-chirp-mass curve over an event's own mass-ratio marginal predicts the
+principal-axis position angle to a median $\LockedOaCurveElong^\circ$ on GWTC-4.0/O4a and
 $\LockedObCurveElong^\circ$ on GWTC-5.0/O4b for elongated posteriors (axis ratio $\ge 3$), with no
-coefficient calibrated on either catalog; the prediction was fixed on GWTC-3 and registered before the
-later data were examined. The corresponding local tangent approximation, which underlies rapid
-parameter-estimation tools, achieves $\CacheObTangent$--$\CacheOaTangent^\circ$ on the same events. The
-result does not follow from a curve merely fitting a curved distribution: substituting any other event's
-mass-ratio marginal degrades the error by $\DegradeMin$--$\DegradeMax\times$, and the achieved error lies
-below the minimum of $\PermN$ catalog-stratified permutations in all three catalogs. Inputs taken from one
-waveform family recover a different family's independently sampled axis to
-$\XfamAtoB^\circ$--$\XfamBtoA^\circ$, against a $\XfamDisagree^\circ$ scale set by the families' mutual
-disagreement, so the result is not an artifact of reusing one posterior's Monte Carlo noise. The residual
-$\sim\!1^\circ$ is $\ResidRatio$ times the Monte Carlo resolution of the released samples and is therefore
-a property of the model rather than of finite sampling; it is tracked by the curve's failure of
-principal-curve self-consistency ($\rho=\SelfRho$, $p=\SelfP$), and finite posterior thickness is an
-out-of-sample contributor. We present this as a posterior-compression relation and a systematics
-diagnostic. It is not a test of general relativity: the posteriors are generated with
-general-relativistic waveform models, and their internal geometry cannot bound departures from the theory
-that produced them.
+coefficient calibrated on either catalog and with the prediction fixed on GWTC-3 beforehand. The local
+tangent approximation used by rapid parameter-estimation tools achieves
+$\CacheObTangent$--$\CacheOaTangent^\circ$ on the same events. This is not a curve merely fitting a curved
+distribution: substituting any other event's marginal degrades the error by
+$\DegradeMin$--$\DegradeMax\times$, and the achieved error falls below the minimum of $\PermN$
+catalog-stratified permutations in all three catalogs. Inputs from one waveform family recover another
+family's independently sampled axis to $\XfamAtoB^\circ$--$\XfamBtoA^\circ$, so the agreement does not
+arise from shared Monte Carlo noise. The residual $\sim\!1^\circ$ is $\ResidRatio$ times the Monte Carlo
+resolution of the released samples and is therefore a property of the model; it is tracked by the curve's
+failure of principal-curve self-consistency. We present this as a posterior-compression relation and a
+systematics diagnostic, not as a test of general relativity.
 \end{abstract}
 
 \section{Introduction}
@@ -62,11 +57,18 @@ the $(m_1,m_2)$ posterior --- the position angle of its principal axis --- be re
 low-dimensional summaries of the same posterior, using no coefficient calibrated on the data being
 predicted, and does such a reconstruction survive on later, disjoint catalogs?
 
-It can. Mapping an event's mass-ratio marginal through the constant-$\mathcal{M}_c$ curve predicts the
-measured position angle to about a degree on elongated posteriors, in two catalogs released after the
-prediction was fixed. The organising idea is that the uncertainty geometry of gravitational-wave inference
-is largely \emph{measurement optics} --- a property of what the signal and instrument can resolve, rather
-than of source astrophysics --- and that this geometry is precise enough to be used as a diagnostic.
+It can, and the construction is elementary. Evaluate the constant-$\mathcal{M}_c$ curve over the event's
+own mass-ratio marginal, and take the principal axis of the resulting set of points. That axis predicts the
+posterior's own principal axis to about a degree on elongated posteriors, in two catalogs released after
+the prediction was fixed.
+
+The reason it works is visible in Figure~\ref{fig:2a}. Posterior samples are spread along an \emph{arc},
+not a line, so their principal axis is a chord of that arc and is rotated away from the tangent at the
+median point. Using the arc rather than the tangent supplies essentially all of the accuracy: the same
+comparison run with the tangent is several times worse. The organising idea is that the uncertainty
+geometry of gravitational-wave inference is largely \emph{measurement optics} --- a property of what the
+signal and instrument can resolve rather than of source astrophysics --- and that this geometry is precise
+enough to be used as a diagnostic.
 
 The ingredients are individually familiar. That inference problems possess a few stiff and many sloppy
 directions is the content of the sloppy-model framework \citep{Transtrum2015}; that the principal axis of
@@ -164,7 +166,8 @@ median $|\psi_{\rm curve}-\psi_{\rm meas}|$ (all) & --- & $\LockedOaCurveAll^\ci
 median $|\psi_{\rm tangent}-\psi_{\rm meas}|$ (all) & $\TrainTangentAll^\circ$ & $\LockedOaTangentAll^\circ$ & $\LockedObTangentAll^\circ$ \\
 chirp-vs-total win fraction & $\TrainWinFrac$\textsuperscript{$\dagger$} & $\LockedOaWinFrac$ & $\LockedObWinFrac$ \\
 Spearman$(|\Delta\psi_{\rm tangent}|,\mathrm{axr})$ & $\TrainSpearmanAxr$ & $\LockedOaSpearmanAxr$ & $\LockedObSpearmanAxr$ \\
-$N$ events (elongated) & $\TrainN$ & $\LockedOaN\ (\LockedOaNElong)$ & $\LockedObN\ (\LockedObNElong)$ \\
+$N$ events, total & $\TrainN$ & $\LockedOaN$ & $\LockedObN$ \\
+$N$ events, elongated & --- & $\LockedOaNElong$ & $\LockedObNElong$ \\
 \hline
 \end{tabular}
 \caption{Locked out-of-sample scores, computed on the full released posterior samples. The reconstruction
@@ -201,7 +204,8 @@ substantive question is whether the \emph{event's own} marginal carries the info
 plausible mass-ratio distribution would perform comparably. It does not (Figure~\ref{fig:1c}).
 
 Replacing the event's marginal with one pooled over the catalog, or with another event's, degrades the
-median error by $\DegradeMin$--$\DegradeMax\times$. Under $\PermN$ catalog-stratified permutations of the
+median error by $\DegradeMin$--$\DegradeMax\times$. The band shown in Figure~\ref{fig:1c} is that null
+distribution; it is not a confidence interval on the reconstruction. Under $\PermN$ catalog-stratified permutations of the
 mass-ratio marginals among events, the achieved error lies below the \emph{minimum} of the null
 distribution in every catalog, giving a permutation $p$-value $< 1/\PermN$ throughout. We report the full
 permutation distribution rather than a single shuffled assignment because one draw is not a null: in O4a
@@ -237,7 +241,8 @@ difference, against a median discrepancy of $\ResidMedian^\circ$: a ratio of $\R
 constant-$\mathcal{M}_c$ curve is an accurate but imperfect description of posterior orientation, and the
 gap is a property of the model rather than of the sample count.
 
-This bootstrap measures the Monte Carlo resolution of the released sample set. It shrinks as more samples
+This bootstrap measures the Monte Carlo resolution of the released sample set, and is distinct from the
+interval drawn in Figure~\ref{fig:1b}, which is a bootstrap over the event sample. It shrinks as more samples
 are released and encodes nothing about detector noise, calibration, waveform systematics or population
 variation; it is not a coverage statement, and we do not report the fraction of events falling within one
 or two bootstrap widths as though it were.
@@ -350,46 +355,49 @@ The tangent baseline quantifies what is being corrected. The principal axis of a
 eigenvector of its covariance, which for a likelihood expanded quadratically about its peak is the local
 tangent to the degeneracy; the tangent error is therefore the error incurred by treating the posterior as
 Gaussian. On elongated events that error is $\GaussTangentErr^\circ$ against $\GaussCurveErr^\circ$ once
-the arc is accounted for --- a factor of $\GaussRatio$. We claim only this elementary geometric fact, and
-do not invoke the asymptotic statement that posteriors approach a Gaussian with inverse-Fisher covariance,
-which the argument does not require.
+the arc is accounted for --- a factor of $\GaussRatio$. For applications that use posterior orientation,
+the arc correction is essentially free: it requires the mass-ratio marginal, which parameter estimation
+already produces.
 
-We also do not appeal to the stronger structural language sometimes attached to results of this kind. The
-``hyperribbon'' picture, in which the covariance eigenvalue spectrum spans many orders of magnitude, does
-not follow from what we measure: in the two-dimensional mass plane the eigenvalue ratio has a median of
-$\EigRatioMedian$, with $\EigFracDecade$ of events exceeding one order of magnitude and $\EigFracTwoDec$
-exceeding two. Sloppiness in that sense is a property of the full parameter space, which a two-dimensional
-marginal cannot establish. Similarly, we do not invoke {\v C}encov's uniqueness theorem for the Fisher--Rao
-metric: our measured object is a Euclidean angle in fixed coordinates and is demonstrably not invariant
-(Section~\ref{sec:frames}), so an appeal to an invariance theorem would contradict the measurement.
+\paragraph{Scope.} Three boundaries are worth stating together, since each has a natural stronger reading
+that the measurements do not support. First, the relation is a compression of a posterior, not a
+prediction from external physics: the mass-ratio marginal is drawn from the posterior being reconstructed.
+Second, the reconstructed quantity is a Euclidean angle in fixed coordinates, and Section~\ref{sec:frames}
+shows it changes with the choice of mass variables; we therefore report the convention rather than claim
+invariance, and do not appeal to {\v C}encov's uniqueness theorem for the Fisher--Rao metric, which would
+assert the opposite of what we measure. Third, we use the stiff/sloppy vocabulary
+\citep{Transtrum2015} for the concept only. The stronger ``hyperribbon'' picture, in which the covariance
+eigenvalue spectrum spans many orders of magnitude, does not follow from these data: in the
+two-dimensional mass plane the eigenvalue ratio has a median of $\EigRatioMedian$, with $\EigFracDecade$
+of events exceeding one order of magnitude and $\EigFracTwoDec$ exceeding two. Sloppiness in that sense is
+a property of the full parameter space, which a two-dimensional marginal cannot establish.
 
-\paragraph{Limitations.}
-(i) This is a posterior-compression result. The mass-ratio marginal is taken from the posterior being
-reconstructed, so it is not a prediction from source medians or from physics external to the posterior.
-(ii) It is validated on elongated posteriors; round posteriors have no well-defined orientation and are
-excluded by construction. \citet{Baird2013} note that constant chirp mass ceases to characterise the mass
-degeneracy as cleanly at higher masses, bounding where such a construction should be expected to hold.
-(iii) The residual is tracked by the curve's failure of self-consistency, but the corresponding one-step
-correction is not established out-of-sample, and the arc-varying form of the thickness contribution is not
-established either. (iv) The measured angle is frame- and coordinate-dependent, and we make no invariance
-claim. (v) O4a and O4b are disjoint event catalogs, not independent experiments: they share detectors,
-calibration, waveform families, priors and analysis conventions. (vi) The two out-of-sample scores are not
-equal evidence. The O4b registration is timestamped in the public record before the data were opened,
-whereas the O4a registration entered the public repository in the same commit as its results and is
-attested only by a private history. (vii) Waveform-model choice contributes a per-event orientation scatter
-of several degrees and is the dominant per-event systematic; on the worst-case event of
-Figure~\ref{fig:2a} the error spans $14.4^\circ$, $16.9^\circ$ and $22.7^\circ$ across its three waveform
-families. (viii) A first-principles derivation of the curve's width and curvature from the Fisher
-information remains open.
+The posteriors analysed here were generated with general-relativistic waveform models, so structure found
+in their geometry probes the internal consistency of those inferences rather than the theory that produced
+them, and no bound on modified inspiral phasing follows. Appendix~\ref{app:exponent} develops this
+quantitatively for a one-parameter generalisation of the chirp-mass exponents, where a naive reading gives
+an apparent $\ExpNaiveSigma\sigma$ departure from the general-relativistic value that two pre-committed
+checks reduce to $\ExpSigma\sigma$.
 
-\paragraph{Not a test of general relativity.}
-The posterior samples analysed here were themselves generated with general-relativistic waveform models.
-Any structure found in their geometry probes the internal consistency of those inferences, not the theory
-that produced them, and no bound on modified inspiral phasing follows. Appendix~\ref{app:exponent}
-develops this point quantitatively for a one-parameter generalisation of the chirp-mass exponents, where a
-naive reading yields an apparent $\ExpNaiveSigma\sigma$ departure from the general-relativistic value that
-two pre-committed checks demote to $\ExpSigma\sigma$. We report it as a diagnostic of the model's own
-imperfections.
+\paragraph{Limitations.} We record the following, roughly in order of how much they constrain use of the
+result.
+\begin{enumerate}\itemsep2pt \parskip0pt
+\item Waveform-model choice contributes a per-event orientation scatter of several degrees and is the
+dominant per-event systematic.
+\item The relation is validated on elongated posteriors. Round posteriors have no well-defined orientation
+and are excluded by construction, and \citet{Baird2013} note that constant chirp mass characterises the
+mass degeneracy less cleanly at higher masses, bounding where the construction should be expected to hold.
+\item O4a and O4b are disjoint event catalogs, not independent experiments: they share detectors,
+calibration, waveform families, priors and analysis conventions.
+\item The two out-of-sample scores are not equal evidence. The O4b registration is timestamped in the
+public record before the data were opened; the O4a registration entered the public repository in the same
+commit as its results and is attested only by a private history.
+\item The residual is tracked by the curve's failure of self-consistency, but the corresponding one-step
+correction does not survive out-of-sample, and the arc-varying form of the thickness contribution is not
+established.
+\item A first-principles derivation of the curve's width and curvature from the Fisher information remains
+open.
+\end{enumerate}
 
 \section{Conclusions}
 \label{sec:conclusions}
@@ -524,17 +532,14 @@ This is independent work carried out entirely on public data. The author is not 
 LIGO--Virgo--KAGRA Collaboration; the Collaboration has not reviewed this
 analysis and bears no responsibility for its conclusions.
 
-\paragraph{Use of AI assistants.} This work was carried out with substantial assistance from large
-language models, disclosed here in full. Anthropic's Claude (Claude Opus 4.8, via Claude Code) was used
-to implement the analysis code, build the artifact-generation and figure pipelines, and draft and
-restructure this manuscript. OpenAI's Codex was used as an independent adversarial reviewer of both the
-analysis and the text, in repeated rounds. That review loop is responsible for several corrections
-reported here, including the identification of the posterior-cache defect described in
-Appendix~\ref{app:repro}, which had propagated into every cache-derived number in an earlier draft. The
-author defined the research questions, specified and registered every preregistered decision before the
-corresponding data were examined, verified the reported results against the committed artifacts, and is
-solely responsible for the content of this paper. The models are tools, not authors; no text or number
-appears here without the author's review. The author thanks the Collaboration for releasing the
+\paragraph{Use of AI assistants.} Large language models were used in this work: Anthropic's Claude
+(Opus 4.8) to implement the analysis code and figure pipelines and to draft the manuscript, and
+OpenAI's Codex for independent adversarial review of the analysis and text. The author defined the research
+questions, registered every preregistered decision before the corresponding data were examined, verified
+all reported results against the committed artifacts, and is solely responsible for the content. The
+models are tools, not authors.
+
+The author thanks the Collaboration for releasing the
 parameter-estimation samples on which the analysis wholly depends, and the open-source scientific Python
 community for NumPy \citep{numpy}, SciPy \citep{scipy}, Matplotlib \citep{matplotlib} and h5py.
 

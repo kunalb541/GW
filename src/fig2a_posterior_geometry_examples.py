@@ -97,7 +97,7 @@ def build():
     rows = collect(prim)
     picks = select(rows)
 
-    fig, axes = plt.subplots(1, 3, figsize=(9.6, 3.9))
+    fig, axes = plt.subplots(1, 3, figsize=(9.6, 4.7))
     side = {"figure": STEM, "role": "explanatory / secondary -- NOT a main-claim panel",
             "caption_guidance": ("Examples of the posterior geometry and its reconstruction. This "
                                  "panel illustrates; it does not establish a mechanism. E96 supports "
