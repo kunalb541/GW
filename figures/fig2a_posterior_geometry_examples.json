@@ -45,7 +45,40 @@
    "curve_err_deg": 16.884157032005106,
    "tangent_err_deg": 23.851074765693625,
    "n_samples_plotted": 1073,
-   "thickness_adjusted_drawn": false
+   "thickness_adjusted_drawn": false,
+   "tail_sensitivity": {
+    "percentile_trims": {
+     "0-100": {
+      "n": 1073,
+      "axr": 4.287503954657,
+      "curve_err_deg": 16.884157032005106
+     },
+     "1-99": {
+      "n": 1032,
+      "axr": 3.875060455379281,
+      "curve_err_deg": 16.40658680811319
+     },
+     "5-95": {
+      "n": 873,
+      "axr": 3.3042048641966164,
+      "curve_err_deg": 18.55632759921002
+     },
+     "10-90": {
+      "n": 688,
+      "axr": 2.802530369458783,
+      "curve_err_deg": 17.797821988899614
+     }
+    },
+    "curve_err_range_deg": [
+     16.40658680811319,
+     18.55632759921002
+    ],
+    "verdict": "NOT a tail artifact: trimming to the central 90% of samples leaves the error within 16.4-18.6 deg, so the worst case is a genuine failure of the curve model, not an outlier dragging the sample covariance."
+   },
+   "inset": {
+    "shows": "central core (2-88 percentile), same three directions",
+    "why": "full-scale panel is dominated by a long high-mass tail"
+   }
   }
  ],
  "recorded_but_not_plotted": {

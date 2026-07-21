@@ -164,11 +164,66 @@ def build():
             ax.spines[s].set_color(GRID)
         ax.tick_params(colors=MUTED, labelsize=8, length=3)
 
-        side["panels"].append({
+        rec_panel = {
             "panel": label, "selection_rule": rule, "event": r["event"], "catalog": r["catalog"],
             "waveform_group": r["group"], "axr": r["axr"], "curve_err_deg": r["curve_err"],
             "tangent_err_deg": r["tangent_err"], "n_samples_plotted": int(len(m1)),
-            "thickness_adjusted_drawn": False})
+            "thickness_adjusted_drawn": False}
+
+        # The worst case is a heavy-tailed, high-mass posterior: the dense core occupies a small
+        # corner of a panel whose limits are set by a long tail, so the geometry is unreadable at
+        # full scale (raised in external review). Two responses, neither cosmetic:
+        #   (a) a zoom inset on the core, so the reader can actually see the three directions;
+        #   (b) a measured check that the failure is NOT a tail artifact -- recorded in the sidecar.
+        if label.startswith("worst"):
+            trims = {}
+            for pct in (100, 99, 95, 90):
+                if pct == 100:
+                    sel = np.ones(len(m1), bool)
+                else:
+                    lo, hi = 100 - pct, pct
+                    sel = ((m1 >= np.percentile(m1, lo)) & (m1 <= np.percentile(m1, hi)) &
+                           (m2 >= np.percentile(m2, lo)) & (m2 <= np.percentile(m2, hi)))
+                ps, ar, _ = psi_axr_rho(m1[sel], m2[sel])
+                trims[f"{100 - pct if pct < 100 else 0}-{pct}"] = {
+                    "n": int(sel.sum()), "axr": float(ar),
+                    "curve_err_deg": float(abs(adiff(curve_psi(mc, q), ps)))}
+            errs = [v["curve_err_deg"] for v in trims.values()]
+            rec_panel["tail_sensitivity"] = {
+                "percentile_trims": trims,
+                "curve_err_range_deg": [float(min(errs)), float(max(errs))],
+                "verdict": ("NOT a tail artifact: trimming to the central 90%% of samples leaves the "
+                            "error within %.1f-%.1f deg, so the worst case is a genuine failure of "
+                            "the curve model, not an outlier dragging the sample covariance."
+                            % (min(errs), max(errs)))}
+
+            zx = np.percentile(m1, [2, 88])
+            zy = np.percentile(m2, [2, 88])
+            zm, zn = 0.5 * (zx[0] + zx[1]), 0.5 * (zy[0] + zy[1])
+            zh = 0.62 * max(zx[1] - zx[0], zy[1] - zy[0], 1e-6)
+            ins = ax.inset_axes([0.545, 0.545, 0.43, 0.43])
+            ins.scatter(m1, m2, s=2, color=SAMPLE_C, alpha=0.35, linewidths=0, rasterized=True)
+            ins.plot(c1, qq * c1, color=CURVE_C, lw=1.1, alpha=0.55)
+            for ang, col, ls, lw in ((v["psi"], MEAS_C, "-", 1.8),
+                                     (tangent_angles(v["m1m"], v["m2m"])[0], TANGENT_C, "--", 1.5),
+                                     (curve_psi(mc, q), CURVE_C, "--", 1.5)):
+                dx, dy = math.cos(math.radians(ang)), math.sin(math.radians(ang))
+                ins.plot([cx - L * dx, cx + L * dx], [cy - L * dy, cy + L * dy],
+                         color=col, ls=ls, lw=lw, solid_capstyle="round")
+            ins.set_xlim(max(zm - zh, 0.0), zm + zh)
+            ins.set_ylim(max(zn - zh, 0.0), zn + zh)
+            ins.set_aspect("equal", adjustable="box")
+            ins.tick_params(colors=MUTED, labelsize=6, length=2)
+            for s in ("top", "right"):
+                ins.spines[s].set_visible(False)
+            for s in ("left", "bottom"):
+                ins.spines[s].set_color(GRID)
+            ins.set_title("core, zoomed", fontsize=7, color=MUTED, pad=2)
+            ax.indicate_inset_zoom(ins, edgecolor=MUTED, alpha=0.55, lw=0.8)
+            rec_panel["inset"] = {"shows": "central core (2-88 percentile), same three directions",
+                                  "why": "full-scale panel is dominated by a long high-mass tail"}
+
+        side["panels"].append(rec_panel)
 
     axes[0].set_ylabel("$m_2$  [$M_\\odot$]", fontsize=9, color=INK)
     fig.legend(handles=[

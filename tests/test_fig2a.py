@@ -105,3 +105,19 @@ def test_rendered_image_is_non_empty_and_not_blank():
     assert a.size > 0
     assert float(a.std()) > 5.0, "rendered image looks blank"
     assert float((a < 250).mean()) > 0.01, "almost no ink on the canvas"
+
+
+def test_worst_case_carries_a_tail_sensitivity_check():
+    """External review asked for the worst-case panel to be rescaled. Rescaling alone would have been
+    cosmetic: the question it raises is whether the 16.9 deg failure is real or an outlier dragging the
+    sample covariance. The figure must answer that, not just look better."""
+    import json, os
+    side = json.load(open(os.path.join(ROOT, "figures/fig2a_posterior_geometry_examples.json")))
+    worst = next(p for p in side["panels"] if p["panel"].startswith("worst"))
+    assert "inset" in worst, "worst-case panel must carry a zoom inset on the dense core"
+    ts = worst["tail_sensitivity"]
+    assert set(ts["percentile_trims"]) >= {"0-100", "1-99", "5-95", "10-90"}
+    lo, hi = ts["curve_err_range_deg"]
+    assert lo > 10.0, ("if trimming ever brings the worst case below ~10 deg it IS a tail artifact "
+                       "and the caption's claim must be rewritten")
+    assert "NOT a tail artifact" in ts["verdict"]

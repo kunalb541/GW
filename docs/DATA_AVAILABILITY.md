@@ -9,8 +9,8 @@ embargoed products and generates no new observational data. Three releases enter
 |---|---|---|---|
 | GWTC-2.1 posterior samples | GWOSC / Zenodo (per-event) | Abbott et al., PRD **109**, 022001 (2024), arXiv:2108.01045 | training catalog (with GWTC-3) |
 | GWTC-3 posterior samples | GWOSC / Zenodo (per-event) | Abbott et al., PRX **13**, 041039 (2023), arXiv:2111.03606 | training catalog |
-| GWTC-4.0 / O4a PE | Zenodo **16053484** | the Zenodo record (see caveat below) | locked out-of-sample test 1 |
-| GWTC-5.0 / O4b PE | Zenodo **20276106**, **20348006** | the Zenodo records (see caveat below) | locked out-of-sample test 2 |
+| GWTC-4.0 / O4a PE | Zenodo **16053484** | arXiv:**2508.18082** + the Zenodo record | locked out-of-sample test 1 |
+| GWTC-5.0 / O4b PE | Zenodo **20276106**, **20348006** | arXiv:**2605.27225** + the Zenodo records | locked out-of-sample test 2 |
 
 Plus the GWOSC **data papers**, which is the citation GWOSC itself asks for (verified at
 <https://gwosc.org/acknowledgement/>, 2026-07-21). One per observing run, and this analysis spans three:
@@ -24,12 +24,20 @@ Plus the GWOSC **data papers**, which is the citation GWOSC itself asks for (ver
 > **This was a real gap.** The manuscript initially cited only the O3 data paper while using O4a and O4b
 > data. Both O4 papers are now cited, and a test fails if either citation disappears.
 
-> ⚠️ **Open citation item.** The GWTC-4.0 and GWTC-5.0 *catalog papers* are cited in the manuscript only
-> through their Zenodo data records, because their journal/arXiv coordinates have **not** been verified at
-> full text in this repo. `docs/NOVELTY.md` carries `arXiv:2508.18080` for GWTC-4.0 flagged as general
-> knowledge. Per the repo rule that nothing enters the manuscript on trust, the catalog-paper references
-> must be looked up and verified before submission. Data-record citation is correct and sufficient in the
-> meantime; a catalog paper reference is additionally expected by the collaboration and should be added.
+> ✅ **Closed 2026-07-21.** The GWTC-4.0 and GWTC-5.0 catalog papers are now cited, verified at their
+> arXiv abstract pages (title and collaboration author form checked for both):
+> **arXiv:2508.18082** — *GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations
+> from the First Part of the Fourth LIGO--Virgo--KAGRA Observing Run*; and
+> **arXiv:2605.27225** — *GWTC-5.0: Observations from the Second Part of the Fourth LIGO--Virgo--KAGRA
+> Observing Run and Updates to the Gravitational-Wave Transient Catalog*.
+>
+> Note `docs/NOVELTY.md` carried **2508.18080**, which is a *different* GWTC-4.0 companion paper. The
+> correct catalog reference is **18082**. That is exactly the kind of transposition the "verify before
+> citing" rule exists to catch. Corroborating detail: the GWTC-4.0 abstract reports 86 candidates with
+> FAR < 1/yr, which is precisely the O4a event count this analysis scores (`n_scored = 86`).
+>
+> Neither paper shows a journal reference yet; both are cited as arXiv preprints and should be upgraded
+> if they are published before submission.
 
 ### Licence and acknowledgment obligations
 

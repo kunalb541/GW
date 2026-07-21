@@ -19,7 +19,7 @@ near-constant-chirp-mass ("banana") contours. This is textbook and appears throu
   plane is central. **[Identity VERIFIED; that it *plots explicit constant-Mc curves* is UNVERIFIED — check
   the figures before citing for the visual. This is the likely intended anchor the pasted text meant.]**
 - GWTC catalog papers routinely show Mc–q / m1–m2 banana posteriors (GWTC-3 [arXiv:2111.03606], GWTC-4
-  [arXiv:2508.18080]). **[General knowledge; verify the exact sentences before quoting.]**
+  [arXiv:2508.18080]). **[CORRECTED 2026-07-21: the GWTC-4.0 *catalog* paper is arXiv:2508.18082, verified at the abstract page; 18080 is a different companion paper. See DATA_AVAILABILITY.md.]**
 - Rapid-classification / observable-feature PE constrains masses near constant-Mc lines: MNRAS 515, 5718;
   ["Simple parameter estimation using observable features" arXiv:2304.03731](https://arxiv.org/abs/2304.03731).
   **[UNVERIFIED — 2304.03731 surfaced as a possible close neighbor; read it before positioning against it.]**
