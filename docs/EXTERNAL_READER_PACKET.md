@@ -2,7 +2,7 @@
 
 **Repo** <https://github.com/kunalb541/GW> · **state handed off at commit `c167e27`** (this packet is
 committed immediately after; it changes no analysis) · **PDF** [`paper/manuscript.pdf`](../paper/manuscript.pdf),
-14 pp · 165 contract tests, all passing.
+9 pp · 165 contract tests, all passing.
 
 Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4447-6325).
 

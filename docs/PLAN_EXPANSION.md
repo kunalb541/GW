@@ -5,7 +5,7 @@
 
 ## Why this document exists
 
-The manuscript is 14 pp and reports one result. The repository holds **45 batteries with committed
+The manuscript is 9 pp and reports one result. The repository holds **45 batteries with committed
 results, 27 preregistrations and 36 reports**; **16 batteries** feed the paper. The author's reaction on
 reading the PDF was that the paper looks thin relative to the work, and that reaction is correct for two
 independent reasons — one of which is a defect and one of which is a scoping decision that was never
@@ -26,7 +26,7 @@ then left unpublished. 19 batteries sit in that category.
 ## Phase 1 — deepen the current paper (no new compute)
 
 Every number below is already measured and committed. This phase adds no analysis; it promotes measured
-material from prose into tables and figures. Expected effect: 14 pp → ~18–20 pp, and the sweeps become
+material from prose into tables and figures. Expected effect in the two-column PRD layout: roughly 9 → 12–14 pp, and the sweeps become
 inspectable rather than asserted.
 
 **Hard rule: every new number must come through `src/build_paper_numbers.py`.** For a table of many rows,
