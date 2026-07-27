@@ -1,4 +1,12 @@
-MIT License
+This repository contains material under two different terms. Read the scope note
+below before reusing anything.
+
+===============================================================================
+1. CODE  —  MIT License
+===============================================================================
+
+Applies to: the analysis code, the figure- and number-generation pipelines, and
+the test suite (src/, tests/, scripts/, and the build_*.py generators).
 
 Copyright (c) 2026 Kunal Bhatia
 
@@ -20,20 +28,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
--------------------------------------------------------------------------------
-Scope of this license
+===============================================================================
+2. MANUSCRIPT AND RESULTS  —  All rights reserved
+===============================================================================
 
-This MIT license covers the analysis code, the figure- and number-generation
-pipelines, the test suite, and the documentation in this repository.
+Applies to: the manuscript (paper/), its figures (figures/), and the written
+scientific content of the documentation and result records (docs/, reports/,
+results/*.json prose fields).
 
-It does NOT cover, and the following are governed by their own terms:
+Copyright (c) 2026 Kunal Bhatia. All rights reserved.
 
-  * Gravitational-wave parameter-estimation data. Not redistributed in this
-    repository. These are public releases from the Gravitational Wave Open
-    Science Center, distributed under a Creative Commons Attribution licence;
-    see docs/DATA_AVAILABILITY.md for record numbers and terms.
+This material is provided for transparency, peer review, and reproducibility
+only. It is intended for publication in a peer-reviewed journal and is NOT
+licensed for redistribution, republication, translation, or reuse, in whole or
+in part, without the prior written permission of the author. Quotation for the
+purpose of scholarly citation and review is permitted with attribution.
 
-  * The manuscript (paper/manuscript.tex, paper/manuscript.pdf). Provided for
-    transparency and reproducibility. Copyright of the manuscript text and
-    figures remains with the author; it is intended for journal publication and
-    is not placed in the public domain by this license.
+===============================================================================
+3. DATA  —  not covered here
+===============================================================================
+
+Gravitational-wave parameter-estimation data are NOT redistributed in this
+repository. They are public releases from the Gravitational Wave Open Science
+Center, distributed under a Creative Commons Attribution licence. See
+docs/DATA_AVAILABILITY.md for record numbers and terms.

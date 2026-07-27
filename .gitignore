@@ -14,3 +14,9 @@ results/e94_posterior_cache.npz
 
 # scratch renders and working files (never part of the record)
 tmp/
+
+# working record: planning, review rounds, dated lab notes -- kept local, not public
+notes/
+
+# run logs
+logs/
