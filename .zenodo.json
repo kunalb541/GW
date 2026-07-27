@@ -1,0 +1,34 @@
+{
+  "title": "Reconstructing compact-binary mass-posterior orientation from the mass-ratio marginal",
+  "description": "<p>Pre-registered gravitational-wave methodology project. The component-mass posterior of a compact-binary coalescence is elongated along a contour of near-constant chirp mass. We show that the orientation of that posterior is quantitatively reconstructible from a single one-dimensional marginal of the same posterior: evaluating the constant-chirp-mass curve over an event's own mass-ratio marginal predicts the principal-axis position angle to a median 1.26 deg on GWTC-4.0/O4a and 1.22 deg on GWTC-5.0/O4b for elongated posteriors, with no coefficient calibrated on the validation catalogs and with the prediction fixed on GWTC-3 beforehand. Presented as a posterior-compression relation and a systematics diagnostic, not as a test of general relativity. Every number in the manuscript is regenerated from a committed machine-readable artifact rather than transcribed.</p>",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Bhatia, Kunal",
+      "orcid": "0009-0007-4447-6325",
+      "affiliation": "Independent researcher, Meerut, India"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "gravitational waves",
+    "compact binary coalescence",
+    "parameter estimation",
+    "posterior geometry",
+    "chirp mass",
+    "mass ratio",
+    "principal curve",
+    "GWTC",
+    "reproducible research",
+    "pre-registration"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/kunalb541/GW",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "This repository does not redistribute gravitational-wave parameter-estimation data. Those are public releases from the Gravitational Wave Open Science Center (GWOSC), distributed under a Creative Commons Attribution licence; record numbers and terms are listed in docs/DATA_AVAILABILITY.md."
+}

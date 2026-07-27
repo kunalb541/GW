@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this software or the analysis it reproduces, please cite both the paper and this repository."
+title: "Reconstructing compact-binary mass-posterior orientation from the mass-ratio marginal"
+abstract: >-
+  Pre-registered gravitational-wave methodology project. The component-mass
+  posterior of a compact-binary coalescence is elongated along a contour of
+  near-constant chirp mass. We show that the orientation of that posterior is
+  quantitatively reconstructible from a single one-dimensional marginal of the
+  same posterior: evaluating the constant-chirp-mass curve over an event's own
+  mass-ratio marginal predicts the principal-axis position angle to about a
+  degree on elongated events, with no coefficient calibrated on the validation
+  catalogs and with the prediction fixed on GWTC-3 before the later data were
+  examined. Out-of-sample it reaches a median 1.26 deg on GWTC-4.0/O4a and
+  1.22 deg on GWTC-5.0/O4b. The result is presented as a posterior-compression
+  relation and a systematics diagnostic, not as a test of general relativity.
+  Every number in the manuscript is regenerated from a committed machine-readable
+  artifact rather than transcribed.
+type: software
+authors:
+  - family-names: "Bhatia"
+    given-names: "Kunal"
+    orcid: "https://orcid.org/0009-0007-4447-6325"
+    affiliation: "Independent researcher, Meerut, India"
+version: "2026.07.21"
+date-released: 2026-07-21
+license: MIT
+repository-code: "https://github.com/kunalb541/GW"
+keywords:
+  - "gravitational waves"
+  - "compact binary coalescence"
+  - "parameter estimation"
+  - "posterior geometry"
+  - "chirp mass"
+  - "mass ratio"
+  - "principal curve"
+  - "GWTC"
+  - "reproducible research"
+  - "pre-registration"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Bhatia"
+      given-names: "Kunal"
+      orcid: "https://orcid.org/0009-0007-4447-6325"
+      affiliation: "Independent researcher, Meerut, India"
+  title: "Reconstructing compact-binary mass-posterior orientation from the mass-ratio marginal"
+  year: 2026
+  notes: "Manuscript in preparation (prepared for Physical Review D)"
