@@ -167,7 +167,7 @@ def main():
                  "ambiguity the D2 caveat names. 4 datasets, 2 not independent (EPTA subsets); "
                  "p~1/24 one-sided if independent, weaker here. To be preregistered against "
                  "IPTA DR3 / NG20yr when public.")}
-    print(f"\n=== POST-HOC (exploratory): gamma vs span ===")
+    print("\n=== POST-HOC (exploratory): gamma vs span ===")
     for k in order: print(f"  {spans[k]:5.1f} yr  gamma={gams[k]:.2f}  {k}")
     print(f"  strictly monotonic: {mono}")
 

@@ -2,7 +2,7 @@
 """E46 - parameterized PN-deviation tests (dchi_i) in the value/shape framework.
 Per-parameter combined GR bound + cross-event sign coherence. Prereg E46.
 Extracts zip members one at a time (low disk). No RNG (binomial is exact)."""
-import os, io, json, math, zipfile, tempfile
+import os, json, zipfile, tempfile
 from collections import defaultdict
 import numpy as np
 import h5py

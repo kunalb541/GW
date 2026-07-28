@@ -142,7 +142,7 @@ def main():
           f"Spearman(err, axr) = {sp.statistic:.2f} (GWTC-3: -0.42; GWTC-4: -0.40)")
     print(f"\nwaveform groups picked (no Mixed in GWTC-5): {dict(grp_counts)}")
 
-    print(f"\n  elongated events (axr>=3), sorted by axr:")
+    print("\n  elongated events (axr>=3), sorted by axr:")
     print(f"  {'event':22s} {'m1':>6s} {'m2':>6s} {'axr':>5s} {'meas':>7s} {'curve':>7s} {'tan':>7s} {'e_crv':>6s} {'e_tan':>6s}")
     for r in sorted(elong, key=lambda r: -r["axr"]):
         print(f"  {r['event']:22s} {r['m1']:6.1f} {r['m2']:6.1f} {r['axr']:5.1f} {r['psi_meas']:7.2f} "
@@ -150,7 +150,7 @@ def main():
 
     # descriptive E72 seed: largest curve residuals overall (labelled post-hoc, not a decision)
     top_resid = sorted(rows, key=lambda r: -r["err_curve"])[:10]
-    print(f"\n  [descriptive/post-hoc; E72 seed] 10 largest |dpsi_curve| residuals:")
+    print("\n  [descriptive/post-hoc; E72 seed] 10 largest |dpsi_curve| residuals:")
     for r in top_resid:
         print(f"  {r['event']:22s} axr={r['axr']:5.1f} m1={r['m1']:6.1f} m2={r['m2']:6.1f} "
               f"q~{r['m2']/r['m1']:.2f} e_curve={r['err_curve']:6.2f}")

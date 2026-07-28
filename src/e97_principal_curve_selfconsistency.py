@@ -31,7 +31,7 @@ HONESTY NOTES BUILT IN
 
 Reads the E94 cache only. No HDF5. Seed 97.
 """
-import json, math, os, sys
+import json, os, sys
 import numpy as np
 from scipy.stats import spearmanr, wilcoxon
 

@@ -82,7 +82,7 @@ def main():
           f"(Fisher cond ~1e12, arbitrary beta units); the absolute magnitude is a conditioning artifact.")
 
     best = sorted(rows, key=lambda r: r["dipole_relative_error"])[:6]
-    print(f"\nbest events for the geometric dipole (GR) test (relative error, best=1.0):")
+    print("\nbest events for the geometric dipole (GR) test (relative error, best=1.0):")
     print(f"  {'event':22s} {'Mtot':>6s} {'f_isco':>7s} {'Mc_f50':>7s} {'chi_f50':>8s} {'rel_err':>8s}")
     for r in best:
         print(f"  {r['event']:22s} {r['m1']+r['m2']:6.1f} {r['f_isco']:7.0f} {r['Mc_f50']:7.1f} "

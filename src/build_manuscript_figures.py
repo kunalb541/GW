@@ -11,7 +11,7 @@ Run after any figure is rebuilt:
     python3 src/fig2a_posterior_geometry_examples.py
     python3 src/build_manuscript_figures.py
 """
-import json, os, sys
+import json, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIG = os.path.join(ROOT, "figures")

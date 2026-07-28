@@ -69,7 +69,7 @@ D3 = (chi2_no/dof_no < 2.0) and (maxpair_no < 2.5)
 print(f"individual tension vs CMB: {indiv}")
 print(f"  >2.5sigma outliers: {outliers}")
 print(f"\nfull late-time consensus H0 = {mu_all:.2f} +/- {sig_all:.2f}  (tension vs CMB {t_all:.2f}sigma; chi2/dof {chi2_all:.1f}/{dof_all})")
-print(f"\nLEAVE-ONE-OUT (consensus + tension vs CMB):")
+print("\nLEAVE-ONE-OUT (consensus + tension vs CMB):")
 for k, v in loo.items():
     print(f"  drop {k:22s} -> H0 {v['consensus_H0']:.2f}+/-{v['sigma']:.2f}  tension {v['tension_vs_CMB']:.2f}")
 print(f"\nno-SH0ES late-time anchors: consensus {mu_no:.2f}+/-{sig_no:.2f}, tension {tens((mu_no,sig_no),CMB):.2f}, "

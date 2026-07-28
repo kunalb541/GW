@@ -2,7 +2,7 @@
 """E65 - derive the E40 mass-plane law from PN Fisher geometry: the chirp->total rotation.
 Prereg E65 (locked). Two-direction Fisher mixture; kappa fit on the 14 E40-prereg events only;
 out-of-sample D1/D2 on the remaining 61; parameter-free sign test D3 on all. Seed 65 (no RNG)."""
-import os, sys, json, glob, math
+import os, sys, json, math
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -170,7 +170,7 @@ def main():
     def sgn(a, b): return (a - b + 90) % 180 - 90
     sres = [sgn(r["psi_meas"], r["psi_chirp"]) for r in rows]
     sp2 = spearmanr([r["axr"] for r in rows], np.abs(sres))
-    print(f"\n=== POST-HOC (exploratory, NOT preregistered): curved-law test ===")
+    print("\n=== POST-HOC (exploratory, NOT preregistered): curved-law test ===")
     print(f"  all 75:      curve {ph_curve_all:.2f} vs tangent {ph_chirp_all:.2f} deg ; curve wins {curve_wins}/75")
     print(f"  elongated (axr>=3, n={len(elong)}): curve {ph_curve_el:.2f} vs tangent {ph_chirp_el:.2f} deg")
     print(f"  Spearman(|signed residual|, axr) = {sp2.statistic:.2f} (p={sp2.pvalue:.3g})")

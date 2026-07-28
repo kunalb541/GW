@@ -71,8 +71,8 @@ print(f"\nremnant shift adding the overtone: median {np.median(shifts):.2f}sig, 
 print(f"COHERENCE: dMf<0 in {n_dMf_neg}/{n} ({frac_dMf_neg:.0%}), daf<0 in {n_daf_neg}/{n} ({frac_daf_neg:.0%})")
 print(f"\nD1 (shift is a COHERENT systematic, not stochastic): {'YES -> SYSTEMATIC, not a no-hair violation' if D1_systematic else 'NO -> scattered'}")
 print(f"D2 (no stochastic no-hair violation): {'PASS' if D2_no_stochastic_violation else 'FAIL'}")
-print(f"=> the 220-vs-221 remnant shift is the known ringdown-overtone systematic (coherent all-event")
-print(f"   down-shift), NOT evidence against Kerr. The clean no-hair result is E47 (221 deviation ~0).")
+print("=> the 220-vs-221 remnant shift is the known ringdown-overtone systematic (coherent all-event")
+print("   down-shift), NOT evidence against Kerr. The clean no-hair result is E47 (221 deviation ~0).")
 
 json.dump({"prereg": "preregs/E59_ringdown_mode_consistency_prereg.md", "n_events": n,
            "median_shift_sigma": round(float(np.median(shifts)), 2), "max_shift_sigma": round(float(shifts.max()), 2),

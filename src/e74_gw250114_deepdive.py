@@ -6,7 +6,7 @@ LVK IMR via GWTC-5). This script's INDEPENDENT contribution: from the PE remnant
 Kerr QNM spectrum (the concrete frequencies/damping times the no-hair test confirms) and validate the
 characterization against published values. Seed 74 (no RNG). Berti-Cardoso-Will 2006 (gr-qc/0512160)
 l=m=2 fitting coefficients."""
-import os, sys, json, math
+import os, json, math
 import numpy as np
 import h5py
 
@@ -76,7 +76,7 @@ def main():
     print(f"  remnant Mf_src={char['Mf_source'][0]:.1f} Msun, af={char['final_spin_af'][0]:.3f} "
           f"(Mf_det={char['Mf_detector'][0]:.1f})")
     print(f"  published-value validation vs Suzuki2026/GWTC-5 IMR: {valid}")
-    print(f"\nIndependent Kerr QNM spectrum (observed frame) from the remnant posterior:")
+    print("\nIndependent Kerr QNM spectrum (observed frame) from the remnant posterior:")
     print(f"  (2,2,0): f = {qnm_out['f_220_Hz'][0]:.1f} Hz  (90% {qnm_out['f_220_Hz'][1]:.1f}-{qnm_out['f_220_Hz'][2]:.1f}),"
           f"  tau = {qnm_out['tau_220_ms'][0]:.2f} ms")
     print(f"  (2,2,1): f = {qnm_out['f_221_Hz'][0]:.1f} Hz  (90% {qnm_out['f_221_Hz'][1]:.1f}-{qnm_out['f_221_Hz'][2]:.1f}),"

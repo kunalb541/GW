@@ -25,7 +25,7 @@ THICKNESS ESTIMATOR (declared, not implied):
   smoothing        none; linear interpolation between bin centres, clamped at the ends
 A constant-thickness synthetic control is run to confirm the estimator does not IMPOSE monotonicity.
 """
-import json, math, os, sys
+import json, os, sys
 import numpy as np
 from scipy.stats import spearmanr, wilcoxon
 

@@ -3,7 +3,7 @@
 Robust PER-EVENT bounds on log10(lambda_eff); alpha=0 -> graviton mass. GR-consistency check.
 The COMBINED bound is prior-dependent (LVK use flat-in-A, not flat-in-log10lambda; prior samples are
 empty in the release) -> reported with that caveat, NOT as the headline. Prereg E58. No RNG."""
-import os, re, json, math, zipfile, tempfile
+import os, re, json, zipfile, tempfile
 from collections import defaultdict
 import numpy as np
 import h5py
@@ -80,16 +80,16 @@ for a in alphas:
 
 D1 = gr_ok
 D2 = best_mg < 1e-22   # robust per-event graviton bound order of magnitude
-print(f"=== D1 GR-consistency (no LIV detection) ===")
+print("=== D1 GR-consistency (no LIV detection) ===")
 print(f"prior edge log10lambda ~ {prior_edge:.1f}; all events q95 near edge = {gr_ok}")
-print(f"\n=== D2 GRAVITON MASS (alpha=0), PER-EVENT robust bounds ===")
+print("\n=== D2 GRAVITON MASS (alpha=0), PER-EVENT robust bounds ===")
 print(f"{'event':12s} {'log10(lambda_g/m)>':>18} {'m_g < [eV/c^2]':>16}")
 for ev, v in sorted(g_per.items(), key=lambda kv: -kv[1]["log10lambda_g_lower_90"]):
     print(f"{ev:12s} {v['log10lambda_g_lower_90']:18.2f} {v['m_g_upper_eV']:16.2e}")
 print(f"\nbest single-event: m_g < {best_mg:.2e} eV/c^2 | median event: m_g < {median_mg:.2e}")
 print(f"naive flat-in-log10lambda combined (PRIOR-DEPENDENT, NOT the LVK bound): m_g < {naive_comb_mg:.2e}")
-print(f"  [LVK GWTC-3 flat-in-A combined = 1.27e-23 eV/c^2; my naive product assumes a different prior]")
-print(f"\n=== D3 LIV per order (per-event median / best log10lambda lower bound) ===")
+print("  [LVK GWTC-3 flat-in-A combined = 1.27e-23 eV/c^2; my naive product assumes a different prior]")
+print("\n=== D3 LIV per order (per-event median / best log10lambda lower bound) ===")
 for a, row in liv_per_alpha.items():
     print(f"  {a:10s} " + "  ".join(f"{s}: med {d['median_event_log10lambda_lower_90']} best {d['best_event']}" for s, d in row.items()))
 print(f"\nD1 (GR-consistent, no LIV detection): {'PASS' if D1 else 'FAIL'}")

@@ -26,7 +26,6 @@ permutation null are rendered as NEUTRAL baselines rather than a third hue -- co
 green fails adjacent CVD separation at dE 3.2 (protan). Marker shape carries identity redundantly.
 """
 import json, os, sys
-import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)

@@ -20,7 +20,7 @@ Formats:
 
 Run after any battery re-runs:  python3 src/build_paper_numbers.py
 """
-import json, os, sys
+import json, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "paper/numbers.tex")
@@ -266,15 +266,20 @@ def fmt(v, how):
         # A p-value must never print as 0.000; below 1e-3 give it in scientific form.
         return fmt(v, "sci") if v < 1e-3 else f"{v:.3f}"
     if how == "sci":
+        if v == 0:
+            return "0"
         e = 0
         m = float(v)
-        while m and abs(m) < 1:
+        while abs(m) < 1:
             m *= 10
             e -= 1
         while abs(m) >= 10:
             m /= 10
             e += 1
-        return f"{m:.0f}\\times10^{{{e}}}"
+        if round(abs(m)) >= 10:      # rounding the mantissa can push it to 10; renormalize
+            m /= 10
+            e += 1
+        return f"{round(m):.0f}\\times10^{{{e}}}"
     raise ValueError(how)
 
 

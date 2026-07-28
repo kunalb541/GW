@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""E91 - reproducible deterministic submission gates for the curved chirp-mass law.
+"""[SUPERSEDED by E94/E95] First packaging attempt for the submission gates. It fell back to
+re-serializing committed E65/E67/E71 JSONs and is NOT part of the current paper pipeline
+(build_paper_numbers.py does not reference it); kept only because a contract test still
+exercises it. The reproducible gate numbers now come from E94 (cache) + E95.
+
+E91 - reproducible deterministic submission gates for the curved chirp-mass law.
 
 This is the executable provenance layer for Gates A/C/D. It writes one event-level CSV plus a JSON
 summary. GWTC-3 preferred-group rows are read from the existing E65/E40 derived artifacts because the
@@ -17,7 +22,6 @@ from collections import Counter, defaultdict
 
 import h5py
 import numpy as np
-from scipy.stats import spearmanr, wilcoxon
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)

@@ -63,7 +63,7 @@ python3 src/build_doc_numbers.py          # -> generated blocks in the docs
 # build the manuscript
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 
-# contract tests are data-free and run anywhere (165 tests)
+# contract tests are data-free and run anywhere (167 tests)
 python3 -m pytest tests/ -q
 ```
 
@@ -110,9 +110,10 @@ GW/
 
 ## Documentation
 
-[`docs/README.md`](docs/README.md) is an index of the documentation, separating reference documents a
-reader may want (data availability, referee-readiness summary, citation verification, workflow) from the
-project's working record (handoffs, review rounds, gate notes) kept for transparency.
+[`docs/README.md`](docs/README.md) indexes the reference documentation — data availability,
+referee-readiness summary, citation verification, literature, workflow, testing. The project's internal
+working record (planning notes, review rounds, dated lab notes) is kept out of the public tree; the
+manuscript and the committed artifacts under `results/` are the authoritative record.
 
 ## How to cite
 

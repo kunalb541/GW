@@ -27,7 +27,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from src.e94_build_posterior_cache import CATALOGS, event_name, SRC
 from src.e95_gate_regeneration import PREFERRED, AXR_MIN
-from src.e71_gwtc5_curved_law import pick_group, psi_axr_rho, curve_psi
+from src.e71_gwtc5_curved_law import psi_axr_rho, curve_psi
 from src.e65_pn_fisher_rotation import adiff
 
 SEED = 99
@@ -39,7 +39,7 @@ RESULT_JSON = os.path.join(ROOT, "results/e99_cache_stability_audit_results.json
 def full_samples():
     """Read every preferred-group posterior at FULL length. The only post-E94 HDF5 pass."""
     import h5py
-    out = {}
+    out, skipped = {}, []
     for lab, d in CATALOGS:
         for fp in sorted(glob.glob(os.path.join(ROOT, d, "*.h5"))
                          + glob.glob(os.path.join(ROOT, d, "*.hdf5"))):
@@ -56,7 +56,8 @@ def full_samples():
                     if not all(k in ds.dtype.names for k in SRC):
                         continue
                     cols = {k: np.asarray(ds[k], float) for k in SRC}
-            except Exception:
+            except Exception as e:
+                skipped.append(f"{ev}: {type(e).__name__}")
                 continue
             ok = np.ones(len(cols["mass_1_source"]), bool)
             for k in SRC:
@@ -66,7 +67,9 @@ def full_samples():
                 continue
             out[(lab, ev)] = (cols["mass_1_source"][ok], cols["mass_2_source"][ok],
                               cols["mass_ratio"][ok], cols["chirp_mass_source"][ok])
-    return out
+    if skipped:
+        print(f"  full_samples: skipped {len(skipped)} file(s): {skipped}")
+    return out, skipped
 
 
 def score(events, draw=None, rng=None):
@@ -84,13 +87,15 @@ def score(events, draw=None, rng=None):
 
 
 def main():
-    ev = full_samples()
-    print(f"read {len(ev)} events at full length")
+    ev, skipped = full_samples()
+    print(f"read {len(ev)} events at full length"
+          + (f" ({len(skipped)} skipped)" if skipped else ""))
     full = score(ev)
     out = {"battery": "E99 cache stability audit", "seed": SEED,
            "issue": ("E94 draws indices with replacement, so the cache is a BOOTSTRAP RESAMPLE of the "
                      "released samples, not a subsample. This audit quantifies the consequence."),
-           "full_sample_reference": full, "by_seed": {}, "by_draw_size": {}}
+           "full_sample_reference": full, "by_seed": {}, "by_draw_size": {},
+           "full_sample_skipped": skipped}
 
     for s in SEEDS:
         out["by_seed"][str(s)] = score(ev, 4000, np.random.default_rng(s))

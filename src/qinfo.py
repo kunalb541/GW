@@ -15,7 +15,7 @@ IMPORTANT distinction:
   the MEAN (value) term and are the physically-relevant model/probe discrimination (e.g. LCDM vs w0wa).
 """
 import numpy as np
-from numpy.linalg import eigh, slogdet, inv, det
+from numpy.linalg import eigh, slogdet, inv
 
 # ---------- density matrix + spectral helpers ----------
 def density(C):

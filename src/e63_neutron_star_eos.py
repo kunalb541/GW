@@ -2,7 +2,7 @@
 """E63 - value/shape geometry of the neutron-star mass-radius tension (first cross-domain transfer).
 Prereg E63. Probes in (M[Msun], R[km]): NICER pulse-profile (J0030 Riley19/Miller-2spot/Miller-3spot;
 J0740 Riley21/Miller21) + GW170817 tidal mapped via C-Love. Reuses src/qinfo.py. Seed 63."""
-import os, sys, json, math, glob
+import os, sys, json, math
 import numpy as np
 from numpy.linalg import inv, det, eigh
 from scipy.linalg import sqrtm

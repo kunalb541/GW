@@ -10,7 +10,6 @@ import h5py
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
-from src.e65_pn_fisher_rotation import ang_of, adiff
 from src.e71_gwtc5_curved_law import psi_axr_rho
 
 GW5 = os.path.join(ROOT, "data/chains/gwtc5")
@@ -127,7 +126,7 @@ def main():
         o["coherence"] = "SYSTEMATIC(waveform-driven)" if o.get("waveform_disagreement", 0) >= o["r_err_curve"] \
                          else "CANDIDATE-physics"
 
-    print(f"\nD1 correlations (Spearman r vs axis; BH-FDR q=0.05; partial controls axr):")
+    print("\nD1 correlations (Spearman r vs axis; BH-FDR q=0.05; partial controls axr):")
     print(f"  {'axis':22s} {'rho':>6s} {'p':>7s} {'q_BH':>7s} {'rho|axr':>8s} {'n':>3s} {'FDR':>4s}")
     for a in AXES:
         d = d1[a]

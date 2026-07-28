@@ -6,7 +6,7 @@ frequency) and the ringdown (dominant frequency + damping time), and cross-check
 prediction (from the PE remnant + Berti-Cardoso-Will fits). This unlocks the strain-level tests (data-driven
 frequency geometry, ringdown-geometry bridge, and -- with systematic controls -- the exotic-echo class).
 Seed 83. Data: data/strain/ (gitignored; GWOSC O4b_4KHZ_R1). GW250114 GPS ~ 1420878141.22."""
-import os, sys, json, math
+import os, json, math
 import numpy as np
 from scipy.signal import welch, butter, filtfilt, hilbert
 

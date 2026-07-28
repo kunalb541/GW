@@ -64,11 +64,11 @@ Ray_p = math.exp(-Z) * (1 + (2*Z - Z**2) / (4*n))
 mean_dir = math.degrees(math.atan2(Ss, Cc))
 D3_iso = Ray_p > 0.05
 
-print(f"\n=== D1 combined no-hair test (Gaussian product) ===")
+print("\n=== D1 combined no-hair test (Gaussian product) ===")
 print(f"combined mean deviation (domega, dtau) = ({cmx:.3f}, {cmy:.3f}); combined sigma-from-GR = {sig_comb:.2f}; Q_comb = {Q_comb:.3f} -> {'CONSISTENT' if D1 else 'TENSION'}")
-print(f"=== D2 per-event ===")
+print("=== D2 per-event ===")
 print(f"consistent (Q<0.90): {len(consistent)}/{n} | discrepant (Q>0.95): {len(discrepant)} {[r['event'] for r in discrepant]}")
-print(f"=== D3 directional coherence ===")
+print("=== D3 directional coherence ===")
 print(f"R={R:.3f}, mean dir={mean_dir:.1f} deg, Rayleigh p={Ray_p:.3f} -> {'ISOTROPIC' if D3_iso else 'COHERENT'}")
 print("\nmost discrepant:")
 for r in sorted(rows, key=lambda r: -r["GR_credible_level"])[:6]:

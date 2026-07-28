@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """E66 - spectral-siren H0 obstruction: linear-response coupling of H0 to the mass scale
 on the real LVK GWTC-3 joint (cosmology+population) posterior (icarogw). Prereg E66. Seed 66."""
-import os, sys, json, math
+import os, json, math
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -102,7 +102,7 @@ def main():
           f"(GWTC-3: 7.49); chirp-vs-total wins {wins}/{len(rows)} = {wins/len(rows)*100:.0f}% "
           f"(GWTC-3: 81%); Spearman(err, axr) = {sp.statistic:.2f} (GWTC-3: -0.42)")
 
-    print(f"\n  elongated events (axr>=3), sorted by axr:")
+    print("\n  elongated events (axr>=3), sorted by axr:")
     print(f"  {'event':22s} {'m1':>6s} {'m2':>6s} {'axr':>5s} {'meas':>7s} {'curve':>7s} {'tan':>7s} {'e_crv':>6s} {'e_tan':>6s}")
     for r in sorted(elong, key=lambda r: -r["axr"]):
         print(f"  {r['event']:22s} {r['m1']:6.1f} {r['m2']:6.1f} {r['axr']:5.1f} {r['psi_meas']:7.2f} "

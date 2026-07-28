@@ -88,12 +88,12 @@ def main():
     print(f"E84 data-driven chirp mass (GW250114, H1 ridge, {len(rf)} points)")
     print(f"  full-track fit: Mc_det = {mc_all:.1f} Msun  (PE {PE_MC_DET}) -> {frac*100:+.0f}% raw")
     print(f"  ESTIMATOR BIAS (injections, recovered/true): {bias} -> +15-30%, growing with Mc")
-    print(f"  -> the raw few-% agreement is PARTLY FORTUITOUS; honest claim: BALLPARK consistent "
-          f"(~20-30% template-free systematic), NOT precision.")
+    print("  -> the raw few-% agreement is PARTLY FORTUITOUS; honest claim: BALLPARK consistent "
+          "(~20-30% template-free systematic), NOT precision.")
     print(f"  band-resolved attempt: {bands}")
-    print(f"  -> upper bands starved of ridge points (GW250114 sweeps 64->200 Hz in <25 ms, faster than")
-    print(f"     any STFT window) - the E73 anatomy-compression prediction observed in data. Band-resolved")
-    print(f"     frequency geometry needs band-limited Bayesian PE (major build), not a ridge.")
+    print("  -> upper bands starved of ridge points (GW250114 sweeps 64->200 Hz in <25 ms, faster than")
+    print("     any STFT window) - the E73 anatomy-compression prediction observed in data. Band-resolved")
+    print("     frequency geometry needs band-limited Bayesian PE (major build), not a ridge.")
 
     json.dump({"battery": "E84 data-driven chirp + band-resolved feasibility (characterization)",
                "event": "GW250114_082203",

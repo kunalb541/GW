@@ -74,7 +74,7 @@ def main():
     w = condition(raw, fpsd, Pxx)
     t = (np.arange(len(raw)) - len(raw) // 2) / FS
     ipk = int(np.argmax(np.abs(w) * (np.abs(t) < 12)))
-    print(f"E86 band-resolved boundary - GW241011_233834 (most elongated event, ~1.2 s inspiral)")
+    print("E86 band-resolved boundary - GW241011_233834 (most elongated event, ~1.2 s inspiral)")
     print(f"  merger located at t={t[ipk]:+.3f}s from GPS estimate, |w|={np.abs(w[ipk]):.0f} sigma\n")
 
     # (1) band scan: where does the ridge stop being a chirp?
@@ -93,7 +93,7 @@ def main():
     mc_real, n_real, rho_real = band_ridge_mc(w, ipk, 2048, 30, 50)
 
     # (2) is the one surviving band even informative? injections into REAL noise
-    print(f"  injection calibration of the surviving band (30-50 Hz, 0.5 s window), real noise:")
+    print("  injection calibration of the surviving band (30-50 Hz, 0.5 s window), real noise:")
     print(f"  {'true Mc_det':>12s} {'recovered':>10s} {'ratio':>7s} {'mono':>7s}")
     inj = {}
     for mc_true in (8.0, 10.9, 14.0):
@@ -109,8 +109,8 @@ def main():
           f"{(r11-r8)/r8*100:.0f}% -> response slope {compression:.2f} (1.0 = unbiased, 0 = no information)")
     print(f"  real GW241011: Mc_det = {mc_real:.2f} (monotonicity {rho_real:+.2f}, n={n_real}) - consistent with")
     print(f"  the true {MC_DET_TARGET} ONLY in the weak sense that the estimator maps everything to ~8.")
-    print(f"\n  VERDICT: ridge methods cannot do band-resolved chirp mass for ANY event class:")
-    print(f"    heavy -> sweep faster than the window (E84); light -> too faint per-slice + line forest (here);")
+    print("\n  VERDICT: ridge methods cannot do band-resolved chirp mass for ANY event class:")
+    print("    heavy -> sweep faster than the window (E84); light -> too faint per-slice + line forest (here);")
     print(f"    long-window rescue -> DEGENERATE (response slope {compression:.2f}). Needs banded Bayesian PE.")
 
     json.dump({"battery": "E86 band-resolved boundary, closed from both sides (definitive negative)",

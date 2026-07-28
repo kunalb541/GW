@@ -6,7 +6,7 @@ Each event's (m1,m2) posterior is a Gaussian N(mu, Sigma); the catalog is the cl
 Radical claim tested: the measurement law (E71) removes the ORIENTATION dimension of this manifold, so
 the catalog collapses to ~2 axes -- POPULATION (chirp mass) + PRECISION (elongation) -- and the residual
 IS the population. Seed 82. Reuses E67/E71 per-event records for the group + the curved-law residual."""
-import os, sys, json, glob, math
+import os, json, math
 import numpy as np
 import h5py
 
@@ -65,16 +65,16 @@ def main():
     med_err = float(np.median([e["err_curve"] for e in ev if e["axr"] >= 3]))
 
     print(f"\n(1) location(population) {loc_frac*100:.0f}% vs shape(measurement) {shape_frac*100:.0f}% "
-          f"[the split is mass-range-dominated -> partly trivial]")
+          "[the split is mass-range-dominated -> partly trivial]")
     print(f"(2) orientation slaved to location by the law: median |dpsi_curve|={med_err:.2f} deg (E71) "
-          f"-> orientation is NOT an independent axis")
+          "-> orientation is NOT an independent axis")
     print(f"(3) MDS variance top-3 = {evr[0]*100:.0f}% / {evr[1]*100:.0f}% / {evr[2]*100:.0f}%")
     for k, a in enumerate(axes):
         print(f"    axis{k+1}: |rho(Mc)|={a['abs_spearman_Mc']:.2f}  |rho(axr)|={a['abs_spearman_axr']:.2f}")
     eff_dim = float((w.sum() ** 2) / (w ** 2).sum())   # participation-ratio effective dimensionality
     print(f"    participation-ratio effective dimensionality = {eff_dim:.2f} (naive per-event DOF = 5)")
-    print(f"\nVERDICT: catalog manifold axes = POPULATION (Mc) + PRECISION (axr); orientation removed by "
-          f"the law. Subtract the law -> the population remains.")
+    print("\nVERDICT: catalog manifold axes = POPULATION (Mc) + PRECISION (axr); orientation removed by "
+          "the law. Subtract the law -> the population remains.")
 
     json.dump({"battery": "E82 inference manifold (characterization)", "n_events": n,
                "location_fraction": loc_frac, "shape_fraction": shape_frac,

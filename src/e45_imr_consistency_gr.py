@@ -2,7 +2,7 @@
 """E45 - strong-gravity IMR-consistency test in the value/shape framework.
 Reads LVK GWTC-3 imrct (ΔMf/Mf, Δaf/af) deviation posteriors, per-event + combined GR consistency
 + directional coherence (Rayleigh). Prereg E45. Extracts zip members one at a time (low disk)."""
-import os, io, json, math, zipfile, tempfile
+import os, json, zipfile, tempfile
 import numpy as np
 import h5py
 
@@ -81,15 +81,15 @@ Rayleigh_p = math.exp(-n * R**2) * (1 + (2 * n * R**2 - (n * R**2)**2) / (4 * n)
 mean_dir = math.degrees(math.atan2(S_, C_))
 D3_isotropic = Rayleigh_p > 0.05
 
-print(f"\n=== D1 population combined GR test ===")
+print("\n=== D1 population combined GR test ===")
 print(f"combined mean deviation (dMf/Mf, daf/af) = ({cmx:.3f}, {cmy:.3f})")
 print(f"GR (0,0) combined credible level Q_comb = {Q_comb:.3f}  -> {'CONSISTENT' if D1 else 'TENSION'}")
-print(f"\n=== D2 per-event ===")
+print("\n=== D2 per-event ===")
 print(f"GR-consistent (Q<0.90): {len(consistent)}/{n} | individually discrepant (Q>0.95): {len(discrepant)}")
 if discrepant: print("  discrepant:", [(r['event'], r['GR_credible_level']) for r in discrepant])
-print(f"\n=== D3 directional coherence ===")
+print("\n=== D3 directional coherence ===")
 print(f"mean resultant R={R:.3f}, direction={mean_dir:.1f} deg, Rayleigh p={Rayleigh_p:.3f} -> {'ISOTROPIC' if D3_isotropic else 'COHERENT'}")
-print(f"\nmost discrepant events (by GR credible level):")
+print("\nmost discrepant events (by GR credible level):")
 for r in sorted(rows, key=lambda r: -r["GR_credible_level"])[:6]:
     print(f"  {r['event']:14s} Q={r['GR_credible_level']:.3f} sig={r['sigma_from_GR']:.2f} dev=({r['mx']:+.2f},{r['my']:+.2f}) rho={r['rho']:+.2f}")
 
