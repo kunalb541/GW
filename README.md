@@ -63,7 +63,7 @@ python3 src/build_doc_numbers.py          # -> generated blocks in the docs
 # build the manuscript
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 
-# contract tests are data-free and run anywhere (167 tests)
+# contract tests are data-free and run anywhere (180 tests)
 python3 -m pytest tests/ -q
 ```
 

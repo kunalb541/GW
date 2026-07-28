@@ -4,7 +4,7 @@
 
 ```bash
 cd ~/Desktop/Research/GW
-python3 -m pytest tests/ -q          # full suite (167 tests, all data-free)
+python3 -m pytest tests/ -q          # full suite (180 tests, all data-free)
 python3 -m pytest tests/test_e65_fisher_rotation.py -q   # one battery
 ```
 
