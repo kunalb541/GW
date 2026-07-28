@@ -37,7 +37,7 @@ It is presented as a posterior-compression relation and a systematics diagnostic
 general relativity: the posteriors are generated with general-relativistic waveform models, so their
 internal geometry cannot bound departures from the theory that produced them.
 
-- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 9 pp, two-column (Physical Review D
+- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 10 pp, two-column (Physical Review D
   format, `revtex4-2`).
 - **Reader's guide:** [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_READER_PACKET.md) — the honest
   summary, strongest and weakest claims, and a reproduction checklist.

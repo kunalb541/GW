@@ -2,126 +2,141 @@
 % Every result number in the manuscript body is a macro defined here and read from a
 % committed artifact. A number that cannot be sourced this way must not appear in the paper.
 % Provenance for each macro (artifact :: json path):
-% TrainTangentAll        e65_pn_fisher_rotation_results.json :: posthoc_curved_law.median_err_tangent_all
-% TrainCurveElong        e65_pn_fisher_rotation_results.json :: posthoc_curved_law.median_err_curve_elong
-% TrainN                 e65_pn_fisher_rotation_results.json :: posthoc_curved_law.n
-% TrainSpearmanAxr       e65_pn_fisher_rotation_results.json :: posthoc_curved_law.spearman_absres_axr
-% TrainWinFrac           e100_frames_and_bands_results.json :: chirp_vs_total_win.GWTC-3.win_fraction
-% LockedOaCurveElong     e67_gwtc4_curved_law_results.json :: D1.median_err_curve_elong
-% LockedObCurveElong     e71_gwtc5_curved_law_results.json :: D1.median_err_curve_elong
-% LockedOaCurveAll       e67_gwtc4_curved_law_results.json :: D2.median_err_curve_all
-% LockedObCurveAll       e71_gwtc5_curved_law_results.json :: D2.median_err_curve_all
-% LockedOaTangentAll     e67_gwtc4_curved_law_results.json :: D2.median_err_tangent_all
-% LockedObTangentAll     e71_gwtc5_curved_law_results.json :: D2.median_err_tangent_all
-% LockedOaN              e67_gwtc4_curved_law_results.json :: n_scored
-% LockedObN              e71_gwtc5_curved_law_results.json :: n_scored
-% LockedOaNElong         e67_gwtc4_curved_law_results.json :: D1.n_elong
-% LockedObNElong         e71_gwtc5_curved_law_results.json :: D1.n_elong
-% LockedOaWinFrac        e67_gwtc4_curved_law_results.json :: @winfrac
-% LockedObWinFrac        e71_gwtc5_curved_law_results.json :: @winfrac
-% LockedOaSpearmanAxr    e67_gwtc4_curved_law_results.json :: D3.spearman_err_axr
-% LockedObSpearmanAxr    e71_gwtc5_curved_law_results.json :: D3.spearman_err_axr
-% CacheTrCurve           e95_gate_regeneration_results.json :: gate_A.GWTC-3.own_q
-% CacheOaCurve           e95_gate_regeneration_results.json :: gate_A.O4a.own_q
-% CacheObCurve           e95_gate_regeneration_results.json :: gate_A.O4b.own_q
-% CacheTrTangent         e95_gate_regeneration_results.json :: gate_A.GWTC-3.tangent
-% CacheOaTangent         e95_gate_regeneration_results.json :: gate_A.O4a.tangent
-% CacheObTangent         e95_gate_regeneration_results.json :: gate_A.O4b.tangent
-% CacheTrPooled          e95_gate_regeneration_results.json :: gate_A.GWTC-3.pooled_q
-% CacheOaPooled          e95_gate_regeneration_results.json :: gate_A.O4a.pooled_q
-% CacheObPooled          e95_gate_regeneration_results.json :: gate_A.O4b.pooled_q
-% PermN                  e95_gate_regeneration_results.json :: gate_A.O4a.perm_null.n
-% PermOaMin              e95_gate_regeneration_results.json :: gate_A.O4a.perm_null.min
-% PermOaMax              e95_gate_regeneration_results.json :: @permmax:O4a
-% DegradeMin             e95_gate_regeneration_results.json :: @degrade_min
-% DegradeMax             e95_gate_regeneration_results.json :: @degrade_max
-% XfamN                  e95_gate_regeneration_results.json :: gate_A_cross_family.n_elong
-% XfamAtoB               e95_gate_regeneration_results.json :: gate_A_cross_family.A_to_B
-% XfamBtoA               e95_gate_regeneration_results.json :: gate_A_cross_family.B_to_A
-% XfamDisagree           e95_gate_regeneration_results.json :: gate_A_cross_family.family_axis_disagreement
-% XfamTanAtoB            e95_gate_regeneration_results.json :: gate_A_cross_family.tangent_A_to_B
-% XfamTanBtoA            e95_gate_regeneration_results.json :: gate_A_cross_family.tangent_B_to_A
-% ResidNElong            e92_curve_uncertainty_results.json :: n_elongated
-% ResidMedian            e92_curve_uncertainty_results.json :: monte_carlo_resolution.median_abs_err_deg
-% ResidSigma             e92_curve_uncertainty_results.json :: monte_carlo_resolution.median_bootstrap_sigma_deg
-% ResidRatio             e92_curve_uncertainty_results.json :: monte_carlo_resolution.median_ratio_err_over_sigma
-% SignedMedian           e92_curve_uncertainty_results.json :: @signedmag
-% SignedPTrain           e92_curve_uncertainty_results.json :: signed_residual.GWTC-3.sign_test_p
-% SignedPOa              e92_curve_uncertainty_results.json :: signed_residual.O4a.sign_test_p
-% SignedPOb              e92_curve_uncertainty_results.json :: signed_residual.O4b.sign_test_p
-% EigRatioMedian         e98_framework_audit_results.json :: sloppy_models.eigenvalue_ratio_median
-% EigFracDecade          e98_framework_audit_results.json :: sloppy_models.frac_gt_1_decade
-% EigFracTwoDec          e98_framework_audit_results.json :: sloppy_models.frac_gt_2_decades
-% GaussTangentErr        e98_framework_audit_results.json :: bernstein_von_mises.gaussian_tangent_error_deg
-% GaussCurveErr          e98_framework_audit_results.json :: bernstein_von_mises.arc_corrected_curve_error_deg
-% GaussRatio             e98_framework_audit_results.json :: bernstein_von_mises.ratio
-% SelfViolation          e97_principal_curve_selfconsistency_results.json :: grid_sweep.grid40_min40.median_violation
-% SelfRho                e97_principal_curve_selfconsistency_results.json :: grid_sweep.grid40_min40.spearman_violation_vs_residual
-% SelfP                  e97_principal_curve_selfconsistency_results.json :: grid_sweep.grid40_min40.p_value
-% SelfRhoMin             e97_principal_curve_selfconsistency_results.json :: @rho_min
-% SelfRhoMax             e97_principal_curve_selfconsistency_results.json :: @rho_max
-% SelfIterMin            e97_principal_curve_selfconsistency_results.json :: @iter_min
-% SelfIterMax            e97_principal_curve_selfconsistency_results.json :: @iter_max
-% SelfXfamAPure          e97_principal_curve_selfconsistency_results.json :: cross_family.AtoB.pure_curve_deg
-% SelfXfamACorr          e97_principal_curve_selfconsistency_results.json :: cross_family.AtoB.self_consistency_corrected_deg
-% SelfXfamAP             e97_principal_curve_selfconsistency_results.json :: cross_family.AtoB.wilcoxon_p
-% SelfXfamBPure          e97_principal_curve_selfconsistency_results.json :: cross_family.BtoA.pure_curve_deg
-% SelfXfamBCorr          e97_principal_curve_selfconsistency_results.json :: cross_family.BtoA.self_consistency_corrected_deg
-% SelfXfamBP             e97_principal_curve_selfconsistency_results.json :: cross_family.BtoA.wilcoxon_p
-% ThickRelative          e96_curve_thickness_mechanism_results.json :: in_sample.median_relative_thickness
-% ThickAPure             e96_curve_thickness_mechanism_results.json :: cross_family.AtoB.pure_curve
-% ThickAMeas             e96_curve_thickness_mechanism_results.json :: cross_family.AtoB.measured
-% ThickAP                e96_curve_thickness_mechanism_results.json :: cross_family.AtoB.measured_vs_pure_wilcoxon_p
-% ThickBPure             e96_curve_thickness_mechanism_results.json :: cross_family.BtoA.pure_curve
-% ThickBMeas             e96_curve_thickness_mechanism_results.json :: cross_family.BtoA.measured
-% ThickBP                e96_curve_thickness_mechanism_results.json :: cross_family.BtoA.measured_vs_pure_wilcoxon_p
-% FrameSourceErr         e100_frames_and_bands_results.json :: frames.source_m1_m2.median_err_deg
-% FrameDetErr            e100_frames_and_bands_results.json :: frames.detector_m1_m2.median_err_deg
-% FrameLogErr            e100_frames_and_bands_results.json :: frames.log_source_m1_m2.median_err_deg
-% FrameNPaired           e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.n_paired
-% FramePairedP           e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.wilcoxon_p
-% FrameAxrSource         e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.median_axr_source
-% FrameAxrDet            e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.median_axr_detector
-% MatchedLowSource       e100_frames_and_bands_results.json :: matched_axis_ratio.3-5.median_source_deg
-% MatchedLowDet          e100_frames_and_bands_results.json :: matched_axis_ratio.3-5.median_detector_deg
-% BandRound              e100_frames_and_bands_results.json :: axr_bands.1-1.5.median_err_deg
-% BandTwo                e100_frames_and_bands_results.json :: axr_bands.1.5-2.median_err_deg
-% BandThree              e100_frames_and_bands_results.json :: axr_bands.2-3.median_err_deg
-% BandFour               e100_frames_and_bands_results.json :: axr_bands.3-5.median_err_deg
-% BandFive               e100_frames_and_bands_results.json :: axr_bands.5+.median_err_deg
-% RandomBaseline         e100_frames_and_bands_results.json :: random_baseline_deg
-% CacheRows              results/e94_posterior_cache_manifest.json_results.json :: n_group_rows
-% CacheRowsExact         results/e94_posterior_cache_manifest.json_results.json :: rows_stored_exactly
-% CacheSamples           results/e94_posterior_cache_manifest.json_results.json :: @millions
-% FullOaCurve            e99_cache_stability_audit_results.json :: summary.O4a.full_sample
-% FullObCurve            e99_cache_stability_audit_results.json :: summary.O4b.full_sample
-% FullTrCurve            e99_cache_stability_audit_results.json :: summary.GWTC-3.full_sample
-% ArcTr                  e100_frames_and_bands_results.json :: arc_length_vs_tangent_error.GWTC-3.spearman_arc_vs_tangent_err
-% ArcOa                  e100_frames_and_bands_results.json :: arc_length_vs_tangent_error.O4a.spearman_arc_vs_tangent_err
-% ArcOb                  e100_frames_and_bands_results.json :: arc_length_vs_tangent_error.O4b.spearman_arc_vs_tangent_err
-% ExpOb                  e78_geometric_gr_exponent_results.json :: p_hat
-% ExpObErr               e78_geometric_gr_exponent_results.json :: stat_err_bootstrap
-% ExpComb                e79_exponent_cross_catalog_results.json :: combined_exponent
-% ExpCombErr             e79_exponent_cross_catalog_results.json :: combined_err
-% ExpSpread              e79_exponent_cross_catalog_results.json :: systematic_followup.catalog_spread
-% ExpOffset              e79_exponent_cross_catalog_results.json :: @expoffset
-% ExpSyst                e79_exponent_cross_catalog_results.json :: systematic_followup.syst_floor
-% ExpSigma               e79_exponent_cross_catalog_results.json :: systematic_followup.honest_sigma_from_GR
-% ExpSpearman            e79_exponent_cross_catalog_results.json :: systematic_followup.spearman_pstar_axr
-% ExpCleanHalf           e79_exponent_cross_catalog_results.json :: systematic_followup.p_hat_most_elongated_half
-% ExpNaiveSigma          e79_exponent_cross_catalog_results.json :: @naivesigma
-% AnatomyN               e73_information_anatomy_results.json :: n_events
-% AnatomySpearman        e73_information_anatomy_results.json :: spearman_richness_vs_Mtot
-% LoudMf                 e74_gw250114_deepdive_results.json :: characterization.Mf_source.0
-% LoudChif               e74_gw250114_deepdive_results.json :: characterization.final_spin_af.0
-% LoudSNR                e74_gw250114_deepdive_results.json :: characterization.network_snr.0
-% LoudFtwoTwoZero        e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.f_220_Hz.0
-% LoudTauTwoTwoZero      e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.tau_220_ms.0
-% LoudFtwoTwoOne         e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.f_221_Hz.0
-% LoudTauTwoTwoOne       e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.tau_221_ms.0
-% AtlasN                 e72_gw_geometry_outlier_atlas_results.json :: n
-% AtlasWfRho             e72_gw_geometry_outlier_atlas_results.json :: D1_correlations.waveform_disagreement.rho
-% AtlasWfQ               e72_gw_geometry_outlier_atlas_results.json :: D1_correlations.waveform_disagreement.q_bh
+% TrainTangentAll        results/e65_pn_fisher_rotation_results.json :: posthoc_curved_law.median_err_tangent_all
+% TrainCurveElong        results/e65_pn_fisher_rotation_results.json :: posthoc_curved_law.median_err_curve_elong
+% TrainN                 results/e65_pn_fisher_rotation_results.json :: posthoc_curved_law.n
+% TrainSpearmanAxr       results/e65_pn_fisher_rotation_results.json :: posthoc_curved_law.spearman_absres_axr
+% TrainWinFrac           results/e100_frames_and_bands_results.json :: chirp_vs_total_win.GWTC-3.win_fraction
+% LockedOaCurveElong     results/e67_gwtc4_curved_law_results.json :: D1.median_err_curve_elong
+% LockedObCurveElong     results/e71_gwtc5_curved_law_results.json :: D1.median_err_curve_elong
+% LockedOaCurveAll       results/e67_gwtc4_curved_law_results.json :: D2.median_err_curve_all
+% LockedObCurveAll       results/e71_gwtc5_curved_law_results.json :: D2.median_err_curve_all
+% LockedOaTangentAll     results/e67_gwtc4_curved_law_results.json :: D2.median_err_tangent_all
+% LockedObTangentAll     results/e71_gwtc5_curved_law_results.json :: D2.median_err_tangent_all
+% LockedOaN              results/e67_gwtc4_curved_law_results.json :: n_scored
+% LockedObN              results/e71_gwtc5_curved_law_results.json :: n_scored
+% LockedOaNElong         results/e67_gwtc4_curved_law_results.json :: D1.n_elong
+% LockedObNElong         results/e71_gwtc5_curved_law_results.json :: D1.n_elong
+% LockedOaWinFrac        results/e67_gwtc4_curved_law_results.json :: @winfrac
+% LockedObWinFrac        results/e71_gwtc5_curved_law_results.json :: @winfrac
+% LockedOaSpearmanAxr    results/e67_gwtc4_curved_law_results.json :: D3.spearman_err_axr
+% LockedObSpearmanAxr    results/e71_gwtc5_curved_law_results.json :: D3.spearman_err_axr
+% CacheTrCurve           results/e95_gate_regeneration_results.json :: gate_A.GWTC-3.own_q
+% CacheOaCurve           results/e95_gate_regeneration_results.json :: gate_A.O4a.own_q
+% CacheObCurve           results/e95_gate_regeneration_results.json :: gate_A.O4b.own_q
+% CacheTrTangent         results/e95_gate_regeneration_results.json :: gate_A.GWTC-3.tangent
+% CacheOaTangent         results/e95_gate_regeneration_results.json :: gate_A.O4a.tangent
+% CacheObTangent         results/e95_gate_regeneration_results.json :: gate_A.O4b.tangent
+% CacheTrPooled          results/e95_gate_regeneration_results.json :: gate_A.GWTC-3.pooled_q
+% CacheOaPooled          results/e95_gate_regeneration_results.json :: gate_A.O4a.pooled_q
+% CacheObPooled          results/e95_gate_regeneration_results.json :: gate_A.O4b.pooled_q
+% PermN                  results/e95_gate_regeneration_results.json :: gate_A.O4a.perm_null.n
+% PermOaMin              results/e95_gate_regeneration_results.json :: gate_A.O4a.perm_null.min
+% PermOaMax              results/e95_gate_regeneration_results.json :: @permmax:O4a
+% DegradeMin             results/e95_gate_regeneration_results.json :: @degrade_min
+% DegradeMax             results/e95_gate_regeneration_results.json :: @degrade_max
+% XfamN                  results/e95_gate_regeneration_results.json :: gate_A_cross_family.n_elong
+% XfamAtoB               results/e95_gate_regeneration_results.json :: gate_A_cross_family.A_to_B
+% XfamBtoA               results/e95_gate_regeneration_results.json :: gate_A_cross_family.B_to_A
+% XfamDisagree           results/e95_gate_regeneration_results.json :: gate_A_cross_family.family_axis_disagreement
+% XfamTanAtoB            results/e95_gate_regeneration_results.json :: gate_A_cross_family.tangent_A_to_B
+% XfamTanBtoA            results/e95_gate_regeneration_results.json :: gate_A_cross_family.tangent_B_to_A
+% ResidNElong            results/e92_curve_uncertainty_results.json :: n_elongated
+% ResidMedian            results/e92_curve_uncertainty_results.json :: monte_carlo_resolution.median_abs_err_deg
+% ResidSigma             results/e92_curve_uncertainty_results.json :: monte_carlo_resolution.median_bootstrap_sigma_deg
+% ResidRatio             results/e92_curve_uncertainty_results.json :: monte_carlo_resolution.median_ratio_err_over_sigma
+% SignedMedian           results/e92_curve_uncertainty_results.json :: @signedmag
+% SignedPTrain           results/e92_curve_uncertainty_results.json :: signed_residual.GWTC-3.sign_test_p
+% SignedPOa              results/e92_curve_uncertainty_results.json :: signed_residual.O4a.sign_test_p
+% SignedPOb              results/e92_curve_uncertainty_results.json :: signed_residual.O4b.sign_test_p
+% EigRatioMedian         results/e98_framework_audit_results.json :: sloppy_models.eigenvalue_ratio_median
+% EigFracDecade          results/e98_framework_audit_results.json :: sloppy_models.frac_gt_1_decade
+% EigFracTwoDec          results/e98_framework_audit_results.json :: sloppy_models.frac_gt_2_decades
+% GaussTangentErr        results/e98_framework_audit_results.json :: bernstein_von_mises.gaussian_tangent_error_deg
+% GaussCurveErr          results/e98_framework_audit_results.json :: bernstein_von_mises.arc_corrected_curve_error_deg
+% GaussRatio             results/e98_framework_audit_results.json :: bernstein_von_mises.ratio
+% SelfViolation          results/e97_principal_curve_selfconsistency_results.json :: grid_sweep.grid40_min40.median_violation
+% SelfRho                results/e97_principal_curve_selfconsistency_results.json :: grid_sweep.grid40_min40.spearman_violation_vs_residual
+% SelfP                  results/e97_principal_curve_selfconsistency_results.json :: grid_sweep.grid40_min40.p_value
+% SelfRhoMin             results/e97_principal_curve_selfconsistency_results.json :: @rho_min
+% SelfRhoMax             results/e97_principal_curve_selfconsistency_results.json :: @rho_max
+% SelfIterMin            results/e97_principal_curve_selfconsistency_results.json :: @iter_min
+% SelfIterMax            results/e97_principal_curve_selfconsistency_results.json :: @iter_max
+% SelfXfamAPure          results/e97_principal_curve_selfconsistency_results.json :: cross_family.AtoB.pure_curve_deg
+% SelfXfamACorr          results/e97_principal_curve_selfconsistency_results.json :: cross_family.AtoB.self_consistency_corrected_deg
+% SelfXfamAP             results/e97_principal_curve_selfconsistency_results.json :: cross_family.AtoB.wilcoxon_p
+% SelfXfamBPure          results/e97_principal_curve_selfconsistency_results.json :: cross_family.BtoA.pure_curve_deg
+% SelfXfamBCorr          results/e97_principal_curve_selfconsistency_results.json :: cross_family.BtoA.self_consistency_corrected_deg
+% SelfXfamBP             results/e97_principal_curve_selfconsistency_results.json :: cross_family.BtoA.wilcoxon_p
+% ThickRelative          results/e96_curve_thickness_mechanism_results.json :: in_sample.median_relative_thickness
+% ThickAPure             results/e96_curve_thickness_mechanism_results.json :: cross_family.AtoB.pure_curve
+% ThickAMeas             results/e96_curve_thickness_mechanism_results.json :: cross_family.AtoB.measured
+% ThickAP                results/e96_curve_thickness_mechanism_results.json :: cross_family.AtoB.measured_vs_pure_wilcoxon_p
+% ThickBPure             results/e96_curve_thickness_mechanism_results.json :: cross_family.BtoA.pure_curve
+% ThickBMeas             results/e96_curve_thickness_mechanism_results.json :: cross_family.BtoA.measured
+% ThickBP                results/e96_curve_thickness_mechanism_results.json :: cross_family.BtoA.measured_vs_pure_wilcoxon_p
+% FrameSourceErr         results/e100_frames_and_bands_results.json :: frames.source_m1_m2.median_err_deg
+% FrameDetErr            results/e100_frames_and_bands_results.json :: frames.detector_m1_m2.median_err_deg
+% FrameLogErr            results/e100_frames_and_bands_results.json :: frames.log_source_m1_m2.median_err_deg
+% FrameNPaired           results/e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.n_paired
+% FramePairedP           results/e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.wilcoxon_p
+% FrameAxrSource         results/e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.median_axr_source
+% FrameAxrDet            results/e100_frames_and_bands_results.json :: frames.detector_vs_source_paired.median_axr_detector
+% MatchedLowSource       results/e100_frames_and_bands_results.json :: matched_axis_ratio.3-5.median_source_deg
+% MatchedLowDet          results/e100_frames_and_bands_results.json :: matched_axis_ratio.3-5.median_detector_deg
+% BandRound              results/e100_frames_and_bands_results.json :: axr_bands.1-1.5.median_err_deg
+% BandTwo                results/e100_frames_and_bands_results.json :: axr_bands.1.5-2.median_err_deg
+% BandThree              results/e100_frames_and_bands_results.json :: axr_bands.2-3.median_err_deg
+% BandFour               results/e100_frames_and_bands_results.json :: axr_bands.3-5.median_err_deg
+% BandFive               results/e100_frames_and_bands_results.json :: axr_bands.5+.median_err_deg
+% RandomBaseline         results/e100_frames_and_bands_results.json :: random_baseline_deg
+% CacheRows              results/e94_posterior_cache_manifest.json :: n_group_rows
+% CacheRowsExact         results/e94_posterior_cache_manifest.json :: rows_stored_exactly
+% CacheSamples           results/e94_posterior_cache_manifest.json :: @millions
+% FullOaCurve            results/e99_cache_stability_audit_results.json :: summary.O4a.full_sample
+% FullObCurve            results/e99_cache_stability_audit_results.json :: summary.O4b.full_sample
+% FullTrCurve            results/e99_cache_stability_audit_results.json :: summary.GWTC-3.full_sample
+% ArcTr                  results/e100_frames_and_bands_results.json :: arc_length_vs_tangent_error.GWTC-3.spearman_arc_vs_tangent_err
+% ArcOa                  results/e100_frames_and_bands_results.json :: arc_length_vs_tangent_error.O4a.spearman_arc_vs_tangent_err
+% ArcOb                  results/e100_frames_and_bands_results.json :: arc_length_vs_tangent_error.O4b.spearman_arc_vs_tangent_err
+% AltErrOaHalf           results/e101_alternative_curves_and_1pn_results.json :: D1_exponent_null.p_star.O4a.err_at_0.50
+% AltErrObHalf           results/e101_alternative_curves_and_1pn_results.json :: D1_exponent_null.p_star.O4b.err_at_0.50
+% AltRatioMin            results/e101_alternative_curves_and_1pn_results.json :: @altratio_min
+% AltRatioMax            results/e101_alternative_curves_and_1pn_results.json :: @altratio_max
+% AltPStarLo             results/e101_alternative_curves_and_1pn_results.json :: @altpstar_min
+% AltPStarHi             results/e101_alternative_curves_and_1pn_results.json :: @altpstar_max
+% ChordOa                results/e101_alternative_curves_and_1pn_results.json :: D2_chord_baseline.O4a.chord
+% ChordOb                results/e101_alternative_curves_and_1pn_results.json :: D2_chord_baseline.O4b.chord
+% OnePNzero              results/e101_alternative_curves_and_1pn_results.json :: D3_1PN_fisher.median_0PN_err_deg
+% OnePNone               results/e101_alternative_curves_and_1pn_results.json :: D3_1PN_fisher.median_1PN_err_deg
+% OnePNpeff              results/e101_alternative_curves_and_1pn_results.json :: D3_1PN_fisher.median_p_eff
+% OnePNpeffLo            results/e101_alternative_curves_and_1pn_results.json :: @peff_lo
+% OnePNpeffHi            results/e101_alternative_curves_and_1pn_results.json :: @peff_hi
+% TangentBeatsAll        figures/fig2a_posterior_geometry_examples.json :: recorded_but_not_plotted.tangent_beats_curve_fraction_all_elongated
+% TangentBeatsHigh       figures/fig2a_posterior_geometry_examples.json :: recorded_but_not_plotted.tangent_beats_curve_fraction_axr_ge_8
+% ExpOb                  results/e78_geometric_gr_exponent_results.json :: p_hat
+% ExpObErr               results/e78_geometric_gr_exponent_results.json :: stat_err_bootstrap
+% ExpComb                results/e79_exponent_cross_catalog_results.json :: combined_exponent
+% ExpCombErr             results/e79_exponent_cross_catalog_results.json :: combined_err
+% ExpSpread              results/e79_exponent_cross_catalog_results.json :: systematic_followup.catalog_spread
+% ExpOffset              results/e79_exponent_cross_catalog_results.json :: @expoffset
+% ExpSyst                results/e79_exponent_cross_catalog_results.json :: systematic_followup.syst_floor
+% ExpSigma               results/e79_exponent_cross_catalog_results.json :: systematic_followup.honest_sigma_from_GR
+% ExpSpearman            results/e79_exponent_cross_catalog_results.json :: systematic_followup.spearman_pstar_axr
+% ExpCleanHalf           results/e79_exponent_cross_catalog_results.json :: systematic_followup.p_hat_most_elongated_half
+% ExpNaiveSigma          results/e79_exponent_cross_catalog_results.json :: @naivesigma
+% AnatomyN               results/e73_information_anatomy_results.json :: n_events
+% AnatomySpearman        results/e73_information_anatomy_results.json :: spearman_richness_vs_Mtot
+% LoudMf                 results/e74_gw250114_deepdive_results.json :: characterization.Mf_source.0
+% LoudChif               results/e74_gw250114_deepdive_results.json :: characterization.final_spin_af.0
+% LoudSNR                results/e74_gw250114_deepdive_results.json :: characterization.network_snr.0
+% LoudFtwoTwoZero        results/e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.f_220_Hz.0
+% LoudTauTwoTwoZero      results/e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.tau_220_ms.0
+% LoudFtwoTwoOne         results/e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.f_221_Hz.0
+% LoudTauTwoTwoOne       results/e74_gw250114_deepdive_results.json :: kerr_qnm_prediction.tau_221_ms.0
+% AtlasN                 results/e72_gw_geometry_outlier_atlas_results.json :: n
+% AtlasWfRho             results/e72_gw_geometry_outlier_atlas_results.json :: D1_correlations.waveform_disagreement.rho
+% AtlasWfQ               results/e72_gw_geometry_outlier_atlas_results.json :: D1_correlations.waveform_disagreement.q_bh
 
 \newcommand{\TrainTangentAll}{7.49}
 \newcommand{\TrainCurveElong}{0.81}
@@ -220,6 +235,21 @@
 \newcommand{\ArcTr}{-0.51}
 \newcommand{\ArcOa}{-0.57}
 \newcommand{\ArcOb}{-0.49}
+\newcommand{\AltErrOaHalf}{4.1}
+\newcommand{\AltErrObHalf}{3.4}
+\newcommand{\AltRatioMin}{2.9}
+\newcommand{\AltRatioMax}{4.7}
+\newcommand{\AltPStarLo}{0.62}
+\newcommand{\AltPStarHi}{0.63}
+\newcommand{\ChordOa}{2.78}
+\newcommand{\ChordOb}{1.89}
+\newcommand{\OnePNzero}{4.9}
+\newcommand{\OnePNone}{4.5}
+\newcommand{\OnePNpeff}{0.630}
+\newcommand{\OnePNpeffLo}{0.628}
+\newcommand{\OnePNpeffHi}{0.639}
+\newcommand{\TangentBeatsAll}{15\%}
+\newcommand{\TangentBeatsHigh}{31\%}
 \newcommand{\ExpOb}{0.616}
 \newcommand{\ExpObErr}{0.011}
 \newcommand{\ExpComb}{0.628}

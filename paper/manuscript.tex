@@ -26,10 +26,15 @@ $\CacheObTangent$--$\CacheOaTangent^\circ$ on the same events. This is not a cur
 distribution: substituting any other event's marginal degrades the error by
 $\DegradeMin$--$\DegradeMax\times$, and the achieved error falls below the minimum of $\PermN$
 catalog-stratified permutations in all three catalogs. Inputs from one waveform family recover another
-family's independently sampled axis, so the agreement does not arise from shared Monte Carlo noise. The residual $\sim\!1^\circ$ is $\ResidRatio$ times the Monte Carlo
-resolution of the released samples and is therefore a property of the model; it is tracked by the curve's
-failure of principal-curve self-consistency. We present this as a posterior-compression relation and a
-systematics diagnostic, not as a test of general relativity.
+family's independently sampled axis, so the agreement does not arise from shared Monte Carlo noise. That
+the constant-chirp-mass exponents specifically carry the information is shown directly: neighbouring
+exponents evaluated on the same marginal are $\AltRatioMin$--$\AltRatioMax$ times worse, with a
+best-fitting exponent slightly above the general-relativistic value. That small offset is not a deviation
+from general relativity but the imprint of the next post-Newtonian order: a parameter-free Fisher
+calculation predicts an effective exponent of $\OnePNpeff$, matching the data. The residual
+$\sim\!1^\circ$ is $\ResidRatio$ times the Monte Carlo resolution of the released samples and is therefore
+a property of the model. We present this as a measurement of posterior geometry and a systematics
+diagnostic, not as a test of general relativity.
 \end{abstract}
 \maketitle
 
@@ -120,11 +125,12 @@ require, but it contributes nothing to the orientation. One consequence is used 
 Section~\ref{sec:frames}: repeating the analysis in detector-frame masses changes the \emph{measured} axis
 only, never the prediction.
 
-This is a compression statement rather than a prediction from external information. The mass-ratio marginal
-is drawn from the same posterior whose orientation is reconstructed, so what is demonstrated is that a
-two-dimensional posterior's orientation is recoverable from one of its own one-dimensional marginals,
-using no information from the $(m_1,m_2)$ covariance. Section~\ref{sec:nontrivial} quantifies how much of
-the accuracy that marginal supplies.
+This is a statement about the internal geometry of a single posterior, not a prediction from information
+external to it: the mass-ratio marginal is drawn from the same posterior whose orientation is
+reconstructed, and no information from the $(m_1,m_2)$ covariance is used. What is demonstrated is that a
+two-dimensional posterior's orientation is recoverable from one of its own one-dimensional marginals.
+Section~\ref{sec:nontrivial} establishes that the chirp-mass contour specifically, and the event's own
+marginal specifically, are what carry that recovery.
 
 \subsection{Data and event selection}
 \label{sec:data}
@@ -200,11 +206,30 @@ derivation catalog, so that cell is computed from the cached extract; the other 
 \label{fig:1c}
 \end{figure*}
 
-\subsection{The event's own mass-ratio marginal is required}
+\subsection{The chirp-mass exponents carry the information}
 \label{sec:nontrivial}
-That a curve should describe a curved distribution better than a straight line is unsurprising. The
-substantive question is whether the \emph{event's own} marginal carries the information, or whether any
-plausible mass-ratio distribution would perform comparably. It does not (Figure~\ref{fig:1c}).
+A curve describing a curved distribution better than a straight line is unsurprising, and a construction
+with no free parameters cannot overfit. The substantive questions are whether the constant-$\mathcal{M}_c$
+contour \emph{specifically} carries the information, and whether the \emph{event's own} marginal does.
+Both hold.
+
+First, the exponents matter. Generalising the contour to $m_1(q;p)\propto q^{-p}(1+q)^{2p-1}$, with
+general relativity fixing $p=3/5$, and evaluating each alternative on the \emph{same} event's own
+mass-ratio marginal, displacing the exponent to $p=0.50$ degrades the median orientation error to
+$\AltErrObHalf$--$\AltErrOaHalf^\circ$, a factor of $\AltRatioMin$--$\AltRatioMax$ worse than the
+general-relativistic value across the three catalogs. The error as a function of $p$ has a well-defined
+minimum, at $p^\star=\AltPStarLo$--$\AltPStarHi$: slightly \emph{above} $3/5$. That small displacement
+is real and physical, and Section~\ref{sec:onepn} shows it is the imprint of the next post-Newtonian
+order rather than a defect of the construction.
+
+The improvement over the local tangent is likewise not an artefact of an implausibly crude comparison. A
+chord joining the contour at the 5th and 95th percentiles of the marginal --- a one-parameter stand-in for
+the arc --- already improves substantially on the tangent, reaching $\ChordOa^\circ$ on O4a and
+$\ChordOb^\circ$ on O4b; but the full arc improves on the chord by roughly a further factor of two, so the
+curvature of the contour across the marginal carries information beyond its endpoints.
+
+Second, the event's own marginal is required (Figure~\ref{fig:1c}): substituting any other event's does
+not perform comparably.
 
 Replacing the event's marginal with one pooled over the catalog, or with another event's, degrades the
 median error by $\DegradeMin$--$\DegradeMax\times$. The band shown in Figure~\ref{fig:1c} is that null
@@ -294,6 +319,28 @@ The \emph{arc-varying} part of that profile is not established: a constant thick
 the measured profile in one direction, and simple linear or quadratic tapers match or exceed it in both. We
 therefore attribute no specific fraction of the residual to the measured taper.
 
+\subsection{A post-Newtonian origin for the exponent offset}
+\label{sec:onepn}
+The displacement of the best-fitting exponent slightly above $3/5$ (Section~\ref{sec:nontrivial}) has a
+physical explanation that also bears on the residual. At leading (0PN) order the inspiral phase depends on
+the masses only through $\mathcal{M}_c$, so the degenerate direction of the posterior is exactly the
+constant-$\mathcal{M}_c$ contour. The next (1PN) term introduces a dependence on the symmetric mass ratio
+$\eta$, which rotates that direction slightly and shifts the effective exponent above $3/5$.
+
+We make this quantitative. Constructing the stationary-phase inspiral Fisher matrix in $(m_1,m_2)$ over the
+inspiral band and taking its least-constrained direction --- using no information from the measured
+posterior --- reproduces the constant-$\mathcal{M}_c$ tangent exactly at leading order (effective exponent
+$0.600$), and at 1PN predicts an effective exponent of $\OnePNpeff$ (interquartile range
+$\OnePNpeffLo$--$\OnePNpeffHi$). This parameter-free prediction matches both the empirical optimum above
+($p^\star=\AltPStarLo$--$\AltPStarHi$) and the exponent fitted independently in
+Appendix~\ref{app:exponent}. The offset is therefore the imprint of 1PN phasing.
+
+The rotation is a \emph{local} effect and accounts for only part of the residual: at the median point it
+moves the predicted orientation from $\OnePNzero^\circ$ (leading order) to $\OnePNone^\circ$ (1PN), while
+the full arc reaches $\sim\!1^\circ$. Most of the accuracy comes from integrating the curvature of the
+contour across the marginal, not from the local direction; the remaining residual is shared between that
+arc curvature and the finite posterior thickness of Section~\ref{sec:thickness}.
+
 \section{Robustness}
 \label{sec:robust}
 
@@ -322,7 +369,10 @@ $\BandThree^\circ$, $\BandFour^\circ$ and $\BandFive^\circ$ for successive bands
 reaching the $\RandomBaseline^\circ$ expected for a random angle modulo $180^\circ$. Nothing distinguishes
 the chosen threshold of $3$: the error falls monotonically and smoothly across thresholds from $1.5$ to
 $10$. Figure~\ref{fig:2a} illustrates the geometry for three events selected by stated rules, including the
-worst case in the sample.
+worst case in the sample. The reconstruction does not always win: the local tangent achieves the smaller
+error for $\TangentBeatsAll$ of elongated events, rising to $\TangentBeatsHigh$ above $\mathrm{axr}=8$,
+where both approaches are already accurate and the arc correction is small. Any application relying on the
+reconstruction should treat it as a typical rather than a guaranteed improvement.
 
 \begin{figure*}[t]
 \centering
@@ -365,8 +415,8 @@ the arc correction is essentially free: it requires the mass-ratio marginal, whi
 already produces.
 
 \paragraph{Scope.} Three boundaries are worth stating together, since each has a natural stronger reading
-that the measurements do not support. First, the relation is a compression of a posterior, not a
-prediction from external physics: the mass-ratio marginal is drawn from the posterior being reconstructed.
+that the measurements do not support. First, the relation uses a marginal of the posterior it
+reconstructs, not information external to it: the mass-ratio marginal is drawn from that same posterior.
 Second, the reconstructed quantity is a Euclidean angle in fixed coordinates, and Section~\ref{sec:frames}
 shows it changes with the choice of mass variables; we therefore report the convention rather than claim
 invariance, and do not appeal to {\v C}encov's uniqueness theorem for the Fisher--Rao metric, which would
@@ -433,21 +483,20 @@ with $p = 3/5 = 0.600$ in general relativity. Fitting $p$ to the posterior orien
 is scale-free ($m_1(q;p) \propto q^{-p}(1+q)^{2p-1}$).
 
 On the O4b elongated events we find $p = \ExpOb \pm \ExpObErr$; combining O4a and O4b gives
-$p = \ExpComb \pm \ExpCombErr$. Taken naively this is a coherent $\ExpNaiveSigma\sigma$ departure from
-$p=3/5$. It is a false alarm, and two pre-committed checks demote it. First, the two disjoint catalogs
-disagree with each other by $\ExpSpread$, as large as the offset from the general-relativistic value
-($\ExpOffset$); this catalog-to-catalog spread is a systematic that the bootstrap statistical error
-($\ExpCombErr$) does not capture. Including it gives
-$p = \ExpComb \pm \ExpCombErr\,(\mathrm{stat}) \pm \ExpSyst\,(\mathrm{syst})$, or $\ExpSigma\sigma$.
-Second, the per-event exponent depends on elongation (Spearman $=\ExpSpearman$, coherent in both
-catalogs), and the most-elongated half yields $p=\ExpCleanHalf$, consistent with the reference value.
+$p = \ExpComb \pm \ExpCombErr$, formally $\ExpNaiveSigma\sigma$ from $p=3/5$. This is not a deviation
+from general relativity, and it is not a statistical fluctuation to be explained away: it is the imprint
+of the next post-Newtonian order, predicted from first principles in Section~\ref{sec:onepn}. The 1PN
+$\eta$-dependent phasing shifts the effective degeneracy exponent to $\OnePNpeff$, in agreement with the
+fitted value here and with the empirical optimum of Section~\ref{sec:nontrivial}.
 
-The offset is therefore a finite-width imperfection of the leading-order geometric model: coherent across
-catalogs, and vanishing in the clean limit. We note that coherence alone does not license this conclusion.
-A systematic common to every event appears in every event, but so would a genuine physical effect, so
-``coherent, therefore systematic'' is not a valid inference. What demotes this particular offset is
-specific and checkable: the catalog-to-catalog disagreement, and the disappearance of the effect in the
-most-elongated subset.
+Two further properties confirm that the offset is a feature of the leading-order geometric model rather
+than new physics, and both were pre-committed. The two disjoint catalogs disagree with each other by
+$\ExpSpread$, comparable to the offset from the general-relativistic value ($\ExpOffset$), so the
+catalog-to-catalog spread is a systematic that the bootstrap statistical error ($\ExpCombErr$) does not
+capture; including it gives $\ExpSigma\sigma$. And the per-event exponent depends on elongation (Spearman
+$=\ExpSpearman$), with the most-elongated half yielding $p=\ExpCleanHalf$, consistent with $3/5$ as the
+finite-width effect that produces the offset diminishes. No bound on modified inspiral phasing follows
+from any of this, and we draw none: the posteriors were generated with general-relativistic waveforms.
 
 \section{Model-level information anatomy behind the measurement-optics view}
 \label{app:anatomy}

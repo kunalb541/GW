@@ -1,7 +1,7 @@
 {
  "generator": "src/build_paper_numbers.py",
  "note": "Provenance for every number in paper/manuscript.tex. Each macro is the only way its value may appear in the paper; see tests/test_paper_numbers.py.",
- "n_macros": 120,
+ "n_macros": 135,
  "macros": [
   {
    "macro": "TrainTangentAll",
@@ -681,6 +681,111 @@
    "artifact": "results/e100_frames_and_bands_results.json",
    "path": "arc_length_vs_tangent_error.O4b.spearman_arc_vs_tangent_err",
    "format": "f2"
+  },
+  {
+   "macro": "AltErrOaHalf",
+   "value": "4.1",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D1_exponent_null.p_star.O4a.err_at_0.50",
+   "format": "f1"
+  },
+  {
+   "macro": "AltErrObHalf",
+   "value": "3.4",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D1_exponent_null.p_star.O4b.err_at_0.50",
+   "format": "f1"
+  },
+  {
+   "macro": "AltRatioMin",
+   "value": "2.9",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "@altratio_min",
+   "format": "f1"
+  },
+  {
+   "macro": "AltRatioMax",
+   "value": "4.7",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "@altratio_max",
+   "format": "f1"
+  },
+  {
+   "macro": "AltPStarLo",
+   "value": "0.62",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "@altpstar_min",
+   "format": "f2"
+  },
+  {
+   "macro": "AltPStarHi",
+   "value": "0.63",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "@altpstar_max",
+   "format": "f2"
+  },
+  {
+   "macro": "ChordOa",
+   "value": "2.78",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D2_chord_baseline.O4a.chord",
+   "format": "f2"
+  },
+  {
+   "macro": "ChordOb",
+   "value": "1.89",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D2_chord_baseline.O4b.chord",
+   "format": "f2"
+  },
+  {
+   "macro": "OnePNzero",
+   "value": "4.9",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D3_1PN_fisher.median_0PN_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "OnePNone",
+   "value": "4.5",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D3_1PN_fisher.median_1PN_err_deg",
+   "format": "f1"
+  },
+  {
+   "macro": "OnePNpeff",
+   "value": "0.630",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "D3_1PN_fisher.median_p_eff",
+   "format": "f3"
+  },
+  {
+   "macro": "OnePNpeffLo",
+   "value": "0.628",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "@peff_lo",
+   "format": "f3"
+  },
+  {
+   "macro": "OnePNpeffHi",
+   "value": "0.639",
+   "artifact": "results/e101_alternative_curves_and_1pn_results.json",
+   "path": "@peff_hi",
+   "format": "f3"
+  },
+  {
+   "macro": "TangentBeatsAll",
+   "value": "15\\%",
+   "artifact": "results/figures/fig2a_posterior_geometry_examples.json_results.json",
+   "path": "recorded_but_not_plotted.tangent_beats_curve_fraction_all_elongated",
+   "format": "pct0"
+  },
+  {
+   "macro": "TangentBeatsHigh",
+   "value": "31\\%",
+   "artifact": "results/figures/fig2a_posterior_geometry_examples.json_results.json",
+   "path": "recorded_but_not_plotted.tangent_beats_curve_fraction_axr_ge_8",
+   "format": "pct0"
   },
   {
    "macro": "ExpOb",
