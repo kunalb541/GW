@@ -410,9 +410,17 @@ The tangent baseline quantifies what is being corrected. The principal axis of a
 eigenvector of its covariance, which for a likelihood expanded quadratically about its peak is the local
 tangent to the degeneracy; the tangent error is therefore the error incurred by treating the posterior as
 Gaussian. On elongated events that error is $\GaussTangentErr^\circ$ against $\GaussCurveErr^\circ$ once
-the arc is accounted for --- a factor of $\GaussRatio$. For applications that use posterior orientation,
-the arc correction is essentially free: it requires the mass-ratio marginal, which parameter estimation
-already produces.
+the arc is accounted for --- a factor of $\GaussRatio$. The correction is essentially free, requiring only
+the mass-ratio marginal that parameter estimation already produces, and its downstream effect is specific
+rather than universal. It does not improve the total credible-region \emph{coverage} of a Gaussian
+single-event approximation, which is set by the region's area and is nearly insensitive to its tilt (the
+$90\%$ region captures $\DownCovTangent$ of the true posterior when tangent-oriented, against
+$\DownCovOracle$ for the true axis). It does improve the component-mass \emph{marginals}, which are
+orientation-sensitive: a tangent-oriented Gaussian misstates the secondary-mass $90\%$ credible width by a
+median $\DownSecTangent$, which the arc reduces to $\DownSecCurve$, close to the $\DownSecOracle$ of the true
+axis. Any catalog-level analysis that reads component-mass intervals from a Gaussian single-event
+approximation therefore benefits; a template-placement or volume estimate that uses only the metric area
+does not.
 
 \paragraph{Scope.} Three boundaries are worth stating together, since each has a natural stronger reading
 that the measurements do not support. First, the relation uses a marginal of the posterior it
@@ -464,7 +472,10 @@ families, and leaves a residual that is a property of the model rather than of f
 
 Two consequences follow. First, the local Gaussian approximation underlying rapid parameter-estimation
 tools misstates posterior orientation by a factor of $\GaussRatio$ more than the arc-corrected
-construction, which suggests a cheap correction for applications that rely on the orientation. Second,
+construction. This is a cheap correction with a specific benefit: it reduces the error in the
+component-mass credible intervals of a Gaussian single-event approximation from a median $\DownSecTangent$
+to $\DownSecCurve$ on the secondary mass, while leaving the total credible-region coverage --- which does
+not depend on orientation --- unchanged. Second,
 because the geometry is this reproducible, departures from it are measurable, and we find no dependence on
 any of nine pre-declared source parameters --- the only surviving correlate is waveform-model disagreement.
 A first-principles derivation of the curve's thickness and curvature from the Fisher information, and a
@@ -497,50 +508,6 @@ capture; including it gives $\ExpSigma\sigma$. And the per-event exponent depend
 $=\ExpSpearman$), with the most-elongated half yielding $p=\ExpCleanHalf$, consistent with $3/5$ as the
 finite-width effect that produces the offset diminishes. No bound on modified inspiral phasing follows
 from any of this, and we draw none: the posteriors were generated with general-relativistic waveforms.
-
-\section{Model-level information anatomy behind the measurement-optics view}
-\label{app:anatomy}
-The measurement-optics reading of Section~\ref{sec:intro} makes a further prediction that can be checked
-against the waveform model directly: the same Fisher structure that fixes the posterior's orientation also
-fixes \emph{when}, in frequency, each parameter's information accumulates. Computing the cumulative Fisher information for chirp mass (0PN),
-mass ratio (1PN) and spin (1.5PN) across $\AnatomyN$ O4a and O4b events, the ordering
-$\mathcal{M}_c < \eta < \chi$ holds universally: chirp mass is determined earliest ($\sim35$~Hz), spin
-latest, and the frequency separation between them is a monotonic function of total mass (Spearman
-$\AnatomySpearman$), widest for light, long-inspiral systems and compressed for heavy systems that merge
-promptly in band.
-
-The ordering is a property of the waveform model, computed from it rather than measured from strain, and
-the Spearman value reflects that determinism rather than a statistical result. It therefore illustrates
-the framework rather than testing it, and the results of Sections~\ref{sec:results}--\ref{sec:robust} do
-not depend on it. A data-driven version, re-analysing loud events in frequency slices and comparing
-empirical with predicted information accumulation, would turn this into a measurement and is left to
-future work.
-
-\section{Why signal-to-noise and orientation informativeness differ: GW250114}
-\label{app:loudest}
-The quantity reconstructed in this paper requires a well-defined principal axis, which is a property of
-posterior \emph{shape} rather than of loudness. The two can come apart sharply, and the loudest event
-detected to date is the clearest example. The ringdown results quoted below are other groups' work and
-are included for orientation.
-
-GW250114 is a near-equal-mass binary black hole detected at network signal-to-noise $\sim\LoudSNR$, with
-remnant mass $M_f^{\rm src}\approx\LoudMf\,M_\odot$ and spin $\chi_f\approx\LoudChif$ --- essentially a
-much louder counterpart of GW150914. Its remnant implies Kerr quasi-normal-mode frequencies of
-$\LoudFtwoTwoZero$~Hz ($\tau=\LoudTauTwoTwoZero$~ms) for the fundamental and $\LoudFtwoTwoOne$~Hz
-($\tau=\LoudTauTwoTwoOne$~ms) for the first overtone. A published ringdown analysis using an
-orthonormal-mode basis reports the first overtone at $99.9\%$ significance --- up from $82.5\%$ in
-nonorthogonal analyses of the same event --- and finds ``no significant deviation'' from the Kerr
-prediction \citep{Suzuki2026}. We quote the orthonormal figure with that context because the significance
-is a property of the analysis basis, and we describe the Kerr result as the null it is reported to be
-rather than as a confirmation of the no-hair theorem.
-
-Being near-equal-mass, its posterior is nearly round, and it therefore falls outside the elongated sample
-used throughout this paper despite being the loudest event available. Loudness buys precision on the
-parameters; it does not buy the anisotropy that an orientation measurement needs. Selecting events for a
-geometric probe by signal-to-noise would therefore be the wrong criterion. We make no ringdown claim of our
-own for this event. An independent ringdown analysis attempted during this work was withdrawn when its
-posterior was found to be prior-dominated, the credible interval reproducing the prior rather than
-measuring the data, and we therefore rely on the published analyses cited above.
 
 \section{Reproducibility}
 \label{app:repro}
@@ -626,8 +593,6 @@ B.~D.~Wandelt, \emph{The Degeneracy Distillery}, arXiv:2606.23838 (2026).
 \emph{J.\ Chem.\ Phys.} \textbf{143}, 010901 (2015).
 \bibitem[Hastie \& Stuetzle(1989)]{HastieStuetzle1989} T.~Hastie and W.~Stuetzle,
 \emph{J.\ Amer.\ Statist.\ Assoc.} \textbf{84}, 502 (1989).
-\bibitem[Suzuki et al.(2026)]{Suzuki2026} M.~Suzuki, K.~Kubota, S.~Morisaki, H.~Motohashi, and
-D.~Watarai, arXiv:2605.03576 (2026).
 \bibitem[LVK(2025)]{GWTC4} The LIGO Scientific, Virgo and KAGRA Collaborations,
 \emph{GWTC-4.0: Updating the Gravitational-Wave Transient Catalog with Observations from the First Part
 of the Fourth LIGO--Virgo--KAGRA Observing Run}, arXiv:2508.18082 (2025).

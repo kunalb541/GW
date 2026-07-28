@@ -33,11 +33,11 @@ predicted orientation is **exactly invariant to chirp mass** — rescaling the c
 which leaves covariance eigenvectors unchanged — so the reconstruction has one input, the mass-ratio
 marginal, not two.
 
-It is presented as a posterior-compression relation and a systematics diagnostic, **not** as a test of
+It is presented as a measurement of posterior geometry and a systematics diagnostic, **not** as a test of
 general relativity: the posteriors are generated with general-relativistic waveform models, so their
 internal geometry cannot bound departures from the theory that produced them.
 
-- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 10 pp, two-column (Physical Review D
+- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 9 pp, two-column (Physical Review D
   format, `revtex4-2`).
 - **Reader's guide:** [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_READER_PACKET.md) — the honest
   summary, strongest and weakest claims, and a reproduction checklist.
@@ -63,7 +63,7 @@ python3 src/build_doc_numbers.py          # -> generated blocks in the docs
 # build the manuscript
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 
-# contract tests are data-free and run anywhere (180 tests)
+# contract tests are data-free and run anywhere (184 tests)
 python3 -m pytest tests/ -q
 ```
 

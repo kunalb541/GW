@@ -1,0 +1,81 @@
+{
+ "battery": "E102 downstream demonstration",
+ "seed": 102,
+ "prereg": "preregs/E102_downstream_demonstration_prereg.md",
+ "provenance": {
+  "cache": "results/e94_posterior_cache.npz",
+  "hdf5_accessed": false
+ },
+ "level": 0.9,
+ "n_elong": {
+  "GWTC-3": 29,
+  "O4a": 19,
+  "O4b": 32
+ },
+ "by_catalog": {
+  "GWTC-3": {
+   "coverage_oracle": 0.9237,
+   "coverage_curve": 0.9223,
+   "coverage_tangent": 0.9206,
+   "gap_closed_frac": 0.561,
+   "m2_width_abs_err_oracle": 0.0253,
+   "m2_width_abs_err_curve": 0.0555,
+   "m2_width_abs_err_tangent": 0.2463
+  },
+  "O4a": {
+   "coverage_oracle": 0.9185,
+   "coverage_curve": 0.921,
+   "coverage_tangent": 0.9103,
+   "gap_closed_frac": 1.311,
+   "m2_width_abs_err_oracle": 0.0157,
+   "m2_width_abs_err_curve": 0.0554,
+   "m2_width_abs_err_tangent": 0.1966
+  },
+  "O4b": {
+   "coverage_oracle": 0.9186,
+   "coverage_curve": 0.918,
+   "coverage_tangent": 0.9134,
+   "gap_closed_frac": 0.886,
+   "m2_width_abs_err_oracle": 0.0208,
+   "m2_width_abs_err_curve": 0.0342,
+   "m2_width_abs_err_tangent": 0.1265
+  }
+ },
+ "by_axr_band": {
+  "3-5": {
+   "n": 43,
+   "coverage_oracle": 0.9198,
+   "coverage_curve": 0.9208,
+   "coverage_tangent": 0.9156
+  },
+  "5-10": {
+   "n": 28,
+   "coverage_oracle": 0.9203,
+   "coverage_curve": 0.9202,
+   "coverage_tangent": 0.9182
+  },
+  "10+": {
+   "n": 9,
+   "coverage_oracle": 0.9106,
+   "coverage_curve": 0.9022,
+   "coverage_tangent": 0.9056
+  }
+ },
+ "verdict": {
+  "primary_coverage": {
+   "oracle": 0.9203,
+   "curve": 0.9204,
+   "tangent": 0.9148,
+   "gap_deg": 0.0055,
+   "outcome": "NULL: orientation barely affects total-region coverage (the region area is fixed, so this metric is insensitive to it)"
+  },
+  "secondary_m2_width_abs_err": {
+   "oracle": 0.021,
+   "curve": 0.048,
+   "tangent": 0.19,
+   "outcome": "EFFECT: a tangent-oriented Gaussian misstates the secondary-mass 90% width; the curve tracks the oracle"
+  },
+  "effect_grows_with_axr": true,
+  "statement": "Orientation is nearly irrelevant to total 90% coverage (oracle 0.920 vs tangent 0.915), which depends on the region area, not its tilt. It matters for the component-mass marginals: a tangent-oriented Gaussian misstates the secondary-mass 90% credible width by 19% (median), which the curve reduces to 5%, close to the oracle 2%. The demonstrated downstream value is thus specific: more accurate component-mass credible intervals from a Gaussian single-event approximation, not better total coverage."
+ }
+}

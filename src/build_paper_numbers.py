@@ -44,6 +44,7 @@ E98 = "e98_framework_audit"
 E100 = "e100_frames_and_bands"
 E99 = "e99_cache_stability_audit"
 E101 = "e101_alternative_curves_and_1pn"
+E102 = "e102_downstream_demonstration"
 E94M = "results/e94_posterior_cache_manifest.json"
 
 
@@ -186,6 +187,11 @@ SPEC = [
     ("OnePNpeffHi",   E101, "@peff_hi", "f3"),
     ("TangentBeatsAll",  "figures/fig2a_posterior_geometry_examples.json", "recorded_but_not_plotted.tangent_beats_curve_fraction_all_elongated", "pct0"),
     ("TangentBeatsHigh", "figures/fig2a_posterior_geometry_examples.json", "recorded_but_not_plotted.tangent_beats_curve_fraction_axr_ge_8", "pct0"),
+    ("DownSecTangent", E102, "verdict.secondary_m2_width_abs_err.tangent", "pct0"),
+    ("DownSecCurve",   E102, "verdict.secondary_m2_width_abs_err.curve", "pct0"),
+    ("DownSecOracle",  E102, "verdict.secondary_m2_width_abs_err.oracle", "pct0"),
+    ("DownCovOracle", E102, "verdict.primary_coverage.oracle", "f3"),
+    ("DownCovTangent",E102, "verdict.primary_coverage.tangent", "f3"),
 
     # --- exponent diagnostic (exploratory) ---
     ("ExpOb",        E78, "p_hat", "f3"),
@@ -201,15 +207,6 @@ SPEC = [
     ("ExpNaiveSigma", E79, "@naivesigma", "f1"),
 
     # --- context sections ---
-    ("AnatomyN",       E73, "n_events", "int"),
-    ("AnatomySpearman", E73, "spearman_richness_vs_Mtot", "f2"),
-    ("LoudMf",     E74, "characterization.Mf_source.0", "f1"),
-    ("LoudChif",   E74, "characterization.final_spin_af.0", "f2"),
-    ("LoudSNR",    E74, "characterization.network_snr.0", "int"),
-    ("LoudFtwoTwoZero", E74, "kerr_qnm_prediction.f_220_Hz.0", "f1"),
-    ("LoudTauTwoTwoZero", E74, "kerr_qnm_prediction.tau_220_ms.0", "f2"),
-    ("LoudFtwoTwoOne", E74, "kerr_qnm_prediction.f_221_Hz.0", "f1"),
-    ("LoudTauTwoTwoOne", E74, "kerr_qnm_prediction.tau_221_ms.0", "f2"),
 
     # --- outlier atlas ---
     ("AtlasN",       E72, "n", "int"),

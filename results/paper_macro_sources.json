@@ -1,7 +1,7 @@
 {
  "generator": "src/build_paper_numbers.py",
  "note": "Provenance for every number in paper/manuscript.tex. Each macro is the only way its value may appear in the paper; see tests/test_paper_numbers.py.",
- "n_macros": 135,
+ "n_macros": 131,
  "macros": [
   {
    "macro": "TrainTangentAll",
@@ -788,6 +788,41 @@
    "format": "pct0"
   },
   {
+   "macro": "DownSecTangent",
+   "value": "19\\%",
+   "artifact": "results/e102_downstream_demonstration_results.json",
+   "path": "verdict.secondary_m2_width_abs_err.tangent",
+   "format": "pct0"
+  },
+  {
+   "macro": "DownSecCurve",
+   "value": "5\\%",
+   "artifact": "results/e102_downstream_demonstration_results.json",
+   "path": "verdict.secondary_m2_width_abs_err.curve",
+   "format": "pct0"
+  },
+  {
+   "macro": "DownSecOracle",
+   "value": "2\\%",
+   "artifact": "results/e102_downstream_demonstration_results.json",
+   "path": "verdict.secondary_m2_width_abs_err.oracle",
+   "format": "pct0"
+  },
+  {
+   "macro": "DownCovOracle",
+   "value": "0.920",
+   "artifact": "results/e102_downstream_demonstration_results.json",
+   "path": "verdict.primary_coverage.oracle",
+   "format": "f3"
+  },
+  {
+   "macro": "DownCovTangent",
+   "value": "0.915",
+   "artifact": "results/e102_downstream_demonstration_results.json",
+   "path": "verdict.primary_coverage.tangent",
+   "format": "f3"
+  },
+  {
    "macro": "ExpOb",
    "value": "0.616",
    "artifact": "results/e78_geometric_gr_exponent_results.json",
@@ -863,69 +898,6 @@
    "artifact": "results/e79_exponent_cross_catalog_results.json",
    "path": "@naivesigma",
    "format": "f1"
-  },
-  {
-   "macro": "AnatomyN",
-   "value": "190",
-   "artifact": "results/e73_information_anatomy_results.json",
-   "path": "n_events",
-   "format": "int"
-  },
-  {
-   "macro": "AnatomySpearman",
-   "value": "-1.00",
-   "artifact": "results/e73_information_anatomy_results.json",
-   "path": "spearman_richness_vs_Mtot",
-   "format": "f2"
-  },
-  {
-   "macro": "LoudMf",
-   "value": "62.8",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "characterization.Mf_source.0",
-   "format": "f1"
-  },
-  {
-   "macro": "LoudChif",
-   "value": "0.68",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "characterization.final_spin_af.0",
-   "format": "f2"
-  },
-  {
-   "macro": "LoudSNR",
-   "value": "77",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "characterization.network_snr.0",
-   "format": "int"
-  },
-  {
-   "macro": "LoudFtwoTwoZero",
-   "value": "248.9",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "kerr_qnm_prediction.f_220_Hz.0",
-   "format": "f1"
-  },
-  {
-   "macro": "LoudTauTwoTwoZero",
-   "value": "4.10",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "kerr_qnm_prediction.tau_220_ms.0",
-   "format": "f2"
-  },
-  {
-   "macro": "LoudFtwoTwoOne",
-   "value": "243.4",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "kerr_qnm_prediction.f_221_Hz.0",
-   "format": "f1"
-  },
-  {
-   "macro": "LoudTauTwoTwoOne",
-   "value": "1.35",
-   "artifact": "results/e74_gw250114_deepdive_results.json",
-   "path": "kerr_qnm_prediction.tau_221_ms.0",
-   "format": "f2"
   },
   {
    "macro": "AtlasN",
