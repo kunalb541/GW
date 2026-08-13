@@ -21,17 +21,15 @@ posterior. Evaluating the constant-chirp-mass curve over an event's own mass-rat
 principal-axis position angle to a median $\LockedOaCurveElong^\circ$ on GWTC-4.0/O4a and
 $\LockedObCurveElong^\circ$ on GWTC-5.0/O4b for elongated posteriors (axis ratio $\ge 3$), with no
 coefficient calibrated on either catalog and with the prediction fixed on GWTC-3 beforehand. The local
-tangent approximation used by rapid parameter-estimation tools achieves
-$\CacheObTangent$--$\CacheOaTangent^\circ$ on the same events. This is not a curve merely fitting a curved
-distribution: substituting any other event's marginal degrades the error by
-$\DegradeMin$--$\DegradeMax\times$, and the achieved error falls below the minimum of $\PermN$
-catalog-stratified permutations in all three catalogs. Inputs from one waveform family recover another
-family's independently sampled axis, so the agreement does not arise from shared Monte Carlo noise. That
-the constant-chirp-mass exponents specifically carry the information is shown directly: neighbouring
-exponents evaluated on the same marginal are $\AltRatioMin$--$\AltRatioMax$ times worse, with a
-best-fitting exponent slightly above the general-relativistic value. That small offset is not a deviation
-from general relativity but the imprint of the next post-Newtonian order: a parameter-free Fisher
-calculation predicts an effective exponent of $\OnePNpeff$, matching the data. The residual
+tangent approximation, analogous to that used by rapid parameter-estimation tools, achieves
+$\CacheObTangent$--$\CacheOaTangent^\circ$ on the same events. The information resides specifically in
+the chirp-mass exponents: displacing them in a generalized contour family, evaluated on the same
+marginal, degrades the error by a factor of $\AltRatioMin$--$\AltRatioMax$, with a best-fitting exponent
+slightly above the general-relativistic $3/5$. That small offset is not a deviation from general
+relativity but the imprint of the next post-Newtonian order: a parameter-free Fisher calculation predicts
+an effective exponent of $\OnePNpeff$, matching the data at the population level. Inputs from one
+waveform family recover another family's independently sampled axis, so the agreement does not arise from
+shared Monte Carlo noise; substituting any other event's marginal degrades the error several-fold. The residual
 $\sim\!1^\circ$ is $\ResidRatio$ times the Monte Carlo resolution of the released samples and is therefore
 a property of the model. We present this as a measurement of posterior geometry and a systematics
 diagnostic, not as a test of general relativity.
@@ -100,8 +98,11 @@ to the elongation threshold. Section~\ref{sec:discussion} discusses scope and li
 \subsection{The predicted orientation}
 \label{sec:definition}
 For an event with source-frame posterior samples $\{(m_1,m_2)\}$, let $\psi_{\rm meas}$ be the position
-angle of the principal axis of the sample covariance and let the axis ratio $\mathrm{axr}$ be the ratio of
-its principal standard deviations. The constant-$\mathcal{M}_c$ curve in the mass plane is
+angle of the principal axis of the sample covariance --- measured in degrees from the $m_1$ axis,
+counter-clockwise, and defined modulo $180^\circ$ since an axis has no direction --- and let the axis
+ratio $\mathrm{axr}$ be the ratio of its principal standard deviations. Samples respect the
+$m_1 \ge m_2$ convention, so near-equal-mass posteriors are truncated at the diagonal; measured and
+predicted axes inherit that truncation consistently. The constant-$\mathcal{M}_c$ curve in the mass plane is
 \begin{equation}
 m_1(q) = \mathcal{M}_c\,(1+q)^{1/5} q^{-3/5}, \qquad m_2 = q\,m_1,
 \label{eq:curve}
@@ -145,7 +146,13 @@ be defined, and any orientation prediction must degrade toward a random baseline
 shows that the score varies smoothly across the threshold and that nothing distinguishes the chosen value.
 
 The relation was fixed on the derivation set and registered before any later-catalog file was opened; the
-scores in Table~\ref{tab:curve} are the resulting locked decision. Appendix~\ref{app:repro} describes the
+scores in Table~\ref{tab:curve} are the resulting locked decision. The registrations are verifiable in
+the public history of the analysis repository (\url{https://github.com/kunalb541/GW}): the O4b
+registration was committed at \texttt{d19a7a8} (2026-07-18), seventeen hours before its result at
+\texttt{e90a77a} (2026-07-19), with no GWTC-5.0 file opened in between. The O4a registration entered the
+public repository together with its results in the porting commit \texttt{180a62d} and is attested only
+by a private history; the two out-of-sample scores are therefore not equal evidence, as
+Section~\ref{sec:discussion} discusses. Appendix~\ref{app:repro} describes the
 computational pipeline and the provenance of every number reported here.
 
 \section{Results}
@@ -158,8 +165,9 @@ $\LockedOaCurveElong^\circ$ on O4a and $\LockedObCurveElong^\circ$ on O4b. These
 and are used in every headline statement. The figures recompute them independently from the cached
 extract of Appendix~\ref{app:repro}: the recomputation agrees on O4a ($\CacheOaCurve^\circ$), and on O4b
 gives $\CacheObCurve^\circ$ against the locked $\LockedObCurveElong^\circ$, the two differing only in
-which waveform group is taken as preferred for a small number of events. We report both rather than
-reconcile them.
+which waveform group is taken as preferred for a small number of events. The preference rule is: the
+\texttt{Mixed} (combined-samples) analysis when one is released, otherwise the analysis with the most
+posterior samples. We report both values rather than reconcile them, and use the locked one throughout.
 
 Table~\ref{tab:curve} collects the locked scores together with the tangent baseline and the replication
 statistics. Every cell is a locked, full-sample value except the derivation-catalog win fraction, for
@@ -173,13 +181,13 @@ tangent error to its curve error so that the full distribution is visible rather
 \hline
  & GWTC-3 (derivation) & GWTC-4.0/O4a & GWTC-5.0/O4b \\
 \hline
-median $|\psi_{\rm curve}-\psi_{\rm meas}|$ (elongated) & --- & $\mathbf{\LockedOaCurveElong^\circ}$ & $\mathbf{\LockedObCurveElong^\circ}$ \\
+median $|\psi_{\rm curve}-\psi_{\rm meas}|$ (elongated) & $\CacheTrCurve^\circ$\textsuperscript{$\dagger$} & $\mathbf{\LockedOaCurveElong^\circ}$ & $\mathbf{\LockedObCurveElong^\circ}$ \\
 median $|\psi_{\rm curve}-\psi_{\rm meas}|$ (all) & --- & $\LockedOaCurveAll^\circ$ & $\LockedObCurveAll^\circ$ \\
 median $|\psi_{\rm tangent}-\psi_{\rm meas}|$ (all) & $\TrainTangentAll^\circ$ & $\LockedOaTangentAll^\circ$ & $\LockedObTangentAll^\circ$ \\
 chirp-vs-total win fraction & $\TrainWinFrac$\textsuperscript{$\dagger$} & $\LockedOaWinFrac$ & $\LockedObWinFrac$ \\
 Spearman$(|\Delta\psi_{\rm tangent}|,\mathrm{axr})$ & $\TrainSpearmanAxr$ & $\LockedOaSpearmanAxr$ & $\LockedObSpearmanAxr$ \\
 $N$ events, total & $\TrainN$ & $\LockedOaN$ & $\LockedObN$ \\
-$N$ events, elongated & --- & $\LockedOaNElong$ & $\LockedObNElong$ \\
+$N$ events, elongated & $\CacheTrNElong$\textsuperscript{$\dagger$} & $\LockedOaNElong$ & $\LockedObNElong$ \\
 \hline
 \end{tabular}
 \caption{Locked out-of-sample scores, computed on the full released posterior samples. The reconstruction
@@ -187,8 +195,10 @@ lands within $\sim\!1.2^\circ$ of the measured orientation on elongated events i
 catalogs. The tangent error \emph{decreases}
 with elongation (final row), i.e.\ orientation becomes better defined for more elongated posteriors;
 normalised arc length behaves the same way, correlating negatively with the tangent error in all three
-catalogs ($\rho=\ArcTr,\ArcOa,\ArcOb$). \textsuperscript{$\dagger$}No locked win fraction exists for the
-derivation catalog, so that cell is computed from the cached extract; the other two are locked.}
+catalogs ($\rho=\ArcTr,\ArcOa,\ArcOb$). The win fraction is the fraction of all events (not only
+elongated) for which the constant-$\mathcal{M}_c$ reconstruction outperforms a constant-total-mass line.
+\textsuperscript{$\dagger$}No locked value exists for the derivation catalog, so its cells are computed
+from the cached extract; all other cells are locked.}
 \label{tab:curve}
 \end{table*}
 
@@ -244,7 +254,10 @@ anywhere in that range.
 \label{sec:xfam}
 Because the mass-ratio marginal is taken from the posterior being reconstructed, a natural concern is
 circularity: the agreement might reflect shared Monte Carlo noise rather than shared geometry. We test this
-by crossing waveform families. Using family~A's mass-ratio marginal to predict family~B's independently
+by crossing waveform families --- the \textsc{IMRPhenom} and \textsc{SEOBNR} analyses released for each
+event (\texttt{IMRPhenomXPHM}/\texttt{SEOBNRv4PHM} in GWTC-3; \texttt{IMRPhenomXPHM-SpinTaylor}/%
+\texttt{SEOBNRv5PHM} in O4a and O4b), with family~A the \textsc{IMRPhenom} member throughout. Using
+family~A's mass-ratio marginal to predict family~B's independently
 sampled principal axis --- never touching B's own geometry --- gives $\XfamAtoB^\circ$ (A$\to$B) and
 $\XfamBtoA^\circ$ (B$\to$A) over $\XfamN$ events elongated in both, against tangent baselines of
 $\XfamTanAtoB^\circ$ and $\XfamTanBtoA^\circ$ in the same directions. The reference scale is
@@ -331,9 +344,23 @@ We make this quantitative. Constructing the stationary-phase inspiral Fisher mat
 inspiral band and taking its least-constrained direction --- using no information from the measured
 posterior --- reproduces the constant-$\mathcal{M}_c$ tangent exactly at leading order (effective exponent
 $0.600$), and at 1PN predicts an effective exponent of $\OnePNpeff$ (interquartile range
-$\OnePNpeffLo$--$\OnePNpeffHi$). This parameter-free prediction matches both the empirical optimum above
-($p^\star=\AltPStarLo$--$\AltPStarHi$) and the exponent fitted independently in
-Appendix~\ref{app:exponent}. The offset is therefore the imprint of 1PN phasing.
+$\OnePNpeffLo$--$\OnePNpeffHi$). This parameter-free prediction matches the empirical optimum above and
+the exponent fitted independently in Appendix~\ref{app:exponent} at the population level: the median
+fitted exponent is $\AttrPStar$ against a median prediction of $\AttrPPred$, a difference consistent with
+zero under a bootstrap over events.
+
+The attribution has a precise boundary, and we state it. The fitted exponent declines with elongation even
+after the 1PN prediction is partialled out (rank partial correlation $\AttrRhoPAax$, $p=\AttrRhoPAaxP$),
+whereas the prediction itself carries no elongation dependence at all ($\rho=\AttrRhoPredAx$,
+$p=\AttrRhoPredAxP$). Two mechanisms therefore coexist: the 1PN phasing sets the central displacement of
+the exponent above $3/5$, and a distinct, elongation-dependent finite-width effect pulls the
+most-elongated events back toward it. The 1PN term explains the offset of the population; it does not
+explain its variation across events.
+
+For reproducibility: the Fisher matrix uses the analytic Advanced-LIGO noise fit of Ajith (2011), the
+band $[20\,\mathrm{Hz}, f_{\rm ISCO}]$ with $f_{\rm ISCO}=4397\,\mathrm{Hz}\,(M/M_\odot)^{-1}$, the
+stationary-phase inspiral phase truncated at 1PN, spins set to zero, and central finite differences for
+the mass gradients.
 
 The rotation is a \emph{local} effect and accounts for only part of the residual: at the median point it
 moves the predicted orientation from $\OnePNzero^\circ$ (leading order) to $\OnePNone^\circ$ (1PN), while
@@ -350,7 +377,10 @@ The measured quantity is a Euclidean principal-axis angle in fixed coordinates a
 reparameterisation invariant. We state that dependence rather than assume it away. Repeating the primary
 score in detector-frame masses gives $\FrameDetErr^\circ$ against $\FrameSourceErr^\circ$ in the source
 frame, paired over the same $\FrameNPaired$ events ($p=\FramePairedP$); in $(\log m_1, \log m_2)$ it gives
-$\FrameLogErr^\circ$. In $(\mathcal{M}_c, q)$ coordinates the construction is degenerate by design, since a
+$\FrameLogErr^\circ$. The log-mass improvement over the source frame is expected --- the curve is closer
+to a straight line in logarithmic coordinates, so the zero-curvature part of the residual shrinks --- but
+we retain the linear source frame as primary because it is the frame in which the construction was locked
+and in which posteriors are reported. In $(\mathcal{M}_c, q)$ coordinates the construction is degenerate by design, since a
 constant-$\mathcal{M}_c$ curve is a vertical line and the reconstruction carries no per-event content.
 
 The detector-frame improvement is largely mediated by elongation rather than indicating a better-suited
@@ -369,7 +399,10 @@ $\BandThree^\circ$, $\BandFour^\circ$ and $\BandFive^\circ$ for successive bands
 reaching the $\RandomBaseline^\circ$ expected for a random angle modulo $180^\circ$. Nothing distinguishes
 the chosen threshold of $3$: the error falls monotonically and smoothly across thresholds from $1.5$ to
 $10$. Figure~\ref{fig:2a} illustrates the geometry for three events selected by stated rules, including the
-worst case in the sample. The reconstruction does not always win: the local tangent achieves the smaller
+worst case in the sample. That worst case (GW200308\_173609, $16^\circ$) is a high-mass system with an
+irregular posterior --- precisely the regime where \citet{Baird2013} note that constant chirp mass stops
+characterising the mass degeneracy cleanly, as anticipated in the limitations below. The reconstruction
+does not always win: the local tangent achieves the smaller
 error for $\TangentBeatsAll$ of elongated events, rising to $\TangentBeatsHigh$ above $\mathrm{axr}=8$,
 where both approaches are already accurate and the arc correction is small. Any application relying on the
 reconstruction should treat it as a typical rather than a guaranteed improvement.
@@ -389,8 +422,12 @@ pre-declared axes --- precession $\chi_p$, aligned spin $\chi_{\rm eff}$, mass r
 signal-to-noise ratio, chirp mass, total mass, secondary mass, and waveform-family disagreement --- with
 Benjamini--Hochberg control and a partial correlation removing the axis-ratio confound, no physical axis
 survives. The only surviving correlate is waveform-model disagreement ($\rho=\AtlasWfRho$,
-$q=\AtlasWfQ$), a measurement systematic, with a sign indicating that the curve tracks the waveform
-\emph{ensemble} consensus more closely than any single waveform tracks another.
+$q=\AtlasWfQ$), a measurement systematic. For this test, disagreement is the standard deviation of
+$\psi_{\rm meas}$ across all waveform-family analyses of the event (mod-$180^\circ$ aligned), and the
+residual is measured against the preferred family's axis. The correlation is \emph{negative}: events on
+which the families disagree more show \emph{smaller} curve residuals. We do not have a derivation of this
+sign --- a construction in which the curve tracked an ensemble consensus would naively predict the
+opposite --- and we report it as an empirical association whose direction is unexplained.
 
 This is a null result on $\AtlasN$ events and has correspondingly limited power. It bounds the size of any
 physical dependence; it does not exclude one.
@@ -418,13 +455,20 @@ $90\%$ region captures $\DownCovTangent$ of the true posterior when tangent-orie
 $\DownCovOracle$ for the true axis). It does improve the component-mass \emph{marginals}, which are
 orientation-sensitive: a tangent-oriented Gaussian misstates the secondary-mass $90\%$ credible width by a
 median $\DownSecTangent$, which the arc reduces to $\DownSecCurve$, close to the $\DownSecOracle$ of the true
-axis. Any catalog-level analysis that reads component-mass intervals from a Gaussian single-event
-approximation therefore benefits; a template-placement or volume estimate that uses only the metric area
-does not.
+axis. (These Gaussians are moment-matched --- true sample mean and covariance eigenvalues, orientation
+set as stated --- and the figures are medians over the $\ResidNElong$ elongated events.) Any analysis
+that reads component-mass intervals from a Gaussian single-event approximation therefore benefits; the
+clearest existing consumer is low-latency source classification, which thresholds on the secondary mass
+to distinguish binary classes. A template-placement or volume estimate that uses only the metric area
+does not benefit.
 
 \paragraph{Scope.} Three boundaries are worth stating together, since each has a natural stronger reading
 that the measurements do not support. First, the relation uses a marginal of the posterior it
 reconstructs, not information external to it: the mass-ratio marginal is drawn from that same posterior.
+Both the input marginal and the target covariance inherit the sampling priors of the released analyses, so
+the geometry characterised here is that of the likelihood--prior product, not of the likelihood alone; for
+quiet events, where the mass-ratio marginal is substantially prior-driven, the diagnostic's meaning shifts
+with the prior choice, and we have not quantified that dependence.
 Second, the reconstructed quantity is a Euclidean angle in fixed coordinates, and Section~\ref{sec:frames}
 shows it changes with the choice of mass variables; we therefore report the convention rather than claim
 invariance, and do not appeal to {\v C}encov's uniqueness theorem for the Fisher--Rao metric, which would
@@ -500,14 +544,17 @@ of the next post-Newtonian order, predicted from first principles in Section~\re
 $\eta$-dependent phasing shifts the effective degeneracy exponent to $\OnePNpeff$, in agreement with the
 fitted value here and with the empirical optimum of Section~\ref{sec:nontrivial}.
 
-Two further properties confirm that the offset is a feature of the leading-order geometric model rather
-than new physics, and both were pre-committed. The two disjoint catalogs disagree with each other by
-$\ExpSpread$, comparable to the offset from the general-relativistic value ($\ExpOffset$), so the
-catalog-to-catalog spread is a systematic that the bootstrap statistical error ($\ExpCombErr$) does not
-capture; including it gives $\ExpSigma\sigma$. And the per-event exponent depends on elongation (Spearman
-$=\ExpSpearman$), with the most-elongated half yielding $p=\ExpCleanHalf$, consistent with $3/5$ as the
-finite-width effect that produces the offset diminishes. No bound on modified inspiral phasing follows
-from any of this, and we draw none: the posteriors were generated with general-relativistic waveforms.
+Two further properties bound the offset, and both were pre-committed. The two disjoint catalogs disagree
+with each other by $\ExpSpread$, comparable to the offset from the general-relativistic value
+($\ExpOffset$), so the catalog-to-catalog spread is a systematic that the bootstrap statistical error
+($\ExpCombErr$) does not capture; including it gives $\ExpSigma\sigma$. And the per-event exponent
+depends on elongation (Spearman rank correlation $\rho = \ExpSpearman$ over the elongated events of both
+catalogs), with the most-elongated half yielding $p=\ExpCleanHalf$. As Section~\ref{sec:onepn} shows
+quantitatively, this elongation dependence is \emph{not} carried by the 1PN prediction, which is flat in
+axis ratio: the 1PN phasing sets the central displacement, and a distinct finite-width effect produces the
+variation with elongation. The combined value quoted above weights the two catalogs by inverse variance.
+No bound on modified inspiral phasing follows from any of this, and we draw none: the posteriors were
+generated with general-relativistic waveforms.
 
 \section{Reproducibility}
 \label{app:repro}

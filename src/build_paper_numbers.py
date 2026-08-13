@@ -45,6 +45,7 @@ E100 = "e100_frames_and_bands"
 E99 = "e99_cache_stability_audit"
 E101 = "e101_alternative_curves_and_1pn"
 E102 = "e102_downstream_demonstration"
+E103 = "e103_exponent_attribution"
 E94M = "results/e94_posterior_cache_manifest.json"
 
 
@@ -79,6 +80,7 @@ SPEC = [
 
     # --- cache-backed reconstruction and its baselines (Gate A) ---
     ("CacheTrCurve",  E95, "gate_A.GWTC-3.own_q", "f2"),
+    ("CacheTrNElong", E95, "gate_A.GWTC-3.n_elong", "int"),
     ("CacheOaCurve",  E95, "gate_A.O4a.own_q", "f2"),
     ("CacheObCurve",  E95, "gate_A.O4b.own_q", "f2"),
     ("CacheTrTangent", E95, "gate_A.GWTC-3.tangent", "f2"),
@@ -192,6 +194,13 @@ SPEC = [
     ("DownSecOracle",  E102, "verdict.secondary_m2_width_abs_err.oracle", "pct0"),
     ("DownCovOracle", E102, "verdict.primary_coverage.oracle", "f3"),
     ("DownCovTangent",E102, "verdict.primary_coverage.tangent", "f3"),
+    ("AttrPStar",     E103, "D1_median_match.median_p_star", "f3"),
+    ("AttrPPred",     E103, "D1_median_match.median_p_pred_1PN", "f3"),
+    ("AttrRhoPP",     E103, "D2_correlations.pstar_vs_ppred.rho", "sf2"),
+    ("AttrRhoPAax",   E103, "D2_correlations.pstar_vs_axr_partial_ppred.rho", "sf2"),
+    ("AttrRhoPAaxP",  E103, "D2_correlations.pstar_vs_axr_partial_ppred.p", "pv"),
+    ("AttrRhoPredAx", E103, "D3_prediction_flat_in_axr.rho", "sf2"),
+    ("AttrRhoPredAxP",E103, "D3_prediction_flat_in_axr.p", "f2"),
 
     # --- exponent diagnostic (exploratory) ---
     ("ExpOb",        E78, "p_hat", "f3"),
@@ -279,6 +288,8 @@ def derived(tag, d):
 def fmt(v, how):
     if how == "int":
         return f"{int(round(v))}"
+    if how.startswith("sf"):
+        return f"{v:+.{int(how[2])}f}"     # signed -- correlations should show their sign
     if how.startswith("f"):
         return f"{v:.{int(how[1])}f}"
     if how == "pct0":

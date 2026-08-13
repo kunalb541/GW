@@ -1,0 +1,50 @@
+{
+ "battery": "E103 exponent attribution",
+ "seed": 103,
+ "n_elong": 80,
+ "prereg": "preregs/E103_exponent_attribution_prereg.md",
+ "provenance": {
+  "cache": "results/e94_posterior_cache.npz",
+  "hdf5_accessed": false
+ },
+ "D1_median_match": {
+  "median_p_star": 0.63,
+  "median_p_pred_1PN": 0.6299768228663087,
+  "median_diff_boot_ci90": [
+   -0.00998519429024759,
+   0.010006370559407118
+  ],
+  "medians_consistent": true
+ },
+ "D2_correlations": {
+  "pstar_vs_ppred": {
+   "rho": 0.23808029883093598,
+   "p": 0.033451492029793264
+  },
+  "pstar_vs_ppred_partial_axr": {
+   "rho": 0.26631504922644167,
+   "p": 0.016949585546895754
+  },
+  "pstar_vs_axr": {
+   "rho": -0.20772935290173292,
+   "p": 0.06446207009458113
+  },
+  "pstar_vs_axr_partial_ppred": {
+   "rho": -0.2573136427566808,
+   "p": 0.02121103808810862
+  }
+ },
+ "D3_prediction_flat_in_axr": {
+  "rho": 0.04737458977965307,
+  "p": 0.6764613668835896,
+  "flat": true
+ },
+ "most_elongated_half": {
+  "median_p_star": 0.62,
+  "median_p_pred": 0.6298354493974441
+ },
+ "verdict": {
+  "two_mechanisms": true,
+  "statement": "BOTH mechanisms are real. The 1PN prediction matches the population-level offset (median p* = 0.630 vs predicted 0.630, difference consistent with zero), but it is flat in elongation (rho = +0.05, p = 0.68) and therefore cannot carry the elongation trend: p* declines with axis ratio even after partialling out the prediction (partial rho = -0.26, p = 0.021). The 1PN term sets the central displacement of the exponent; a distinct elongation-dependent (finite-width) effect pulls the most-elongated events back toward 3/5. Neither categorical attribution alone is correct."
+ }
+}

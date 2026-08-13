@@ -2,7 +2,7 @@
 
 **Repo** <https://github.com/kunalb541/GW> · **state handed off at commit `c167e27`** (this packet is
 committed immediately after; it changes no analysis) · **PDF** [`paper/manuscript.pdf`](../paper/manuscript.pdf),
-9 pp · 184 contract tests, all passing.
+10 pp · 188 contract tests, all passing.
 
 Contact: Kunal Bhatia, ORCID [0009-0007-4447-6325](https://orcid.org/0009-0007-4447-6325).
 
@@ -100,7 +100,7 @@ python3 src/e94_build_posterior_cache.py          # writes results/e94_posterior
 <!-- END GENERATED: cache-cmd -->
 
 **Time/resource budget:** ~58 GB download (hours, network-bound); ~5 min cache build; everything
-downstream is seconds. The 184 tests need no data and run in ~1 min.
+downstream is seconds. The 188 tests need no data and run in ~1 min.
 
 ## Checklist for an external reader
 

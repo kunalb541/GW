@@ -1,7 +1,7 @@
 {
  "generator": "src/build_paper_numbers.py",
  "note": "Provenance for every number in paper/manuscript.tex. Each macro is the only way its value may appear in the paper; see tests/test_paper_numbers.py.",
- "n_macros": 131,
+ "n_macros": 139,
  "macros": [
   {
    "macro": "TrainTangentAll",
@@ -142,6 +142,13 @@
    "artifact": "results/e95_gate_regeneration_results.json",
    "path": "gate_A.GWTC-3.own_q",
    "format": "f2"
+  },
+  {
+   "macro": "CacheTrNElong",
+   "value": "29",
+   "artifact": "results/e95_gate_regeneration_results.json",
+   "path": "gate_A.GWTC-3.n_elong",
+   "format": "int"
   },
   {
    "macro": "CacheOaCurve",
@@ -821,6 +828,55 @@
    "artifact": "results/e102_downstream_demonstration_results.json",
    "path": "verdict.primary_coverage.tangent",
    "format": "f3"
+  },
+  {
+   "macro": "AttrPStar",
+   "value": "0.630",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D1_median_match.median_p_star",
+   "format": "f3"
+  },
+  {
+   "macro": "AttrPPred",
+   "value": "0.630",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D1_median_match.median_p_pred_1PN",
+   "format": "f3"
+  },
+  {
+   "macro": "AttrRhoPP",
+   "value": "+0.24",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D2_correlations.pstar_vs_ppred.rho",
+   "format": "sf2"
+  },
+  {
+   "macro": "AttrRhoPAax",
+   "value": "-0.26",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D2_correlations.pstar_vs_axr_partial_ppred.rho",
+   "format": "sf2"
+  },
+  {
+   "macro": "AttrRhoPAaxP",
+   "value": "0.021",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D2_correlations.pstar_vs_axr_partial_ppred.p",
+   "format": "pv"
+  },
+  {
+   "macro": "AttrRhoPredAx",
+   "value": "+0.05",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D3_prediction_flat_in_axr.rho",
+   "format": "sf2"
+  },
+  {
+   "macro": "AttrRhoPredAxP",
+   "value": "0.68",
+   "artifact": "results/e103_exponent_attribution_results.json",
+   "path": "D3_prediction_flat_in_axr.p",
+   "format": "f2"
   },
   {
    "macro": "ExpOb",
