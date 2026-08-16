@@ -7,9 +7,10 @@ A reproducible, pre-registered gravitational-wave methodology project. Analysis 
 predictions, per-event results, figures, and the manuscript for a single result, with every number in
 the paper generated from a committed artifact rather than typed by hand.
 
-> **License:** MIT (code and docs). Gravitational-wave data are not redistributed here; they are public
-> GWOSC releases under CC-BY. The manuscript is provided for transparency and remains the author's work.
-> See [`LICENSE`](LICENSE).
+> **License:** MIT for the code (`src/`, `tests/`, `scripts/`); the manuscript, figures, and written
+> documentation are provided for transparency and peer review and remain the author's work (all rights
+> reserved). Gravitational-wave data are not redistributed here; they are public GWOSC releases under
+> CC-BY. See [`LICENSE`](LICENSE).
 
 ---
 
@@ -37,8 +38,8 @@ It is presented as a measurement of posterior geometry and a systematics diagnos
 general relativity: the posteriors are generated with general-relativistic waveform models, so their
 internal geometry cannot bound departures from the theory that produced them.
 
-- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 10 pp, two-column (Physical Review D
-  format, `revtex4-2`).
+- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 10 pp, two-column, `revtex4-2`.
+  **Submitted to Physical Review D** (August 2026).
 - **Reader's guide:** [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_READER_PACKET.md) — the honest
   summary, strongest and weakest claims, and a reproduction checklist.
 
