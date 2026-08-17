@@ -38,8 +38,9 @@ It is presented as a measurement of posterior geometry and a systematics diagnos
 general relativity: the posteriors are generated with general-relativistic waveform models, so their
 internal geometry cannot bound departures from the theory that produced them.
 
-- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 10 pp, two-column, `revtex4-2`.
-  **Submitted to Physical Review D** (August 2026).
+- **Manuscript:** [`paper/manuscript.pdf`](paper/manuscript.pdf) — 10 pp, two-column, `revtex4-2`;
+  single-column submission build in [`paper/manuscript_cqg.pdf`](paper/manuscript_cqg.pdf).
+  **Under journal submission** (2026).
 - **Reader's guide:** [`docs/EXTERNAL_READER_PACKET.md`](docs/EXTERNAL_READER_PACKET.md) — the honest
   summary, strongest and weakest claims, and a reproduction checklist.
 
@@ -64,7 +65,7 @@ python3 src/build_doc_numbers.py          # -> generated blocks in the docs
 # build the manuscript
 cd paper && pdflatex manuscript.tex && pdflatex manuscript.tex
 
-# contract tests are data-free and run anywhere (188 tests)
+# contract tests are data-free and run anywhere (190 tests)
 python3 -m pytest tests/ -q
 ```
 
